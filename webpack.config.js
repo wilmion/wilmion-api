@@ -1,6 +1,7 @@
 const path = require("path");
+const WebpackShellPluginNext = require("webpack-shell-plugin-next");
 const nodeExternals = require("webpack-node-externals");
-const NODE_ENV = process.env.NODE_ENV;
+const { NODE_ENV = "production" } = process.env;
 const PORT = process.env.PORT;
 
 module.exports = {
@@ -9,12 +10,14 @@ module.exports = {
   target: "node",
   mode: NODE_ENV,
   externals: [nodeExternals()],
+  mode: NODE_ENV,
+  watch: NODE_ENV === "development",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "index.js",
   },
   resolve: {
-    extensions: [".ts", ".js", ".mts"],
+    extensions: [".ts", ".js"],
   },
   module: {
     rules: [
@@ -31,4 +34,9 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new WebpackShellPluginNext({
+      onBuildEnd: ["npm run run:dev"],
+    }),
+  ],
 };
