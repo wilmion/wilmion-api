@@ -1,7 +1,6 @@
-import { join } from "path";
 import { createConnection, ConnectionOptions, Connection } from "typeorm";
 import config from "../config";
-import { Tag } from "../entities/tag.entity";
+import entities from "./entities";
 
 export class ConnectionLib {
   private _db: Connection;
@@ -13,7 +12,7 @@ export class ConnectionLib {
       username: config.postgres.username,
       password: config.postgres.password,
       database: config.postgres.database,
-      entities: [Tag],
+      entities,
       logging: true,
     };
     this.connect(options);

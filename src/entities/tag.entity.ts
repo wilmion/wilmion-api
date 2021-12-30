@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn, ManyToMany } from "typeorm";
+import { Post } from "./post.entity";
 
 @Entity({ name: "tags" })
 export class Tag {
@@ -9,11 +10,14 @@ export class Tag {
     type: "varchar",
     nullable: false,
   })
-  color: string;
+  readonly color: string;
 
   @Column({
     type: "varchar",
     nullable: false,
   })
-  text: string;
+  readonly text: string;
+
+  @ManyToMany(() => Post, (post) => post.tags)
+  readonly posts: Post[];
 }
