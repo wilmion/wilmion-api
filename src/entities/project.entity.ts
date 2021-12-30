@@ -69,6 +69,6 @@ export class Project {
 
   //Relations n:n
   @ManyToMany(() => Skill)
-  @JoinTable({ name: "CONNECTION_PROJECTS_TOS_KILLS" })
+  @JoinTable({ name: "CONNECTION_PROJECTS_TO_KILLS" })
   skills: Skill[];
 }

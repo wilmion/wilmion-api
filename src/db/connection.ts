@@ -1,5 +1,5 @@
 import { createConnection, ConnectionOptions, Connection } from "typeorm";
-import config from "../config";
+import config from "@config/index";
 import entities from "./entities";
 
 export class ConnectionLib {

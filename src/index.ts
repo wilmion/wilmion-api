@@ -1,26 +1,14 @@
 import "reflect-metadata";
 import express from "express";
 
-import { db } from "./db/connection";
-import { Tag } from "./entities/tag.entity";
+import { db } from "@db/connection";
+import setAllRouters from "@routes/index";
 
 const app = express();
 
 app.use(express.json());
 
-app.get("/", async (req, res) => {
-  const database = db.db;
-
-  const tagsRepo = database.getRepository(Tag);
-
-  const tags = tagsRepo.find();
-
-  res.status(200).json({
-    message: "¡Hola! Bienvenido a la API de https://wilmion.com",
-    documentationOfApi: "https://link.com",
-    tags,
-  });
-});
+setAllRouters(app);
 
 app.listen(3000, () => {
   console.log(`App runing on http://localhost:3000`);

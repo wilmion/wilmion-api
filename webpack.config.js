@@ -17,6 +17,15 @@ module.exports = {
     filename: "index.js",
   },
   resolve: {
+    alias: {
+      "@routes": path.resolve(__dirname, "./src/routes/"),
+      "@utils": path.resolve(__dirname, "./src/utils/"),
+      "@config": path.resolve(__dirname, "./src/config/"),
+      "@controllers": path.resolve(__dirname, "./src/controllers/"),
+      "@db": path.resolve(__dirname, "./src/db/"),
+      "@entities": path.resolve(__dirname, "./src/entities/"),
+      "@services": path.resolve(__dirname, "./src/services/"),
+    },
     extensions: [".ts", ".js"],
   },
   module: {

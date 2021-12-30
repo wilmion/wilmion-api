@@ -7,6 +7,16 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "baseUrl": "src",
+    "paths": {
+      "@utils/*": ["utils/*"],
+      "@config/*": ["config/*"],
+      "@controllers/*": ["controllers/*"],
+      "@db/*": ["db/*"],
+      "@entities/*": ["entities/*"],
+      "@routes/*": ["routes/*"],
+      "@services/*": ["services/*"]
+    }
   }
 }
