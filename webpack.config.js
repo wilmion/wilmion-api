@@ -25,6 +25,7 @@ module.exports = {
       "@db": path.resolve(__dirname, "./src/db/"),
       "@entities": path.resolve(__dirname, "./src/entities/"),
       "@services": path.resolve(__dirname, "./src/services/"),
+      "@dtos": path.resolve(__dirname, "./src/dtos/"),
     },
     extensions: [".ts", ".js"],
   },

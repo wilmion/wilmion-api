@@ -16,7 +16,8 @@
       "@db/*": ["db/*"],
       "@entities/*": ["entities/*"],
       "@routes/*": ["routes/*"],
-      "@services/*": ["services/*"]
+      "@services/*": ["services/*"],
+      "@dtos/*": ["dtos/*"]
     }
   }
 }

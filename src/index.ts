@@ -1,7 +1,7 @@
 import "reflect-metadata";
+import "@db/connection";
 import express from "express";
 
-import { db } from "@db/connection";
 import setAllRouters from "@routes/index";
 
 const app = express();

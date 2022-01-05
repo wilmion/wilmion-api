@@ -1,11 +1,22 @@
 import { Router } from "express";
 
-const route = Router();
+import { StaticContentsService } from "@services/static-contents.service";
 
-route.get("/", (req, res) => {
-  res.status(200).json({
-    state: "working....",
-  });
+import response from "@utils/response";
+
+const route = Router();
+const service = new StaticContentsService();
+
+route.get("/", async (req, res) => {
+  try {
+    const { limit, offset } = req.query as any;
+
+    const data = await service.getAll(limit, offset);
+
+    response(res, 200, data, "Data traveled successfully");
+  } catch (e) {
+    response(res, 500, {}, "Internal server error");
+  }
 });
 
 export default route;
