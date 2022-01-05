@@ -27,5 +27,5 @@ export class Auth {
 
   @OneToOne(() => User, { nullable: false })
   @JoinColumn()
-  readonly user: User;
+  user: User;
 }

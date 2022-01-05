@@ -10,4 +10,10 @@ export interface Config {
     database: string;
   };
   port: number;
+  encryption: {
+    saltRounds: number;
+  };
+  jwt: {
+    secret: string;
+  };
 }

@@ -1,12 +1,32 @@
 import { Router } from "express";
 import response from "@utils/response";
 
-const route = Router();
+import { AuthService } from "@services/auth.service";
 
-route.get("/register", async (req, res) => {
+const route = Router();
+const service = new AuthService();
+
+route.post("/register", async (req, res) => {
   try {
-    response(res, 200, { message: "In work" }, "worked");
+    const body = req.body;
+
+    const auth = await service.create(body);
+
+    response(res, 201, auth, "Registered successfully");
   } catch (error) {
+    res.send("No....");
+  }
+});
+
+route.post("/login", async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    const payload = await service.login(email, password);
+
+    response(res, 200, payload, "Login successfull");
+  } catch (error) {
+    console.log(error);
     res.send("No....");
   }
 });

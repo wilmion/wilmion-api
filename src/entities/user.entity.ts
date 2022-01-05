@@ -41,5 +41,5 @@ export class User {
 
   @OneToOne(() => Image, { nullable: false })
   @JoinColumn()
-  readonly image: Image;
+  image: Image;
 }
