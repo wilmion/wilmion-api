@@ -1,4 +1,5 @@
 export interface Config {
+  mode: "DEV" | "PROD";
   typeorm: {
     connection: "postgres" | "mysql";
   };

@@ -17,7 +17,11 @@
       "@entities/*": ["entities/*"],
       "@routes/*": ["routes/*"],
       "@services/*": ["services/*"],
-      "@dtos/*": ["dtos/*"]
+      "@dtos/*": ["dtos/*"],
+      "@middlewares/*": ["middlewares/*"],
+      "@Joi/*": ["Joi/*"],
+      "@strategies/*": ["strategies/*"],
+      "@models/*": ["models/*"]
     }
   }
 }

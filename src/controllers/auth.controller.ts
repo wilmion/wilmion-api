@@ -3,22 +3,31 @@ import response from "@utils/response";
 
 import { AuthService } from "@services/auth.service";
 
+import { AuthSchema } from "@Joi/auth.joi";
+import { RegisterSchema } from "@Joi/user.joi";
+
+import { validateHandler } from "@middlewares/validator.middleware";
+
 const route = Router();
 const service = new AuthService();
 
-route.post("/register", async (req, res) => {
-  try {
-    const body = req.body;
+route.post(
+  "/register",
+  validateHandler(RegisterSchema),
+  async (req, res, next) => {
+    try {
+      const body = req.body;
 
-    const auth = await service.create(body);
+      const auth = await service.create(body);
 
-    response(res, 201, auth, "Registered successfully");
-  } catch (error) {
-    res.send("No....");
+      response(res, 201, auth, "Registered successfully");
+    } catch (error) {
+      next(error);
+    }
   }
-});
+);
 
-route.post("/login", async (req, res) => {
+route.post("/login", validateHandler(AuthSchema), async (req, res, next) => {
   try {
     const { email, password } = req.body;
 
@@ -26,8 +35,7 @@ route.post("/login", async (req, res) => {
 
     response(res, 200, payload, "Login successfull");
   } catch (error) {
-    console.log(error);
-    res.send("No....");
+    next(error);
   }
 });
 

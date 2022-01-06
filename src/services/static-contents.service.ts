@@ -1,4 +1,5 @@
-import { FindManyOptions, Repository, Not } from "typeorm";
+import { FindManyOptions, Repository, Not, IsNull } from "typeorm";
+import Boom from "@hapi/boom";
 
 import { connection } from "@db/connection";
 
@@ -34,41 +35,37 @@ export class StaticContentsService {
 
   async getOne(page: PagesOfStaticContent) {
     if (page === "contact") {
-      const data = await this.db.findOne({ contactEmail: Not(null) });
+      const data = await this.db.findOne({ contactEmail: Not(IsNull()) });
 
       return data;
     }
 
-    return "Not Found";
+    throw Boom.notFound("This page isn't exist");
   }
 
   async create(payload: StaticContentDto) {
-    await this.db.save(payload);
+    if (payload.contactEmail) {
+      const contact = await this.getOne("contact");
 
-    return "Static Content created";
+      if (contact) throw Boom.conflict("The contact page already exist");
+    }
+
+    const newStaticContent = await this.db.create(payload);
+
+    return await this.db.save(newStaticContent);
   }
 
   async update(page: PagesOfStaticContent, payload: Partial<StaticContentDto>) {
     const data = await this.getOne(page);
 
-    if (data !== "Not Found") {
-      await this.db.merge(data, payload);
-
-      return "Updated data";
-    }
-
-    return data;
+    return await this.db.merge(data, payload);
   }
 
   async delete(page: PagesOfStaticContent) {
     const data = await this.getOne(page);
 
-    if (data !== "Not Found") {
-      await this.db.delete(data.id);
+    await this.db.delete(data.id);
 
-      return "Removed successfully";
-    }
-
-    return data;
+    return "Removed successfully";
   }
 }

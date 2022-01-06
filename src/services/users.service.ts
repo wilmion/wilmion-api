@@ -1,4 +1,5 @@
 import { Repository } from "typeorm";
+import Boom from "@hapi/boom";
 
 import { connection } from "@db/connection";
 
@@ -28,7 +29,7 @@ export class UsersService {
     });
 
     if (!user) {
-      throw new Error("User not found");
+      throw Boom.notFound("User not found");
     }
 
     return user;
@@ -64,6 +65,6 @@ export class UsersService {
   private async comprobateImageId(imageId: string) {
     const existAnImage = await this.imageService.getById(imageId);
 
-    if (!existAnImage) throw new Error("Image entity does not exist");
+    if (!existAnImage) throw Boom.notFound("Image entity does not exist");
   }
 }

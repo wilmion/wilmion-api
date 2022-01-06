@@ -1,4 +1,7 @@
 import { Repository } from "typeorm";
+import Boom from "@hapi/boom";
+
+import { TokenUser } from "@models/tokenUser.model";
 
 import { connection } from "@db/connection";
 
@@ -30,7 +33,7 @@ export class AuthService {
       relations: ["user"],
     });
 
-    if (!auth) throw new Error("This user is not exist");
+    if (!auth) throw Boom.notFound("This user is not exist");
 
     return auth;
   }
@@ -38,13 +41,14 @@ export class AuthService {
   async login(email: string, password: string) {
     const auth = await this.db.findOne({ email }, { relations: ["user"] });
 
-    if (!auth) throw new Error("This email is not corresponding anyone users");
+    if (!auth)
+      throw Boom.notFound("This email is not corresponding anyone users");
 
     const isPassword = await verify(password, auth.password);
 
-    if (!isPassword) throw new Error("You not be this user");
+    if (!isPassword) throw Boom.unauthorized("You not be this user");
 
-    const payloadToken = {
+    const payloadToken: TokenUser = {
       id: auth.id,
       id_user: auth.user.id,
       role: auth.email === "wilmion92@gmail.com" ? "admin" : "customer",

@@ -6,6 +6,7 @@ dotenv.config({
 });
 
 const config: Config = {
+  mode: process.env.NODE_ENV ? "DEV" : "PROD",
   typeorm: {
     connection: process.env.TYPEORM_CONNECTION as any,
   },
