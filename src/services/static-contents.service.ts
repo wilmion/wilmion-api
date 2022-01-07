@@ -22,6 +22,14 @@ export class StaticContentsService {
     this.db = database.getRepository(StaticContent);
   }
 
+  async getById(id: string) {
+    const content = await this.db.findOne(id);
+
+    if (!content) throw Boom.notFound("The static content was not found");
+
+    return content;
+  }
+
   async getAll(limit: string | undefined, offset: string | undefined) {
     let options: FindManyOptions = {
       take: limit ? parseInt(limit, 10) : 20,
@@ -55,14 +63,16 @@ export class StaticContentsService {
     return await this.db.save(newStaticContent);
   }
 
-  async update(page: PagesOfStaticContent, payload: Partial<StaticContentDto>) {
-    const data = await this.getOne(page);
+  async update(id: string, payload: Partial<StaticContentDto>) {
+    const data = await this.getById(id);
 
-    return await this.db.merge(data, payload);
+    await this.db.update(data.id, payload);
+
+    return { ...data, ...payload };
   }
 
-  async delete(page: PagesOfStaticContent) {
-    const data = await this.getOne(page);
+  async delete(id: string) {
+    const data = await this.getById(id);
 
     await this.db.delete(data.id);
 

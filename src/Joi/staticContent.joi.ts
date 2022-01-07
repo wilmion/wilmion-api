@@ -11,3 +11,11 @@ export const staticContentSchema = {
   responseQuestion: responseQuestionSchema.required(),
   contactEmail: emailSchema,
 };
+
+export const staticContentUpdateSchema = {
+  introduction: introductionSchema,
+  responseQuestion: responseQuestionSchema,
+  contactEmail: emailSchema,
+};
+
+export const pageParamSchema = { page: Joi.string().valid("contact") };
