@@ -38,15 +38,19 @@ export class AuthService {
     return auth;
   }
 
+  private async verifyPassword(password: string, hashedPassword: string) {
+    const isPassword = await verify(password, hashedPassword);
+
+    if (!isPassword) throw Boom.unauthorized("You not be this user");
+  }
+
   async login(email: string, password: string) {
     const auth = await this.db.findOne({ email }, { relations: ["user"] });
 
     if (!auth)
       throw Boom.notFound("This email is not corresponding anyone users");
 
-    const isPassword = await verify(password, auth.password);
-
-    if (!isPassword) throw Boom.unauthorized("You not be this user");
+    await this.verifyPassword(password, auth.password);
 
     const payloadToken: TokenUser = {
       id: auth.id,
@@ -81,33 +85,38 @@ export class AuthService {
     return await this.db.save(newAuth);
   }
 
-  async update(id: string, payload: Partial<AuthDto>) {
+  async changePassword(id: string, password: string, currentPassword: string) {
     const auth = await this.getById(id);
 
-    if (payload.password) {
-      const hashedPassword = await encryption(payload.password);
+    await this.verifyPassword(currentPassword, auth.password);
 
-      const authChanges: Partial<AuthDto> = {
-        ...payload,
-        password: hashedPassword,
-      };
+    const hashedPassword = await encryption(password);
 
-      await this.db.merge(auth, authChanges);
+    const authChanges: Partial<AuthDto> = {
+      password: hashedPassword,
+    };
 
-      return "Changessuccessfull";
-    }
+    await this.db.update(id, authChanges);
 
-    await this.db.merge(auth, payload);
-
-    return "Changes successfull";
+    return {};
   }
 
-  async delete(id: string) {
+  async changeEmail(id: string, email: string) {
+    const isExistOtherUser = await this.db.findOne({ email });
+
+    if (isExistOtherUser) throw Boom.conflict("Other user use this email");
+
+    await this.db.update(id, { email });
+  }
+
+  async delete(id: string, currentPassword: string) {
     const auth = await this.getById(id);
 
-    await this.userService.delete(auth.user.id);
+    await this.verifyPassword(currentPassword, auth.password);
 
     const authDeleted = await this.db.delete(auth.id);
+
+    await this.userService.delete(auth.user.id);
 
     return authDeleted;
   }

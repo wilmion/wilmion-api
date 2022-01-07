@@ -1,12 +1,15 @@
 import { Router } from "express";
 import response from "@utils/response";
+import passport from "passport";
 
 import { AuthService } from "@services/auth.service";
 
-import { AuthSchema } from "@Joi/auth.joi";
+import { AuthDeleteSchema, AuthSchema, AuthUpdateSchema } from "@Joi/auth.joi";
 import { RegisterSchema } from "@Joi/user.joi";
 
 import { validateHandler } from "@middlewares/validator.middleware";
+
+import { TokenUser } from "@models/tokenUser.model";
 
 const route = Router();
 const service = new AuthService();
@@ -38,5 +41,47 @@ route.post("/login", validateHandler(AuthSchema), async (req, res, next) => {
     next(error);
   }
 });
+
+route.patch(
+  "/change-password",
+  passport.authenticate("jwt", { session: false }),
+  validateHandler(AuthUpdateSchema),
+  async (req, res, next) => {
+    try {
+      const token = req.user as TokenUser;
+      const { newPassword, currentPassword } = req.body;
+      const { id } = token;
+
+      const data = await service.changePassword(
+        id,
+        newPassword,
+        currentPassword
+      );
+
+      response(res, 200, data, "Your password is updated successfully");
+    } catch (e) {
+      next(e);
+    }
+  }
+);
+
+route.delete(
+  "/delete-my-account",
+  passport.authenticate("jwt", { session: false }),
+  validateHandler(AuthDeleteSchema),
+  async (req, res, next) => {
+    try {
+      const token = req.user as TokenUser;
+      const { id } = token;
+      const { currentPassword } = req.body;
+
+      const data = await service.delete(id, currentPassword);
+
+      response(res, 200, {}, "Your account removed successfully");
+    } catch (e) {
+      next(e);
+    }
+  }
+);
 
 export default route;
