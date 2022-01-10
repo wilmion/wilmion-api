@@ -101,12 +101,15 @@ export class AuthService {
     return {};
   }
 
-  async changeEmail(id: string, email: string) {
+  async changeEmail(id: string, idUser: string, email: string) {
     const isExistOtherUser = await this.db.findOne({ email });
 
     if (isExistOtherUser) throw Boom.conflict("Other user use this email");
 
-    await this.db.update(id, { email });
+    const jsonNewEmail = { email };
+
+    await this.userService.update(idUser, jsonNewEmail, true);
+    await this.db.update(id, jsonNewEmail);
   }
 
   async delete(id: string, currentPassword: string) {

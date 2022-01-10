@@ -4,7 +4,12 @@ import passport from "passport";
 
 import { AuthService } from "@services/auth.service";
 
-import { AuthDeleteSchema, AuthSchema, AuthUpdateSchema } from "@Joi/auth.joi";
+import {
+  AuthDeleteSchema,
+  AuthSchema,
+  AuthUpdateSchema,
+  emailSchema,
+} from "@Joi/auth.joi";
 import { RegisterSchema } from "@Joi/user.joi";
 
 import { validateHandler } from "@middlewares/validator.middleware";
@@ -59,6 +64,25 @@ route.patch(
       );
 
       response(res, 200, data, "Your password is updated successfully");
+    } catch (e) {
+      next(e);
+    }
+  }
+);
+
+route.patch(
+  "/change-email",
+  passport.authenticate("jwt", { session: false }),
+  validateHandler({ email: emailSchema.required() }),
+  async (req, res, next) => {
+    try {
+      const token = req.user as TokenUser;
+      const { email } = req.body;
+      const { id, id_user } = token;
+
+      const data = await service.changeEmail(id, id_user, email);
+
+      response(res, 200, data, "Your email was changed successfully");
     } catch (e) {
       next(e);
     }

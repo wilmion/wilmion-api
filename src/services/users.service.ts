@@ -44,12 +44,21 @@ export class UsersService {
     return await this.db.save(newUser);
   }
 
-  async update(id: string, payload: Partial<UserDto>) {
+  async update(
+    id: string,
+    payload: Partial<UserDto>,
+    fromAuthController = false
+  ) {
     if (payload.imageId) await this.comprobateImageId(payload.imageId);
+
+    if (payload.email && !fromAuthController)
+      throw Boom.conflict(
+        "The email is not change, visit the url http://localhost:3000/api/auth/change-email"
+      );
 
     const user = await this.getById(id);
 
-    const userUpdated = await this.db.merge(user, payload);
+    const userUpdated = await this.db.update(user.id, payload);
 
     return userUpdated;
   }

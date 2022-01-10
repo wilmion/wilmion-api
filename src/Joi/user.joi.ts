@@ -22,3 +22,11 @@ export const RegisterSchema = {
   password: passwordSchema.required(),
   ...UserSchenma,
 };
+
+export const UserUpdateSchema = {
+  username: usernameSchema,
+  name: nameSchema,
+  job: jobSchema,
+  email: emailSchema,
+  imageId: imageIdSchema,
+};
