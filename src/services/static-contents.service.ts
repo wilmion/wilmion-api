@@ -1,4 +1,4 @@
-import { FindManyOptions, Repository, Not, IsNull } from "typeorm";
+import { Repository, Not, IsNull } from "typeorm";
 import Boom from "@hapi/boom";
 
 import { connection } from "@db/connection";
@@ -8,6 +8,8 @@ import {
   StaticContentDto,
   PagesOfStaticContent,
 } from "@dtos/staticContents.dto";
+
+import { convertQueryParamsInOptions } from "@utils/convertQueryParamsInOptions";
 
 export class StaticContentsService {
   private db: Repository<StaticContent>;
@@ -31,10 +33,7 @@ export class StaticContentsService {
   }
 
   async getAll(limit: string | undefined, offset: string | undefined) {
-    let options: FindManyOptions = {
-      take: limit ? parseInt(limit, 10) : 20,
-      skip: offset ? parseInt(offset, 10) : 0,
-    };
+    const options = convertQueryParamsInOptions(limit, offset);
 
     const staticContents = await this.db.find(options);
 

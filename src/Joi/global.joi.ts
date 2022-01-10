@@ -12,5 +12,5 @@ export const idRouteSchema = {
 
 export const querySchema = {
   limit: limitSchema,
-  offsetSchema: offsetSchema,
+  offset: offsetSchema,
 };

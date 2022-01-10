@@ -12,5 +12,5 @@ export class Image {
   readonly size: string;
 
   @Column({ type: "varchar", nullable: false })
-  readonly resolution: string;
+  resolution: string;
 }
