@@ -23,6 +23,12 @@ export class User {
     type: "varchar",
     nullable: false,
   })
+  readonly password: string;
+
+  @Column({
+    type: "varchar",
+    nullable: false,
+  })
   readonly name: string;
 
   @Column({
@@ -31,6 +37,12 @@ export class User {
     default: "NOT-DEFINED",
   })
   readonly job: string;
+
+  @Column({
+    type: "boolean",
+    default: true,
+  })
+  readonly active: boolean;
 
   @Column({
     type: "varchar",

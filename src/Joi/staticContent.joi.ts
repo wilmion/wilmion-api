@@ -1,6 +1,6 @@
 import Joi from "@hapi/joi";
 
-import { emailSchema } from "./auth.joi";
+import { emailSchema } from "./user.joi";
 
 const introductionSchema = Joi.string().min(20);
 

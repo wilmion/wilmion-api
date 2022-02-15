@@ -11,6 +11,18 @@ export class SocialMedia {
   })
   readonly name: string;
 
+  @Column({
+    type: "varchar",
+    nullable: false,
+  })
+  readonly icon: string;
+
+  @Column({
+    type: "varchar",
+    nullable: false,
+  })
+  readonly color: string;
+
   @Column({ type: "varchar", nullable: false, name: "redirect_url" })
   readonly redirectUrl: string;
 }

@@ -16,7 +16,7 @@ export const jwtStrategy = new Strategy(
   },
   async (payload: TokenUser, done) => {
     try {
-      await service.getById(payload.id_user);
+      await service.getById(payload.id);
 
       done(null, payload);
     } catch (e) {

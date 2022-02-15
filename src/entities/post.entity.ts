@@ -16,54 +16,51 @@ import { Tag } from "./tag.entity";
 @Entity({ name: "posts" })
 export class Post {
   @PrimaryGeneratedColumn()
-  readonly id: string;
+  id: string;
 
   @Column({
     type: "varchar",
     nullable: false,
   })
-  readonly title: string;
+  title: string;
 
   @Column({
     type: "timestamp",
     name: "created_at",
     default: new Date(),
-    nullable: false,
   })
-  readonly createdAt: Timestamp;
+  createdAt: Timestamp;
 
   @Column({
     type: "int",
-    nullable: false,
     default: 0,
   })
-  readonly likes: number;
+  likes: number;
 
   @Column({
     type: "double precision",
     name: "time_read",
     nullable: false,
   })
-  readonly timeRead: number;
+  timeRead: number;
 
   @Column({
     type: "int",
-    nullable: false,
     default: 0,
   })
-  readonly views: number;
+  views: number;
 
   // Relations one to one
   @OneToOne(() => User, { nullable: false })
   @JoinColumn()
-  readonly user: User;
+  user: User;
 
   // relations 1:n
   @OneToMany(() => Content, (content) => content.post, { nullable: false })
-  readonly contents: Content[];
+  contents: Content[];
 
   // relations many to many
   @ManyToMany(() => Tag, (tag) => tag.posts)
   @JoinTable({ name: "CONNECTION_TAGS_TO_POSTS" })
-  readonly tags: Tag[];
+  tags: Tag[];
 }

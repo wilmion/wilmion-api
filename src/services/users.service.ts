@@ -5,8 +5,14 @@ import { connection } from "@db/connection";
 
 import { ImageService } from "@services/image.service";
 
+import { TokenUser } from "@models/tokenUser.model";
+
 import { User } from "@entities/user.entity";
-import { UserDto } from "@dtos/user.dto";
+import { loginDto, UserDto } from "@dtos/user.dto";
+
+import { encryption, verify } from "@utils/security";
+import { generateToken } from "@utils/jwt";
+import { emailSchema } from "@Joi/user.joi";
 
 export class UsersService {
   private db: Repository<User>;
@@ -28,7 +34,7 @@ export class UsersService {
       relations: ["image"],
     });
 
-    if (!user) {
+    if (!user || !user.active) {
       throw Boom.notFound("User not found");
     }
 
@@ -38,23 +44,47 @@ export class UsersService {
   async create(payload: UserDto) {
     const image = await this.imageService.getById(payload.imageId);
 
-    const newUser = await this.db.create(payload);
+    const password = await encryption(payload.password);
+
+    const newUser = await this.db.create({ ...payload, password });
+
     newUser.image = image;
 
-    return await this.db.save(newUser);
+    const userSaved = await this.db.save(newUser);
+
+    return this.quitPasswordFromReturnData(userSaved);
   }
 
-  async update(
-    id: string,
-    payload: Partial<UserDto>,
-    fromAuthController = false
-  ) {
+  async login(loginDto: loginDto) {
+    const user = await this.db.findOne(
+      { email: loginDto.email },
+      {
+        relations: ["image"],
+      }
+    );
+
+    if (!user || !user.active) throw Boom.notFound("This user doesn't exist");
+
+    const isPassword = await verify(loginDto.password, user.password);
+
+    if (!isPassword) throw Boom.unauthorized("You're not this user 👎🙅‍♂️🙅‍♀️");
+
+    const payloadToken: TokenUser = {
+      id: user.id,
+      role: user.email === "wilmion92@gmail.com" ? "admin" : "customer",
+    };
+
+    return {
+      user: this.quitPasswordFromReturnData(user),
+      token: await generateToken(payloadToken),
+    };
+  }
+
+  async update(id: string, payload: Partial<UserDto>) {
     if (payload.imageId) await this.comprobateImageId(payload.imageId);
 
-    if (payload.email && !fromAuthController)
-      throw Boom.conflict(
-        "The email is not change, visit the url http://localhost:3000/api/auth/change-email"
-      );
+    if (payload.password || payload.email)
+      throw Boom.conflict("The password or email is not change");
 
     const user = await this.getById(id);
 
@@ -66,14 +96,36 @@ export class UsersService {
   async delete(id: string) {
     const user = await this.getById(id);
 
-    await this.db.delete(user.id);
+    return this.db.update(user.id, { ...user, active: false });
+  }
 
-    return "Deleted successfully";
+  async changeEmail() {
+    return "This function for now, it not exist";
+  }
+
+  async changePassword(oldPassword: string, newPassword: string, id: string) {
+    const user = await this.getById(id);
+
+    const isCurrentPassword = await verify(oldPassword, user.password);
+
+    if (!isCurrentPassword)
+      throw Boom.unauthorized("You're not have property of this user 🤔🙄😑");
+
+    const password = await encryption(newPassword);
+
+    return this.db.update(id, { password });
   }
 
   private async comprobateImageId(imageId: string) {
     const existAnImage = await this.imageService.getById(imageId);
 
     if (!existAnImage) throw Boom.notFound("Image entity does not exist");
+  }
+
+  private quitPasswordFromReturnData(user: User) {
+    return {
+      ...user,
+      password: "",
+    };
   }
 }

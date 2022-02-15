@@ -2,7 +2,6 @@ import { Application, Router } from "express";
 
 //routes
 import StaticContentsRoute from "@controllers/static-contents.controller";
-import AuthRoute from "@controllers/auth.controller";
 import UserRoute from "@controllers/users.controller";
 import ImageRoute from "@controllers/image.controller";
 
@@ -11,7 +10,6 @@ async function setAllRouters(app: Application) {
 
   // Routes
   router.use("/static-contents", StaticContentsRoute);
-  router.use("/auth", AuthRoute);
   router.use("/users", UserRoute);
   router.use("/images", ImageRoute);
 

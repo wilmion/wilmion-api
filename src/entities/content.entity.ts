@@ -7,7 +7,6 @@ import {
   JoinColumn,
 } from "typeorm";
 import { Post } from "./post.entity";
-import { Comment } from "./comment.entity";
 import { Image } from "./image.entity";
 
 export enum TypeContent {
@@ -36,7 +35,7 @@ export class Content {
     name: "order_number",
     nullable: false,
   })
-  readonly orderNumber: number;
+  orderNumber: number;
 
   @Column({
     type: "varchar",
@@ -51,9 +50,6 @@ export class Content {
 
   // Relations n:1
 
-  @ManyToOne(() => Post, (post) => post.contents, { nullable: false })
+  @ManyToOne(() => Post, (post) => post.contents)
   readonly post: Post;
-
-  @ManyToOne(() => Comment, (comment) => comment.contents, { nullable: false })
-  readonly comment: Comment;
 }
