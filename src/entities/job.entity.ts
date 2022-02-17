@@ -18,70 +18,74 @@ export class Job {
     nullable: false,
     name: "name_businness",
   })
-  readonly nameBusinness: string;
+  nameBusinness: string;
 
   @Column({
     type: "varchar",
     nullable: false,
   })
-  readonly color: string;
+  color: string;
 
   @Column({
     type: "varchar",
     nullable: false,
   })
-  readonly description: string;
+  description: string;
 
   @Column({
     type: "boolean",
     nullable: false,
   })
-  readonly active: boolean;
+  active: boolean;
 
   @Column({
     type: "varchar",
     nullable: false,
   })
-  readonly role: string;
+  role: string;
 
   @Column({
     type: "timestamp",
     nullable: false,
   })
-  readonly from: Timestamp;
+  from: Timestamp;
 
   @Column({
     type: "varchar",
     nullable: false,
   })
-  readonly to: string | "Currently";
+  to: string | "Currently";
 
   @Column({
     type: "varchar",
     name: "function_1",
+    nullable: true,
   })
-  readonly function1: string | undefined;
+  function1: string | undefined;
 
   @Column({
     type: "varchar",
     name: "function_2",
+    nullable: true,
   })
-  readonly function2: string | undefined;
+  function2: string | undefined;
 
   @Column({
     type: "varchar",
     name: "function_3",
+    nullable: true,
   })
-  readonly function3: string | undefined;
+  function3: string | undefined;
 
   @Column({
     type: "varchar",
     name: "function_4",
+    nullable: true,
   })
-  readonly function4: string | undefined;
+  function4: string | undefined;
 
   // Relations
   @OneToOne(() => Image, { nullable: false })
   @JoinColumn()
-  readonly image: Image;
+  image: Image;
 }
