@@ -12,7 +12,6 @@ import { loginDto, UserDto } from "@dtos/user.dto";
 
 import { encryption, verify } from "@utils/security";
 import { generateToken } from "@utils/jwt";
-import { emailSchema } from "@Joi/user.joi";
 
 export class UsersService {
   private db: Repository<User>;

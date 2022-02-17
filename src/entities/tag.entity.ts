@@ -10,14 +10,21 @@ export class Tag {
     type: "varchar",
     nullable: false,
   })
-  readonly color: string;
+  color: string;
 
   @Column({
     type: "varchar",
     nullable: false,
+    unique: true,
   })
-  readonly text: string;
+  text: string;
+
+  @Column({
+    type: "boolean",
+    default: true,
+  })
+  active: boolean;
 
   @ManyToMany(() => Post, (post) => post.tags)
-  readonly posts: Post[];
+  posts: Post[];
 }

@@ -1,8 +1,6 @@
 import { Router } from "express";
 import passport from "passport";
 
-import { TokenUser } from "@models/tokenUser.model";
-
 import { validateHandler } from "@middlewares/validator.middleware";
 import { validatePermision } from "@middlewares/authorization.middleware";
 
