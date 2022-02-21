@@ -10,6 +10,7 @@ import { logErrors, wrapError, errorHandler } from "@middlewares/error.handler";
 const app = express();
 
 app.use(express.json());
+app.set("trust proxy", true);
 
 setAllRouters(app);
 

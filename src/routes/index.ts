@@ -6,6 +6,9 @@ import UserRoute from "@controllers/users.controller";
 import ImageRoute from "@controllers/image.controller";
 import JobsRoute from "@controllers/jobs.controller";
 import TagsRoute from "@controllers/tags.controller";
+import PostsRoute from "@controllers/posts.controller";
+import ContentsRoute from "@controllers/contents.controller";
+import IpsUserRoute from "@controllers/ipsUser.controller";
 
 async function setAllRouters(app: Application) {
   const router = Router();
@@ -16,6 +19,9 @@ async function setAllRouters(app: Application) {
   router.use("/images", ImageRoute);
   router.use("/jobs", JobsRoute);
   router.use("/tags", TagsRoute);
+  router.use("/posts", PostsRoute);
+  router.use("/contents", ContentsRoute);
+  router.use("/ips", IpsUserRoute);
 
   app.use("/api", router);
 }

@@ -21,14 +21,14 @@ export enum TypeContent {
 @Entity({ name: "contents" })
 export class Content {
   @PrimaryGeneratedColumn()
-  readonly id: string;
+  id: string;
 
   @Column({
     type: "enum",
     enum: TypeContent,
     nullable: false,
   })
-  readonly type: TypeContent;
+  type: TypeContent;
 
   @Column({
     type: "int",
@@ -41,15 +41,15 @@ export class Content {
     type: "varchar",
     nullable: false,
   })
-  readonly content: string;
+  content: string;
 
   // Relations 1:1
   @OneToOne(() => Image, { nullable: false })
   @JoinColumn()
-  readonly image: Image;
+  image: Image;
 
   // Relations n:1
 
   @ManyToOne(() => Post, (post) => post.contents)
-  readonly post: Post;
+  post: Post;
 }

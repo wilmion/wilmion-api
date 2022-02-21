@@ -4,8 +4,10 @@ import {
   PrimaryGeneratedColumn,
   OneToOne,
   JoinColumn,
+  OneToMany,
 } from "typeorm";
 import { Image } from "./image.entity";
+import { Post } from "./post.entity";
 
 @Entity({ name: "users" })
 export class User {
@@ -54,4 +56,7 @@ export class User {
   @OneToOne(() => Image, { nullable: false })
   @JoinColumn()
   image: Image;
+
+  @OneToMany(() => Post, (post) => post.user)
+  posts: Post[];
 }

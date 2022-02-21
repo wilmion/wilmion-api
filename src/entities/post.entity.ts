@@ -2,16 +2,18 @@ import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
-  OneToOne,
+  ManyToOne,
   JoinColumn,
   OneToMany,
   Timestamp,
   ManyToMany,
   JoinTable,
 } from "typeorm";
+
 import { Content } from "./content.entity";
 import { User } from "./user.entity";
 import { Tag } from "./tag.entity";
+import { DatePostWithIps } from "./datePostWithIps.entity";
 
 @Entity({ name: "posts" })
 export class Post {
@@ -32,12 +34,6 @@ export class Post {
   createdAt: Timestamp;
 
   @Column({
-    type: "int",
-    default: 0,
-  })
-  likes: number;
-
-  @Column({
     type: "double precision",
     name: "time_read",
     nullable: false,
@@ -45,19 +41,21 @@ export class Post {
   timeRead: number;
 
   @Column({
-    type: "int",
-    default: 0,
+    type: "boolean",
+    default: true,
   })
-  views: number;
+  active: boolean;
 
   // Relations one to one
-  @OneToOne(() => User, { nullable: false })
-  @JoinColumn()
+  @ManyToOne(() => User, (user) => user.posts, { nullable: false })
   user: User;
 
   // relations 1:n
   @OneToMany(() => Content, (content) => content.post, { nullable: false })
   contents: Content[];
+
+  @OneToMany(() => DatePostWithIps, (datePostWithIps) => datePostWithIps.post)
+  datePostWithIps: DatePostWithIps[];
 
   // relations many to many
   @ManyToMany(() => Tag, (tag) => tag.posts)
