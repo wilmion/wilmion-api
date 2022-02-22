@@ -13,6 +13,8 @@ import { convertQueryParamsInOptions } from "@utils/convertQueryParamsInOptions"
 import { TagsService } from "./tags.service";
 import { UsersService } from "./users.service";
 
+import { getNotRepeatInManyToManyRelations } from "@utils/get-nor-repeat-in-many-to-many-relations";
+
 export class PostsService {
   private db: Repository<Post>;
   private tagsService: TagsService;
@@ -85,14 +87,10 @@ export class PostsService {
     if (postUpdateDto.tagsId) {
       const tagsId = postUpdateDto.tagsId;
 
-      const newTagsIds: string[] = tagsId.filter((tagId) => {
-        let isUnique = true;
-        post.tags.forEach((tag) => {
-          if (String(tag.id) === tagId) isUnique = false;
-        });
-
-        return isUnique;
-      });
+      const newTagsIds = getNotRepeatInManyToManyRelations<Tag>(
+        tagsId,
+        post.tags
+      );
 
       const newTags = await this.getTags(newTagsIds);
 

@@ -30,7 +30,7 @@ export class Project {
   @Column({
     type: "varchar",
     name: "link_frontend",
-    default: null,
+    nullable: false,
   })
   readonly linkFrontend: string;
 
@@ -71,7 +71,7 @@ export class Project {
   // Relations
   @OneToOne(() => Image, { nullable: false })
   @JoinColumn()
-  readonly image: Image;
+  image: Image;
 
   //Relations n:n
   @ManyToMany(() => Skill)
