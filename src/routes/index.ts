@@ -9,6 +9,7 @@ import TagsRoute from "@controllers/tags.controller";
 import PostsRoute from "@controllers/posts.controller";
 import ContentsRoute from "@controllers/contents.controller";
 import IpsUserRoute from "@controllers/ipsUser.controller";
+import SkillRoute from "@controllers/skills.controller";
 
 async function setAllRouters(app: Application) {
   const router = Router();
@@ -22,6 +23,7 @@ async function setAllRouters(app: Application) {
   router.use("/posts", PostsRoute);
   router.use("/contents", ContentsRoute);
   router.use("/ips", IpsUserRoute);
+  router.use("/skills", SkillRoute);
 
   app.use("/api", router);
 }

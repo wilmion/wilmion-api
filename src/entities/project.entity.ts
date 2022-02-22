@@ -62,6 +62,12 @@ export class Project {
   })
   readonly linkRepository: string;
 
+  @Column({
+    type: "boolean",
+    default: true,
+  })
+  active: boolean;
+
   // Relations
   @OneToOne(() => Image, { nullable: false })
   @JoinColumn()

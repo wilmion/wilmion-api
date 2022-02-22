@@ -15,6 +15,7 @@ export class Skill {
   @Column({
     type: "varchar",
     nullable: false,
+    unique: true,
   })
   readonly name: string;
 
@@ -33,12 +34,18 @@ export class Skill {
   readonly iconColor: string;
 
   @Column({
+    type: "boolean",
+    default: true,
+  })
+  active: boolean;
+
+  @Column({
     type: "varchar",
     default: null,
   })
-  readonly icon: string | null;
+  icon: string | null;
 
-  @OneToOne(() => Image, { nullable: false })
+  @OneToOne(() => Image, { nullable: true })
   @JoinColumn()
-  readonly image: Image;
+  image: Image;
 }
