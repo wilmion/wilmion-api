@@ -8,6 +8,7 @@ export class SocialMedia {
   @Column({
     type: "varchar",
     nullable: false,
+    unique: true,
   })
   readonly name: string;
 
@@ -22,6 +23,12 @@ export class SocialMedia {
     nullable: false,
   })
   readonly color: string;
+
+  @Column({
+    type: "boolean",
+    default: true,
+  })
+  active: boolean;
 
   @Column({ type: "varchar", nullable: false, name: "redirect_url" })
   readonly redirectUrl: string;

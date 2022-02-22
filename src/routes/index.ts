@@ -11,6 +11,7 @@ import ContentsRoute from "@controllers/contents.controller";
 import IpsUserRoute from "@controllers/ipsUser.controller";
 import SkillRoute from "@controllers/skills.controller";
 import ProjectRoute from "@controllers/project.controller";
+import SocialMedia from "@controllers/social-media.controller";
 
 async function setAllRouters(app: Application) {
   const router = Router();
@@ -26,6 +27,7 @@ async function setAllRouters(app: Application) {
   router.use("/ips", IpsUserRoute);
   router.use("/skills", SkillRoute);
   router.use("/projects", ProjectRoute);
+  router.use("/social-media", SocialMedia);
 
   app.use("/api", router);
 }
