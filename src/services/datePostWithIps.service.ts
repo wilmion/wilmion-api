@@ -8,8 +8,10 @@ import { DatePostWithIpsDto } from "@dtos/datePostWithIps.dto";
 import { DatePostWithIps } from "@entities/datePostWithIps.entity";
 import { IPUser } from "@entities/ip.entity";
 import { Post } from "@entities/post.entity";
+import { TypeStat } from "@entities/stats.entity";
 
 import { PostsService } from "./post.service";
+import { StatService } from "./stat.service";
 
 import { convertQueryParamsInOptions } from "@utils/convertQueryParamsInOptions";
 
@@ -17,6 +19,7 @@ export class DatePostsWithIpsService {
   private db: Repository<DatePostWithIps>;
   private dbIp: Repository<IPUser>;
   private postService: PostsService;
+  private statService: StatService;
 
   constructor() {
     this.connect();
@@ -28,6 +31,7 @@ export class DatePostsWithIpsService {
     this.db = database.getRepository(DatePostWithIps);
     this.dbIp = database.getRepository(IPUser);
     this.postService = new PostsService();
+    this.statService = new StatService();
   }
 
   private async getByPostAndIp(post: Post, ip: IPUser) {
@@ -105,6 +109,12 @@ export class DatePostsWithIpsService {
 
     info.quantityViews = info.quantityViews + 1;
     info.lastView = now;
+
+    // Turn on the stat
+    await this.statService.create({
+      type: TypeStat.visitsToTheBlogPost,
+      postId: idPost,
+    });
 
     return await this.db.save(info);
   }

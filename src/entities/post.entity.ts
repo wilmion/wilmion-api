@@ -3,7 +3,6 @@ import {
   Column,
   PrimaryGeneratedColumn,
   ManyToOne,
-  JoinColumn,
   OneToMany,
   Timestamp,
   ManyToMany,
@@ -14,6 +13,7 @@ import { Content } from "./content.entity";
 import { User } from "./user.entity";
 import { Tag } from "./tag.entity";
 import { DatePostWithIps } from "./datePostWithIps.entity";
+import { Stat } from "./stats.entity";
 
 @Entity({ name: "posts" })
 export class Post {
@@ -56,6 +56,10 @@ export class Post {
 
   @OneToMany(() => DatePostWithIps, (datePostWithIps) => datePostWithIps.post)
   datePostWithIps: DatePostWithIps[];
+
+  // Relation many to one or viceverse
+  @OneToMany(() => Stat, (stat) => stat.post)
+  stats: Stat[];
 
   // relations many to many
   @ManyToMany(() => Tag, (tag) => tag.posts)

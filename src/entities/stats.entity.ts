@@ -3,18 +3,16 @@ import {
   Column,
   PrimaryGeneratedColumn,
   Timestamp,
-  OneToOne,
-  JoinColumn,
+  ManyToOne,
 } from "typeorm";
 import { Post } from "./post.entity";
 
 export enum TypeStat {
-  newUsers = "NU",
-  visitsToTheBlogPost = "VTTBP",
-  numberOfCommentsOnPosts = "NOCOP",
-  visitsToThePortafolioPage = "VTTPP",
-  visitsToTheContactPage = "VTTCP",
-  numberOfClickWhenSubmittingTheForm = "NOCWSTF",
+  newUsers = "NU", // In own controller
+  visitsToTheBlogPost = "VTTBP", // builded
+  visitsToThePortafolioPage = "VTTPP", // In own controller
+  visitsToTheContactPage = "VTTCP", // In own controller
+  numberOfClickWhenSubmittingTheForm = "NOCWSTF", // In own controller
 }
 
 @Entity({ name: "stats" })
@@ -34,7 +32,6 @@ export class Stat {
   readonly createdAt: Timestamp;
 
   // Relations one to one
-  @OneToOne(() => Post)
-  @JoinColumn()
-  readonly post: Post;
+  @ManyToOne(() => Post, (post) => post.stats, { nullable: true })
+  post: Post;
 }

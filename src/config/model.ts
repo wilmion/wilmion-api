@@ -11,6 +11,7 @@ export interface Config {
     database: string;
   };
   port: number;
+  hostAllowedList: string[];
   encryption: {
     saltRounds: number;
   };
