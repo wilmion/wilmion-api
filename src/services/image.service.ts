@@ -1,3 +1,5 @@
+import fileUpload from "express-fileupload";
+
 import { FindManyOptions, Repository } from "typeorm";
 import Boom from "@hapi/boom";
 
@@ -7,6 +9,8 @@ import { Image } from "@entities/image.entity";
 import { ImageDto } from "@dtos/image.dto";
 
 import { convertQueryParamsInOptions } from "@utils/convertQueryParamsInOptions";
+
+import { uploadStorage, getUriFromFile } from "@firebase/upload-storage";
 
 export class ImageService {
   private db: Repository<Image>;
@@ -40,6 +44,14 @@ export class ImageService {
     return image;
   }
 
+  async getByMd5(md5: string) {
+    const image = await this.db.findOne({ md5 });
+
+    if (!image) throw Boom.notFound("This image is not exist in this database");
+
+    return image;
+  }
+
   async getAll(limit: string | undefined, offset: string | undefined) {
     const options = convertQueryParamsInOptions(limit, offset);
 
@@ -48,29 +60,36 @@ export class ImageService {
     return images;
   }
 
-  async create(imageDto: ImageDto) {
-    const newImage = await this.db.create(imageDto);
+  async create(
+    imageDto: ImageDto,
+    file: fileUpload.UploadedFile | fileUpload.UploadedFile[]
+  ) {
+    if (!file) throw Boom.notAcceptable("The image? 🤨");
 
-    newImage.resolution = this.getResolutionBySize(newImage.size);
-
-    return await this.db.save(newImage);
-  }
-
-  async update(id: string, imageDto: Partial<ImageDto>) {
-    const image = await this.getById(id);
-
-    let changes: any = { ...imageDto };
-
-    if (imageDto.size) {
-      changes = {
-        ...imageDto,
-        resolution: this.getResolutionBySize(imageDto.size),
-      };
+    if (Array.isArray(file)) {
+      throw Boom.notAcceptable("The image is only one 👀");
     }
 
-    await this.db.update(image.id, changes);
+    const blob: Buffer = file.data;
+    const name: string = file.md5;
 
-    return {};
+    const existImage = await this.db.findOne({ md5: name });
+
+    if (existImage)
+      throw Boom.conflict(
+        "This image already exist, the ID is " + existImage.id
+      );
+
+    await uploadStorage(name, blob);
+    const Uri = await getUriFromFile(name);
+
+    const newImage = await this.db.create(imageDto);
+
+    newImage.imageUrl = Uri;
+    newImage.resolution = this.getResolutionBySize(newImage.size);
+    newImage.md5 = name;
+
+    return await this.db.save(newImage);
   }
 
   async delete(id: string) {

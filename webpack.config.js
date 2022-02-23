@@ -30,6 +30,7 @@ module.exports = {
       "@Joi": path.resolve(__dirname, "./src/Joi/"),
       "@strategies": path.resolve(__dirname, "./src/strategies/"),
       "@models": path.resolve(__dirname, "./src/models/"),
+      "@firebase": path.resolve(__dirname, "./src/firebase/"),
     },
     extensions: [".ts", ".js"],
   },

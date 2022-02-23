@@ -21,7 +21,8 @@
       "@middlewares/*": ["middlewares/*"],
       "@Joi/*": ["Joi/*"],
       "@strategies/*": ["strategies/*"],
-      "@models/*": ["models/*"]
+      "@models/*": ["models/*"],
+      "@firebase/*": ["firebase/*"]
     }
   }
 }
