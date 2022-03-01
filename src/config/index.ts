@@ -19,7 +19,7 @@ const config: Config = {
     password: process.env.POSTGRES_PASSWORD,
     database: process.env.POSTGRES_DB,
   },
-  port: parseInt(process.env.PORT, 10),
+  port: process.env.PORT || 5000,
   hostAllowedList: process.env.HOSTALLOWEDLIST.split(" "),
   encryption: {
     saltRounds: parseInt(process.env.ENCRYPTION_SALT_ROUNDS, 10),

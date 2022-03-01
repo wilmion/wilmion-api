@@ -38,6 +38,6 @@ app.use(wrapError);
 app.use(notFoundMiddleware);
 app.use(errorHandler);
 
-app.listen(3000, () => {
+app.listen(config.port, () => {
   console.log(`App runing on http://localhost:3000`);
 });

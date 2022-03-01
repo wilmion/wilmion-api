@@ -10,7 +10,7 @@ export interface Config {
     password: string;
     database: string;
   };
-  port: number;
+  port: string | number;
   hostAllowedList: string[];
   encryption: {
     saltRounds: number;
