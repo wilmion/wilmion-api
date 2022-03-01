@@ -1,4 +1,10 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from "typeorm";
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  OneToMany,
+  JoinColumn,
+} from "typeorm";
 
 import { DatePostWithIps } from "./datePostWithIps.entity";
 
@@ -15,5 +21,6 @@ export class IPUser {
   ip: string;
 
   @OneToMany(() => DatePostWithIps, (datePostWithIps) => datePostWithIps.ip)
+  @JoinColumn()
   datePostWithIps: DatePostWithIps[];
 }

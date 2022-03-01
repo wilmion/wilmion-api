@@ -6,6 +6,8 @@ import express from "express";
 import cors from "cors";
 import fileUpload from "express-fileupload";
 
+import { setupSwagger } from "@swagger/config.swagger";
+
 import config from "@config/index";
 
 import setAllRouters from "@routes/index";
@@ -28,6 +30,7 @@ app.use(
 app.use(express.json());
 app.set("trust proxy", true);
 
+setupSwagger(app);
 setAllRouters(app);
 
 app.use(logErrors);

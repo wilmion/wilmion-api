@@ -3,6 +3,7 @@ import {
   Column,
   PrimaryGeneratedColumn,
   Timestamp,
+  JoinColumn,
   ManyToOne,
 } from "typeorm";
 import { Post } from "./post.entity";
@@ -33,5 +34,6 @@ export class Stat {
 
   // Relations one to one
   @ManyToOne(() => Post, (post) => post.stats, { nullable: true })
+  @JoinColumn()
   post: Post;
 }

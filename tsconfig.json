@@ -22,7 +22,8 @@
       "@Joi/*": ["Joi/*"],
       "@strategies/*": ["strategies/*"],
       "@models/*": ["models/*"],
-      "@firebase/*": ["firebase/*"]
+      "@firebase/*": ["firebase/*"],
+      "@swagger/*": ["swagger/*"]
     }
   }
 }

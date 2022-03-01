@@ -12,7 +12,9 @@ module.exports = {
   externals: [nodeExternals()],
   mode: NODE_ENV,
   watch: NODE_ENV === "development",
+  optimization: { minimize: false },
   output: {
+    libraryTarget: "commonjs",
     path: path.resolve(__dirname, "dist"),
     filename: "index.js",
   },
@@ -31,6 +33,7 @@ module.exports = {
       "@strategies": path.resolve(__dirname, "./src/strategies/"),
       "@models": path.resolve(__dirname, "./src/models/"),
       "@firebase": path.resolve(__dirname, "./src/firebase/"),
+      "@swagger": path.resolve(__dirname, "./src/swagger/"),
     },
     extensions: [".ts", ".js"],
   },

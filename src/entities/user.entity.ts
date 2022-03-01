@@ -58,5 +58,6 @@ export class User {
   image: Image;
 
   @OneToMany(() => Post, (post) => post.user)
+  @JoinColumn()
   posts: Post[];
 }

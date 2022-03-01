@@ -1,12 +1,14 @@
 import dotenv from "dotenv";
 import { Config } from "./model";
 
+const development = process.env.NODE_ENV === "development";
+
 dotenv.config({
-  path: process.env.NODE_ENV ? ".env" : ".prod.env",
+  path: development ? ".develop.env" : ".env",
 });
 
 const config: Config = {
-  mode: process.env.NODE_ENV ? "DEV" : "PROD",
+  mode: development ? "DEV" : "PROD",
   typeorm: {
     connection: process.env.TYPEORM_CONNECTION as any,
   },

@@ -7,6 +7,7 @@ import {
   Timestamp,
   ManyToMany,
   JoinTable,
+  JoinColumn,
 } from "typeorm";
 
 import { Content } from "./content.entity";
@@ -59,6 +60,7 @@ export class Post {
 
   // Relation many to one or viceverse
   @OneToMany(() => Stat, (stat) => stat.post)
+  @JoinColumn()
   stats: Stat[];
 
   // relations many to many

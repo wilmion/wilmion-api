@@ -3,7 +3,7 @@ import Boom from "@hapi/boom";
 
 import { connection } from "@db/connection";
 
-import { ImageService } from "@services/image.service";
+import { ImageService } from "./image.service";
 
 import { TokenUser } from "@models/tokenUser.model";
 
@@ -19,13 +19,13 @@ export class UsersService {
 
   constructor() {
     this.connect();
-    this.imageService = new ImageService();
   }
 
   private async connect() {
     const database = await connection.db;
 
     this.db = database.getRepository(User);
+    this.imageService = new ImageService();
   }
 
   async getById(id: string) {

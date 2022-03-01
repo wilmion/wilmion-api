@@ -3,7 +3,7 @@ import {
   Column,
   PrimaryGeneratedColumn,
   ManyToOne,
-  Timestamp,
+  JoinColumn,
 } from "typeorm";
 
 import { IPUser } from "./ip.entity";
@@ -38,10 +38,12 @@ export class DatePostWithIps {
   // Relations many to one
 
   @ManyToOne(() => Post, (post) => post.datePostWithIps, { nullable: false })
-  post: Post;
+  @JoinColumn()
+  post: Post | undefined;
 
   @ManyToOne(() => IPUser, (ipUser) => ipUser.datePostWithIps, {
     nullable: false,
   })
-  ip: IPUser;
+  @JoinColumn()
+  ip: IPUser | undefined;
 }

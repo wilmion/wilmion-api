@@ -16,7 +16,19 @@ export class ConnectionLib {
   };
 
   constructor() {
+    if (config.mode === "PROD") this.setSslConnection();
     this.connect();
+  }
+
+  private setSslConnection() {
+    this.options = {
+      ...this.options,
+      extra: {
+        ssl: {
+          rejectUnauthorized: false,
+        },
+      },
+    };
   }
 
   private async connect() {
