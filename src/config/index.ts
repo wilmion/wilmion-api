@@ -10,14 +10,7 @@ dotenv.config({
 const config: Config = {
   mode: development ? "DEV" : "PROD",
   typeorm: {
-    connection: process.env.TYPEORM_CONNECTION as any,
-  },
-  postgres: {
-    host: process.env.POSTGRES_HOST,
-    port: parseInt(process.env.POSTGRES_PORT, 10),
-    username: process.env.POSTGRES_USERNAME,
-    password: process.env.POSTGRES_PASSWORD,
-    database: process.env.POSTGRES_DB,
+    url: process.env.DATABASE_URL,
   },
   port: process.env.PORT || 5000,
   hostAllowedList: process.env.HOSTALLOWEDLIST.split(" "),

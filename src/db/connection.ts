@@ -5,30 +5,18 @@ import entities from "./entities";
 export class ConnectionLib {
   private _db: Connection | undefined;
   private options: ConnectionOptions = {
-    type: config.typeorm.connection,
-    host: config.postgres.host,
-    port: config.postgres.port,
-    username: config.postgres.username,
-    password: config.postgres.password,
-    database: config.postgres.database,
+    type: "postgres",
+    url: config.typeorm.url,
+    synchronize: false,
     entities,
     logging: true,
+    ssl: {
+      rejectUnauthorized: false,
+    },
   };
 
   constructor() {
-    if (config.mode === "PROD") this.setSslConnection();
     this.connect();
-  }
-
-  private setSslConnection() {
-    this.options = {
-      ...this.options,
-      extra: {
-        ssl: {
-          rejectUnauthorized: false,
-        },
-      },
-    };
   }
 
   private async connect() {

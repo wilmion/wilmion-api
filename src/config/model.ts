@@ -1,14 +1,7 @@
 export interface Config {
   mode: "DEV" | "PROD";
   typeorm: {
-    connection: "postgres" | "mysql";
-  };
-  postgres: {
-    host: string;
-    port: number;
-    username: string;
-    password: string;
-    database: string;
+    url: string;
   };
   port: string | number;
   hostAllowedList: string[];
