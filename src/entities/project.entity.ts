@@ -2,7 +2,7 @@ import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
-  OneToOne,
+  ManyToOne,
   JoinColumn,
   ManyToMany,
   JoinTable,
@@ -69,12 +69,11 @@ export class Project {
   active: boolean;
 
   // Relations
-  @OneToOne(() => Image, { nullable: false })
-  @JoinColumn()
+  @ManyToOne("images", "projects") // need
   image: Image;
 
   //Relations n:n
-  @ManyToMany(() => Skill)
+  @ManyToMany("skills", { nullable: true })
   @JoinTable({ name: "CONNECTION_PROJECTS_TO_KILLS" })
   skills: Skill[];
 }

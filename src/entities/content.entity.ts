@@ -44,12 +44,12 @@ export class Content {
   content: string;
 
   // Relations 1:1
-  @OneToOne(() => Image, { nullable: false })
+  @ManyToOne("images", "contents")
   @JoinColumn()
   image: Image;
 
   // Relations n:1
 
-  @ManyToOne(() => Post, (post) => post.contents)
+  @ManyToOne("posts", "contents")
   post: Post;
 }

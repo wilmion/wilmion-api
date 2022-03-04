@@ -10,7 +10,7 @@ import { TokenUser } from "@models/tokenUser.model";
 import { User } from "@entities/user.entity";
 import { loginDto, UserDto } from "@dtos/user.dto";
 
-import { encryption, verify } from "@utils/security";
+import { encryption, verifyPassword } from "@utils/security";
 import { generateToken } from "@utils/jwt";
 
 export class UsersService {
@@ -42,8 +42,10 @@ export class UsersService {
 
   async create(payload: UserDto) {
     const image = await this.imageService.getById(payload.imageId);
+    console.log(1);
 
     const password = await encryption(payload.password);
+    console.log(1);
 
     const newUser = await this.db.create({ ...payload, password });
 
@@ -55,6 +57,8 @@ export class UsersService {
   }
 
   async login(loginDto: loginDto) {
+    console.log(1);
+
     const user = await this.db.findOne(
       { email: loginDto.email },
       {
@@ -62,16 +66,24 @@ export class UsersService {
       }
     );
 
+    console.log(1);
+
     if (!user || !user.active) throw Boom.notFound("This user doesn't exist");
 
-    const isPassword = await verify(loginDto.password, user.password);
+    const isPassword = await verifyPassword(loginDto.password, user.password);
+
+    console.log(1);
 
     if (!isPassword) throw Boom.unauthorized("You're not this user 👎🙅‍♂️🙅‍♀️");
+
+    console.log(1);
 
     const payloadToken: TokenUser = {
       id: user.id,
       role: user.email === "wilmion92@gmail.com" ? "admin" : "customer",
     };
+
+    console.log(1);
 
     return {
       user: this.quitPasswordFromReturnData(user),
@@ -105,7 +117,7 @@ export class UsersService {
   async changePassword(oldPassword: string, newPassword: string, id: string) {
     const user = await this.getById(id);
 
-    const isCurrentPassword = await verify(oldPassword, user.password);
+    const isCurrentPassword = await verifyPassword(oldPassword, user.password);
 
     if (!isCurrentPassword)
       throw Boom.unauthorized("You're not have property of this user 🤔🙄😑");

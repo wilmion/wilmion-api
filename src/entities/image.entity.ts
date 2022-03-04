@@ -1,4 +1,10 @@
-import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from "typeorm";
+
+import { Content } from "./content.entity";
+import { Job } from "./job.entity";
+import { Project } from "./project.entity";
+import { Skill } from "./skill.entity";
+import { User } from "./user.entity";
 
 @Entity({ name: "images" })
 export class Image {
@@ -20,4 +26,19 @@ export class Image {
     unique: true,
   })
   md5: string;
+
+  @OneToMany("contents", "image", { nullable: true })
+  contents: Content;
+
+  @OneToMany("jobs", "image", { nullable: true })
+  jobs: Job;
+
+  @OneToMany("projects", "image", { nullable: true })
+  projects: Project;
+
+  @OneToMany("skills", "image", { nullable: true })
+  skills: Skill;
+
+  @OneToMany("users", "image", { nullable: true })
+  users: User;
 }

@@ -2,7 +2,20 @@ const path = require("path");
 const WebpackShellPluginNext = require("webpack-shell-plugin-next");
 const nodeExternals = require("webpack-node-externals");
 const { NODE_ENV = "production" } = process.env;
-const PORT = process.env.PORT;
+
+function getPlugins() {
+  const plugins = [];
+
+  if (NODE_ENV === "development") {
+    plugins.push(
+      new WebpackShellPluginNext({
+        onBuildEnd: ["npm run run:dev"],
+      })
+    );
+  }
+
+  return plugins;
+}
 
 module.exports = {
   name: "express-server",
@@ -10,9 +23,8 @@ module.exports = {
   target: "node",
   mode: NODE_ENV,
   externals: [nodeExternals()],
-  mode: NODE_ENV,
   watch: NODE_ENV === "development",
-  optimization: { minimize: false },
+  //optimization: { minimize: false },
   output: {
     libraryTarget: "commonjs",
     path: path.resolve(__dirname, "dist"),
@@ -52,9 +64,5 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new WebpackShellPluginNext({
-      onBuildEnd: ["npm run run:dev"],
-    }),
-  ],
+  plugins: getPlugins(),
 };

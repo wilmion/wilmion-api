@@ -33,7 +33,7 @@ export class Stat {
   readonly createdAt: Timestamp;
 
   // Relations one to one
-  @ManyToOne(() => Post, (post) => post.stats, { nullable: true })
+  @ManyToOne("posts", "stats", { nullable: true })
   @JoinColumn()
   post: Post;
 }

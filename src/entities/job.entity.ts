@@ -2,8 +2,7 @@ import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
-  OneToOne,
-  JoinColumn,
+  ManyToOne,
   Timestamp,
 } from "typeorm";
 import { Image } from "./image.entity";
@@ -85,7 +84,6 @@ export class Job {
   function4: string | undefined;
 
   // Relations
-  @OneToOne(() => Image, { nullable: false })
-  @JoinColumn()
+  @ManyToOne("images", "jobs") //need
   image: Image;
 }

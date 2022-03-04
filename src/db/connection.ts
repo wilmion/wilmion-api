@@ -10,17 +10,26 @@ export class ConnectionLib {
     synchronize: false,
     entities,
     logging: true,
-    ssl: {
-      rejectUnauthorized: false,
-    },
   };
 
   constructor() {
     this.connect();
   }
 
+  private getSsl(): any {
+    if (config.mode === "PROD") {
+      return {
+        ssl: {
+          rejectUnauthorized: false,
+        },
+      };
+    }
+
+    return {};
+  }
+
   private async connect() {
-    this._db = await createConnection(this.options);
+    this._db = await createConnection({ ...this.options, ...this.getSsl() });
     return this._db;
   }
 

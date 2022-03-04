@@ -20,7 +20,7 @@ export class IPUser {
   })
   ip: string;
 
-  @OneToMany(() => DatePostWithIps, (datePostWithIps) => datePostWithIps.ip)
+  @OneToMany("date_posts_with_ips", "ip", { nullable: true })
   @JoinColumn()
   datePostWithIps: DatePostWithIps[];
 }

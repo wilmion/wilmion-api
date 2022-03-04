@@ -37,13 +37,11 @@ export class DatePostWithIps {
 
   // Relations many to one
 
-  @ManyToOne(() => Post, (post) => post.datePostWithIps, { nullable: false })
+  @ManyToOne("posts", "datePostWithIps")
   @JoinColumn()
-  post: Post | undefined;
+  post: Post;
 
-  @ManyToOne(() => IPUser, (ipUser) => ipUser.datePostWithIps, {
-    nullable: false,
-  })
+  @ManyToOne("ips_user", "datePostWithIps")
   @JoinColumn()
   ip: IPUser | undefined;
 }

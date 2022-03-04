@@ -2,7 +2,7 @@ import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
-  OneToOne,
+  ManyToOne,
   JoinColumn,
 } from "typeorm";
 import { Image } from "./image.entity";
@@ -45,7 +45,6 @@ export class Skill {
   })
   icon: string | null;
 
-  @OneToOne(() => Image, { nullable: true })
-  @JoinColumn()
+  @ManyToOne("images", "skills", { nullable: true })
   image: Image;
 }

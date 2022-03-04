@@ -2,7 +2,7 @@ import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
-  OneToOne,
+  ManyToOne,
   JoinColumn,
   OneToMany,
 } from "typeorm";
@@ -53,11 +53,9 @@ export class User {
   })
   readonly email: string;
 
-  @OneToOne(() => Image, { nullable: false })
-  @JoinColumn()
+  @ManyToOne("images", "users") // need
   image: Image;
 
-  @OneToMany(() => Post, (post) => post.user)
-  @JoinColumn()
+  @OneToMany("posts", "user", { nullable: true })
   posts: Post[];
 }

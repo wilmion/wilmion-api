@@ -48,23 +48,23 @@ export class Post {
   active: boolean;
 
   // Relations one to one
-  @ManyToOne(() => User, (user) => user.posts, { nullable: false })
+  @ManyToOne("users", "posts") // need
   user: User;
 
   // relations 1:n
-  @OneToMany(() => Content, (content) => content.post, { nullable: false })
+  @OneToMany("contents", "post") // need
   contents: Content[];
 
-  @OneToMany(() => DatePostWithIps, (datePostWithIps) => datePostWithIps.post)
+  @OneToMany("date_posts_with_ips", "post", { nullable: true })
   datePostWithIps: DatePostWithIps[];
 
   // Relation many to one or viceverse
-  @OneToMany(() => Stat, (stat) => stat.post)
+  @OneToMany("stats", "post", { nullable: true })
   @JoinColumn()
   stats: Stat[];
 
   // relations many to many
-  @ManyToMany(() => Tag, (tag) => tag.posts)
+  @ManyToMany("tags", "posts", { nullable: true })
   @JoinTable({ name: "CONNECTION_TAGS_TO_POSTS" })
   tags: Tag[];
 }

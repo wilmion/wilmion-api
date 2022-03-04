@@ -25,6 +25,6 @@ export class Tag {
   })
   active: boolean;
 
-  @ManyToMany(() => Post, (post) => post.tags)
+  @ManyToMany("posts", "tags", { nullable: true })
   posts: Post[];
 }
