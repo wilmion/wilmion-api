@@ -42,14 +42,13 @@ export class UsersService {
 
   async create(payload: UserDto) {
     const image = await this.imageService.getById(payload.imageId);
-    console.log(1);
 
     const password = await encryption(payload.password);
-    console.log(1);
 
     const newUser = await this.db.create({ ...payload, password });
 
     newUser.image = image;
+    newUser.posts = [];
 
     const userSaved = await this.db.save(newUser);
 
@@ -57,8 +56,6 @@ export class UsersService {
   }
 
   async login(loginDto: loginDto) {
-    console.log(1);
-
     const user = await this.db.findOne(
       { email: loginDto.email },
       {
@@ -66,24 +63,16 @@ export class UsersService {
       }
     );
 
-    console.log(1);
-
     if (!user || !user.active) throw Boom.notFound("This user doesn't exist");
 
     const isPassword = await verifyPassword(loginDto.password, user.password);
 
-    console.log(1);
-
     if (!isPassword) throw Boom.unauthorized("You're not this user 👎🙅‍♂️🙅‍♀️");
-
-    console.log(1);
 
     const payloadToken: TokenUser = {
       id: user.id,
       role: user.email === "wilmion92@gmail.com" ? "admin" : "customer",
     };
-
-    console.log(1);
 
     return {
       user: this.quitPasswordFromReturnData(user),

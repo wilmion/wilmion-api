@@ -24,7 +24,7 @@ module.exports = {
   mode: NODE_ENV,
   externals: [nodeExternals()],
   watch: NODE_ENV === "development",
-  //optimization: { minimize: false },
+  optimization: { minimize: false },
   output: {
     libraryTarget: "commonjs",
     path: path.resolve(__dirname, "dist"),
