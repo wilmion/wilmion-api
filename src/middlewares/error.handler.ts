@@ -11,7 +11,7 @@ export function logErrors(
   res: Response,
   next: NextFunction
 ) {
-  if (config.mode === "PROD") console.log(err);
+  if (config.mode === "DEV") console.log(err);
   next(err);
 }
 

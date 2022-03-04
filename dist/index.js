@@ -6307,22 +6307,17 @@ var UsersService = /** @class */ (function () {
                     case 0: return [4 /*yield*/, this.imageService.getById(payload.imageId)];
                     case 1:
                         image = _a.sent();
-                        console.log(1);
                         return [4 /*yield*/, (0, security_1.encryption)(payload.password)];
                     case 2:
                         password = _a.sent();
-                        console.log(1);
                         return [4 /*yield*/, this.db.create(__assign(__assign({}, payload), { password: password }))];
                     case 3:
                         newUser = _a.sent();
-                        console.log(1);
                         newUser.image = image;
                         newUser.posts = [];
-                        console.log(1);
                         return [4 /*yield*/, this.db.save(newUser)];
                     case 4:
                         userSaved = _a.sent();
-                        console.log(1);
                         return [2 /*return*/, this.quitPasswordFromReturnData(userSaved)];
                 }
             });
@@ -6334,28 +6329,22 @@ var UsersService = /** @class */ (function () {
             var _a;
             return __generator(this, function (_b) {
                 switch (_b.label) {
-                    case 0:
-                        console.log(1);
-                        return [4 /*yield*/, this.db.findOne({ email: loginDto.email }, {
-                                relations: ["image"],
-                            })];
+                    case 0: return [4 /*yield*/, this.db.findOne({ email: loginDto.email }, {
+                            relations: ["image"],
+                        })];
                     case 1:
                         user = _b.sent();
-                        console.log(1);
                         if (!user || !user.active)
                             throw boom_1.default.notFound("This user doesn't exist");
                         return [4 /*yield*/, (0, security_1.verifyPassword)(loginDto.password, user.password)];
                     case 2:
                         isPassword = _b.sent();
-                        console.log(1);
                         if (!isPassword)
                             throw boom_1.default.unauthorized("You're not this user 👎🙅‍♂️🙅‍♀️");
-                        console.log(1);
                         payloadToken = {
                             id: user.id,
                             role: user.email === "wilmion92@gmail.com" ? "admin" : "customer",
                         };
-                        console.log(1);
                         _a = {
                             user: this.quitPasswordFromReturnData(user)
                         };
