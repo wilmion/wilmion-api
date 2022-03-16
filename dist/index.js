@@ -1,6904 +1,869 @@
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 141:
+/***/ "./src/Joi/content.joi.ts":
+/*!********************************!*\
+  !*** ./src/Joi/content.joi.ts ***!
+  \********************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-var _a;
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.UpdateContentSchema = exports.ContentSchema = exports.querySchema = void 0;
-var joi_1 = __importDefault(__webpack_require__(8414));
-var enum_1 = __webpack_require__(5033);
-var content_entity_1 = __webpack_require__(8416);
-var typeSchema = (_a = joi_1.default.string()).valid.apply(_a, (0, enum_1.ToArray)(content_entity_1.TypeContent));
-var contentSchema = joi_1.default.string().min(1);
-var imageIdSchema = joi_1.default.string();
-var postIdSchema = joi_1.default.string();
-exports.querySchema = {
-    limit: joi_1.default.number(),
-    offset: joi_1.default.number().min(0),
-    post_id: joi_1.default.string(),
-};
-exports.ContentSchema = {
-    type: typeSchema.required(),
-    content: contentSchema.required(),
-    imageId: imageIdSchema.required(),
-    postId: postIdSchema.required(),
-};
-exports.UpdateContentSchema = {
-    type: typeSchema,
-    content: contentSchema,
-    imageId: imageIdSchema,
-};
-
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nvar _a;\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.UpdateContentSchema = exports.ContentSchema = exports.querySchema = void 0;\nvar joi_1 = __importDefault(__webpack_require__(/*! @hapi/joi */ \"@hapi/joi\"));\nvar enum_1 = __webpack_require__(/*! @utils/enum */ \"./src/utils/enum.ts\");\nvar content_entity_1 = __webpack_require__(/*! @entities/content.entity */ \"./src/entities/content.entity.ts\");\nvar typeSchema = (_a = joi_1.default.string()).valid.apply(_a, (0, enum_1.ToArray)(content_entity_1.TypeContent));\nvar contentSchema = joi_1.default.string().min(1);\nvar imageIdSchema = joi_1.default.string();\nvar postIdSchema = joi_1.default.string();\nexports.querySchema = {\n    limit: joi_1.default.number(),\n    offset: joi_1.default.number().min(0),\n    post_id: joi_1.default.string(),\n};\nexports.ContentSchema = {\n    type: typeSchema.required(),\n    content: contentSchema.required(),\n    imageId: imageIdSchema.required(),\n    postId: postIdSchema.required(),\n};\nexports.UpdateContentSchema = {\n    type: typeSchema,\n    content: contentSchema,\n    imageId: imageIdSchema,\n};\n\n\n//# sourceURL=webpack://wilmion-api/./src/Joi/content.joi.ts?");
 
 /***/ }),
 
-/***/ 8589:
+/***/ "./src/Joi/global.joi.ts":
+/*!*******************************!*\
+  !*** ./src/Joi/global.joi.ts ***!
+  \*******************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.querySchema = exports.idRouteSchema = exports.idSchema = void 0;
-var joi_1 = __importDefault(__webpack_require__(8414));
-exports.idSchema = joi_1.default.string();
-var limitSchema = joi_1.default.number().min(0).positive();
-var offsetSchema = joi_1.default.number().min(0).positive();
-exports.idRouteSchema = {
-    id: exports.idSchema.required(),
-};
-exports.querySchema = {
-    limit: limitSchema,
-    offset: offsetSchema,
-};
-
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.querySchema = exports.idRouteSchema = exports.idSchema = void 0;\nvar joi_1 = __importDefault(__webpack_require__(/*! @hapi/joi */ \"@hapi/joi\"));\nexports.idSchema = joi_1.default.string();\nvar limitSchema = joi_1.default.number().min(0).positive();\nvar offsetSchema = joi_1.default.number().min(0);\nexports.idRouteSchema = {\n    id: exports.idSchema.required(),\n};\nexports.querySchema = {\n    limit: limitSchema,\n    offset: offsetSchema,\n};\n\n\n//# sourceURL=webpack://wilmion-api/./src/Joi/global.joi.ts?");
 
 /***/ }),
 
-/***/ 4599:
+/***/ "./src/Joi/image.joi.ts":
+/*!******************************!*\
+  !*** ./src/Joi/image.joi.ts ***!
+  \******************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.imageSchema = void 0;
-var joi_1 = __importDefault(__webpack_require__(8414));
-var sizeSchema = joi_1.default.string().min(4);
-exports.imageSchema = {
-    size: sizeSchema.required(),
-};
-
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.imageSchema = void 0;\nvar joi_1 = __importDefault(__webpack_require__(/*! @hapi/joi */ \"@hapi/joi\"));\nvar sizeSchema = joi_1.default.string().min(4);\nexports.imageSchema = {\n    size: sizeSchema.required(),\n};\n\n\n//# sourceURL=webpack://wilmion-api/./src/Joi/image.joi.ts?");
 
 /***/ }),
 
-/***/ 9949:
+/***/ "./src/Joi/job.joi.ts":
+/*!****************************!*\
+  !*** ./src/Joi/job.joi.ts ***!
+  \****************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.UpdateJobSchema = exports.JobSchema = void 0;
-var joi_1 = __importDefault(__webpack_require__(8414));
-var nameBusinnessSchema = joi_1.default.string().min(5).max(50);
-var descriptionSchema = joi_1.default.string().min(20);
-var colorSchema = joi_1.default.string();
-var activeSchema = joi_1.default.boolean();
-var roleSchema = joi_1.default.string();
-var fromSchema = joi_1.default.string();
-var toSchema = joi_1.default.string();
-var functionSchema = joi_1.default.string();
-var imageId = joi_1.default.string().min(1);
-exports.JobSchema = {
-    nameBusinness: nameBusinnessSchema.required(),
-    color: colorSchema.required(),
-    description: descriptionSchema.required(),
-    active: activeSchema.required(),
-    role: roleSchema.required(),
-    from: fromSchema.required(),
-    to: toSchema.required(),
-    function1: functionSchema,
-    function2: functionSchema,
-    function3: functionSchema,
-    function4: functionSchema,
-    imageId: imageId.required(),
-};
-exports.UpdateJobSchema = {
-    nameBusinness: nameBusinnessSchema,
-    color: colorSchema,
-    description: descriptionSchema,
-    active: activeSchema,
-    role: roleSchema,
-    from: fromSchema,
-    to: toSchema,
-    function1: functionSchema,
-    function2: functionSchema,
-    function3: functionSchema,
-    function4: functionSchema,
-    imageId: imageId,
-};
-
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.UpdateJobSchema = exports.JobSchema = void 0;\nvar joi_1 = __importDefault(__webpack_require__(/*! @hapi/joi */ \"@hapi/joi\"));\nvar nameBusinnessSchema = joi_1.default.string().min(5).max(50);\nvar descriptionSchema = joi_1.default.string().min(20);\nvar colorSchema = joi_1.default.string();\nvar activeSchema = joi_1.default.boolean();\nvar roleSchema = joi_1.default.string();\nvar fromSchema = joi_1.default.string();\nvar toSchema = joi_1.default.string();\nvar functionSchema = joi_1.default.string();\nvar imageId = joi_1.default.string().min(1);\nexports.JobSchema = {\n    nameBusinness: nameBusinnessSchema.required(),\n    color: colorSchema.required(),\n    description: descriptionSchema.required(),\n    active: activeSchema.required(),\n    role: roleSchema.required(),\n    from: fromSchema.required(),\n    to: toSchema.required(),\n    function1: functionSchema,\n    function2: functionSchema,\n    function3: functionSchema,\n    function4: functionSchema,\n    imageId: imageId.required(),\n};\nexports.UpdateJobSchema = {\n    nameBusinness: nameBusinnessSchema,\n    color: colorSchema,\n    description: descriptionSchema,\n    active: activeSchema,\n    role: roleSchema,\n    from: fromSchema,\n    to: toSchema,\n    function1: functionSchema,\n    function2: functionSchema,\n    function3: functionSchema,\n    function4: functionSchema,\n    imageId: imageId,\n};\n\n\n//# sourceURL=webpack://wilmion-api/./src/Joi/job.joi.ts?");
 
 /***/ }),
 
-/***/ 3593:
+/***/ "./src/Joi/post.joi.ts":
+/*!*****************************!*\
+  !*** ./src/Joi/post.joi.ts ***!
+  \*****************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.UpdatePostSchema = exports.postSchema = void 0;
-var joi_1 = __importDefault(__webpack_require__(8414));
-var titleSchema = joi_1.default.string().min(5);
-var tagsIdSchema = joi_1.default.array().items(joi_1.default.string());
-exports.postSchema = {
-    title: titleSchema.required(),
-    tagsId: tagsIdSchema.required(),
-};
-exports.UpdatePostSchema = {
-    title: titleSchema,
-    tagsId: tagsIdSchema,
-};
-
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.UpdatePostSchema = exports.postSchema = void 0;\nvar joi_1 = __importDefault(__webpack_require__(/*! @hapi/joi */ \"@hapi/joi\"));\nvar titleSchema = joi_1.default.string().min(5);\nvar tagsIdSchema = joi_1.default.array().items(joi_1.default.string());\nexports.postSchema = {\n    title: titleSchema.required(),\n    tagsId: tagsIdSchema.required(),\n};\nexports.UpdatePostSchema = {\n    title: titleSchema,\n    tagsId: tagsIdSchema,\n};\n\n\n//# sourceURL=webpack://wilmion-api/./src/Joi/post.joi.ts?");
 
 /***/ }),
 
-/***/ 6197:
+/***/ "./src/Joi/project.joi.ts":
+/*!********************************!*\
+  !*** ./src/Joi/project.joi.ts ***!
+  \********************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.updateProjectSchema = exports.projectSchema = void 0;
-var joi_1 = __importDefault(__webpack_require__(8414));
-var nameSchema = joi_1.default.string().min(4);
-var descriptionSchema = joi_1.default.string().min(10);
-var linkFrontendSchema = joi_1.default.string().uri();
-var linkBackendSchema = joi_1.default.string().uri();
-var linkBlogSchema = joi_1.default.string().uri();
-var linkFigmaSchema = joi_1.default.string().uri();
-var linkRepositorySchema = joi_1.default.string().uri();
-var imageIdSchema = joi_1.default.string();
-var skillsIdsSchema = joi_1.default.array().items(joi_1.default.string());
-exports.projectSchema = {
-    name: nameSchema.required(),
-    description: descriptionSchema.required(),
-    linkFrontend: linkFrontendSchema.required(),
-    linkBackend: linkBackendSchema,
-    linkBlog: linkBlogSchema,
-    linkFigma: linkFigmaSchema,
-    linkRepository: linkRepositorySchema.required(),
-    imageId: imageIdSchema.required(),
-    skillsIds: skillsIdsSchema.required(),
-};
-exports.updateProjectSchema = {
-    name: nameSchema,
-    description: descriptionSchema,
-    linkFrontend: linkFrontendSchema,
-    linkBackend: linkBackendSchema,
-    linkBlog: linkBlogSchema,
-    linkFigma: linkFigmaSchema,
-    linkRepository: linkRepositorySchema,
-    imageId: imageIdSchema,
-    skillsIds: skillsIdsSchema,
-};
-
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.updateProjectSchema = exports.projectSchema = void 0;\nvar joi_1 = __importDefault(__webpack_require__(/*! @hapi/joi */ \"@hapi/joi\"));\nvar nameSchema = joi_1.default.string().min(4);\nvar descriptionSchema = joi_1.default.string().min(10);\nvar linkFrontendSchema = joi_1.default.string().uri();\nvar linkBackendSchema = joi_1.default.string().uri();\nvar linkBlogSchema = joi_1.default.string().uri();\nvar linkFigmaSchema = joi_1.default.string().uri();\nvar linkRepositorySchema = joi_1.default.string().uri();\nvar imageIdSchema = joi_1.default.string();\nvar skillsIdsSchema = joi_1.default.array().items(joi_1.default.string());\nexports.projectSchema = {\n    name: nameSchema.required(),\n    description: descriptionSchema.required(),\n    linkFrontend: linkFrontendSchema.required(),\n    linkBackend: linkBackendSchema,\n    linkBlog: linkBlogSchema,\n    linkFigma: linkFigmaSchema,\n    linkRepository: linkRepositorySchema.required(),\n    imageId: imageIdSchema.required(),\n    skillsIds: skillsIdsSchema.required(),\n};\nexports.updateProjectSchema = {\n    name: nameSchema,\n    description: descriptionSchema,\n    linkFrontend: linkFrontendSchema,\n    linkBackend: linkBackendSchema,\n    linkBlog: linkBlogSchema,\n    linkFigma: linkFigmaSchema,\n    linkRepository: linkRepositorySchema,\n    imageId: imageIdSchema,\n    skillsIds: skillsIdsSchema,\n};\n\n\n//# sourceURL=webpack://wilmion-api/./src/Joi/project.joi.ts?");
 
 /***/ }),
 
-/***/ 2603:
+/***/ "./src/Joi/skill.joi.ts":
+/*!******************************!*\
+  !*** ./src/Joi/skill.joi.ts ***!
+  \******************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.updateSkillSchema = exports.skillSchema = void 0;
-var joi_1 = __importDefault(__webpack_require__(8414));
-var nameSchema = joi_1.default.string().min(4);
-var backgroundColorSchema = joi_1.default.string().hex();
-var iconColorSchema = joi_1.default.string().hex();
-var iconSchema = joi_1.default.string();
-var imageIdSchema = joi_1.default.string();
-exports.skillSchema = {
-    name: nameSchema.required(),
-    backgroundColor: backgroundColorSchema.required(),
-    iconColor: iconColorSchema.required(),
-    icon: iconSchema,
-    imageId: imageIdSchema,
-};
-exports.updateSkillSchema = {
-    name: nameSchema,
-    backgroundColor: backgroundColorSchema,
-    iconColor: iconColorSchema,
-    icon: iconSchema,
-    imageId: imageIdSchema,
-};
-
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.updateSkillSchema = exports.skillSchema = void 0;\nvar joi_1 = __importDefault(__webpack_require__(/*! @hapi/joi */ \"@hapi/joi\"));\nvar nameSchema = joi_1.default.string().min(4);\nvar backgroundColorSchema = joi_1.default.string().hex();\nvar iconColorSchema = joi_1.default.string().hex();\nvar iconSchema = joi_1.default.string();\nvar imageIdSchema = joi_1.default.string();\nexports.skillSchema = {\n    name: nameSchema.required(),\n    backgroundColor: backgroundColorSchema.required(),\n    iconColor: iconColorSchema.required(),\n    icon: iconSchema,\n    imageId: imageIdSchema,\n};\nexports.updateSkillSchema = {\n    name: nameSchema,\n    backgroundColor: backgroundColorSchema,\n    iconColor: iconColorSchema,\n    icon: iconSchema,\n    imageId: imageIdSchema,\n};\n\n\n//# sourceURL=webpack://wilmion-api/./src/Joi/skill.joi.ts?");
 
 /***/ }),
 
-/***/ 1582:
+/***/ "./src/Joi/socialMedia.joi.ts":
+/*!************************************!*\
+  !*** ./src/Joi/socialMedia.joi.ts ***!
+  \************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.updateSocialMediaSchema = exports.socialMediaSchema = void 0;
-var joi_1 = __importDefault(__webpack_require__(8414));
-var nameSchema = joi_1.default.string().min(4);
-var iconSchema = joi_1.default.string();
-var colorSchema = joi_1.default.string().hex();
-var redirectUrlSchema = joi_1.default.string().uri();
-exports.socialMediaSchema = {
-    name: nameSchema.required(),
-    icon: iconSchema.required(),
-    color: colorSchema.required(),
-    redirectUrl: redirectUrlSchema.required(),
-};
-exports.updateSocialMediaSchema = {
-    name: nameSchema,
-    icon: iconSchema,
-    color: colorSchema,
-    redirectUrl: redirectUrlSchema,
-};
-
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.updateSocialMediaSchema = exports.socialMediaSchema = void 0;\nvar joi_1 = __importDefault(__webpack_require__(/*! @hapi/joi */ \"@hapi/joi\"));\nvar nameSchema = joi_1.default.string().min(4);\nvar iconSchema = joi_1.default.string();\nvar colorSchema = joi_1.default.string().hex();\nvar redirectUrlSchema = joi_1.default.string().uri();\nexports.socialMediaSchema = {\n    name: nameSchema.required(),\n    icon: iconSchema.required(),\n    color: colorSchema.required(),\n    redirectUrl: redirectUrlSchema.required(),\n};\nexports.updateSocialMediaSchema = {\n    name: nameSchema,\n    icon: iconSchema,\n    color: colorSchema,\n    redirectUrl: redirectUrlSchema,\n};\n\n\n//# sourceURL=webpack://wilmion-api/./src/Joi/socialMedia.joi.ts?");
 
 /***/ }),
 
-/***/ 3376:
+/***/ "./src/Joi/stat.joi.ts":
+/*!*****************************!*\
+  !*** ./src/Joi/stat.joi.ts ***!
+  \*****************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-var _a;
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.querySchema = exports.statSchema = void 0;
-var joi_1 = __importDefault(__webpack_require__(8414));
-var stats_entity_1 = __webpack_require__(5642);
-var enum_1 = __webpack_require__(5033);
-var typeSchema = (_a = joi_1.default.string()).valid.apply(_a, (0, enum_1.ToArray)(stats_entity_1.TypeStat));
-exports.statSchema = {
-    type: typeSchema.required(),
-};
-exports.querySchema = {
-    limit: joi_1.default.number().min(0),
-    offset: joi_1.default.number().min(0),
-    type: typeSchema,
-};
-
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nvar _a;\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.querySchema = exports.statSchema = void 0;\nvar joi_1 = __importDefault(__webpack_require__(/*! @hapi/joi */ \"@hapi/joi\"));\nvar stats_entity_1 = __webpack_require__(/*! @entities/stats.entity */ \"./src/entities/stats.entity.ts\");\nvar enum_1 = __webpack_require__(/*! @utils/enum */ \"./src/utils/enum.ts\");\nvar typeSchema = (_a = joi_1.default.string()).valid.apply(_a, (0, enum_1.ToArray)(stats_entity_1.TypeStat));\nexports.statSchema = {\n    type: typeSchema.required(),\n};\nexports.querySchema = {\n    limit: joi_1.default.number().min(0),\n    offset: joi_1.default.number().min(0),\n    type: typeSchema,\n};\n\n\n//# sourceURL=webpack://wilmion-api/./src/Joi/stat.joi.ts?");
 
 /***/ }),
 
-/***/ 1067:
+/***/ "./src/Joi/staticContent.joi.ts":
+/*!**************************************!*\
+  !*** ./src/Joi/staticContent.joi.ts ***!
+  \**************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.pageParamSchema = exports.staticContentUpdateSchema = exports.staticContentSchema = void 0;
-var joi_1 = __importDefault(__webpack_require__(8414));
-var user_joi_1 = __webpack_require__(3447);
-var introductionSchema = joi_1.default.string().min(20);
-var responseQuestionSchema = joi_1.default.string().min(20);
-exports.staticContentSchema = {
-    introduction: introductionSchema.required(),
-    responseQuestion: responseQuestionSchema.required(),
-    contactEmail: user_joi_1.emailSchema,
-};
-exports.staticContentUpdateSchema = {
-    introduction: introductionSchema,
-    responseQuestion: responseQuestionSchema,
-    contactEmail: user_joi_1.emailSchema,
-};
-exports.pageParamSchema = { page: joi_1.default.string().valid("contact") };
-
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.pageParamSchema = exports.staticContentUpdateSchema = exports.staticContentSchema = void 0;\nvar joi_1 = __importDefault(__webpack_require__(/*! @hapi/joi */ \"@hapi/joi\"));\nvar user_joi_1 = __webpack_require__(/*! ./user.joi */ \"./src/Joi/user.joi.ts\");\nvar introductionSchema = joi_1.default.string().min(20);\nvar responseQuestionSchema = joi_1.default.string().min(20);\nexports.staticContentSchema = {\n    introduction: introductionSchema.required(),\n    responseQuestion: responseQuestionSchema.required(),\n    contactEmail: user_joi_1.emailSchema,\n};\nexports.staticContentUpdateSchema = {\n    introduction: introductionSchema,\n    responseQuestion: responseQuestionSchema,\n    contactEmail: user_joi_1.emailSchema,\n};\nexports.pageParamSchema = { page: joi_1.default.string().valid(\"contact\") };\n\n\n//# sourceURL=webpack://wilmion-api/./src/Joi/staticContent.joi.ts?");
 
 /***/ }),
 
-/***/ 1015:
+/***/ "./src/Joi/tag.joi.ts":
+/*!****************************!*\
+  !*** ./src/Joi/tag.joi.ts ***!
+  \****************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.UpdateTagSchema = exports.tagSchema = void 0;
-var joi_1 = __importDefault(__webpack_require__(8414));
-var colorSchema = joi_1.default.string().hex();
-var textSchema = joi_1.default.string().min(5).max(35);
-exports.tagSchema = {
-    color: colorSchema.required(),
-    text: textSchema.required(),
-};
-exports.UpdateTagSchema = {
-    color: colorSchema,
-    text: textSchema,
-};
-
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.UpdateTagSchema = exports.tagSchema = void 0;\nvar joi_1 = __importDefault(__webpack_require__(/*! @hapi/joi */ \"@hapi/joi\"));\nvar colorSchema = joi_1.default.string().hex();\nvar textSchema = joi_1.default.string().min(5).max(35);\nexports.tagSchema = {\n    color: colorSchema.required(),\n    text: textSchema.required(),\n};\nexports.UpdateTagSchema = {\n    color: colorSchema,\n    text: textSchema,\n};\n\n\n//# sourceURL=webpack://wilmion-api/./src/Joi/tag.joi.ts?");
 
 /***/ }),
 
-/***/ 3447:
+/***/ "./src/Joi/user.joi.ts":
+/*!*****************************!*\
+  !*** ./src/Joi/user.joi.ts ***!
+  \*****************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.updatePasswordSchema = exports.loginSchema = exports.UserUpdateSchema = exports.UserSchenma = exports.imageIdSchema = exports.jobSchema = exports.nameSchema = exports.usernameSchema = exports.passwordSchema = exports.emailSchema = void 0;
-var Joi = __importStar(__webpack_require__(8414));
-exports.emailSchema = Joi.string().email();
-exports.passwordSchema = Joi.string().min(8);
-exports.usernameSchema = Joi.string().min(4).max(100);
-exports.nameSchema = Joi.string().min(1).max(100);
-exports.jobSchema = Joi.string().min(5).max(50);
-exports.imageIdSchema = Joi.number();
-exports.UserSchenma = {
-    username: exports.usernameSchema.required(),
-    password: exports.passwordSchema.required(),
-    name: exports.nameSchema.required(),
-    job: exports.jobSchema.required(),
-    email: exports.emailSchema.required(),
-    imageId: exports.imageIdSchema.required(),
-};
-exports.UserUpdateSchema = {
-    username: exports.usernameSchema,
-    name: exports.nameSchema,
-    job: exports.jobSchema,
-    email: exports.emailSchema,
-    imageId: exports.imageIdSchema,
-};
-exports.loginSchema = {
-    email: exports.emailSchema.required(),
-    password: exports.passwordSchema.required(),
-};
-exports.updatePasswordSchema = {
-    oldPassword: exports.passwordSchema.required(),
-    newPassword: exports.passwordSchema.required(),
-};
-
+eval("\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\n    if (k2 === undefined) k2 = k;\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\n}) : (function(o, m, k, k2) {\n    if (k2 === undefined) k2 = k;\n    o[k2] = m[k];\n}));\nvar __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {\n    Object.defineProperty(o, \"default\", { enumerable: true, value: v });\n}) : function(o, v) {\n    o[\"default\"] = v;\n});\nvar __importStar = (this && this.__importStar) || function (mod) {\n    if (mod && mod.__esModule) return mod;\n    var result = {};\n    if (mod != null) for (var k in mod) if (k !== \"default\" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);\n    __setModuleDefault(result, mod);\n    return result;\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.updatePasswordSchema = exports.loginSchema = exports.UserUpdateSchema = exports.UserSchenma = exports.imageIdSchema = exports.jobSchema = exports.nameSchema = exports.usernameSchema = exports.passwordSchema = exports.emailSchema = void 0;\nvar Joi = __importStar(__webpack_require__(/*! @hapi/joi */ \"@hapi/joi\"));\nexports.emailSchema = Joi.string().email();\nexports.passwordSchema = Joi.string().min(8);\nexports.usernameSchema = Joi.string().min(4).max(100);\nexports.nameSchema = Joi.string().min(1).max(100);\nexports.jobSchema = Joi.string().min(5).max(50);\nexports.imageIdSchema = Joi.number();\nexports.UserSchenma = {\n    username: exports.usernameSchema.required(),\n    password: exports.passwordSchema.required(),\n    name: exports.nameSchema.required(),\n    job: exports.jobSchema.required(),\n    email: exports.emailSchema.required(),\n    imageId: exports.imageIdSchema.required(),\n};\nexports.UserUpdateSchema = {\n    username: exports.usernameSchema,\n    name: exports.nameSchema,\n    job: exports.jobSchema,\n    email: exports.emailSchema,\n    imageId: exports.imageIdSchema,\n};\nexports.loginSchema = {\n    email: exports.emailSchema.required(),\n    password: exports.passwordSchema.required(),\n};\nexports.updatePasswordSchema = {\n    oldPassword: exports.passwordSchema.required(),\n    newPassword: exports.passwordSchema.required(),\n};\n\n\n//# sourceURL=webpack://wilmion-api/./src/Joi/user.joi.ts?");
 
 /***/ }),
 
-/***/ 2275:
+/***/ "./src/config/index.ts":
+/*!*****************************!*\
+  !*** ./src/config/index.ts ***!
+  \*****************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var dotenv_1 = __importDefault(__webpack_require__(5142));
-var development = "production" === "development";
-dotenv_1.default.config({
-    path: development ? ".develop.env" : ".env",
-});
-var config = {
-    mode: development ? "DEV" : "PROD",
-    typeorm: {
-        url: process.env.DATABASE_URL,
-    },
-    port: process.env.PORT || 5000,
-    hostAllowedList: process.env.HOSTALLOWEDLIST.split(" "),
-    encryption: {
-        saltRounds: parseInt(process.env.ENCRYPTION_SALT_ROUNDS, 10),
-    },
-    jwt: {
-        secret: process.env.JWT_SECRET,
-    },
-    firebaseConfig: {
-        apiKey: process.env.APIKEY,
-        authDomain: process.env.AUTHDOMAIN,
-        projectId: process.env.PROJECTID,
-        storageBucket: process.env.STORAGEBUCKET,
-        messagingSenderId: process.env.MESSAGINGSENDERID,
-        appId: process.env.APPID,
-        measurementId: process.env.MEASUREMENTID,
-    },
-};
-exports["default"] = config;
-
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar dotenv_1 = __importDefault(__webpack_require__(/*! dotenv */ \"dotenv\"));\nvar development = \"development\" === \"development\";\ndotenv_1.default.config({\n    path: development ? \".develop.env\" : \".env\",\n});\nvar config = {\n    mode: development ? \"DEV\" : \"PROD\",\n    typeorm: {\n        url: process.env.DATABASE_URL,\n    },\n    port: process.env.PORT || 5000,\n    hostAllowedList: process.env.HOSTALLOWEDLIST.split(\" \"),\n    encryption: {\n        saltRounds: parseInt(process.env.ENCRYPTION_SALT_ROUNDS, 10),\n    },\n    jwt: {\n        secret: process.env.JWT_SECRET,\n    },\n    firebaseConfig: {\n        apiKey: process.env.APIKEY,\n        authDomain: process.env.AUTHDOMAIN,\n        projectId: process.env.PROJECTID,\n        storageBucket: process.env.STORAGEBUCKET,\n        messagingSenderId: process.env.MESSAGINGSENDERID,\n        appId: process.env.APPID,\n        measurementId: process.env.MEASUREMENTID,\n    },\n};\nexports[\"default\"] = config;\n\n\n//# sourceURL=webpack://wilmion-api/./src/config/index.ts?");
 
 /***/ }),
 
-/***/ 4207:
+/***/ "./src/controllers/contents.controller.ts":
+/*!************************************************!*\
+  !*** ./src/controllers/contents.controller.ts ***!
+  \************************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var express_1 = __webpack_require__(6860);
-var passport_1 = __importDefault(__webpack_require__(3511));
-var validator_middleware_1 = __webpack_require__(7058);
-var authorization_middleware_1 = __webpack_require__(9683);
-var global_joi_1 = __webpack_require__(8589);
-var content_joi_1 = __webpack_require__(141);
-var contents_service_1 = __webpack_require__(4890);
-var response_1 = __importDefault(__webpack_require__(178));
-var route = (0, express_1.Router)();
-var service = new contents_service_1.ContentService();
-route.get("/", (0, validator_middleware_1.validateHandler)(content_joi_1.querySchema, "query"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var _a, limit, offset, post_id, contents, error_1;
-    return __generator(this, function (_b) {
-        switch (_b.label) {
-            case 0:
-                _b.trys.push([0, 2, , 3]);
-                _a = req.query, limit = _a.limit, offset = _a.offset, post_id = _a.post_id;
-                return [4 /*yield*/, service.getAll(limit, offset, post_id)];
-            case 1:
-                contents = _b.sent();
-                (0, response_1.default)(res, 200, contents, "The data traveled successfull");
-                return [3 /*break*/, 3];
-            case 2:
-                error_1 = _b.sent();
-                next(error_1);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.get("/:id", (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, "params"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, content, error_2;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                id = req.params.id;
-                return [4 /*yield*/, service.getById(id)];
-            case 1:
-                content = _a.sent();
-                (0, response_1.default)(res, 200, content, "The data traveled successfull");
-                return [3 /*break*/, 3];
-            case 2:
-                error_2 = _a.sent();
-                next(error_2);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.post("/", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)(content_joi_1.ContentSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var body, result, error_3;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                body = req.body;
-                return [4 /*yield*/, service.create(body)];
-            case 1:
-                result = _a.sent();
-                (0, response_1.default)(res, 201, result, "The content with post ID ".concat(body.postId, " has been successfully created \uD83E\uDD63\uD83E\uDDC2"));
-                return [3 /*break*/, 3];
-            case 2:
-                error_3 = _a.sent();
-                next(error_3);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.patch("/:id", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, "params"), (0, validator_middleware_1.validateHandler)(content_joi_1.UpdateContentSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, body, result, error_4;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                id = req.params.id;
-                body = req.body;
-                return [4 /*yield*/, service.update(body, id)];
-            case 1:
-                result = _a.sent();
-                (0, response_1.default)(res, 200, result, "The content was updated 💓");
-                return [3 /*break*/, 3];
-            case 2:
-                error_4 = _a.sent();
-                next(error_4);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.delete("/:id", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, "params"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, result, error_5;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                id = req.params.id;
-                return [4 /*yield*/, service.delete(id)];
-            case 1:
-                result = _a.sent();
-                (0, response_1.default)(res, 200, result, "The content has been removed from database 📅");
-                return [3 /*break*/, 3];
-            case 2:
-                error_5 = _a.sent();
-                next(error_5);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-exports["default"] = route;
-
+eval("\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar express_1 = __webpack_require__(/*! express */ \"express\");\nvar passport_1 = __importDefault(__webpack_require__(/*! passport */ \"passport\"));\nvar validator_middleware_1 = __webpack_require__(/*! @middlewares/validator.middleware */ \"./src/middlewares/validator.middleware.ts\");\nvar authorization_middleware_1 = __webpack_require__(/*! @middlewares/authorization.middleware */ \"./src/middlewares/authorization.middleware.ts\");\nvar global_joi_1 = __webpack_require__(/*! @Joi/global.joi */ \"./src/Joi/global.joi.ts\");\nvar content_joi_1 = __webpack_require__(/*! @Joi/content.joi */ \"./src/Joi/content.joi.ts\");\nvar contents_service_1 = __webpack_require__(/*! @services/contents.service */ \"./src/services/contents.service.ts\");\nvar response_1 = __importDefault(__webpack_require__(/*! @utils/response */ \"./src/utils/response.ts\"));\nvar route = (0, express_1.Router)();\nvar service = new contents_service_1.ContentService();\nroute.get(\"/\", (0, validator_middleware_1.validateHandler)(content_joi_1.querySchema, \"query\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var _a, limit, offset, post_id, contents, error_1;\n    return __generator(this, function (_b) {\n        switch (_b.label) {\n            case 0:\n                _b.trys.push([0, 2, , 3]);\n                _a = req.query, limit = _a.limit, offset = _a.offset, post_id = _a.post_id;\n                return [4 /*yield*/, service.getAll(limit, offset, post_id)];\n            case 1:\n                contents = _b.sent();\n                (0, response_1.default)(res, 200, contents, \"The data traveled successfull\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_1 = _b.sent();\n                next(error_1);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.get(\"/:id\", (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, \"params\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var id, content, error_2;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                id = req.params.id;\n                return [4 /*yield*/, service.getById(id)];\n            case 1:\n                content = _a.sent();\n                (0, response_1.default)(res, 200, content, \"The data traveled successfull\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_2 = _a.sent();\n                next(error_2);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.post(\"/\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)(content_joi_1.ContentSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var body, result, error_3;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                body = req.body;\n                return [4 /*yield*/, service.create(body)];\n            case 1:\n                result = _a.sent();\n                (0, response_1.default)(res, 201, result, \"The content with post ID \".concat(body.postId, \" has been successfully created \\uD83E\\uDD63\\uD83E\\uDDC2\"));\n                return [3 /*break*/, 3];\n            case 2:\n                error_3 = _a.sent();\n                next(error_3);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.patch(\"/:id\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, \"params\"), (0, validator_middleware_1.validateHandler)(content_joi_1.UpdateContentSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var id, body, result, error_4;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                id = req.params.id;\n                body = req.body;\n                return [4 /*yield*/, service.update(body, id)];\n            case 1:\n                result = _a.sent();\n                (0, response_1.default)(res, 200, result, \"The content was updated 💓\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_4 = _a.sent();\n                next(error_4);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.delete(\"/:id\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, \"params\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var id, result, error_5;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                id = req.params.id;\n                return [4 /*yield*/, service.delete(id)];\n            case 1:\n                result = _a.sent();\n                (0, response_1.default)(res, 200, result, \"The content has been removed from database 📅\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_5 = _a.sent();\n                next(error_5);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nexports[\"default\"] = route;\n\n\n//# sourceURL=webpack://wilmion-api/./src/controllers/contents.controller.ts?");
 
 /***/ }),
 
-/***/ 1869:
+/***/ "./src/controllers/image.controller.ts":
+/*!*********************************************!*\
+  !*** ./src/controllers/image.controller.ts ***!
+  \*********************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var express_1 = __webpack_require__(6860);
-var passport_1 = __importDefault(__webpack_require__(3511));
-var image_service_1 = __webpack_require__(5784);
-var image_joi_1 = __webpack_require__(4599);
-var global_joi_1 = __webpack_require__(8589);
-var validator_middleware_1 = __webpack_require__(7058);
-var authorization_middleware_1 = __webpack_require__(9683);
-var response_1 = __importDefault(__webpack_require__(178));
-var router = (0, express_1.Router)();
-var service = new image_service_1.ImageService();
-router.get("/", (0, validator_middleware_1.validateHandler)(global_joi_1.querySchema, "query"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var _a, limit, offset, data, e_1;
-    return __generator(this, function (_b) {
-        switch (_b.label) {
-            case 0:
-                _b.trys.push([0, 2, , 3]);
-                _a = req.query, limit = _a.limit, offset = _a.offset;
-                return [4 /*yield*/, service.getAll(limit, offset)];
-            case 1:
-                data = _b.sent();
-                (0, response_1.default)(res, 200, data, "Data traveled successfully");
-                return [3 /*break*/, 3];
-            case 2:
-                e_1 = _b.sent();
-                next(e_1);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-router.get("/:id", (0, validator_middleware_1.validateHandler)(global_joi_1.idRouteSchema, "params"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, image, e_2;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                id = req.params.id;
-                return [4 /*yield*/, service.getById(id)];
-            case 1:
-                image = _a.sent();
-                (0, response_1.default)(res, 200, image, "This is an image");
-                return [3 /*break*/, 3];
-            case 2:
-                e_2 = _a.sent();
-                next(e_2);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-router.get("/by-md5/:id", (0, validator_middleware_1.validateHandler)(global_joi_1.idRouteSchema, "params"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, image, e_3;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                id = req.params.id;
-                return [4 /*yield*/, service.getByMd5(id)];
-            case 1:
-                image = _a.sent();
-                (0, response_1.default)(res, 200, image, "This is an image");
-                return [3 /*break*/, 3];
-            case 2:
-                e_3 = _a.sent();
-                next(e_3);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-router.post("/", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)(image_joi_1.imageSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var body, files, data, e_4;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                body = req.body;
-                files = req.files;
-                return [4 /*yield*/, service.create(body, files.image)];
-            case 1:
-                data = _a.sent();
-                (0, response_1.default)(res, 201, data, "Insert Image in the database");
-                return [3 /*break*/, 3];
-            case 2:
-                e_4 = _a.sent();
-                next(e_4);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-router.delete("/:id", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)(global_joi_1.idRouteSchema, "params"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, data, e_5;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                id = req.params.id;
-                return [4 /*yield*/, service.delete(id)];
-            case 1:
-                data = _a.sent();
-                (0, response_1.default)(res, 200, data, "The Image with ID ".concat(id, " has removed"));
-                return [3 /*break*/, 3];
-            case 2:
-                e_5 = _a.sent();
-                next(e_5);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-exports["default"] = router;
-
+eval("\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar express_1 = __webpack_require__(/*! express */ \"express\");\nvar passport_1 = __importDefault(__webpack_require__(/*! passport */ \"passport\"));\nvar image_service_1 = __webpack_require__(/*! @services/image.service */ \"./src/services/image.service.ts\");\nvar image_joi_1 = __webpack_require__(/*! @Joi/image.joi */ \"./src/Joi/image.joi.ts\");\nvar global_joi_1 = __webpack_require__(/*! @Joi/global.joi */ \"./src/Joi/global.joi.ts\");\nvar validator_middleware_1 = __webpack_require__(/*! @middlewares/validator.middleware */ \"./src/middlewares/validator.middleware.ts\");\nvar authorization_middleware_1 = __webpack_require__(/*! @middlewares/authorization.middleware */ \"./src/middlewares/authorization.middleware.ts\");\nvar response_1 = __importDefault(__webpack_require__(/*! @utils/response */ \"./src/utils/response.ts\"));\nvar router = (0, express_1.Router)();\nvar service = new image_service_1.ImageService();\nrouter.get(\"/\", (0, validator_middleware_1.validateHandler)(global_joi_1.querySchema, \"query\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var _a, limit, offset, data, e_1;\n    return __generator(this, function (_b) {\n        switch (_b.label) {\n            case 0:\n                _b.trys.push([0, 2, , 3]);\n                _a = req.query, limit = _a.limit, offset = _a.offset;\n                return [4 /*yield*/, service.getAll(limit, offset)];\n            case 1:\n                data = _b.sent();\n                (0, response_1.default)(res, 200, data, \"Data traveled successfully\");\n                return [3 /*break*/, 3];\n            case 2:\n                e_1 = _b.sent();\n                next(e_1);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nrouter.get(\"/:id\", (0, validator_middleware_1.validateHandler)(global_joi_1.idRouteSchema, \"params\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var id, image, e_2;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                id = req.params.id;\n                return [4 /*yield*/, service.getById(id)];\n            case 1:\n                image = _a.sent();\n                (0, response_1.default)(res, 200, image, \"This is an image\");\n                return [3 /*break*/, 3];\n            case 2:\n                e_2 = _a.sent();\n                next(e_2);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nrouter.get(\"/by-md5/:id\", (0, validator_middleware_1.validateHandler)(global_joi_1.idRouteSchema, \"params\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var id, image, e_3;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                id = req.params.id;\n                return [4 /*yield*/, service.getByMd5(id)];\n            case 1:\n                image = _a.sent();\n                (0, response_1.default)(res, 200, image, \"This is an image\");\n                return [3 /*break*/, 3];\n            case 2:\n                e_3 = _a.sent();\n                next(e_3);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nrouter.post(\"/\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)(image_joi_1.imageSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var body, files, data, e_4;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                body = req.body;\n                files = req.files;\n                return [4 /*yield*/, service.create(body, files.image)];\n            case 1:\n                data = _a.sent();\n                (0, response_1.default)(res, 201, data, \"Insert Image in the database\");\n                return [3 /*break*/, 3];\n            case 2:\n                e_4 = _a.sent();\n                next(e_4);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nrouter.delete(\"/:id\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)(global_joi_1.idRouteSchema, \"params\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var id, data, e_5;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                id = req.params.id;\n                return [4 /*yield*/, service.delete(id)];\n            case 1:\n                data = _a.sent();\n                (0, response_1.default)(res, 200, data, \"The Image with ID \".concat(id, \" has removed\"));\n                return [3 /*break*/, 3];\n            case 2:\n                e_5 = _a.sent();\n                next(e_5);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nexports[\"default\"] = router;\n\n\n//# sourceURL=webpack://wilmion-api/./src/controllers/image.controller.ts?");
 
 /***/ }),
 
-/***/ 7140:
+/***/ "./src/controllers/ipsUser.controller.ts":
+/*!***********************************************!*\
+  !*** ./src/controllers/ipsUser.controller.ts ***!
+  \***********************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var express_1 = __webpack_require__(6860);
-var passport_1 = __importDefault(__webpack_require__(3511));
-var validator_middleware_1 = __webpack_require__(7058);
-var authorization_middleware_1 = __webpack_require__(9683);
-var global_joi_1 = __webpack_require__(8589);
-var ipsUser_service_1 = __webpack_require__(9597);
-var response_1 = __importDefault(__webpack_require__(178));
-var route = (0, express_1.Router)();
-var service = new ipsUser_service_1.IpsUserService();
-route.get("/", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)(global_joi_1.querySchema, "query"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var _a, limit, offset, data, error_1;
-    return __generator(this, function (_b) {
-        switch (_b.label) {
-            case 0:
-                _b.trys.push([0, 2, , 3]);
-                _a = req.query, limit = _a.limit, offset = _a.offset;
-                return [4 /*yield*/, service.getAll(limit, offset)];
-            case 1:
-                data = _b.sent();
-                (0, response_1.default)(res, 200, data, "The data traveled successfull ✈️🛫🛬");
-                return [3 /*break*/, 3];
-            case 2:
-                error_1 = _b.sent();
-                next(error_1);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.get("/my-ip", function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var ip, data, error_2;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                ip = req.header("x-forwarded-for") || req.connection.remoteAddress;
-                return [4 /*yield*/, service.getByIp(ip)];
-            case 1:
-                data = _a.sent();
-                (0, response_1.default)(res, 200, data, "The data traveled successfull ✈️🛫🛬");
-                return [3 /*break*/, 3];
-            case 2:
-                error_2 = _a.sent();
-                next(error_2);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.post("/", function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var ip, result, error_3;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                ip = req.header("x-forwarded-for") || req.connection.remoteAddress;
-                return [4 /*yield*/, service.create({ ip: ip })];
-            case 1:
-                result = _a.sent();
-                (0, response_1.default)(res, 201, result, "🚲🚴‍♀️🚴‍♂️");
-                return [3 /*break*/, 3];
-            case 2:
-                error_3 = _a.sent();
-                next(error_3);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-exports["default"] = route;
-
+eval("\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar express_1 = __webpack_require__(/*! express */ \"express\");\nvar passport_1 = __importDefault(__webpack_require__(/*! passport */ \"passport\"));\nvar validator_middleware_1 = __webpack_require__(/*! @middlewares/validator.middleware */ \"./src/middlewares/validator.middleware.ts\");\nvar authorization_middleware_1 = __webpack_require__(/*! @middlewares/authorization.middleware */ \"./src/middlewares/authorization.middleware.ts\");\nvar global_joi_1 = __webpack_require__(/*! @Joi/global.joi */ \"./src/Joi/global.joi.ts\");\nvar ipsUser_service_1 = __webpack_require__(/*! @services/ipsUser.service */ \"./src/services/ipsUser.service.ts\");\nvar response_1 = __importDefault(__webpack_require__(/*! @utils/response */ \"./src/utils/response.ts\"));\nvar route = (0, express_1.Router)();\nvar service = new ipsUser_service_1.IpsUserService();\nroute.get(\"/\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)(global_joi_1.querySchema, \"query\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var _a, limit, offset, data, error_1;\n    return __generator(this, function (_b) {\n        switch (_b.label) {\n            case 0:\n                _b.trys.push([0, 2, , 3]);\n                _a = req.query, limit = _a.limit, offset = _a.offset;\n                return [4 /*yield*/, service.getAll(limit, offset)];\n            case 1:\n                data = _b.sent();\n                (0, response_1.default)(res, 200, data, \"The data traveled successfull ✈️🛫🛬\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_1 = _b.sent();\n                next(error_1);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.get(\"/my-ip\", function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var ip, data, error_2;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                ip = req.header(\"x-forwarded-for\") || req.connection.remoteAddress;\n                return [4 /*yield*/, service.getByIp(ip)];\n            case 1:\n                data = _a.sent();\n                (0, response_1.default)(res, 200, data, \"The data traveled successfull ✈️🛫🛬\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_2 = _a.sent();\n                next(error_2);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.post(\"/\", function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var ip, result, error_3;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                ip = req.header(\"x-forwarded-for\") || req.connection.remoteAddress;\n                return [4 /*yield*/, service.create({ ip: ip })];\n            case 1:\n                result = _a.sent();\n                (0, response_1.default)(res, 201, result, \"🚲🚴‍♀️🚴‍♂️\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_3 = _a.sent();\n                next(error_3);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nexports[\"default\"] = route;\n\n\n//# sourceURL=webpack://wilmion-api/./src/controllers/ipsUser.controller.ts?");
 
 /***/ }),
 
-/***/ 4879:
+/***/ "./src/controllers/jobs.controller.ts":
+/*!********************************************!*\
+  !*** ./src/controllers/jobs.controller.ts ***!
+  \********************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var express_1 = __webpack_require__(6860);
-var passport_1 = __importDefault(__webpack_require__(3511));
-var validator_middleware_1 = __webpack_require__(7058);
-var authorization_middleware_1 = __webpack_require__(9683);
-var global_joi_1 = __webpack_require__(8589);
-var job_joi_1 = __webpack_require__(9949);
-var jobs_service_1 = __webpack_require__(3139);
-var response_1 = __importDefault(__webpack_require__(178));
-var route = (0, express_1.Router)();
-var service = new jobs_service_1.JobsService();
-route.get("/", function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var data, error_1;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                return [4 /*yield*/, service.getAll()];
-            case 1:
-                data = _a.sent();
-                (0, response_1.default)(res, 200, data, "The data traveled successfull");
-                return [3 /*break*/, 3];
-            case 2:
-                error_1 = _a.sent();
-                next(error_1);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.get("/:id", (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, "params"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, data, error_2;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                id = req.params.id;
-                return [4 /*yield*/, service.getById(id)];
-            case 1:
-                data = _a.sent();
-                (0, response_1.default)(res, 200, data, "The data traveled sucessfull");
-                return [3 /*break*/, 3];
-            case 2:
-                error_2 = _a.sent();
-                next(error_2);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.post("/", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)(job_joi_1.JobSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var body, createdJob, e_1;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                body = req.body;
-                return [4 /*yield*/, service.create(body)];
-            case 1:
-                createdJob = _a.sent();
-                (0, response_1.default)(res, 201, createdJob, "Job successfull created 💪🧑‍🏭");
-                return [3 /*break*/, 3];
-            case 2:
-                e_1 = _a.sent();
-                next(e_1);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.patch("/:id", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, "params"), (0, validator_middleware_1.validateHandler)(job_joi_1.UpdateJobSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var body, id, result, error_3;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                body = req.body;
-                id = req.params.id;
-                return [4 /*yield*/, service.update(id, body)];
-            case 1:
-                result = _a.sent();
-                (0, response_1.default)(res, 200, result, "The job with ID ".concat(id, " was updated with successful"));
-                return [3 /*break*/, 3];
-            case 2:
-                error_3 = _a.sent();
-                next(error_3);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.post("/activate/:id", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, "params"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, data, error_4;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                id = req.params.id;
-                return [4 /*yield*/, service.activate(id)];
-            case 1:
-                data = _a.sent();
-                (0, response_1.default)(res, 200, data, "The job was successfull activate");
-                return [3 /*break*/, 3];
-            case 2:
-                error_4 = _a.sent();
-                next(error_4);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.delete("/:id", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, "params"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, data, error_5;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                id = req.params.id;
-                return [4 /*yield*/, service.deactivate(id)];
-            case 1:
-                data = _a.sent();
-                (0, response_1.default)(res, 200, data, "The job was successfull deactivate");
-                return [3 /*break*/, 3];
-            case 2:
-                error_5 = _a.sent();
-                next(error_5);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-exports["default"] = route;
-
+eval("\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar express_1 = __webpack_require__(/*! express */ \"express\");\nvar passport_1 = __importDefault(__webpack_require__(/*! passport */ \"passport\"));\nvar validator_middleware_1 = __webpack_require__(/*! @middlewares/validator.middleware */ \"./src/middlewares/validator.middleware.ts\");\nvar authorization_middleware_1 = __webpack_require__(/*! @middlewares/authorization.middleware */ \"./src/middlewares/authorization.middleware.ts\");\nvar global_joi_1 = __webpack_require__(/*! @Joi/global.joi */ \"./src/Joi/global.joi.ts\");\nvar job_joi_1 = __webpack_require__(/*! @Joi/job.joi */ \"./src/Joi/job.joi.ts\");\nvar jobs_service_1 = __webpack_require__(/*! @services/jobs.service */ \"./src/services/jobs.service.ts\");\nvar response_1 = __importDefault(__webpack_require__(/*! @utils/response */ \"./src/utils/response.ts\"));\nvar route = (0, express_1.Router)();\nvar service = new jobs_service_1.JobsService();\nroute.get(\"/\", function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var data, error_1;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                return [4 /*yield*/, service.getAll()];\n            case 1:\n                data = _a.sent();\n                (0, response_1.default)(res, 200, data, \"The data traveled successfull\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_1 = _a.sent();\n                next(error_1);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.get(\"/:id\", (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, \"params\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var id, data, error_2;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                id = req.params.id;\n                return [4 /*yield*/, service.getById(id)];\n            case 1:\n                data = _a.sent();\n                (0, response_1.default)(res, 200, data, \"The data traveled sucessfull\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_2 = _a.sent();\n                next(error_2);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.post(\"/\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)(job_joi_1.JobSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var body, createdJob, e_1;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                body = req.body;\n                return [4 /*yield*/, service.create(body)];\n            case 1:\n                createdJob = _a.sent();\n                (0, response_1.default)(res, 201, createdJob, \"Job successfull created 💪🧑‍🏭\");\n                return [3 /*break*/, 3];\n            case 2:\n                e_1 = _a.sent();\n                next(e_1);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.patch(\"/:id\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, \"params\"), (0, validator_middleware_1.validateHandler)(job_joi_1.UpdateJobSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var body, id, result, error_3;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                body = req.body;\n                id = req.params.id;\n                return [4 /*yield*/, service.update(id, body)];\n            case 1:\n                result = _a.sent();\n                (0, response_1.default)(res, 200, result, \"The job with ID \".concat(id, \" was updated with successful\"));\n                return [3 /*break*/, 3];\n            case 2:\n                error_3 = _a.sent();\n                next(error_3);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.post(\"/activate/:id\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, \"params\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var id, data, error_4;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                id = req.params.id;\n                return [4 /*yield*/, service.activate(id)];\n            case 1:\n                data = _a.sent();\n                (0, response_1.default)(res, 200, data, \"The job was successfull activate\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_4 = _a.sent();\n                next(error_4);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.delete(\"/:id\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, \"params\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var id, data, error_5;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                id = req.params.id;\n                return [4 /*yield*/, service.deactivate(id)];\n            case 1:\n                data = _a.sent();\n                (0, response_1.default)(res, 200, data, \"The job was successfull deactivate\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_5 = _a.sent();\n                next(error_5);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nexports[\"default\"] = route;\n\n\n//# sourceURL=webpack://wilmion-api/./src/controllers/jobs.controller.ts?");
 
 /***/ }),
 
-/***/ 4930:
+/***/ "./src/controllers/posts.controller.ts":
+/*!*********************************************!*\
+  !*** ./src/controllers/posts.controller.ts ***!
+  \*********************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var express_1 = __webpack_require__(6860);
-var passport_1 = __importDefault(__webpack_require__(3511));
-var validator_middleware_1 = __webpack_require__(7058);
-var authorization_middleware_1 = __webpack_require__(9683);
-var global_joi_1 = __webpack_require__(8589);
-var post_joi_1 = __webpack_require__(3593);
-var post_service_1 = __webpack_require__(7440);
-var datePostWithIps_service_1 = __webpack_require__(1060);
-var response_1 = __importDefault(__webpack_require__(178));
-var route = (0, express_1.Router)();
-var service = new post_service_1.PostsService();
-var datePostsWithIpsService = new datePostWithIps_service_1.DatePostsWithIpsService();
-route.get("/", (0, validator_middleware_1.validateHandler)(global_joi_1.querySchema, "query"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var _a, limit, offset, data, error_1;
-    return __generator(this, function (_b) {
-        switch (_b.label) {
-            case 0:
-                _b.trys.push([0, 2, , 3]);
-                _a = req.query, limit = _a.limit, offset = _a.offset;
-                return [4 /*yield*/, service.getAll(limit, offset)];
-            case 1:
-                data = _b.sent();
-                (0, response_1.default)(res, 200, data, "Data traveled successfull");
-                return [3 /*break*/, 3];
-            case 2:
-                error_1 = _b.sent();
-                next(error_1);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.get("/:id", (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, "params"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, data, error_2;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                id = req.params.id;
-                return [4 /*yield*/, service.getById(id)];
-            case 1:
-                data = _a.sent();
-                (0, response_1.default)(res, 200, data, "Data traveled successfull");
-                return [3 /*break*/, 3];
-            case 2:
-                error_2 = _a.sent();
-                next(error_2);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.post("/", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)(post_joi_1.postSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var token, body, result, error_3;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                token = req.user;
-                body = req.body;
-                return [4 /*yield*/, service.create(body, token.id)];
-            case 1:
-                result = _a.sent();
-                (0, response_1.default)(res, 201, result, "The post has been created 🍻");
-                return [3 /*break*/, 3];
-            case 2:
-                error_3 = _a.sent();
-                next(error_3);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.post("/like/:id", (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema }, "params"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, ip, result, error_4;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                id = req.params.id;
-                ip = req.header("x-forwarded-for") || req.connection.remoteAddress;
-                return [4 /*yield*/, datePostsWithIpsService.setLike(true, id, ip)];
-            case 1:
-                result = _a.sent();
-                (0, response_1.default)(res, 201, result, "Just, the post was liked for you 💓😻");
-                return [3 /*break*/, 3];
-            case 2:
-                error_4 = _a.sent();
-                next(error_4);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.post("/dislike/:id", (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema }, "params"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, ip, result, error_5;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                id = req.params.id;
-                ip = req.header("x-forwarded-for") || req.connection.remoteAddress;
-                return [4 /*yield*/, datePostsWithIpsService.setLike(false, id, ip)];
-            case 1:
-                result = _a.sent();
-                (0, response_1.default)(res, 201, result, "Ohh , we lament that you dislike this post");
-                return [3 /*break*/, 3];
-            case 2:
-                error_5 = _a.sent();
-                next(error_5);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.post("/view/:id", (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema }, "params"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, ip, result, error_6;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                id = req.params.id;
-                ip = req.header("x-forwarded-for") || req.connection.remoteAddress;
-                return [4 /*yield*/, datePostsWithIpsService.incrementView(id, ip)];
-            case 1:
-                result = _a.sent();
-                (0, response_1.default)(res, 201, result, "Do you like this post? 👀");
-                return [3 /*break*/, 3];
-            case 2:
-                error_6 = _a.sent();
-                next(error_6);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.patch("/:id", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)(post_joi_1.UpdatePostSchema), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, "params"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, body, result, error_7;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                id = req.params.id;
-                body = req.body;
-                return [4 /*yield*/, service.update(body, id)];
-            case 1:
-                result = _a.sent();
-                (0, response_1.default)(res, 200, result, "The post has been updated ⚒️");
-                return [3 /*break*/, 3];
-            case 2:
-                error_7 = _a.sent();
-                next(error_7);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.delete("/:id", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, "params"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, result, error_8;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                id = req.params.id;
-                return [4 /*yield*/, service.delete(id)];
-            case 1:
-                result = _a.sent();
-                (0, response_1.default)(res, 200, result, "The post has been deleted 🚆");
-                return [3 /*break*/, 3];
-            case 2:
-                error_8 = _a.sent();
-                next(error_8);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-exports["default"] = route;
-
+eval("\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar express_1 = __webpack_require__(/*! express */ \"express\");\nvar passport_1 = __importDefault(__webpack_require__(/*! passport */ \"passport\"));\nvar validator_middleware_1 = __webpack_require__(/*! @middlewares/validator.middleware */ \"./src/middlewares/validator.middleware.ts\");\nvar authorization_middleware_1 = __webpack_require__(/*! @middlewares/authorization.middleware */ \"./src/middlewares/authorization.middleware.ts\");\nvar global_joi_1 = __webpack_require__(/*! @Joi/global.joi */ \"./src/Joi/global.joi.ts\");\nvar post_joi_1 = __webpack_require__(/*! @Joi/post.joi */ \"./src/Joi/post.joi.ts\");\nvar post_service_1 = __webpack_require__(/*! @services/post.service */ \"./src/services/post.service.ts\");\nvar datePostWithIps_service_1 = __webpack_require__(/*! @services/datePostWithIps.service */ \"./src/services/datePostWithIps.service.ts\");\nvar response_1 = __importDefault(__webpack_require__(/*! @utils/response */ \"./src/utils/response.ts\"));\nvar route = (0, express_1.Router)();\nvar service = new post_service_1.PostsService();\nvar datePostsWithIpsService = new datePostWithIps_service_1.DatePostsWithIpsService();\nroute.get(\"/\", (0, validator_middleware_1.validateHandler)(global_joi_1.querySchema, \"query\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var _a, limit, offset, data, error_1;\n    return __generator(this, function (_b) {\n        switch (_b.label) {\n            case 0:\n                _b.trys.push([0, 2, , 3]);\n                _a = req.query, limit = _a.limit, offset = _a.offset;\n                return [4 /*yield*/, service.getAll(limit, offset)];\n            case 1:\n                data = _b.sent();\n                (0, response_1.default)(res, 200, data, \"Data traveled successfull\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_1 = _b.sent();\n                next(error_1);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.get(\"/:id\", (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, \"params\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var id, data, error_2;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                id = req.params.id;\n                return [4 /*yield*/, service.getById(id)];\n            case 1:\n                data = _a.sent();\n                (0, response_1.default)(res, 200, data, \"Data traveled successfull\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_2 = _a.sent();\n                next(error_2);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.post(\"/\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)(post_joi_1.postSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var token, body, result, error_3;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                token = req.user;\n                body = req.body;\n                return [4 /*yield*/, service.create(body, token.id)];\n            case 1:\n                result = _a.sent();\n                (0, response_1.default)(res, 201, result, \"The post has been created 🍻\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_3 = _a.sent();\n                next(error_3);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.post(\"/like/:id\", (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema }, \"params\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var id, ip, result, error_4;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                id = req.params.id;\n                ip = req.header(\"x-forwarded-for\") || req.connection.remoteAddress;\n                return [4 /*yield*/, datePostsWithIpsService.setLike(true, id, ip)];\n            case 1:\n                result = _a.sent();\n                (0, response_1.default)(res, 201, result, \"Just, the post was liked for you 💓😻\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_4 = _a.sent();\n                next(error_4);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.post(\"/dislike/:id\", (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema }, \"params\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var id, ip, result, error_5;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                id = req.params.id;\n                ip = req.header(\"x-forwarded-for\") || req.connection.remoteAddress;\n                return [4 /*yield*/, datePostsWithIpsService.setLike(false, id, ip)];\n            case 1:\n                result = _a.sent();\n                (0, response_1.default)(res, 201, result, \"Ohh , we lament that you dislike this post\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_5 = _a.sent();\n                next(error_5);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.post(\"/view/:id\", (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema }, \"params\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var id, ip, result, error_6;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                id = req.params.id;\n                ip = req.header(\"x-forwarded-for\") || req.connection.remoteAddress;\n                return [4 /*yield*/, datePostsWithIpsService.incrementView(id, ip)];\n            case 1:\n                result = _a.sent();\n                (0, response_1.default)(res, 201, result, \"Do you like this post? 👀\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_6 = _a.sent();\n                next(error_6);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.patch(\"/:id\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)(post_joi_1.UpdatePostSchema), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, \"params\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var id, body, result, error_7;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                id = req.params.id;\n                body = req.body;\n                return [4 /*yield*/, service.update(body, id)];\n            case 1:\n                result = _a.sent();\n                (0, response_1.default)(res, 200, result, \"The post has been updated ⚒️\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_7 = _a.sent();\n                next(error_7);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.delete(\"/:id\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, \"params\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var id, result, error_8;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                id = req.params.id;\n                return [4 /*yield*/, service.delete(id)];\n            case 1:\n                result = _a.sent();\n                (0, response_1.default)(res, 200, result, \"The post has been deleted 🚆\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_8 = _a.sent();\n                next(error_8);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nexports[\"default\"] = route;\n\n\n//# sourceURL=webpack://wilmion-api/./src/controllers/posts.controller.ts?");
 
 /***/ }),
 
-/***/ 6124:
+/***/ "./src/controllers/project.controller.ts":
+/*!***********************************************!*\
+  !*** ./src/controllers/project.controller.ts ***!
+  \***********************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var express_1 = __webpack_require__(6860);
-var passport_1 = __importDefault(__webpack_require__(3511));
-var validator_middleware_1 = __webpack_require__(7058);
-var authorization_middleware_1 = __webpack_require__(9683);
-var global_joi_1 = __webpack_require__(8589);
-var project_joi_1 = __webpack_require__(6197);
-var project_service_1 = __webpack_require__(6795);
-var response_1 = __importDefault(__webpack_require__(178));
-var route = (0, express_1.Router)();
-var service = new project_service_1.ProjectService();
-route.get("/", function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var data, error_1;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                return [4 /*yield*/, service.getAll()];
-            case 1:
-                data = _a.sent();
-                (0, response_1.default)(res, 200, data, "The data traveled successfull 🛬🛫✈️");
-                return [3 /*break*/, 3];
-            case 2:
-                error_1 = _a.sent();
-                next(error_1);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.get("/:id", (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, "params"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, data, error_2;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                id = req.params.id;
-                return [4 /*yield*/, service.getById(id)];
-            case 1:
-                data = _a.sent();
-                (0, response_1.default)(res, 200, data, "The data traveled successfull 🛬🛫✈️");
-                return [3 /*break*/, 3];
-            case 2:
-                error_2 = _a.sent();
-                next(error_2);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.post("/", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)(project_joi_1.projectSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var body, result, error_3;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                body = req.body;
-                return [4 /*yield*/, service.create(body)];
-            case 1:
-                result = _a.sent();
-                (0, response_1.default)(res, 201, result, "The project has been created now 📽️");
-                return [3 /*break*/, 3];
-            case 2:
-                error_3 = _a.sent();
-                next(error_3);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.patch("/:id", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)(project_joi_1.updateProjectSchema), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, "params"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, body, result, error_4;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                id = req.params.id;
-                body = req.body;
-                return [4 /*yield*/, service.update(body, id)];
-            case 1:
-                result = _a.sent();
-                (0, response_1.default)(res, 200, result, "The project has been updated 🆙");
-                return [3 /*break*/, 3];
-            case 2:
-                error_4 = _a.sent();
-                next(error_4);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.post("/activate/:id", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, "params"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, result, error_5;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                id = req.params.id;
-                return [4 /*yield*/, service.activateProject(id)];
-            case 1:
-                result = _a.sent();
-                (0, response_1.default)(res, 200, result, "The project reactivate! 😁😸🙌");
-                return [3 /*break*/, 3];
-            case 2:
-                error_5 = _a.sent();
-                next(error_5);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.delete("/:id", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, "params"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, result, error_6;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                id = req.params.id;
-                return [4 /*yield*/, service.delete(id)];
-            case 1:
-                result = _a.sent();
-                (0, response_1.default)(res, 200, result, "The project has been deleted ☹️");
-                return [3 /*break*/, 3];
-            case 2:
-                error_6 = _a.sent();
-                next(error_6);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-exports["default"] = route;
-
+eval("\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar express_1 = __webpack_require__(/*! express */ \"express\");\nvar passport_1 = __importDefault(__webpack_require__(/*! passport */ \"passport\"));\nvar validator_middleware_1 = __webpack_require__(/*! @middlewares/validator.middleware */ \"./src/middlewares/validator.middleware.ts\");\nvar authorization_middleware_1 = __webpack_require__(/*! @middlewares/authorization.middleware */ \"./src/middlewares/authorization.middleware.ts\");\nvar global_joi_1 = __webpack_require__(/*! @Joi/global.joi */ \"./src/Joi/global.joi.ts\");\nvar project_joi_1 = __webpack_require__(/*! @Joi/project.joi */ \"./src/Joi/project.joi.ts\");\nvar project_service_1 = __webpack_require__(/*! @services/project.service */ \"./src/services/project.service.ts\");\nvar response_1 = __importDefault(__webpack_require__(/*! @utils/response */ \"./src/utils/response.ts\"));\nvar route = (0, express_1.Router)();\nvar service = new project_service_1.ProjectService();\nroute.get(\"/\", function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var data, error_1;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                return [4 /*yield*/, service.getAll()];\n            case 1:\n                data = _a.sent();\n                (0, response_1.default)(res, 200, data, \"The data traveled successfull 🛬🛫✈️\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_1 = _a.sent();\n                next(error_1);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.get(\"/:id\", (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, \"params\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var id, data, error_2;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                id = req.params.id;\n                return [4 /*yield*/, service.getById(id)];\n            case 1:\n                data = _a.sent();\n                (0, response_1.default)(res, 200, data, \"The data traveled successfull 🛬🛫✈️\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_2 = _a.sent();\n                next(error_2);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.post(\"/\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)(project_joi_1.projectSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var body, result, error_3;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                body = req.body;\n                return [4 /*yield*/, service.create(body)];\n            case 1:\n                result = _a.sent();\n                (0, response_1.default)(res, 201, result, \"The project has been created now 📽️\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_3 = _a.sent();\n                next(error_3);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.patch(\"/:id\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)(project_joi_1.updateProjectSchema), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, \"params\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var id, body, result, error_4;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                id = req.params.id;\n                body = req.body;\n                return [4 /*yield*/, service.update(body, id)];\n            case 1:\n                result = _a.sent();\n                (0, response_1.default)(res, 200, result, \"The project has been updated 🆙\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_4 = _a.sent();\n                next(error_4);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.post(\"/activate/:id\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, \"params\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var id, result, error_5;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                id = req.params.id;\n                return [4 /*yield*/, service.activateProject(id)];\n            case 1:\n                result = _a.sent();\n                (0, response_1.default)(res, 200, result, \"The project reactivate! 😁😸🙌\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_5 = _a.sent();\n                next(error_5);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.delete(\"/:id\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, \"params\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var id, result, error_6;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                id = req.params.id;\n                return [4 /*yield*/, service.delete(id)];\n            case 1:\n                result = _a.sent();\n                (0, response_1.default)(res, 200, result, \"The project has been deleted ☹️\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_6 = _a.sent();\n                next(error_6);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nexports[\"default\"] = route;\n\n\n//# sourceURL=webpack://wilmion-api/./src/controllers/project.controller.ts?");
 
 /***/ }),
 
-/***/ 3941:
+/***/ "./src/controllers/skills.controller.ts":
+/*!**********************************************!*\
+  !*** ./src/controllers/skills.controller.ts ***!
+  \**********************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var express_1 = __webpack_require__(6860);
-var passport_1 = __importDefault(__webpack_require__(3511));
-var validator_middleware_1 = __webpack_require__(7058);
-var authorization_middleware_1 = __webpack_require__(9683);
-var global_joi_1 = __webpack_require__(8589);
-var skill_joi_1 = __webpack_require__(2603);
-var skills_service_1 = __webpack_require__(7444);
-var response_1 = __importDefault(__webpack_require__(178));
-var route = (0, express_1.Router)();
-var service = new skills_service_1.SkillService();
-route.get("/", (0, validator_middleware_1.validateHandler)(global_joi_1.querySchema, "query"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var _a, limit, offset, data, error_1;
-    return __generator(this, function (_b) {
-        switch (_b.label) {
-            case 0:
-                _b.trys.push([0, 2, , 3]);
-                _a = req.query, limit = _a.limit, offset = _a.offset;
-                return [4 /*yield*/, service.getAll(limit, offset)];
-            case 1:
-                data = _b.sent();
-                (0, response_1.default)(res, 200, data, "The data traveled successfully 🛩️");
-                return [3 /*break*/, 3];
-            case 2:
-                error_1 = _b.sent();
-                next(error_1);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.get("/:id", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, "params"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, data, error_2;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                id = req.params.id;
-                return [4 /*yield*/, service.getById(id)];
-            case 1:
-                data = _a.sent();
-                (0, response_1.default)(res, 200, data, "The data traveled successfully 🛩️");
-                return [3 /*break*/, 3];
-            case 2:
-                error_2 = _a.sent();
-                next(error_2);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.post("/", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)(skill_joi_1.skillSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var body, result, error_3;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                body = req.body;
-                return [4 /*yield*/, service.create(body)];
-            case 1:
-                result = _a.sent();
-                (0, response_1.default)(res, 201, result, "The skill has created 🎳🎳");
-                return [3 /*break*/, 3];
-            case 2:
-                error_3 = _a.sent();
-                next(error_3);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.patch("/:id", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, "params"), (0, validator_middleware_1.validateHandler)(skill_joi_1.updateSkillSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, body, result, error_4;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                id = req.params.id;
-                body = req.body;
-                return [4 /*yield*/, service.update(body, id)];
-            case 1:
-                result = _a.sent();
-                (0, response_1.default)(res, 200, result, "The skill has updated 👍");
-                return [3 /*break*/, 3];
-            case 2:
-                error_4 = _a.sent();
-                next(error_4);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.delete("/:id", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, "params"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, result, error_5;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                id = req.params.id;
-                return [4 /*yield*/, service.delete(id)];
-            case 1:
-                result = _a.sent();
-                (0, response_1.default)(res, 200, result, "The skill has removed 😔 ID: " + id);
-                return [3 /*break*/, 3];
-            case 2:
-                error_5 = _a.sent();
-                next(error_5);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-exports["default"] = route;
-
+eval("\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar express_1 = __webpack_require__(/*! express */ \"express\");\nvar passport_1 = __importDefault(__webpack_require__(/*! passport */ \"passport\"));\nvar validator_middleware_1 = __webpack_require__(/*! @middlewares/validator.middleware */ \"./src/middlewares/validator.middleware.ts\");\nvar authorization_middleware_1 = __webpack_require__(/*! @middlewares/authorization.middleware */ \"./src/middlewares/authorization.middleware.ts\");\nvar global_joi_1 = __webpack_require__(/*! @Joi/global.joi */ \"./src/Joi/global.joi.ts\");\nvar skill_joi_1 = __webpack_require__(/*! @Joi/skill.joi */ \"./src/Joi/skill.joi.ts\");\nvar skills_service_1 = __webpack_require__(/*! @services/skills.service */ \"./src/services/skills.service.ts\");\nvar response_1 = __importDefault(__webpack_require__(/*! @utils/response */ \"./src/utils/response.ts\"));\nvar route = (0, express_1.Router)();\nvar service = new skills_service_1.SkillService();\nroute.get(\"/\", (0, validator_middleware_1.validateHandler)(global_joi_1.querySchema, \"query\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var _a, limit, offset, data, error_1;\n    return __generator(this, function (_b) {\n        switch (_b.label) {\n            case 0:\n                _b.trys.push([0, 2, , 3]);\n                _a = req.query, limit = _a.limit, offset = _a.offset;\n                return [4 /*yield*/, service.getAll(limit, offset)];\n            case 1:\n                data = _b.sent();\n                (0, response_1.default)(res, 200, data, \"The data traveled successfully 🛩️\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_1 = _b.sent();\n                next(error_1);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.get(\"/:id\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, \"params\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var id, data, error_2;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                id = req.params.id;\n                return [4 /*yield*/, service.getById(id)];\n            case 1:\n                data = _a.sent();\n                (0, response_1.default)(res, 200, data, \"The data traveled successfully 🛩️\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_2 = _a.sent();\n                next(error_2);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.post(\"/\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)(skill_joi_1.skillSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var body, result, error_3;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                body = req.body;\n                return [4 /*yield*/, service.create(body)];\n            case 1:\n                result = _a.sent();\n                (0, response_1.default)(res, 201, result, \"The skill has created 🎳🎳\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_3 = _a.sent();\n                next(error_3);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.patch(\"/:id\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, \"params\"), (0, validator_middleware_1.validateHandler)(skill_joi_1.updateSkillSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var id, body, result, error_4;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                id = req.params.id;\n                body = req.body;\n                return [4 /*yield*/, service.update(body, id)];\n            case 1:\n                result = _a.sent();\n                (0, response_1.default)(res, 200, result, \"The skill has updated 👍\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_4 = _a.sent();\n                next(error_4);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.delete(\"/:id\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, \"params\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var id, result, error_5;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                id = req.params.id;\n                return [4 /*yield*/, service.delete(id)];\n            case 1:\n                result = _a.sent();\n                (0, response_1.default)(res, 200, result, \"The skill has removed 😔 ID: \" + id);\n                return [3 /*break*/, 3];\n            case 2:\n                error_5 = _a.sent();\n                next(error_5);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nexports[\"default\"] = route;\n\n\n//# sourceURL=webpack://wilmion-api/./src/controllers/skills.controller.ts?");
 
 /***/ }),
 
-/***/ 9101:
+/***/ "./src/controllers/social-media.controller.ts":
+/*!****************************************************!*\
+  !*** ./src/controllers/social-media.controller.ts ***!
+  \****************************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var express_1 = __webpack_require__(6860);
-var passport_1 = __importDefault(__webpack_require__(3511));
-var validator_middleware_1 = __webpack_require__(7058);
-var authorization_middleware_1 = __webpack_require__(9683);
-var global_joi_1 = __webpack_require__(8589);
-var socialMedia_joi_1 = __webpack_require__(1582);
-var socialMedia_service_1 = __webpack_require__(1307);
-var response_1 = __importDefault(__webpack_require__(178));
-var route = (0, express_1.Router)();
-var service = new socialMedia_service_1.SocialMediaService();
-route.get("/", (0, validator_middleware_1.validateHandler)(global_joi_1.querySchema, "query"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var _a, limit, offset, data, error_1;
-    return __generator(this, function (_b) {
-        switch (_b.label) {
-            case 0:
-                _b.trys.push([0, 2, , 3]);
-                _a = req.query, limit = _a.limit, offset = _a.offset;
-                return [4 /*yield*/, service.getAll(limit, offset)];
-            case 1:
-                data = _b.sent();
-                (0, response_1.default)(res, 200, data, "The data traveled successfully 🛬🛫✈️");
-                return [3 /*break*/, 3];
-            case 2:
-                error_1 = _b.sent();
-                next(error_1);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.get("/:id", (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, "params"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, data, error_2;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                id = req.params.id;
-                return [4 /*yield*/, service.getById(id)];
-            case 1:
-                data = _a.sent();
-                (0, response_1.default)(res, 200, data, "The data traveled successfully 🛬🛫✈️");
-                return [3 /*break*/, 3];
-            case 2:
-                error_2 = _a.sent();
-                next(error_2);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.post("/", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)(socialMedia_joi_1.socialMediaSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var body, result, error_3;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                body = req.body;
-                return [4 /*yield*/, service.create(body)];
-            case 1:
-                result = _a.sent();
-                (0, response_1.default)(res, 201, result, "The social media has been created 😎😎");
-                return [3 /*break*/, 3];
-            case 2:
-                error_3 = _a.sent();
-                next(error_3);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.patch("/:id", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, "params"), (0, validator_middleware_1.validateHandler)(socialMedia_joi_1.updateSocialMediaSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, body, result, error_4;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                id = req.params.id;
-                body = req.body;
-                return [4 /*yield*/, service.update(body, id)];
-            case 1:
-                result = _a.sent();
-                (0, response_1.default)(res, 200, result, "The social media has been updated 😎😎");
-                return [3 /*break*/, 3];
-            case 2:
-                error_4 = _a.sent();
-                next(error_4);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.delete("/:id", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, "params"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, result, error_5;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                id = req.params.id;
-                return [4 /*yield*/, service.delete(id)];
-            case 1:
-                result = _a.sent();
-                (0, response_1.default)(res, 200, result, "The social media with Id ".concat(id, " has been removed \u2639\uFE0F"));
-                return [3 /*break*/, 3];
-            case 2:
-                error_5 = _a.sent();
-                next(error_5);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-exports["default"] = route;
-
+eval("\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar express_1 = __webpack_require__(/*! express */ \"express\");\nvar passport_1 = __importDefault(__webpack_require__(/*! passport */ \"passport\"));\nvar validator_middleware_1 = __webpack_require__(/*! @middlewares/validator.middleware */ \"./src/middlewares/validator.middleware.ts\");\nvar authorization_middleware_1 = __webpack_require__(/*! @middlewares/authorization.middleware */ \"./src/middlewares/authorization.middleware.ts\");\nvar global_joi_1 = __webpack_require__(/*! @Joi/global.joi */ \"./src/Joi/global.joi.ts\");\nvar socialMedia_joi_1 = __webpack_require__(/*! @Joi/socialMedia.joi */ \"./src/Joi/socialMedia.joi.ts\");\nvar socialMedia_service_1 = __webpack_require__(/*! @services/socialMedia.service */ \"./src/services/socialMedia.service.ts\");\nvar response_1 = __importDefault(__webpack_require__(/*! @utils/response */ \"./src/utils/response.ts\"));\nvar route = (0, express_1.Router)();\nvar service = new socialMedia_service_1.SocialMediaService();\nroute.get(\"/\", (0, validator_middleware_1.validateHandler)(global_joi_1.querySchema, \"query\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var _a, limit, offset, data, error_1;\n    return __generator(this, function (_b) {\n        switch (_b.label) {\n            case 0:\n                _b.trys.push([0, 2, , 3]);\n                _a = req.query, limit = _a.limit, offset = _a.offset;\n                return [4 /*yield*/, service.getAll(limit, offset)];\n            case 1:\n                data = _b.sent();\n                (0, response_1.default)(res, 200, data, \"The data traveled successfully 🛬🛫✈️\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_1 = _b.sent();\n                next(error_1);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.get(\"/:id\", (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, \"params\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var id, data, error_2;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                id = req.params.id;\n                return [4 /*yield*/, service.getById(id)];\n            case 1:\n                data = _a.sent();\n                (0, response_1.default)(res, 200, data, \"The data traveled successfully 🛬🛫✈️\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_2 = _a.sent();\n                next(error_2);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.post(\"/\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)(socialMedia_joi_1.socialMediaSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var body, result, error_3;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                body = req.body;\n                return [4 /*yield*/, service.create(body)];\n            case 1:\n                result = _a.sent();\n                (0, response_1.default)(res, 201, result, \"The social media has been created 😎😎\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_3 = _a.sent();\n                next(error_3);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.patch(\"/:id\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, \"params\"), (0, validator_middleware_1.validateHandler)(socialMedia_joi_1.updateSocialMediaSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var id, body, result, error_4;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                id = req.params.id;\n                body = req.body;\n                return [4 /*yield*/, service.update(body, id)];\n            case 1:\n                result = _a.sent();\n                (0, response_1.default)(res, 200, result, \"The social media has been updated 😎😎\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_4 = _a.sent();\n                next(error_4);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.delete(\"/:id\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, \"params\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var id, result, error_5;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                id = req.params.id;\n                return [4 /*yield*/, service.delete(id)];\n            case 1:\n                result = _a.sent();\n                (0, response_1.default)(res, 200, result, \"The social media with Id \".concat(id, \" has been removed \\u2639\\uFE0F\"));\n                return [3 /*break*/, 3];\n            case 2:\n                error_5 = _a.sent();\n                next(error_5);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nexports[\"default\"] = route;\n\n\n//# sourceURL=webpack://wilmion-api/./src/controllers/social-media.controller.ts?");
 
 /***/ }),
 
-/***/ 7963:
+/***/ "./src/controllers/static-contents.controller.ts":
+/*!*******************************************************!*\
+  !*** ./src/controllers/static-contents.controller.ts ***!
+  \*******************************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var express_1 = __webpack_require__(6860);
-var passport_1 = __importDefault(__webpack_require__(3511));
-var boom_1 = __importDefault(__webpack_require__(3767));
-var authorization_middleware_1 = __webpack_require__(9683);
-var validator_middleware_1 = __webpack_require__(7058);
-var staticContent_joi_1 = __webpack_require__(1067);
-var global_joi_1 = __webpack_require__(8589);
-var static_contents_service_1 = __webpack_require__(1200);
-var response_1 = __importDefault(__webpack_require__(178));
-var route = (0, express_1.Router)();
-var service = new static_contents_service_1.StaticContentsService();
-route.get("/", (0, validator_middleware_1.validateHandler)(global_joi_1.querySchema, "query"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var _a, limit, offset, data, e_1;
-    return __generator(this, function (_b) {
-        switch (_b.label) {
-            case 0:
-                _b.trys.push([0, 2, , 3]);
-                _a = req.query, limit = _a.limit, offset = _a.offset;
-                return [4 /*yield*/, service.getAll(limit, offset)];
-            case 1:
-                data = _b.sent();
-                (0, response_1.default)(res, 200, data, "Data traveled successfully");
-                return [3 /*break*/, 3];
-            case 2:
-                e_1 = _b.sent();
-                next(e_1);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.get("/:page", (0, validator_middleware_1.validateHandler)(staticContent_joi_1.pageParamSchema, "params"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var page, staticContent, e_2;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                page = req.params.page;
-                return [4 /*yield*/, service.getOne(page)];
-            case 1:
-                staticContent = _a.sent();
-                if (!staticContent)
-                    throw boom_1.default.notFound("The ".concat(page, " page does not exist"));
-                (0, response_1.default)(res, 200, staticContent, "This is a static content");
-                return [3 /*break*/, 3];
-            case 2:
-                e_2 = _a.sent();
-                next(e_2);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.post("/", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)(staticContent_joi_1.staticContentSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var body, data, e_3;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                body = req.body;
-                return [4 /*yield*/, service.create(body)];
-            case 1:
-                data = _a.sent();
-                (0, response_1.default)(res, 201, data, "Insert static content");
-                return [3 /*break*/, 3];
-            case 2:
-                e_3 = _a.sent();
-                next(e_3);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.patch("/:id", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)(global_joi_1.idRouteSchema, "params"), (0, validator_middleware_1.validateHandler)(staticContent_joi_1.staticContentUpdateSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var body, params, id, data, e_4;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                body = req.body, params = req.params;
-                id = params.id;
-                return [4 /*yield*/, service.update(id, body)];
-            case 1:
-                data = _a.sent();
-                (0, response_1.default)(res, 206, data, "The static content was updated successfully");
-                return [3 /*break*/, 3];
-            case 2:
-                e_4 = _a.sent();
-                next(e_4);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.delete("/:id", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)(global_joi_1.idRouteSchema, "params"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, staticContentDeleted, e_5;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                id = req.params.id;
-                return [4 /*yield*/, service.delete(id)];
-            case 1:
-                staticContentDeleted = _a.sent();
-                (0, response_1.default)(res, 200, staticContentDeleted, "Static Content with ID ".concat(id, " has removed"));
-                return [3 /*break*/, 3];
-            case 2:
-                e_5 = _a.sent();
-                next(e_5);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-exports["default"] = route;
-
+eval("\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar express_1 = __webpack_require__(/*! express */ \"express\");\nvar passport_1 = __importDefault(__webpack_require__(/*! passport */ \"passport\"));\nvar boom_1 = __importDefault(__webpack_require__(/*! @hapi/boom */ \"@hapi/boom\"));\nvar authorization_middleware_1 = __webpack_require__(/*! @middlewares/authorization.middleware */ \"./src/middlewares/authorization.middleware.ts\");\nvar validator_middleware_1 = __webpack_require__(/*! @middlewares/validator.middleware */ \"./src/middlewares/validator.middleware.ts\");\nvar staticContent_joi_1 = __webpack_require__(/*! @Joi/staticContent.joi */ \"./src/Joi/staticContent.joi.ts\");\nvar global_joi_1 = __webpack_require__(/*! @Joi/global.joi */ \"./src/Joi/global.joi.ts\");\nvar static_contents_service_1 = __webpack_require__(/*! @services/static-contents.service */ \"./src/services/static-contents.service.ts\");\nvar response_1 = __importDefault(__webpack_require__(/*! @utils/response */ \"./src/utils/response.ts\"));\nvar route = (0, express_1.Router)();\nvar service = new static_contents_service_1.StaticContentsService();\nroute.get(\"/\", (0, validator_middleware_1.validateHandler)(global_joi_1.querySchema, \"query\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var _a, limit, offset, data, e_1;\n    return __generator(this, function (_b) {\n        switch (_b.label) {\n            case 0:\n                _b.trys.push([0, 2, , 3]);\n                _a = req.query, limit = _a.limit, offset = _a.offset;\n                return [4 /*yield*/, service.getAll(limit, offset)];\n            case 1:\n                data = _b.sent();\n                (0, response_1.default)(res, 200, data, \"Data traveled successfully\");\n                return [3 /*break*/, 3];\n            case 2:\n                e_1 = _b.sent();\n                next(e_1);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.get(\"/:page\", (0, validator_middleware_1.validateHandler)(staticContent_joi_1.pageParamSchema, \"params\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var page, staticContent, e_2;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                page = req.params.page;\n                return [4 /*yield*/, service.getOne(page)];\n            case 1:\n                staticContent = _a.sent();\n                if (!staticContent)\n                    throw boom_1.default.notFound(\"The \".concat(page, \" page does not exist\"));\n                (0, response_1.default)(res, 200, staticContent, \"This is a static content\");\n                return [3 /*break*/, 3];\n            case 2:\n                e_2 = _a.sent();\n                next(e_2);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.post(\"/\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)(staticContent_joi_1.staticContentSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var body, data, e_3;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                body = req.body;\n                return [4 /*yield*/, service.create(body)];\n            case 1:\n                data = _a.sent();\n                (0, response_1.default)(res, 201, data, \"Insert static content\");\n                return [3 /*break*/, 3];\n            case 2:\n                e_3 = _a.sent();\n                next(e_3);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.patch(\"/:id\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)(global_joi_1.idRouteSchema, \"params\"), (0, validator_middleware_1.validateHandler)(staticContent_joi_1.staticContentUpdateSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var body, params, id, data, e_4;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                body = req.body, params = req.params;\n                id = params.id;\n                return [4 /*yield*/, service.update(id, body)];\n            case 1:\n                data = _a.sent();\n                (0, response_1.default)(res, 206, data, \"The static content was updated successfully\");\n                return [3 /*break*/, 3];\n            case 2:\n                e_4 = _a.sent();\n                next(e_4);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.delete(\"/:id\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)(global_joi_1.idRouteSchema, \"params\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var id, staticContentDeleted, e_5;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                id = req.params.id;\n                return [4 /*yield*/, service.delete(id)];\n            case 1:\n                staticContentDeleted = _a.sent();\n                (0, response_1.default)(res, 200, staticContentDeleted, \"Static Content with ID \".concat(id, \" has removed\"));\n                return [3 /*break*/, 3];\n            case 2:\n                e_5 = _a.sent();\n                next(e_5);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nexports[\"default\"] = route;\n\n\n//# sourceURL=webpack://wilmion-api/./src/controllers/static-contents.controller.ts?");
 
 /***/ }),
 
-/***/ 5396:
+/***/ "./src/controllers/stats.controller.ts":
+/*!*********************************************!*\
+  !*** ./src/controllers/stats.controller.ts ***!
+  \*********************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var express_1 = __webpack_require__(6860);
-var passport_1 = __importDefault(__webpack_require__(3511));
-var validator_middleware_1 = __webpack_require__(7058);
-var authorization_middleware_1 = __webpack_require__(9683);
-var global_joi_1 = __webpack_require__(8589);
-var stat_joi_1 = __webpack_require__(3376);
-var stat_service_1 = __webpack_require__(4376);
-var response_1 = __importDefault(__webpack_require__(178));
-var route = (0, express_1.Router)();
-var service = new stat_service_1.StatService();
-route.get("/", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)(stat_joi_1.querySchema, "query"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var _a, limit, offset, type, data, error_1;
-    return __generator(this, function (_b) {
-        switch (_b.label) {
-            case 0:
-                _b.trys.push([0, 2, , 3]);
-                _a = req.query, limit = _a.limit, offset = _a.offset, type = _a.type;
-                return [4 /*yield*/, service.getAll(limit, offset, type)];
-            case 1:
-                data = _b.sent();
-                (0, response_1.default)(res, 200, data, "The data traveled successfully 🛬🛫✈️");
-                return [3 /*break*/, 3];
-            case 2:
-                error_1 = _b.sent();
-                next(error_1);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.get("/:id", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, "params"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, data, error_2;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                id = req.params.id;
-                return [4 /*yield*/, service.getById(id)];
-            case 1:
-                data = _a.sent();
-                (0, response_1.default)(res, 200, data, "The data traveled successfully 🛬🛫✈️");
-                return [3 /*break*/, 3];
-            case 2:
-                error_2 = _a.sent();
-                next(error_2);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.post("/", (0, validator_middleware_1.validateHandler)(stat_joi_1.statSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var body, origin_1, result, error_3;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                body = req.body;
-                origin_1 = req.get("host");
-                return [4 /*yield*/, service.create(body, origin_1)];
-            case 1:
-                result = _a.sent();
-                (0, response_1.default)(res, 201, result, "The stat was created successfully 🥵");
-                return [3 /*break*/, 3];
-            case 2:
-                error_3 = _a.sent();
-                next(error_3);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.delete("/:id", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, "params"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, result, error_4;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                id = req.params.id;
-                return [4 /*yield*/, service.delete(id)];
-            case 1:
-                result = _a.sent();
-                (0, response_1.default)(res, 200, result, "The stat with id ".concat(id, " has been removed \u2639\uFE0F"));
-                return [3 /*break*/, 3];
-            case 2:
-                error_4 = _a.sent();
-                next(error_4);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-exports["default"] = route;
-
+eval("\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar express_1 = __webpack_require__(/*! express */ \"express\");\nvar passport_1 = __importDefault(__webpack_require__(/*! passport */ \"passport\"));\nvar validator_middleware_1 = __webpack_require__(/*! @middlewares/validator.middleware */ \"./src/middlewares/validator.middleware.ts\");\nvar authorization_middleware_1 = __webpack_require__(/*! @middlewares/authorization.middleware */ \"./src/middlewares/authorization.middleware.ts\");\nvar global_joi_1 = __webpack_require__(/*! @Joi/global.joi */ \"./src/Joi/global.joi.ts\");\nvar stat_joi_1 = __webpack_require__(/*! @Joi/stat.joi */ \"./src/Joi/stat.joi.ts\");\nvar stat_service_1 = __webpack_require__(/*! @services/stat.service */ \"./src/services/stat.service.ts\");\nvar response_1 = __importDefault(__webpack_require__(/*! @utils/response */ \"./src/utils/response.ts\"));\nvar route = (0, express_1.Router)();\nvar service = new stat_service_1.StatService();\nroute.get(\"/\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)(stat_joi_1.querySchema, \"query\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var _a, limit, offset, type, data, error_1;\n    return __generator(this, function (_b) {\n        switch (_b.label) {\n            case 0:\n                _b.trys.push([0, 2, , 3]);\n                _a = req.query, limit = _a.limit, offset = _a.offset, type = _a.type;\n                return [4 /*yield*/, service.getAll(limit, offset, type)];\n            case 1:\n                data = _b.sent();\n                (0, response_1.default)(res, 200, data, \"The data traveled successfully 🛬🛫✈️\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_1 = _b.sent();\n                next(error_1);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.get(\"/:id\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, \"params\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var id, data, error_2;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                id = req.params.id;\n                return [4 /*yield*/, service.getById(id)];\n            case 1:\n                data = _a.sent();\n                (0, response_1.default)(res, 200, data, \"The data traveled successfully 🛬🛫✈️\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_2 = _a.sent();\n                next(error_2);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.post(\"/\", (0, validator_middleware_1.validateHandler)(stat_joi_1.statSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var body, origin_1, result, error_3;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                body = req.body;\n                origin_1 = req.get(\"host\");\n                return [4 /*yield*/, service.create(body, origin_1)];\n            case 1:\n                result = _a.sent();\n                (0, response_1.default)(res, 201, result, \"The stat was created successfully 🥵\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_3 = _a.sent();\n                next(error_3);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.delete(\"/:id\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, \"params\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var id, result, error_4;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                id = req.params.id;\n                return [4 /*yield*/, service.delete(id)];\n            case 1:\n                result = _a.sent();\n                (0, response_1.default)(res, 200, result, \"The stat with id \".concat(id, \" has been removed \\u2639\\uFE0F\"));\n                return [3 /*break*/, 3];\n            case 2:\n                error_4 = _a.sent();\n                next(error_4);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nexports[\"default\"] = route;\n\n\n//# sourceURL=webpack://wilmion-api/./src/controllers/stats.controller.ts?");
 
 /***/ }),
 
-/***/ 446:
+/***/ "./src/controllers/tags.controller.ts":
+/*!********************************************!*\
+  !*** ./src/controllers/tags.controller.ts ***!
+  \********************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var express_1 = __webpack_require__(6860);
-var passport_1 = __importDefault(__webpack_require__(3511));
-var validator_middleware_1 = __webpack_require__(7058);
-var authorization_middleware_1 = __webpack_require__(9683);
-var global_joi_1 = __webpack_require__(8589);
-var tag_joi_1 = __webpack_require__(1015);
-var tags_service_1 = __webpack_require__(2837);
-var response_1 = __importDefault(__webpack_require__(178));
-var route = (0, express_1.Router)();
-var service = new tags_service_1.TagsService();
-route.get("/", (0, validator_middleware_1.validateHandler)(global_joi_1.querySchema, "query"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var _a, limit, offset, data, error_1;
-    return __generator(this, function (_b) {
-        switch (_b.label) {
-            case 0:
-                _b.trys.push([0, 2, , 3]);
-                _a = req.query, limit = _a.limit, offset = _a.offset;
-                return [4 /*yield*/, service.getAll(limit, offset)];
-            case 1:
-                data = _b.sent();
-                (0, response_1.default)(res, 200, data, "The data traveled successfull");
-                return [3 /*break*/, 3];
-            case 2:
-                error_1 = _b.sent();
-                next(error_1);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.get("/:id", (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, "params"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, data, error_2;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                id = req.params.id;
-                return [4 /*yield*/, service.getById(id)];
-            case 1:
-                data = _a.sent();
-                (0, response_1.default)(res, 200, data, "The data traveled successfull");
-                return [3 /*break*/, 3];
-            case 2:
-                error_2 = _a.sent();
-                next(error_2);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.post("/", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)(tag_joi_1.tagSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var body, result, error_3;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                body = req.body;
-                return [4 /*yield*/, service.create(body)];
-            case 1:
-                result = _a.sent();
-                (0, response_1.default)(res, 201, result, "The tag was created successfull 🏷️");
-                return [3 /*break*/, 3];
-            case 2:
-                error_3 = _a.sent();
-                next(error_3);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.patch("/:id", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, "params"), (0, validator_middleware_1.validateHandler)(tag_joi_1.UpdateTagSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, body, result, error_4;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                id = req.params.id;
-                body = req.body;
-                return [4 /*yield*/, service.update(body, id)];
-            case 1:
-                result = _a.sent();
-                (0, response_1.default)(res, 200, result, "The tag was updated successfull 🏷️🔁");
-                return [3 /*break*/, 3];
-            case 2:
-                error_4 = _a.sent();
-                next(error_4);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.delete("/:id", passport_1.default.authenticate("jwt", { session: false }), (0, authorization_middleware_1.validatePermision)(["admin"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, "params"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, data, error_5;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                id = req.params.id;
-                return [4 /*yield*/, service.delete(id)];
-            case 1:
-                data = _a.sent();
-                (0, response_1.default)(res, 200, data, "Remove successfully");
-                return [3 /*break*/, 3];
-            case 2:
-                error_5 = _a.sent();
-                next(error_5);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-exports["default"] = route;
-
+eval("\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar express_1 = __webpack_require__(/*! express */ \"express\");\nvar passport_1 = __importDefault(__webpack_require__(/*! passport */ \"passport\"));\nvar validator_middleware_1 = __webpack_require__(/*! @middlewares/validator.middleware */ \"./src/middlewares/validator.middleware.ts\");\nvar authorization_middleware_1 = __webpack_require__(/*! @middlewares/authorization.middleware */ \"./src/middlewares/authorization.middleware.ts\");\nvar global_joi_1 = __webpack_require__(/*! @Joi/global.joi */ \"./src/Joi/global.joi.ts\");\nvar tag_joi_1 = __webpack_require__(/*! @Joi/tag.joi */ \"./src/Joi/tag.joi.ts\");\nvar tags_service_1 = __webpack_require__(/*! @services/tags.service */ \"./src/services/tags.service.ts\");\nvar response_1 = __importDefault(__webpack_require__(/*! @utils/response */ \"./src/utils/response.ts\"));\nvar route = (0, express_1.Router)();\nvar service = new tags_service_1.TagsService();\nroute.get(\"/\", (0, validator_middleware_1.validateHandler)(global_joi_1.querySchema, \"query\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var _a, limit, offset, data, error_1;\n    return __generator(this, function (_b) {\n        switch (_b.label) {\n            case 0:\n                _b.trys.push([0, 2, , 3]);\n                _a = req.query, limit = _a.limit, offset = _a.offset;\n                return [4 /*yield*/, service.getAll(limit, offset)];\n            case 1:\n                data = _b.sent();\n                (0, response_1.default)(res, 200, data, \"The data traveled successfull\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_1 = _b.sent();\n                next(error_1);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.get(\"/:id\", (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, \"params\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var id, data, error_2;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                id = req.params.id;\n                return [4 /*yield*/, service.getById(id)];\n            case 1:\n                data = _a.sent();\n                (0, response_1.default)(res, 200, data, \"The data traveled successfull\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_2 = _a.sent();\n                next(error_2);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.post(\"/\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)(tag_joi_1.tagSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var body, result, error_3;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                body = req.body;\n                return [4 /*yield*/, service.create(body)];\n            case 1:\n                result = _a.sent();\n                (0, response_1.default)(res, 201, result, \"The tag was created successfull 🏷️\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_3 = _a.sent();\n                next(error_3);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.patch(\"/:id\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, \"params\"), (0, validator_middleware_1.validateHandler)(tag_joi_1.UpdateTagSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var id, body, result, error_4;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                id = req.params.id;\n                body = req.body;\n                return [4 /*yield*/, service.update(body, id)];\n            case 1:\n                result = _a.sent();\n                (0, response_1.default)(res, 200, result, \"The tag was updated successfull 🏷️🔁\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_4 = _a.sent();\n                next(error_4);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.delete(\"/:id\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, authorization_middleware_1.validatePermision)([\"admin\"]), (0, validator_middleware_1.validateHandler)({ id: global_joi_1.idSchema.required() }, \"params\"), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var id, data, error_5;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                id = req.params.id;\n                return [4 /*yield*/, service.delete(id)];\n            case 1:\n                data = _a.sent();\n                (0, response_1.default)(res, 200, data, \"Remove successfully\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_5 = _a.sent();\n                next(error_5);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nexports[\"default\"] = route;\n\n\n//# sourceURL=webpack://wilmion-api/./src/controllers/tags.controller.ts?");
 
 /***/ }),
 
-/***/ 3630:
+/***/ "./src/controllers/users.controller.ts":
+/*!*********************************************!*\
+  !*** ./src/controllers/users.controller.ts ***!
+  \*********************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var express_1 = __webpack_require__(6860);
-var passport_1 = __importDefault(__webpack_require__(3511));
-var validator_middleware_1 = __webpack_require__(7058);
-var user_joi_1 = __webpack_require__(3447);
-var users_service_1 = __webpack_require__(5099);
-var response_1 = __importDefault(__webpack_require__(178));
-var route = (0, express_1.Router)();
-var service = new users_service_1.UsersService();
-route.get("/get-my-account", passport_1.default.authenticate("jwt", { session: false }), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var token, data, e_1;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                token = req.user;
-                return [4 /*yield*/, service.getById(token.id)];
-            case 1:
-                data = _a.sent();
-                (0, response_1.default)(res, 200, data, "This is your user's profile");
-                return [3 /*break*/, 3];
-            case 2:
-                e_1 = _a.sent();
-                next(e_1);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.post("/register", (0, validator_middleware_1.validateHandler)(user_joi_1.UserSchenma), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var body, user, err_1;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                body = req.body;
-                return [4 /*yield*/, service.create(body)];
-            case 1:
-                user = _a.sent();
-                (0, response_1.default)(res, 201, user, "Register was successfull");
-                return [3 /*break*/, 3];
-            case 2:
-                err_1 = _a.sent();
-                next(err_1);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.post("/login", (0, validator_middleware_1.validateHandler)(user_joi_1.loginSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var body, data, err_2;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                body = req.body;
-                return [4 /*yield*/, service.login(body)];
-            case 1:
-                data = _a.sent();
-                (0, response_1.default)(res, 200, data, "Login successfuly");
-                return [3 /*break*/, 3];
-            case 2:
-                err_2 = _a.sent();
-                next(err_2);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.patch("/", passport_1.default.authenticate("jwt", { session: false }), (0, validator_middleware_1.validateHandler)(user_joi_1.UserUpdateSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var token, id, body, data, error_1;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                token = req.user;
-                id = token.id;
-                body = req.body;
-                return [4 /*yield*/, service.update(id, body)];
-            case 1:
-                data = _a.sent();
-                (0, response_1.default)(res, 200, data, "User updated successfully");
-                return [3 /*break*/, 3];
-            case 2:
-                error_1 = _a.sent();
-                next(error_1);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.post("/change-email", function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var payload, err_3;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                return [4 /*yield*/, service.changeEmail()];
-            case 1:
-                payload = _a.sent();
-                (0, response_1.default)(res, 200, payload, payload);
-                return [3 /*break*/, 3];
-            case 2:
-                err_3 = _a.sent();
-                next(err_3);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.post("/change-password", passport_1.default.authenticate("jwt", { session: false }), (0, validator_middleware_1.validateHandler)(user_joi_1.updatePasswordSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var token, id, body, payload, err_4;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                token = req.user;
-                id = token.id;
-                body = req.body;
-                return [4 /*yield*/, service.changePassword(body.oldPassword, body.newPassword, id)];
-            case 1:
-                payload = _a.sent();
-                (0, response_1.default)(res, 200, payload, "Your password are updated now");
-                return [3 /*break*/, 3];
-            case 2:
-                err_4 = _a.sent();
-                next(err_4);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-route.delete("/", passport_1.default.authenticate("jwt", { session: false }), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var token, id, payload, err_5;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                token = req.user;
-                id = token.id;
-                return [4 /*yield*/, service.delete(id)];
-            case 1:
-                payload = _a.sent();
-                (0, response_1.default)(res, 200, payload, "Desactivate your account.");
-                return [3 /*break*/, 3];
-            case 2:
-                err_5 = _a.sent();
-                next(err_5);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-exports["default"] = route;
-
+eval("\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar express_1 = __webpack_require__(/*! express */ \"express\");\nvar passport_1 = __importDefault(__webpack_require__(/*! passport */ \"passport\"));\nvar validator_middleware_1 = __webpack_require__(/*! @middlewares/validator.middleware */ \"./src/middlewares/validator.middleware.ts\");\nvar user_joi_1 = __webpack_require__(/*! @Joi/user.joi */ \"./src/Joi/user.joi.ts\");\nvar users_service_1 = __webpack_require__(/*! @services/users.service */ \"./src/services/users.service.ts\");\nvar response_1 = __importDefault(__webpack_require__(/*! @utils/response */ \"./src/utils/response.ts\"));\nvar route = (0, express_1.Router)();\nvar service = new users_service_1.UsersService();\nroute.get(\"/get-my-account\", passport_1.default.authenticate(\"jwt\", { session: false }), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var token, data, e_1;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                token = req.user;\n                return [4 /*yield*/, service.getById(token.id)];\n            case 1:\n                data = _a.sent();\n                (0, response_1.default)(res, 200, data, \"This is your user's profile\");\n                return [3 /*break*/, 3];\n            case 2:\n                e_1 = _a.sent();\n                next(e_1);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.post(\"/register\", (0, validator_middleware_1.validateHandler)(user_joi_1.UserSchenma), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var body, user, err_1;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                body = req.body;\n                return [4 /*yield*/, service.create(body)];\n            case 1:\n                user = _a.sent();\n                (0, response_1.default)(res, 201, user, \"Register was successfull\");\n                return [3 /*break*/, 3];\n            case 2:\n                err_1 = _a.sent();\n                next(err_1);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.post(\"/login\", (0, validator_middleware_1.validateHandler)(user_joi_1.loginSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var body, data, err_2;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                body = req.body;\n                return [4 /*yield*/, service.login(body)];\n            case 1:\n                data = _a.sent();\n                (0, response_1.default)(res, 200, data, \"Login successfuly\");\n                return [3 /*break*/, 3];\n            case 2:\n                err_2 = _a.sent();\n                next(err_2);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.patch(\"/\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, validator_middleware_1.validateHandler)(user_joi_1.UserUpdateSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var token, id, body, data, error_1;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                token = req.user;\n                id = token.id;\n                body = req.body;\n                return [4 /*yield*/, service.update(id, body)];\n            case 1:\n                data = _a.sent();\n                (0, response_1.default)(res, 200, data, \"User updated successfully\");\n                return [3 /*break*/, 3];\n            case 2:\n                error_1 = _a.sent();\n                next(error_1);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.post(\"/change-email\", function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var payload, err_3;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                return [4 /*yield*/, service.changeEmail()];\n            case 1:\n                payload = _a.sent();\n                (0, response_1.default)(res, 200, payload, payload);\n                return [3 /*break*/, 3];\n            case 2:\n                err_3 = _a.sent();\n                next(err_3);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.post(\"/change-password\", passport_1.default.authenticate(\"jwt\", { session: false }), (0, validator_middleware_1.validateHandler)(user_joi_1.updatePasswordSchema), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var token, id, body, payload, err_4;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                token = req.user;\n                id = token.id;\n                body = req.body;\n                return [4 /*yield*/, service.changePassword(body.oldPassword, body.newPassword, id)];\n            case 1:\n                payload = _a.sent();\n                (0, response_1.default)(res, 200, payload, \"Your password are updated now\");\n                return [3 /*break*/, 3];\n            case 2:\n                err_4 = _a.sent();\n                next(err_4);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nroute.delete(\"/\", passport_1.default.authenticate(\"jwt\", { session: false }), function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {\n    var token, id, payload, err_5;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                token = req.user;\n                id = token.id;\n                return [4 /*yield*/, service.delete(id)];\n            case 1:\n                payload = _a.sent();\n                (0, response_1.default)(res, 200, payload, \"Desactivate your account.\");\n                return [3 /*break*/, 3];\n            case 2:\n                err_5 = _a.sent();\n                next(err_5);\n                return [3 /*break*/, 3];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\nexports[\"default\"] = route;\n\n\n//# sourceURL=webpack://wilmion-api/./src/controllers/users.controller.ts?");
 
 /***/ }),
 
-/***/ 681:
+/***/ "./src/db/connection.ts":
+/*!******************************!*\
+  !*** ./src/db/connection.ts ***!
+  \******************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.connection = exports.ConnectionLib = void 0;
-var typeorm_1 = __webpack_require__(5250);
-var index_1 = __importDefault(__webpack_require__(2275));
-var entities_1 = __importDefault(__webpack_require__(2751));
-var ConnectionLib = /** @class */ (function () {
-    function ConnectionLib() {
-        this.options = {
-            type: "postgres",
-            url: index_1.default.typeorm.url,
-            synchronize: false,
-            entities: entities_1.default,
-            logging: true,
-        };
-        this.connect();
-    }
-    ConnectionLib.prototype.getSsl = function () {
-        if (index_1.default.mode === "PROD") {
-            return {
-                ssl: {
-                    rejectUnauthorized: false,
-                },
-            };
-        }
-        return {};
-    };
-    ConnectionLib.prototype.connect = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var _a;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
-                    case 0:
-                        _a = this;
-                        return [4 /*yield*/, (0, typeorm_1.createConnection)(__assign(__assign({}, this.options), this.getSsl()))];
-                    case 1:
-                        _a._db = _b.sent();
-                        return [2 /*return*/, this._db];
-                }
-            });
-        });
-    };
-    Object.defineProperty(ConnectionLib.prototype, "db", {
-        get: function () {
-            if (!this._db)
-                return this.connect();
-            return this._db;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    return ConnectionLib;
-}());
-exports.ConnectionLib = ConnectionLib;
-exports.connection = new ConnectionLib();
-
+eval("\nvar __assign = (this && this.__assign) || function () {\n    __assign = Object.assign || function(t) {\n        for (var s, i = 1, n = arguments.length; i < n; i++) {\n            s = arguments[i];\n            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))\n                t[p] = s[p];\n        }\n        return t;\n    };\n    return __assign.apply(this, arguments);\n};\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.connection = exports.ConnectionLib = void 0;\nvar typeorm_1 = __webpack_require__(/*! typeorm */ \"typeorm\");\nvar index_1 = __importDefault(__webpack_require__(/*! @config/index */ \"./src/config/index.ts\"));\nvar entities_1 = __importDefault(__webpack_require__(/*! ./entities */ \"./src/db/entities.ts\"));\nvar ConnectionLib = /** @class */ (function () {\n    function ConnectionLib() {\n        this.options = {\n            type: \"postgres\",\n            url: index_1.default.typeorm.url,\n            synchronize: false,\n            entities: entities_1.default,\n            logging: true,\n        };\n        this.connect();\n    }\n    ConnectionLib.prototype.getSsl = function () {\n        if (index_1.default.mode === \"PROD\") {\n            return {\n                ssl: {\n                    rejectUnauthorized: false,\n                },\n            };\n        }\n        return {};\n    };\n    ConnectionLib.prototype.connect = function () {\n        return __awaiter(this, void 0, void 0, function () {\n            var _a;\n            return __generator(this, function (_b) {\n                switch (_b.label) {\n                    case 0:\n                        _a = this;\n                        return [4 /*yield*/, (0, typeorm_1.createConnection)(__assign(__assign({}, this.options), this.getSsl()))];\n                    case 1:\n                        _a._db = _b.sent();\n                        return [2 /*return*/, this._db];\n                }\n            });\n        });\n    };\n    Object.defineProperty(ConnectionLib.prototype, \"db\", {\n        get: function () {\n            if (!this._db)\n                return this.connect();\n            return this._db;\n        },\n        enumerable: false,\n        configurable: true\n    });\n    return ConnectionLib;\n}());\nexports.ConnectionLib = ConnectionLib;\nexports.connection = new ConnectionLib();\n\n\n//# sourceURL=webpack://wilmion-api/./src/db/connection.ts?");
 
 /***/ }),
 
-/***/ 2751:
+/***/ "./src/db/entities.ts":
+/*!****************************!*\
+  !*** ./src/db/entities.ts ***!
+  \****************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var tag_entity_1 = __webpack_require__(9074);
-var stats_entity_1 = __webpack_require__(5642);
-var staticContents_entity_1 = __webpack_require__(4318);
-var socialMedia_entity_1 = __webpack_require__(9196);
-var image_entity_1 = __webpack_require__(6488);
-var user_entity_1 = __webpack_require__(7052);
-var project_entity_1 = __webpack_require__(4971);
-var job_entity_1 = __webpack_require__(4352);
-var skill_entity_1 = __webpack_require__(4472);
-var content_entity_1 = __webpack_require__(8416);
-var post_entity_1 = __webpack_require__(1091);
-var ip_entity_1 = __webpack_require__(7229);
-var datePostWithIps_entity_1 = __webpack_require__(7579);
-var entities = [
-    tag_entity_1.Tag,
-    socialMedia_entity_1.SocialMedia,
-    staticContents_entity_1.StaticContent,
-    stats_entity_1.Stat,
-    image_entity_1.Image,
-    user_entity_1.User,
-    project_entity_1.Project,
-    job_entity_1.Job,
-    post_entity_1.Post,
-    content_entity_1.Content,
-    skill_entity_1.Skill,
-    ip_entity_1.IPUser,
-    datePostWithIps_entity_1.DatePostWithIps,
-];
-exports["default"] = entities;
-
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar tag_entity_1 = __webpack_require__(/*! @entities/tag.entity */ \"./src/entities/tag.entity.ts\");\nvar stats_entity_1 = __webpack_require__(/*! @entities/stats.entity */ \"./src/entities/stats.entity.ts\");\nvar staticContents_entity_1 = __webpack_require__(/*! @entities/staticContents.entity */ \"./src/entities/staticContents.entity.ts\");\nvar socialMedia_entity_1 = __webpack_require__(/*! @entities/socialMedia.entity */ \"./src/entities/socialMedia.entity.ts\");\nvar image_entity_1 = __webpack_require__(/*! @entities/image.entity */ \"./src/entities/image.entity.ts\");\nvar user_entity_1 = __webpack_require__(/*! @entities/user.entity */ \"./src/entities/user.entity.ts\");\nvar project_entity_1 = __webpack_require__(/*! @entities/project.entity */ \"./src/entities/project.entity.ts\");\nvar job_entity_1 = __webpack_require__(/*! @entities/job.entity */ \"./src/entities/job.entity.ts\");\nvar skill_entity_1 = __webpack_require__(/*! @entities/skill.entity */ \"./src/entities/skill.entity.ts\");\nvar content_entity_1 = __webpack_require__(/*! @entities/content.entity */ \"./src/entities/content.entity.ts\");\nvar post_entity_1 = __webpack_require__(/*! @entities/post.entity */ \"./src/entities/post.entity.ts\");\nvar ip_entity_1 = __webpack_require__(/*! @entities/ip.entity */ \"./src/entities/ip.entity.ts\");\nvar datePostWithIps_entity_1 = __webpack_require__(/*! @entities/datePostWithIps.entity */ \"./src/entities/datePostWithIps.entity.ts\");\nvar entities = [\n    tag_entity_1.Tag,\n    socialMedia_entity_1.SocialMedia,\n    staticContents_entity_1.StaticContent,\n    stats_entity_1.Stat,\n    image_entity_1.Image,\n    user_entity_1.User,\n    project_entity_1.Project,\n    job_entity_1.Job,\n    post_entity_1.Post,\n    content_entity_1.Content,\n    skill_entity_1.Skill,\n    ip_entity_1.IPUser,\n    datePostWithIps_entity_1.DatePostWithIps,\n];\nexports[\"default\"] = entities;\n\n\n//# sourceURL=webpack://wilmion-api/./src/db/entities.ts?");
 
 /***/ }),
 
-/***/ 8416:
+/***/ "./src/entities/content.entity.ts":
+/*!****************************************!*\
+  !*** ./src/entities/content.entity.ts ***!
+  \****************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.Content = exports.TypeContent = void 0;
-var typeorm_1 = __webpack_require__(5250);
-var post_entity_1 = __webpack_require__(1091);
-var image_entity_1 = __webpack_require__(6488);
-var TypeContent;
-(function (TypeContent) {
-    TypeContent["subtitle"] = "SUBTITLE";
-    TypeContent["paragraph"] = "PARAGRAPH";
-    TypeContent["listForPoint"] = "LIST-FOR-POINT";
-    TypeContent["listForNumbers"] = "LIST-FOR-NUMBERS";
-    TypeContent["code"] = "CODE";
-    TypeContent["image"] = "IMAGE";
-})(TypeContent = exports.TypeContent || (exports.TypeContent = {}));
-var Content = /** @class */ (function () {
-    function Content() {
-    }
-    __decorate([
-        (0, typeorm_1.PrimaryGeneratedColumn)(),
-        __metadata("design:type", String)
-    ], Content.prototype, "id", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "enum",
-            enum: TypeContent,
-            nullable: false,
-        }),
-        __metadata("design:type", String)
-    ], Content.prototype, "type", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "int",
-            name: "order_number",
-            nullable: false,
-        }),
-        __metadata("design:type", Number)
-    ], Content.prototype, "orderNumber", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            nullable: false,
-        }),
-        __metadata("design:type", String)
-    ], Content.prototype, "content", void 0);
-    __decorate([
-        (0, typeorm_1.ManyToOne)("images", "contents"),
-        (0, typeorm_1.JoinColumn)(),
-        __metadata("design:type", image_entity_1.Image)
-    ], Content.prototype, "image", void 0);
-    __decorate([
-        (0, typeorm_1.ManyToOne)("posts", "contents"),
-        __metadata("design:type", post_entity_1.Post)
-    ], Content.prototype, "post", void 0);
-    Content = __decorate([
-        (0, typeorm_1.Entity)({ name: "contents" })
-    ], Content);
-    return Content;
-}());
-exports.Content = Content;
-
+eval("\nvar __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\n};\nvar __metadata = (this && this.__metadata) || function (k, v) {\n    if (typeof Reflect === \"object\" && typeof Reflect.metadata === \"function\") return Reflect.metadata(k, v);\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.Content = exports.TypeContent = void 0;\nvar typeorm_1 = __webpack_require__(/*! typeorm */ \"typeorm\");\nvar post_entity_1 = __webpack_require__(/*! ./post.entity */ \"./src/entities/post.entity.ts\");\nvar image_entity_1 = __webpack_require__(/*! ./image.entity */ \"./src/entities/image.entity.ts\");\nvar TypeContent;\n(function (TypeContent) {\n    TypeContent[\"subtitle\"] = \"SUBTITLE\";\n    TypeContent[\"paragraph\"] = \"PARAGRAPH\";\n    TypeContent[\"listForPoint\"] = \"LIST-FOR-POINT\";\n    TypeContent[\"listForNumbers\"] = \"LIST-FOR-NUMBERS\";\n    TypeContent[\"code\"] = \"CODE\";\n    TypeContent[\"image\"] = \"IMAGE\";\n})(TypeContent = exports.TypeContent || (exports.TypeContent = {}));\nvar Content = /** @class */ (function () {\n    function Content() {\n    }\n    __decorate([\n        (0, typeorm_1.PrimaryGeneratedColumn)(),\n        __metadata(\"design:type\", String)\n    ], Content.prototype, \"id\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"enum\",\n            enum: TypeContent,\n            nullable: false,\n        }),\n        __metadata(\"design:type\", String)\n    ], Content.prototype, \"type\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"int\",\n            name: \"order_number\",\n            nullable: false,\n        }),\n        __metadata(\"design:type\", Number)\n    ], Content.prototype, \"orderNumber\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            nullable: false,\n        }),\n        __metadata(\"design:type\", String)\n    ], Content.prototype, \"content\", void 0);\n    __decorate([\n        (0, typeorm_1.ManyToOne)(\"images\", \"contents\"),\n        (0, typeorm_1.JoinColumn)(),\n        __metadata(\"design:type\", image_entity_1.Image)\n    ], Content.prototype, \"image\", void 0);\n    __decorate([\n        (0, typeorm_1.ManyToOne)(\"posts\", \"contents\"),\n        __metadata(\"design:type\", post_entity_1.Post)\n    ], Content.prototype, \"post\", void 0);\n    Content = __decorate([\n        (0, typeorm_1.Entity)({ name: \"contents\" })\n    ], Content);\n    return Content;\n}());\nexports.Content = Content;\n\n\n//# sourceURL=webpack://wilmion-api/./src/entities/content.entity.ts?");
 
 /***/ }),
 
-/***/ 7579:
+/***/ "./src/entities/datePostWithIps.entity.ts":
+/*!************************************************!*\
+  !*** ./src/entities/datePostWithIps.entity.ts ***!
+  \************************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.DatePostWithIps = void 0;
-var typeorm_1 = __webpack_require__(5250);
-var ip_entity_1 = __webpack_require__(7229);
-var post_entity_1 = __webpack_require__(1091);
-var DatePostWithIps = /** @class */ (function () {
-    function DatePostWithIps() {
-    }
-    __decorate([
-        (0, typeorm_1.PrimaryGeneratedColumn)(),
-        __metadata("design:type", String)
-    ], DatePostWithIps.prototype, "id", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "timestamptz",
-            default: new Date(),
-            nullable: false,
-        }),
-        __metadata("design:type", Date)
-    ], DatePostWithIps.prototype, "lastView", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "int",
-            default: 0,
-            nullable: false,
-        }),
-        __metadata("design:type", Number)
-    ], DatePostWithIps.prototype, "quantityViews", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "boolean",
-            default: false,
-            nullable: false,
-        }),
-        __metadata("design:type", Boolean)
-    ], DatePostWithIps.prototype, "likedPost", void 0);
-    __decorate([
-        (0, typeorm_1.ManyToOne)("posts", "datePostWithIps"),
-        (0, typeorm_1.JoinColumn)(),
-        __metadata("design:type", post_entity_1.Post)
-    ], DatePostWithIps.prototype, "post", void 0);
-    __decorate([
-        (0, typeorm_1.ManyToOne)("ips_user", "datePostWithIps"),
-        (0, typeorm_1.JoinColumn)(),
-        __metadata("design:type", ip_entity_1.IPUser)
-    ], DatePostWithIps.prototype, "ip", void 0);
-    DatePostWithIps = __decorate([
-        (0, typeorm_1.Entity)({ name: "date_posts_with_ips" })
-    ], DatePostWithIps);
-    return DatePostWithIps;
-}());
-exports.DatePostWithIps = DatePostWithIps;
-
+eval("\nvar __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\n};\nvar __metadata = (this && this.__metadata) || function (k, v) {\n    if (typeof Reflect === \"object\" && typeof Reflect.metadata === \"function\") return Reflect.metadata(k, v);\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.DatePostWithIps = void 0;\nvar typeorm_1 = __webpack_require__(/*! typeorm */ \"typeorm\");\nvar ip_entity_1 = __webpack_require__(/*! ./ip.entity */ \"./src/entities/ip.entity.ts\");\nvar post_entity_1 = __webpack_require__(/*! ./post.entity */ \"./src/entities/post.entity.ts\");\nvar DatePostWithIps = /** @class */ (function () {\n    function DatePostWithIps() {\n    }\n    __decorate([\n        (0, typeorm_1.PrimaryGeneratedColumn)(),\n        __metadata(\"design:type\", String)\n    ], DatePostWithIps.prototype, \"id\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"timestamptz\",\n            default: new Date(),\n            nullable: false,\n        }),\n        __metadata(\"design:type\", Date)\n    ], DatePostWithIps.prototype, \"lastView\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"int\",\n            default: 0,\n            nullable: false,\n        }),\n        __metadata(\"design:type\", Number)\n    ], DatePostWithIps.prototype, \"quantityViews\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"boolean\",\n            default: false,\n            nullable: false,\n        }),\n        __metadata(\"design:type\", Boolean)\n    ], DatePostWithIps.prototype, \"likedPost\", void 0);\n    __decorate([\n        (0, typeorm_1.ManyToOne)(\"posts\", \"datePostWithIps\"),\n        (0, typeorm_1.JoinColumn)(),\n        __metadata(\"design:type\", post_entity_1.Post)\n    ], DatePostWithIps.prototype, \"post\", void 0);\n    __decorate([\n        (0, typeorm_1.ManyToOne)(\"ips_user\", \"datePostWithIps\"),\n        (0, typeorm_1.JoinColumn)(),\n        __metadata(\"design:type\", ip_entity_1.IPUser)\n    ], DatePostWithIps.prototype, \"ip\", void 0);\n    DatePostWithIps = __decorate([\n        (0, typeorm_1.Entity)({ name: \"date_posts_with_ips\" })\n    ], DatePostWithIps);\n    return DatePostWithIps;\n}());\nexports.DatePostWithIps = DatePostWithIps;\n\n\n//# sourceURL=webpack://wilmion-api/./src/entities/datePostWithIps.entity.ts?");
 
 /***/ }),
 
-/***/ 6488:
+/***/ "./src/entities/image.entity.ts":
+/*!**************************************!*\
+  !*** ./src/entities/image.entity.ts ***!
+  \**************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.Image = void 0;
-var typeorm_1 = __webpack_require__(5250);
-var content_entity_1 = __webpack_require__(8416);
-var job_entity_1 = __webpack_require__(4352);
-var project_entity_1 = __webpack_require__(4971);
-var skill_entity_1 = __webpack_require__(4472);
-var user_entity_1 = __webpack_require__(7052);
-var Image = /** @class */ (function () {
-    function Image() {
-    }
-    __decorate([
-        (0, typeorm_1.PrimaryGeneratedColumn)(),
-        __metadata("design:type", String)
-    ], Image.prototype, "id", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({ type: "varchar", nullable: false, name: "image_url" }),
-        __metadata("design:type", String)
-    ], Image.prototype, "imageUrl", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({ type: "varchar", nullable: false }),
-        __metadata("design:type", String)
-    ], Image.prototype, "size", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({ type: "varchar", nullable: false }),
-        __metadata("design:type", String)
-    ], Image.prototype, "resolution", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            nullable: false,
-            unique: true,
-        }),
-        __metadata("design:type", String)
-    ], Image.prototype, "md5", void 0);
-    __decorate([
-        (0, typeorm_1.OneToMany)("contents", "image", { nullable: true }),
-        __metadata("design:type", content_entity_1.Content)
-    ], Image.prototype, "contents", void 0);
-    __decorate([
-        (0, typeorm_1.OneToMany)("jobs", "image", { nullable: true }),
-        __metadata("design:type", job_entity_1.Job)
-    ], Image.prototype, "jobs", void 0);
-    __decorate([
-        (0, typeorm_1.OneToMany)("projects", "image", { nullable: true }),
-        __metadata("design:type", project_entity_1.Project)
-    ], Image.prototype, "projects", void 0);
-    __decorate([
-        (0, typeorm_1.OneToMany)("skills", "image", { nullable: true }),
-        __metadata("design:type", skill_entity_1.Skill)
-    ], Image.prototype, "skills", void 0);
-    __decorate([
-        (0, typeorm_1.OneToMany)("users", "image", { nullable: true }),
-        __metadata("design:type", user_entity_1.User)
-    ], Image.prototype, "users", void 0);
-    Image = __decorate([
-        (0, typeorm_1.Entity)({ name: "images" })
-    ], Image);
-    return Image;
-}());
-exports.Image = Image;
-
+eval("\nvar __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\n};\nvar __metadata = (this && this.__metadata) || function (k, v) {\n    if (typeof Reflect === \"object\" && typeof Reflect.metadata === \"function\") return Reflect.metadata(k, v);\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.Image = void 0;\nvar typeorm_1 = __webpack_require__(/*! typeorm */ \"typeorm\");\nvar content_entity_1 = __webpack_require__(/*! ./content.entity */ \"./src/entities/content.entity.ts\");\nvar job_entity_1 = __webpack_require__(/*! ./job.entity */ \"./src/entities/job.entity.ts\");\nvar project_entity_1 = __webpack_require__(/*! ./project.entity */ \"./src/entities/project.entity.ts\");\nvar skill_entity_1 = __webpack_require__(/*! ./skill.entity */ \"./src/entities/skill.entity.ts\");\nvar user_entity_1 = __webpack_require__(/*! ./user.entity */ \"./src/entities/user.entity.ts\");\nvar Image = /** @class */ (function () {\n    function Image() {\n    }\n    __decorate([\n        (0, typeorm_1.PrimaryGeneratedColumn)(),\n        __metadata(\"design:type\", String)\n    ], Image.prototype, \"id\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({ type: \"varchar\", nullable: false, name: \"image_url\" }),\n        __metadata(\"design:type\", String)\n    ], Image.prototype, \"imageUrl\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({ type: \"varchar\", nullable: false }),\n        __metadata(\"design:type\", String)\n    ], Image.prototype, \"size\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({ type: \"varchar\", nullable: false }),\n        __metadata(\"design:type\", String)\n    ], Image.prototype, \"resolution\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            nullable: false,\n            unique: true,\n        }),\n        __metadata(\"design:type\", String)\n    ], Image.prototype, \"md5\", void 0);\n    __decorate([\n        (0, typeorm_1.OneToMany)(\"contents\", \"image\", { nullable: true }),\n        __metadata(\"design:type\", content_entity_1.Content)\n    ], Image.prototype, \"contents\", void 0);\n    __decorate([\n        (0, typeorm_1.OneToMany)(\"jobs\", \"image\", { nullable: true }),\n        __metadata(\"design:type\", job_entity_1.Job)\n    ], Image.prototype, \"jobs\", void 0);\n    __decorate([\n        (0, typeorm_1.OneToMany)(\"projects\", \"image\", { nullable: true }),\n        __metadata(\"design:type\", project_entity_1.Project)\n    ], Image.prototype, \"projects\", void 0);\n    __decorate([\n        (0, typeorm_1.OneToMany)(\"skills\", \"image\", { nullable: true }),\n        __metadata(\"design:type\", skill_entity_1.Skill)\n    ], Image.prototype, \"skills\", void 0);\n    __decorate([\n        (0, typeorm_1.OneToMany)(\"users\", \"image\", { nullable: true }),\n        __metadata(\"design:type\", user_entity_1.User)\n    ], Image.prototype, \"users\", void 0);\n    Image = __decorate([\n        (0, typeorm_1.Entity)({ name: \"images\" })\n    ], Image);\n    return Image;\n}());\nexports.Image = Image;\n\n\n//# sourceURL=webpack://wilmion-api/./src/entities/image.entity.ts?");
 
 /***/ }),
 
-/***/ 7229:
+/***/ "./src/entities/ip.entity.ts":
+/*!***********************************!*\
+  !*** ./src/entities/ip.entity.ts ***!
+  \***********************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.IPUser = void 0;
-var typeorm_1 = __webpack_require__(5250);
-var IPUser = /** @class */ (function () {
-    function IPUser() {
-    }
-    __decorate([
-        (0, typeorm_1.PrimaryGeneratedColumn)(),
-        __metadata("design:type", String)
-    ], IPUser.prototype, "id", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            nullable: false,
-            unique: true,
-        }),
-        __metadata("design:type", String)
-    ], IPUser.prototype, "ip", void 0);
-    __decorate([
-        (0, typeorm_1.OneToMany)("date_posts_with_ips", "ip", { nullable: true }),
-        (0, typeorm_1.JoinColumn)(),
-        __metadata("design:type", Array)
-    ], IPUser.prototype, "datePostWithIps", void 0);
-    IPUser = __decorate([
-        (0, typeorm_1.Entity)({ name: "ips_user" })
-    ], IPUser);
-    return IPUser;
-}());
-exports.IPUser = IPUser;
-
+eval("\nvar __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\n};\nvar __metadata = (this && this.__metadata) || function (k, v) {\n    if (typeof Reflect === \"object\" && typeof Reflect.metadata === \"function\") return Reflect.metadata(k, v);\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.IPUser = void 0;\nvar typeorm_1 = __webpack_require__(/*! typeorm */ \"typeorm\");\nvar IPUser = /** @class */ (function () {\n    function IPUser() {\n    }\n    __decorate([\n        (0, typeorm_1.PrimaryGeneratedColumn)(),\n        __metadata(\"design:type\", String)\n    ], IPUser.prototype, \"id\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            nullable: false,\n            unique: true,\n        }),\n        __metadata(\"design:type\", String)\n    ], IPUser.prototype, \"ip\", void 0);\n    __decorate([\n        (0, typeorm_1.OneToMany)(\"date_posts_with_ips\", \"ip\", { nullable: true }),\n        (0, typeorm_1.JoinColumn)(),\n        __metadata(\"design:type\", Array)\n    ], IPUser.prototype, \"datePostWithIps\", void 0);\n    IPUser = __decorate([\n        (0, typeorm_1.Entity)({ name: \"ips_user\" })\n    ], IPUser);\n    return IPUser;\n}());\nexports.IPUser = IPUser;\n\n\n//# sourceURL=webpack://wilmion-api/./src/entities/ip.entity.ts?");
 
 /***/ }),
 
-/***/ 4352:
+/***/ "./src/entities/job.entity.ts":
+/*!************************************!*\
+  !*** ./src/entities/job.entity.ts ***!
+  \************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.Job = void 0;
-var typeorm_1 = __webpack_require__(5250);
-var image_entity_1 = __webpack_require__(6488);
-var Job = /** @class */ (function () {
-    function Job() {
-    }
-    __decorate([
-        (0, typeorm_1.PrimaryGeneratedColumn)(),
-        __metadata("design:type", String)
-    ], Job.prototype, "id", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            nullable: false,
-            name: "name_businness",
-        }),
-        __metadata("design:type", String)
-    ], Job.prototype, "nameBusinness", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            nullable: false,
-        }),
-        __metadata("design:type", String)
-    ], Job.prototype, "color", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            nullable: false,
-        }),
-        __metadata("design:type", String)
-    ], Job.prototype, "description", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "boolean",
-            nullable: false,
-        }),
-        __metadata("design:type", Boolean)
-    ], Job.prototype, "active", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            nullable: false,
-        }),
-        __metadata("design:type", String)
-    ], Job.prototype, "role", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "timestamp",
-            nullable: false,
-        }),
-        __metadata("design:type", typeorm_1.Timestamp)
-    ], Job.prototype, "from", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            nullable: false,
-        }),
-        __metadata("design:type", String)
-    ], Job.prototype, "to", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            name: "function_1",
-            nullable: true,
-        }),
-        __metadata("design:type", String)
-    ], Job.prototype, "function1", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            name: "function_2",
-            nullable: true,
-        }),
-        __metadata("design:type", String)
-    ], Job.prototype, "function2", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            name: "function_3",
-            nullable: true,
-        }),
-        __metadata("design:type", String)
-    ], Job.prototype, "function3", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            name: "function_4",
-            nullable: true,
-        }),
-        __metadata("design:type", String)
-    ], Job.prototype, "function4", void 0);
-    __decorate([
-        (0, typeorm_1.ManyToOne)("images", "jobs") //need
-        ,
-        __metadata("design:type", image_entity_1.Image)
-    ], Job.prototype, "image", void 0);
-    Job = __decorate([
-        (0, typeorm_1.Entity)({ name: "jobs" })
-    ], Job);
-    return Job;
-}());
-exports.Job = Job;
-
+eval("\nvar __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\n};\nvar __metadata = (this && this.__metadata) || function (k, v) {\n    if (typeof Reflect === \"object\" && typeof Reflect.metadata === \"function\") return Reflect.metadata(k, v);\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.Job = void 0;\nvar typeorm_1 = __webpack_require__(/*! typeorm */ \"typeorm\");\nvar image_entity_1 = __webpack_require__(/*! ./image.entity */ \"./src/entities/image.entity.ts\");\nvar Job = /** @class */ (function () {\n    function Job() {\n    }\n    __decorate([\n        (0, typeorm_1.PrimaryGeneratedColumn)(),\n        __metadata(\"design:type\", String)\n    ], Job.prototype, \"id\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            nullable: false,\n            name: \"name_businness\",\n        }),\n        __metadata(\"design:type\", String)\n    ], Job.prototype, \"nameBusinness\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            nullable: false,\n        }),\n        __metadata(\"design:type\", String)\n    ], Job.prototype, \"color\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            nullable: false,\n        }),\n        __metadata(\"design:type\", String)\n    ], Job.prototype, \"description\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"boolean\",\n            nullable: false,\n        }),\n        __metadata(\"design:type\", Boolean)\n    ], Job.prototype, \"active\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            nullable: false,\n        }),\n        __metadata(\"design:type\", String)\n    ], Job.prototype, \"role\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"timestamp\",\n            nullable: false,\n        }),\n        __metadata(\"design:type\", typeorm_1.Timestamp)\n    ], Job.prototype, \"from\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            nullable: false,\n        }),\n        __metadata(\"design:type\", String)\n    ], Job.prototype, \"to\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            name: \"function_1\",\n            nullable: true,\n        }),\n        __metadata(\"design:type\", String)\n    ], Job.prototype, \"function1\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            name: \"function_2\",\n            nullable: true,\n        }),\n        __metadata(\"design:type\", String)\n    ], Job.prototype, \"function2\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            name: \"function_3\",\n            nullable: true,\n        }),\n        __metadata(\"design:type\", String)\n    ], Job.prototype, \"function3\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            name: \"function_4\",\n            nullable: true,\n        }),\n        __metadata(\"design:type\", String)\n    ], Job.prototype, \"function4\", void 0);\n    __decorate([\n        (0, typeorm_1.ManyToOne)(\"images\", \"jobs\") //need\n        ,\n        __metadata(\"design:type\", image_entity_1.Image)\n    ], Job.prototype, \"image\", void 0);\n    Job = __decorate([\n        (0, typeorm_1.Entity)({ name: \"jobs\" })\n    ], Job);\n    return Job;\n}());\nexports.Job = Job;\n\n\n//# sourceURL=webpack://wilmion-api/./src/entities/job.entity.ts?");
 
 /***/ }),
 
-/***/ 1091:
+/***/ "./src/entities/post.entity.ts":
+/*!*************************************!*\
+  !*** ./src/entities/post.entity.ts ***!
+  \*************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.Post = void 0;
-var typeorm_1 = __webpack_require__(5250);
-var user_entity_1 = __webpack_require__(7052);
-var Post = /** @class */ (function () {
-    function Post() {
-    }
-    __decorate([
-        (0, typeorm_1.PrimaryGeneratedColumn)(),
-        __metadata("design:type", String)
-    ], Post.prototype, "id", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            nullable: false,
-        }),
-        __metadata("design:type", String)
-    ], Post.prototype, "title", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "timestamp",
-            name: "created_at",
-            default: new Date(),
-        }),
-        __metadata("design:type", typeorm_1.Timestamp)
-    ], Post.prototype, "createdAt", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "double precision",
-            name: "time_read",
-            nullable: false,
-        }),
-        __metadata("design:type", Number)
-    ], Post.prototype, "timeRead", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "boolean",
-            default: true,
-        }),
-        __metadata("design:type", Boolean)
-    ], Post.prototype, "active", void 0);
-    __decorate([
-        (0, typeorm_1.ManyToOne)("users", "posts") // need
-        ,
-        __metadata("design:type", user_entity_1.User)
-    ], Post.prototype, "user", void 0);
-    __decorate([
-        (0, typeorm_1.OneToMany)("contents", "post") // need
-        ,
-        __metadata("design:type", Array)
-    ], Post.prototype, "contents", void 0);
-    __decorate([
-        (0, typeorm_1.OneToMany)("date_posts_with_ips", "post", { nullable: true }),
-        __metadata("design:type", Array)
-    ], Post.prototype, "datePostWithIps", void 0);
-    __decorate([
-        (0, typeorm_1.OneToMany)("stats", "post", { nullable: true }),
-        (0, typeorm_1.JoinColumn)(),
-        __metadata("design:type", Array)
-    ], Post.prototype, "stats", void 0);
-    __decorate([
-        (0, typeorm_1.ManyToMany)("tags", "posts", { nullable: true }),
-        (0, typeorm_1.JoinTable)({ name: "CONNECTION_TAGS_TO_POSTS" }),
-        __metadata("design:type", Array)
-    ], Post.prototype, "tags", void 0);
-    Post = __decorate([
-        (0, typeorm_1.Entity)({ name: "posts" })
-    ], Post);
-    return Post;
-}());
-exports.Post = Post;
-
+eval("\nvar __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\n};\nvar __metadata = (this && this.__metadata) || function (k, v) {\n    if (typeof Reflect === \"object\" && typeof Reflect.metadata === \"function\") return Reflect.metadata(k, v);\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.Post = void 0;\nvar typeorm_1 = __webpack_require__(/*! typeorm */ \"typeorm\");\nvar user_entity_1 = __webpack_require__(/*! ./user.entity */ \"./src/entities/user.entity.ts\");\nvar Post = /** @class */ (function () {\n    function Post() {\n    }\n    __decorate([\n        (0, typeorm_1.PrimaryGeneratedColumn)(),\n        __metadata(\"design:type\", String)\n    ], Post.prototype, \"id\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            nullable: false,\n        }),\n        __metadata(\"design:type\", String)\n    ], Post.prototype, \"title\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"timestamp\",\n            name: \"created_at\",\n            default: new Date(),\n        }),\n        __metadata(\"design:type\", typeorm_1.Timestamp)\n    ], Post.prototype, \"createdAt\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"double precision\",\n            name: \"time_read\",\n            nullable: false,\n        }),\n        __metadata(\"design:type\", Number)\n    ], Post.prototype, \"timeRead\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"boolean\",\n            default: true,\n        }),\n        __metadata(\"design:type\", Boolean)\n    ], Post.prototype, \"active\", void 0);\n    __decorate([\n        (0, typeorm_1.ManyToOne)(\"users\", \"posts\") // need\n        ,\n        __metadata(\"design:type\", user_entity_1.User)\n    ], Post.prototype, \"user\", void 0);\n    __decorate([\n        (0, typeorm_1.OneToMany)(\"contents\", \"post\") // need\n        ,\n        __metadata(\"design:type\", Array)\n    ], Post.prototype, \"contents\", void 0);\n    __decorate([\n        (0, typeorm_1.OneToMany)(\"date_posts_with_ips\", \"post\", { nullable: true }),\n        __metadata(\"design:type\", Array)\n    ], Post.prototype, \"datePostWithIps\", void 0);\n    __decorate([\n        (0, typeorm_1.OneToMany)(\"stats\", \"post\", { nullable: true }),\n        (0, typeorm_1.JoinColumn)(),\n        __metadata(\"design:type\", Array)\n    ], Post.prototype, \"stats\", void 0);\n    __decorate([\n        (0, typeorm_1.ManyToMany)(\"tags\", \"posts\", { nullable: true }),\n        (0, typeorm_1.JoinTable)({ name: \"CONNECTION_TAGS_TO_POSTS\" }),\n        __metadata(\"design:type\", Array)\n    ], Post.prototype, \"tags\", void 0);\n    Post = __decorate([\n        (0, typeorm_1.Entity)({ name: \"posts\" })\n    ], Post);\n    return Post;\n}());\nexports.Post = Post;\n\n\n//# sourceURL=webpack://wilmion-api/./src/entities/post.entity.ts?");
 
 /***/ }),
 
-/***/ 4971:
+/***/ "./src/entities/project.entity.ts":
+/*!****************************************!*\
+  !*** ./src/entities/project.entity.ts ***!
+  \****************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.Project = void 0;
-var typeorm_1 = __webpack_require__(5250);
-var image_entity_1 = __webpack_require__(6488);
-var Project = /** @class */ (function () {
-    function Project() {
-    }
-    __decorate([
-        (0, typeorm_1.PrimaryGeneratedColumn)(),
-        __metadata("design:type", String)
-    ], Project.prototype, "id", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            nullable: false,
-        }),
-        __metadata("design:type", String)
-    ], Project.prototype, "name", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            nullable: false,
-        }),
-        __metadata("design:type", String)
-    ], Project.prototype, "description", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            name: "link_frontend",
-            nullable: false,
-        }),
-        __metadata("design:type", String)
-    ], Project.prototype, "linkFrontend", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            name: "link_backend",
-            default: null,
-        }),
-        __metadata("design:type", String)
-    ], Project.prototype, "linkBackend", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            name: "link_blog",
-            default: null,
-        }),
-        __metadata("design:type", String)
-    ], Project.prototype, "linkBlog", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            name: "link_figma",
-            default: null,
-        }),
-        __metadata("design:type", String)
-    ], Project.prototype, "linkFigma", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            name: "link_repository",
-            nullable: false,
-        }),
-        __metadata("design:type", String)
-    ], Project.prototype, "linkRepository", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "boolean",
-            default: true,
-        }),
-        __metadata("design:type", Boolean)
-    ], Project.prototype, "active", void 0);
-    __decorate([
-        (0, typeorm_1.ManyToOne)("images", "projects") // need
-        ,
-        __metadata("design:type", image_entity_1.Image)
-    ], Project.prototype, "image", void 0);
-    __decorate([
-        (0, typeorm_1.ManyToMany)("skills", { nullable: true }),
-        (0, typeorm_1.JoinTable)({ name: "CONNECTION_PROJECTS_TO_KILLS" }),
-        __metadata("design:type", Array)
-    ], Project.prototype, "skills", void 0);
-    Project = __decorate([
-        (0, typeorm_1.Entity)({ name: "projects" })
-    ], Project);
-    return Project;
-}());
-exports.Project = Project;
-
+eval("\nvar __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\n};\nvar __metadata = (this && this.__metadata) || function (k, v) {\n    if (typeof Reflect === \"object\" && typeof Reflect.metadata === \"function\") return Reflect.metadata(k, v);\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.Project = void 0;\nvar typeorm_1 = __webpack_require__(/*! typeorm */ \"typeorm\");\nvar image_entity_1 = __webpack_require__(/*! ./image.entity */ \"./src/entities/image.entity.ts\");\nvar Project = /** @class */ (function () {\n    function Project() {\n    }\n    __decorate([\n        (0, typeorm_1.PrimaryGeneratedColumn)(),\n        __metadata(\"design:type\", String)\n    ], Project.prototype, \"id\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            nullable: false,\n        }),\n        __metadata(\"design:type\", String)\n    ], Project.prototype, \"name\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            nullable: false,\n        }),\n        __metadata(\"design:type\", String)\n    ], Project.prototype, \"description\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            name: \"link_frontend\",\n            nullable: false,\n        }),\n        __metadata(\"design:type\", String)\n    ], Project.prototype, \"linkFrontend\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            name: \"link_backend\",\n            default: null,\n        }),\n        __metadata(\"design:type\", String)\n    ], Project.prototype, \"linkBackend\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            name: \"link_blog\",\n            default: null,\n        }),\n        __metadata(\"design:type\", String)\n    ], Project.prototype, \"linkBlog\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            name: \"link_figma\",\n            default: null,\n        }),\n        __metadata(\"design:type\", String)\n    ], Project.prototype, \"linkFigma\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            name: \"link_repository\",\n            nullable: false,\n        }),\n        __metadata(\"design:type\", String)\n    ], Project.prototype, \"linkRepository\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"boolean\",\n            default: true,\n        }),\n        __metadata(\"design:type\", Boolean)\n    ], Project.prototype, \"active\", void 0);\n    __decorate([\n        (0, typeorm_1.ManyToOne)(\"images\", \"projects\") // need\n        ,\n        __metadata(\"design:type\", image_entity_1.Image)\n    ], Project.prototype, \"image\", void 0);\n    __decorate([\n        (0, typeorm_1.ManyToMany)(\"skills\", { nullable: true }),\n        (0, typeorm_1.JoinTable)({ name: \"CONNECTION_PROJECTS_TO_KILLS\" }),\n        __metadata(\"design:type\", Array)\n    ], Project.prototype, \"skills\", void 0);\n    Project = __decorate([\n        (0, typeorm_1.Entity)({ name: \"projects\" })\n    ], Project);\n    return Project;\n}());\nexports.Project = Project;\n\n\n//# sourceURL=webpack://wilmion-api/./src/entities/project.entity.ts?");
 
 /***/ }),
 
-/***/ 4472:
+/***/ "./src/entities/skill.entity.ts":
+/*!**************************************!*\
+  !*** ./src/entities/skill.entity.ts ***!
+  \**************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.Skill = void 0;
-var typeorm_1 = __webpack_require__(5250);
-var image_entity_1 = __webpack_require__(6488);
-var Skill = /** @class */ (function () {
-    function Skill() {
-    }
-    __decorate([
-        (0, typeorm_1.PrimaryGeneratedColumn)(),
-        __metadata("design:type", String)
-    ], Skill.prototype, "id", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            nullable: false,
-            unique: true,
-        }),
-        __metadata("design:type", String)
-    ], Skill.prototype, "name", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            nullable: false,
-            name: "background_color",
-        }),
-        __metadata("design:type", String)
-    ], Skill.prototype, "backgroundColor", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            nullable: false,
-            name: "icon_color",
-        }),
-        __metadata("design:type", String)
-    ], Skill.prototype, "iconColor", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "boolean",
-            default: true,
-        }),
-        __metadata("design:type", Boolean)
-    ], Skill.prototype, "active", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            default: null,
-        }),
-        __metadata("design:type", String)
-    ], Skill.prototype, "icon", void 0);
-    __decorate([
-        (0, typeorm_1.ManyToOne)("images", "skills", { nullable: true }),
-        __metadata("design:type", image_entity_1.Image)
-    ], Skill.prototype, "image", void 0);
-    Skill = __decorate([
-        (0, typeorm_1.Entity)({ name: "skills" })
-    ], Skill);
-    return Skill;
-}());
-exports.Skill = Skill;
-
+eval("\nvar __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\n};\nvar __metadata = (this && this.__metadata) || function (k, v) {\n    if (typeof Reflect === \"object\" && typeof Reflect.metadata === \"function\") return Reflect.metadata(k, v);\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.Skill = void 0;\nvar typeorm_1 = __webpack_require__(/*! typeorm */ \"typeorm\");\nvar image_entity_1 = __webpack_require__(/*! ./image.entity */ \"./src/entities/image.entity.ts\");\nvar Skill = /** @class */ (function () {\n    function Skill() {\n    }\n    __decorate([\n        (0, typeorm_1.PrimaryGeneratedColumn)(),\n        __metadata(\"design:type\", String)\n    ], Skill.prototype, \"id\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            nullable: false,\n            unique: true,\n        }),\n        __metadata(\"design:type\", String)\n    ], Skill.prototype, \"name\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            nullable: false,\n            name: \"background_color\",\n        }),\n        __metadata(\"design:type\", String)\n    ], Skill.prototype, \"backgroundColor\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            nullable: false,\n            name: \"icon_color\",\n        }),\n        __metadata(\"design:type\", String)\n    ], Skill.prototype, \"iconColor\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"boolean\",\n            default: true,\n        }),\n        __metadata(\"design:type\", Boolean)\n    ], Skill.prototype, \"active\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            default: null,\n        }),\n        __metadata(\"design:type\", String)\n    ], Skill.prototype, \"icon\", void 0);\n    __decorate([\n        (0, typeorm_1.ManyToOne)(\"images\", \"skills\", { nullable: true }),\n        __metadata(\"design:type\", image_entity_1.Image)\n    ], Skill.prototype, \"image\", void 0);\n    Skill = __decorate([\n        (0, typeorm_1.Entity)({ name: \"skills\" })\n    ], Skill);\n    return Skill;\n}());\nexports.Skill = Skill;\n\n\n//# sourceURL=webpack://wilmion-api/./src/entities/skill.entity.ts?");
 
 /***/ }),
 
-/***/ 9196:
+/***/ "./src/entities/socialMedia.entity.ts":
+/*!********************************************!*\
+  !*** ./src/entities/socialMedia.entity.ts ***!
+  \********************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.SocialMedia = void 0;
-var typeorm_1 = __webpack_require__(5250);
-var SocialMedia = /** @class */ (function () {
-    function SocialMedia() {
-    }
-    __decorate([
-        (0, typeorm_1.PrimaryGeneratedColumn)(),
-        __metadata("design:type", String)
-    ], SocialMedia.prototype, "id", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            nullable: false,
-            unique: true,
-        }),
-        __metadata("design:type", String)
-    ], SocialMedia.prototype, "name", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            nullable: false,
-        }),
-        __metadata("design:type", String)
-    ], SocialMedia.prototype, "icon", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            nullable: false,
-        }),
-        __metadata("design:type", String)
-    ], SocialMedia.prototype, "color", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "boolean",
-            default: true,
-        }),
-        __metadata("design:type", Boolean)
-    ], SocialMedia.prototype, "active", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({ type: "varchar", nullable: false, name: "redirect_url" }),
-        __metadata("design:type", String)
-    ], SocialMedia.prototype, "redirectUrl", void 0);
-    SocialMedia = __decorate([
-        (0, typeorm_1.Entity)({ name: "social-media" })
-    ], SocialMedia);
-    return SocialMedia;
-}());
-exports.SocialMedia = SocialMedia;
-
+eval("\nvar __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\n};\nvar __metadata = (this && this.__metadata) || function (k, v) {\n    if (typeof Reflect === \"object\" && typeof Reflect.metadata === \"function\") return Reflect.metadata(k, v);\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.SocialMedia = void 0;\nvar typeorm_1 = __webpack_require__(/*! typeorm */ \"typeorm\");\nvar SocialMedia = /** @class */ (function () {\n    function SocialMedia() {\n    }\n    __decorate([\n        (0, typeorm_1.PrimaryGeneratedColumn)(),\n        __metadata(\"design:type\", String)\n    ], SocialMedia.prototype, \"id\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            nullable: false,\n            unique: true,\n        }),\n        __metadata(\"design:type\", String)\n    ], SocialMedia.prototype, \"name\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            nullable: false,\n        }),\n        __metadata(\"design:type\", String)\n    ], SocialMedia.prototype, \"icon\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            nullable: false,\n        }),\n        __metadata(\"design:type\", String)\n    ], SocialMedia.prototype, \"color\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"boolean\",\n            default: true,\n        }),\n        __metadata(\"design:type\", Boolean)\n    ], SocialMedia.prototype, \"active\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({ type: \"varchar\", nullable: false, name: \"redirect_url\" }),\n        __metadata(\"design:type\", String)\n    ], SocialMedia.prototype, \"redirectUrl\", void 0);\n    SocialMedia = __decorate([\n        (0, typeorm_1.Entity)({ name: \"social-media\" })\n    ], SocialMedia);\n    return SocialMedia;\n}());\nexports.SocialMedia = SocialMedia;\n\n\n//# sourceURL=webpack://wilmion-api/./src/entities/socialMedia.entity.ts?");
 
 /***/ }),
 
-/***/ 4318:
+/***/ "./src/entities/staticContents.entity.ts":
+/*!***********************************************!*\
+  !*** ./src/entities/staticContents.entity.ts ***!
+  \***********************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.StaticContent = void 0;
-var typeorm_1 = __webpack_require__(5250);
-var StaticContent = /** @class */ (function () {
-    function StaticContent() {
-    }
-    __decorate([
-        (0, typeorm_1.PrimaryGeneratedColumn)(),
-        __metadata("design:type", String)
-    ], StaticContent.prototype, "id", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({ type: "varchar", nullable: false }),
-        __metadata("design:type", String)
-    ], StaticContent.prototype, "introduction", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({ type: "varchar", nullable: false, name: "response_question" }),
-        __metadata("design:type", String)
-    ], StaticContent.prototype, "responseQuestion", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({ type: "varchar", name: "contact_email" }),
-        __metadata("design:type", String)
-    ], StaticContent.prototype, "contactEmail", void 0);
-    StaticContent = __decorate([
-        (0, typeorm_1.Entity)({ name: "static-contents" })
-    ], StaticContent);
-    return StaticContent;
-}());
-exports.StaticContent = StaticContent;
-
+eval("\nvar __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\n};\nvar __metadata = (this && this.__metadata) || function (k, v) {\n    if (typeof Reflect === \"object\" && typeof Reflect.metadata === \"function\") return Reflect.metadata(k, v);\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.StaticContent = void 0;\nvar typeorm_1 = __webpack_require__(/*! typeorm */ \"typeorm\");\nvar StaticContent = /** @class */ (function () {\n    function StaticContent() {\n    }\n    __decorate([\n        (0, typeorm_1.PrimaryGeneratedColumn)(),\n        __metadata(\"design:type\", String)\n    ], StaticContent.prototype, \"id\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({ type: \"varchar\", nullable: false }),\n        __metadata(\"design:type\", String)\n    ], StaticContent.prototype, \"introduction\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({ type: \"varchar\", nullable: false, name: \"response_question\" }),\n        __metadata(\"design:type\", String)\n    ], StaticContent.prototype, \"responseQuestion\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({ type: \"varchar\", name: \"contact_email\" }),\n        __metadata(\"design:type\", String)\n    ], StaticContent.prototype, \"contactEmail\", void 0);\n    StaticContent = __decorate([\n        (0, typeorm_1.Entity)({ name: \"static-contents\" })\n    ], StaticContent);\n    return StaticContent;\n}());\nexports.StaticContent = StaticContent;\n\n\n//# sourceURL=webpack://wilmion-api/./src/entities/staticContents.entity.ts?");
 
 /***/ }),
 
-/***/ 5642:
+/***/ "./src/entities/stats.entity.ts":
+/*!**************************************!*\
+  !*** ./src/entities/stats.entity.ts ***!
+  \**************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.Stat = exports.TypeStat = void 0;
-var typeorm_1 = __webpack_require__(5250);
-var post_entity_1 = __webpack_require__(1091);
-var TypeStat;
-(function (TypeStat) {
-    TypeStat["newUsers"] = "NU";
-    TypeStat["visitsToTheBlogPost"] = "VTTBP";
-    TypeStat["visitsToThePortafolioPage"] = "VTTPP";
-    TypeStat["visitsToTheContactPage"] = "VTTCP";
-    TypeStat["numberOfClickWhenSubmittingTheForm"] = "NOCWSTF";
-})(TypeStat = exports.TypeStat || (exports.TypeStat = {}));
-var Stat = /** @class */ (function () {
-    function Stat() {
-    }
-    __decorate([
-        (0, typeorm_1.PrimaryGeneratedColumn)(),
-        __metadata("design:type", String)
-    ], Stat.prototype, "id", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({ type: "enum", enum: TypeStat, nullable: false }),
-        __metadata("design:type", String)
-    ], Stat.prototype, "type", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "timestamp",
-            name: "created_at",
-            nullable: false,
-            default: new Date(),
-        }),
-        __metadata("design:type", typeorm_1.Timestamp)
-    ], Stat.prototype, "createdAt", void 0);
-    __decorate([
-        (0, typeorm_1.ManyToOne)("posts", "stats", { nullable: true }),
-        (0, typeorm_1.JoinColumn)(),
-        __metadata("design:type", post_entity_1.Post)
-    ], Stat.prototype, "post", void 0);
-    Stat = __decorate([
-        (0, typeorm_1.Entity)({ name: "stats" })
-    ], Stat);
-    return Stat;
-}());
-exports.Stat = Stat;
-
+eval("\nvar __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\n};\nvar __metadata = (this && this.__metadata) || function (k, v) {\n    if (typeof Reflect === \"object\" && typeof Reflect.metadata === \"function\") return Reflect.metadata(k, v);\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.Stat = exports.TypeStat = void 0;\nvar typeorm_1 = __webpack_require__(/*! typeorm */ \"typeorm\");\nvar post_entity_1 = __webpack_require__(/*! ./post.entity */ \"./src/entities/post.entity.ts\");\nvar TypeStat;\n(function (TypeStat) {\n    TypeStat[\"newUsers\"] = \"NU\";\n    TypeStat[\"visitsToTheBlogPost\"] = \"VTTBP\";\n    TypeStat[\"visitsToThePortafolioPage\"] = \"VTTPP\";\n    TypeStat[\"visitsToTheContactPage\"] = \"VTTCP\";\n    TypeStat[\"numberOfClickWhenSubmittingTheForm\"] = \"NOCWSTF\";\n})(TypeStat = exports.TypeStat || (exports.TypeStat = {}));\nvar Stat = /** @class */ (function () {\n    function Stat() {\n    }\n    __decorate([\n        (0, typeorm_1.PrimaryGeneratedColumn)(),\n        __metadata(\"design:type\", String)\n    ], Stat.prototype, \"id\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({ type: \"enum\", enum: TypeStat, nullable: false }),\n        __metadata(\"design:type\", String)\n    ], Stat.prototype, \"type\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"timestamp\",\n            name: \"created_at\",\n            nullable: false,\n            default: new Date(),\n        }),\n        __metadata(\"design:type\", typeorm_1.Timestamp)\n    ], Stat.prototype, \"createdAt\", void 0);\n    __decorate([\n        (0, typeorm_1.ManyToOne)(\"posts\", \"stats\", { nullable: true }),\n        (0, typeorm_1.JoinColumn)(),\n        __metadata(\"design:type\", post_entity_1.Post)\n    ], Stat.prototype, \"post\", void 0);\n    Stat = __decorate([\n        (0, typeorm_1.Entity)({ name: \"stats\" })\n    ], Stat);\n    return Stat;\n}());\nexports.Stat = Stat;\n\n\n//# sourceURL=webpack://wilmion-api/./src/entities/stats.entity.ts?");
 
 /***/ }),
 
-/***/ 9074:
+/***/ "./src/entities/tag.entity.ts":
+/*!************************************!*\
+  !*** ./src/entities/tag.entity.ts ***!
+  \************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.Tag = void 0;
-var typeorm_1 = __webpack_require__(5250);
-var Tag = /** @class */ (function () {
-    function Tag() {
-    }
-    __decorate([
-        (0, typeorm_1.PrimaryGeneratedColumn)(),
-        __metadata("design:type", String)
-    ], Tag.prototype, "id", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            nullable: false,
-        }),
-        __metadata("design:type", String)
-    ], Tag.prototype, "color", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            nullable: false,
-            unique: true,
-        }),
-        __metadata("design:type", String)
-    ], Tag.prototype, "text", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "boolean",
-            default: true,
-        }),
-        __metadata("design:type", Boolean)
-    ], Tag.prototype, "active", void 0);
-    __decorate([
-        (0, typeorm_1.ManyToMany)("posts", "tags", { nullable: true }),
-        __metadata("design:type", Array)
-    ], Tag.prototype, "posts", void 0);
-    Tag = __decorate([
-        (0, typeorm_1.Entity)({ name: "tags" })
-    ], Tag);
-    return Tag;
-}());
-exports.Tag = Tag;
-
+eval("\nvar __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\n};\nvar __metadata = (this && this.__metadata) || function (k, v) {\n    if (typeof Reflect === \"object\" && typeof Reflect.metadata === \"function\") return Reflect.metadata(k, v);\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.Tag = void 0;\nvar typeorm_1 = __webpack_require__(/*! typeorm */ \"typeorm\");\nvar Tag = /** @class */ (function () {\n    function Tag() {\n    }\n    __decorate([\n        (0, typeorm_1.PrimaryGeneratedColumn)(),\n        __metadata(\"design:type\", String)\n    ], Tag.prototype, \"id\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            nullable: false,\n        }),\n        __metadata(\"design:type\", String)\n    ], Tag.prototype, \"color\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            nullable: false,\n            unique: true,\n        }),\n        __metadata(\"design:type\", String)\n    ], Tag.prototype, \"text\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"boolean\",\n            default: true,\n        }),\n        __metadata(\"design:type\", Boolean)\n    ], Tag.prototype, \"active\", void 0);\n    __decorate([\n        (0, typeorm_1.ManyToMany)(\"posts\", \"tags\", { nullable: true }),\n        __metadata(\"design:type\", Array)\n    ], Tag.prototype, \"posts\", void 0);\n    Tag = __decorate([\n        (0, typeorm_1.Entity)({ name: \"tags\" })\n    ], Tag);\n    return Tag;\n}());\nexports.Tag = Tag;\n\n\n//# sourceURL=webpack://wilmion-api/./src/entities/tag.entity.ts?");
 
 /***/ }),
 
-/***/ 7052:
+/***/ "./src/entities/user.entity.ts":
+/*!*************************************!*\
+  !*** ./src/entities/user.entity.ts ***!
+  \*************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.User = void 0;
-var typeorm_1 = __webpack_require__(5250);
-var image_entity_1 = __webpack_require__(6488);
-var User = /** @class */ (function () {
-    function User() {
-    }
-    __decorate([
-        (0, typeorm_1.PrimaryGeneratedColumn)(),
-        __metadata("design:type", String)
-    ], User.prototype, "id", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            nullable: false,
-            unique: true,
-        }),
-        __metadata("design:type", String)
-    ], User.prototype, "username", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            nullable: false,
-        }),
-        __metadata("design:type", String)
-    ], User.prototype, "password", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            nullable: false,
-        }),
-        __metadata("design:type", String)
-    ], User.prototype, "name", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            nullable: false,
-            default: "NOT-DEFINED",
-        }),
-        __metadata("design:type", String)
-    ], User.prototype, "job", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "boolean",
-            default: true,
-        }),
-        __metadata("design:type", Boolean)
-    ], User.prototype, "active", void 0);
-    __decorate([
-        (0, typeorm_1.Column)({
-            type: "varchar",
-            nullable: false,
-            unique: true,
-        }),
-        __metadata("design:type", String)
-    ], User.prototype, "email", void 0);
-    __decorate([
-        (0, typeorm_1.ManyToOne)("images", "users") // need
-        ,
-        __metadata("design:type", image_entity_1.Image)
-    ], User.prototype, "image", void 0);
-    __decorate([
-        (0, typeorm_1.OneToMany)("posts", "user", { nullable: true }),
-        __metadata("design:type", Array)
-    ], User.prototype, "posts", void 0);
-    User = __decorate([
-        (0, typeorm_1.Entity)({ name: "users" })
-    ], User);
-    return User;
-}());
-exports.User = User;
-
+eval("\nvar __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\n};\nvar __metadata = (this && this.__metadata) || function (k, v) {\n    if (typeof Reflect === \"object\" && typeof Reflect.metadata === \"function\") return Reflect.metadata(k, v);\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.User = void 0;\nvar typeorm_1 = __webpack_require__(/*! typeorm */ \"typeorm\");\nvar image_entity_1 = __webpack_require__(/*! ./image.entity */ \"./src/entities/image.entity.ts\");\nvar User = /** @class */ (function () {\n    function User() {\n    }\n    __decorate([\n        (0, typeorm_1.PrimaryGeneratedColumn)(),\n        __metadata(\"design:type\", String)\n    ], User.prototype, \"id\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            nullable: false,\n            unique: true,\n        }),\n        __metadata(\"design:type\", String)\n    ], User.prototype, \"username\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            nullable: false,\n        }),\n        __metadata(\"design:type\", String)\n    ], User.prototype, \"password\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            nullable: false,\n        }),\n        __metadata(\"design:type\", String)\n    ], User.prototype, \"name\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            nullable: false,\n            default: \"NOT-DEFINED\",\n        }),\n        __metadata(\"design:type\", String)\n    ], User.prototype, \"job\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"boolean\",\n            default: true,\n        }),\n        __metadata(\"design:type\", Boolean)\n    ], User.prototype, \"active\", void 0);\n    __decorate([\n        (0, typeorm_1.Column)({\n            type: \"varchar\",\n            nullable: false,\n            unique: true,\n        }),\n        __metadata(\"design:type\", String)\n    ], User.prototype, \"email\", void 0);\n    __decorate([\n        (0, typeorm_1.ManyToOne)(\"images\", \"users\") // need\n        ,\n        __metadata(\"design:type\", image_entity_1.Image)\n    ], User.prototype, \"image\", void 0);\n    __decorate([\n        (0, typeorm_1.OneToMany)(\"posts\", \"user\", { nullable: true }),\n        __metadata(\"design:type\", Array)\n    ], User.prototype, \"posts\", void 0);\n    User = __decorate([\n        (0, typeorm_1.Entity)({ name: \"users\" })\n    ], User);\n    return User;\n}());\nexports.User = User;\n\n\n//# sourceURL=webpack://wilmion-api/./src/entities/user.entity.ts?");
 
 /***/ }),
 
-/***/ 9844:
+/***/ "./src/firebase/index.ts":
+/*!*******************************!*\
+  !*** ./src/firebase/index.ts ***!
+  \*******************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.app = void 0;
-var app_1 = __webpack_require__(4324);
-var index_1 = __importDefault(__webpack_require__(2275));
-exports.app = (0, app_1.initializeApp)(index_1.default.firebaseConfig);
-
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.app = void 0;\nvar app_1 = __webpack_require__(/*! firebase/app */ \"firebase/app\");\nvar index_1 = __importDefault(__webpack_require__(/*! @config/index */ \"./src/config/index.ts\"));\nexports.app = (0, app_1.initializeApp)(index_1.default.firebaseConfig);\n\n\n//# sourceURL=webpack://wilmion-api/./src/firebase/index.ts?");
 
 /***/ }),
 
-/***/ 7017:
+/***/ "./src/firebase/upload-storage.ts":
+/*!****************************************!*\
+  !*** ./src/firebase/upload-storage.ts ***!
+  \****************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.getUriFromFile = exports.uploadStorage = void 0;
-var storage_1 = __webpack_require__(1668);
-var index_1 = __webpack_require__(9844);
-var storage = (0, storage_1.getStorage)(index_1.app);
-function uploadStorage(name, file) {
-    return __awaiter(this, void 0, void 0, function () {
-        var referency, snapshot;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    referency = (0, storage_1.ref)(storage, "images/".concat(name));
-                    return [4 /*yield*/, (0, storage_1.uploadBytes)(referency, file)];
-                case 1:
-                    snapshot = _a.sent();
-                    return [2 /*return*/, snapshot];
-            }
-        });
-    });
-}
-exports.uploadStorage = uploadStorage;
-function getUriFromFile(name, folder) {
-    if (folder === void 0) { folder = "images"; }
-    return __awaiter(this, void 0, void 0, function () {
-        var referency, URI;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    referency = (0, storage_1.ref)(storage, "".concat(folder, "/").concat(name));
-                    return [4 /*yield*/, (0, storage_1.getDownloadURL)(referency)];
-                case 1:
-                    URI = _a.sent();
-                    return [2 /*return*/, URI];
-            }
-        });
-    });
-}
-exports.getUriFromFile = getUriFromFile;
-
+eval("\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.getUriFromFile = exports.uploadStorage = void 0;\nvar storage_1 = __webpack_require__(/*! firebase/storage */ \"firebase/storage\");\nvar index_1 = __webpack_require__(/*! ./index */ \"./src/firebase/index.ts\");\nvar storage = (0, storage_1.getStorage)(index_1.app);\nfunction uploadStorage(name, file) {\n    return __awaiter(this, void 0, void 0, function () {\n        var referency, snapshot;\n        return __generator(this, function (_a) {\n            switch (_a.label) {\n                case 0:\n                    referency = (0, storage_1.ref)(storage, \"images/\".concat(name));\n                    return [4 /*yield*/, (0, storage_1.uploadBytes)(referency, file)];\n                case 1:\n                    snapshot = _a.sent();\n                    return [2 /*return*/, snapshot];\n            }\n        });\n    });\n}\nexports.uploadStorage = uploadStorage;\nfunction getUriFromFile(name, folder) {\n    if (folder === void 0) { folder = \"images\"; }\n    return __awaiter(this, void 0, void 0, function () {\n        var referency, URI;\n        return __generator(this, function (_a) {\n            switch (_a.label) {\n                case 0:\n                    referency = (0, storage_1.ref)(storage, \"\".concat(folder, \"/\").concat(name));\n                    return [4 /*yield*/, (0, storage_1.getDownloadURL)(referency)];\n                case 1:\n                    URI = _a.sent();\n                    return [2 /*return*/, URI];\n            }\n        });\n    });\n}\nexports.getUriFromFile = getUriFromFile;\n\n\n//# sourceURL=webpack://wilmion-api/./src/firebase/upload-storage.ts?");
 
 /***/ }),
 
-/***/ 3607:
+/***/ "./src/index.ts":
+/*!**********************!*\
+  !*** ./src/index.ts ***!
+  \**********************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-__webpack_require__(3236);
-__webpack_require__(681);
-__webpack_require__(3370);
-var express_1 = __importDefault(__webpack_require__(6860));
-var cors_1 = __importDefault(__webpack_require__(3582));
-var express_fileupload_1 = __importDefault(__webpack_require__(6674));
-var config_swagger_1 = __webpack_require__(3618);
-var index_1 = __importDefault(__webpack_require__(2275));
-var index_2 = __importDefault(__webpack_require__(8479));
-var error_handler_1 = __webpack_require__(3341);
-var notFound_middleware_1 = __webpack_require__(6504);
-var app = (0, express_1.default)();
-app.use((0, cors_1.default)({
-    origin: index_1.default.hostAllowedList,
-}));
-app.use((0, express_fileupload_1.default)({
-    createParentPath: true,
-}));
-app.use(express_1.default.json());
-app.set("trust proxy", true);
-(0, config_swagger_1.setupSwagger)(app);
-(0, index_2.default)(app);
-app.use(error_handler_1.logErrors);
-app.use(error_handler_1.wrapError);
-app.use(notFound_middleware_1.notFoundMiddleware);
-app.use(error_handler_1.errorHandler);
-app.listen(index_1.default.port, function () {
-    console.log("App runing on http://localhost:3000");
-});
-
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\n__webpack_require__(/*! reflect-metadata */ \"reflect-metadata\");\n__webpack_require__(/*! @db/connection */ \"./src/db/connection.ts\");\n__webpack_require__(/*! @strategies/index */ \"./src/strategies/index.ts\");\nvar express_1 = __importDefault(__webpack_require__(/*! express */ \"express\"));\nvar cors_1 = __importDefault(__webpack_require__(/*! cors */ \"cors\"));\nvar express_fileupload_1 = __importDefault(__webpack_require__(/*! express-fileupload */ \"express-fileupload\"));\nvar config_swagger_1 = __webpack_require__(/*! @swagger/config.swagger */ \"./src/swagger/config.swagger.ts\");\nvar index_1 = __importDefault(__webpack_require__(/*! @config/index */ \"./src/config/index.ts\"));\nvar index_2 = __importDefault(__webpack_require__(/*! @routes/index */ \"./src/routes/index.ts\"));\nvar error_handler_1 = __webpack_require__(/*! @middlewares/error.handler */ \"./src/middlewares/error.handler.ts\");\nvar notFound_middleware_1 = __webpack_require__(/*! @middlewares/notFound.middleware */ \"./src/middlewares/notFound.middleware.ts\");\nvar app = (0, express_1.default)();\napp.use((0, cors_1.default)({\n    origin: index_1.default.hostAllowedList,\n}));\napp.use((0, express_fileupload_1.default)({\n    createParentPath: true,\n}));\napp.use(express_1.default.json());\napp.set(\"trust proxy\", true);\n(0, config_swagger_1.setupSwagger)(app);\n(0, index_2.default)(app);\napp.use(error_handler_1.logErrors);\napp.use(error_handler_1.wrapError);\napp.use(notFound_middleware_1.notFoundMiddleware);\napp.use(error_handler_1.errorHandler);\napp.listen(index_1.default.port, function () {\n    console.log(\"App runing on http://localhost:3000\");\n});\n\n\n//# sourceURL=webpack://wilmion-api/./src/index.ts?");
 
 /***/ }),
 
-/***/ 9683:
+/***/ "./src/middlewares/authorization.middleware.ts":
+/*!*****************************************************!*\
+  !*** ./src/middlewares/authorization.middleware.ts ***!
+  \*****************************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.validatePermision = void 0;
-var boom_1 = __importDefault(__webpack_require__(3767));
-function validatePermision(permisions) {
-    return function (req, res, next) {
-        var user = req.user;
-        if (!user || (user && !user.role)) {
-            next(boom_1.default.unauthorized("Missing token or roles"));
-        }
-        var isAuthorized = permisions.find(function (r) { return r === user.role; });
-        if (!isAuthorized)
-            next(boom_1.default.unauthorized("Your role is not sufficient for access this route"));
-        next();
-    };
-}
-exports.validatePermision = validatePermision;
-
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.validatePermision = void 0;\nvar boom_1 = __importDefault(__webpack_require__(/*! @hapi/boom */ \"@hapi/boom\"));\nfunction validatePermision(permisions) {\n    return function (req, res, next) {\n        var user = req.user;\n        if (!user || (user && !user.role)) {\n            next(boom_1.default.unauthorized(\"Missing token or roles\"));\n        }\n        var isAuthorized = permisions.find(function (r) { return r === user.role; });\n        if (!isAuthorized)\n            next(boom_1.default.unauthorized(\"Your role is not sufficient for access this route\"));\n        next();\n    };\n}\nexports.validatePermision = validatePermision;\n\n\n//# sourceURL=webpack://wilmion-api/./src/middlewares/authorization.middleware.ts?");
 
 /***/ }),
 
-/***/ 3341:
+/***/ "./src/middlewares/error.handler.ts":
+/*!******************************************!*\
+  !*** ./src/middlewares/error.handler.ts ***!
+  \******************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.errorHandler = exports.wrapError = exports.logErrors = void 0;
-var boom_1 = __importDefault(__webpack_require__(3767));
-var index_1 = __importDefault(__webpack_require__(2275));
-var response_1 = __importDefault(__webpack_require__(178));
-function logErrors(err, req, res, next) {
-    if (index_1.default.mode === "PROD")
-        console.log(err);
-    next(err);
-}
-exports.logErrors = logErrors;
-function wrapError(err, req, res, next) {
-    if (!err.isBoom) {
-        next(boom_1.default.badImplementation(err.message));
-        return;
-    }
-    next(err);
-}
-exports.wrapError = wrapError;
-function errorHandler(err, req, res, next) {
-    var _a = err.output, statusCode = _a.statusCode, payload = _a.payload;
-    (0, response_1.default)(res, statusCode || 500, {}, err.message);
-}
-exports.errorHandler = errorHandler;
-
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.errorHandler = exports.wrapError = exports.logErrors = void 0;\nvar boom_1 = __importDefault(__webpack_require__(/*! @hapi/boom */ \"@hapi/boom\"));\nvar index_1 = __importDefault(__webpack_require__(/*! @config/index */ \"./src/config/index.ts\"));\nvar response_1 = __importDefault(__webpack_require__(/*! @utils/response */ \"./src/utils/response.ts\"));\nfunction logErrors(err, req, res, next) {\n    if (index_1.default.mode === \"DEV\")\n        console.log(err);\n    next(err);\n}\nexports.logErrors = logErrors;\nfunction wrapError(err, req, res, next) {\n    if (!err.isBoom) {\n        next(boom_1.default.badImplementation(err.message));\n        return;\n    }\n    next(err);\n}\nexports.wrapError = wrapError;\nfunction errorHandler(err, req, res, next) {\n    var _a = err.output, statusCode = _a.statusCode, payload = _a.payload;\n    (0, response_1.default)(res, statusCode || 500, {}, err.message);\n}\nexports.errorHandler = errorHandler;\n\n\n//# sourceURL=webpack://wilmion-api/./src/middlewares/error.handler.ts?");
 
 /***/ }),
 
-/***/ 6504:
+/***/ "./src/middlewares/notFound.middleware.ts":
+/*!************************************************!*\
+  !*** ./src/middlewares/notFound.middleware.ts ***!
+  \************************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.notFoundMiddleware = void 0;
-var boom_1 = __webpack_require__(3767);
-function notFoundMiddleware(res, req, next) {
-    next((0, boom_1.notFound)("The rute of API doesn't exist 🧑‍🏫"));
-}
-exports.notFoundMiddleware = notFoundMiddleware;
-
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.notFoundMiddleware = void 0;\nvar boom_1 = __webpack_require__(/*! @hapi/boom */ \"@hapi/boom\");\nfunction notFoundMiddleware(res, req, next) {\n    next((0, boom_1.notFound)(\"The rute of API doesn't exist 🧑‍🏫\"));\n}\nexports.notFoundMiddleware = notFoundMiddleware;\n\n\n//# sourceURL=webpack://wilmion-api/./src/middlewares/notFound.middleware.ts?");
 
 /***/ }),
 
-/***/ 7058:
+/***/ "./src/middlewares/validator.middleware.ts":
+/*!*************************************************!*\
+  !*** ./src/middlewares/validator.middleware.ts ***!
+  \*************************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.validateHandler = void 0;
-var Joi = __importStar(__webpack_require__(8414));
-var boom_1 = __webpack_require__(3767);
-function validatorSchema(schema, data) {
-    var error = Joi.object(schema).validate(data).error;
-    return error;
-}
-function validateHandler(schema, check) {
-    if (check === void 0) { check = "body"; }
-    return function (req, res, next) {
-        var data = req[check];
-        var error = validatorSchema(schema, data);
-        if (error)
-            next((0, boom_1.badRequest)(error.message));
-        next();
-    };
-}
-exports.validateHandler = validateHandler;
-
+eval("\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\n    if (k2 === undefined) k2 = k;\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\n}) : (function(o, m, k, k2) {\n    if (k2 === undefined) k2 = k;\n    o[k2] = m[k];\n}));\nvar __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {\n    Object.defineProperty(o, \"default\", { enumerable: true, value: v });\n}) : function(o, v) {\n    o[\"default\"] = v;\n});\nvar __importStar = (this && this.__importStar) || function (mod) {\n    if (mod && mod.__esModule) return mod;\n    var result = {};\n    if (mod != null) for (var k in mod) if (k !== \"default\" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);\n    __setModuleDefault(result, mod);\n    return result;\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.validateHandler = void 0;\nvar Joi = __importStar(__webpack_require__(/*! @hapi/joi */ \"@hapi/joi\"));\nvar boom_1 = __webpack_require__(/*! @hapi/boom */ \"@hapi/boom\");\nfunction validatorSchema(schema, data) {\n    var error = Joi.object(schema).validate(data).error;\n    return error;\n}\nfunction validateHandler(schema, check) {\n    if (check === void 0) { check = \"body\"; }\n    return function (req, res, next) {\n        var data = req[check];\n        var error = validatorSchema(schema, data);\n        if (error)\n            next((0, boom_1.badRequest)(error.message));\n        next();\n    };\n}\nexports.validateHandler = validateHandler;\n\n\n//# sourceURL=webpack://wilmion-api/./src/middlewares/validator.middleware.ts?");
 
 /***/ }),
 
-/***/ 8479:
+/***/ "./src/routes/index.ts":
+/*!*****************************!*\
+  !*** ./src/routes/index.ts ***!
+  \*****************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var express_1 = __webpack_require__(6860);
-//routes
-var static_contents_controller_1 = __importDefault(__webpack_require__(7963));
-var users_controller_1 = __importDefault(__webpack_require__(3630));
-var image_controller_1 = __importDefault(__webpack_require__(1869));
-var jobs_controller_1 = __importDefault(__webpack_require__(4879));
-var tags_controller_1 = __importDefault(__webpack_require__(446));
-var posts_controller_1 = __importDefault(__webpack_require__(4930));
-var contents_controller_1 = __importDefault(__webpack_require__(4207));
-var ipsUser_controller_1 = __importDefault(__webpack_require__(7140));
-var skills_controller_1 = __importDefault(__webpack_require__(3941));
-var project_controller_1 = __importDefault(__webpack_require__(6124));
-var social_media_controller_1 = __importDefault(__webpack_require__(9101));
-var stats_controller_1 = __importDefault(__webpack_require__(5396));
-function setAllRouters(app) {
-    return __awaiter(this, void 0, void 0, function () {
-        var router;
-        return __generator(this, function (_a) {
-            router = (0, express_1.Router)();
-            // Routes
-            router.use("/static-contents", static_contents_controller_1.default);
-            router.use("/users", users_controller_1.default);
-            router.use("/images", image_controller_1.default);
-            router.use("/jobs", jobs_controller_1.default);
-            router.use("/tags", tags_controller_1.default);
-            router.use("/posts", posts_controller_1.default);
-            router.use("/contents", contents_controller_1.default);
-            router.use("/ips", ipsUser_controller_1.default);
-            router.use("/skills", skills_controller_1.default);
-            router.use("/projects", project_controller_1.default);
-            router.use("/social-media", social_media_controller_1.default);
-            router.use("/stats", stats_controller_1.default);
-            app.use("/api", router);
-            return [2 /*return*/];
-        });
-    });
-}
-exports["default"] = setAllRouters;
-
+eval("\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar express_1 = __webpack_require__(/*! express */ \"express\");\n//routes\nvar static_contents_controller_1 = __importDefault(__webpack_require__(/*! @controllers/static-contents.controller */ \"./src/controllers/static-contents.controller.ts\"));\nvar users_controller_1 = __importDefault(__webpack_require__(/*! @controllers/users.controller */ \"./src/controllers/users.controller.ts\"));\nvar image_controller_1 = __importDefault(__webpack_require__(/*! @controllers/image.controller */ \"./src/controllers/image.controller.ts\"));\nvar jobs_controller_1 = __importDefault(__webpack_require__(/*! @controllers/jobs.controller */ \"./src/controllers/jobs.controller.ts\"));\nvar tags_controller_1 = __importDefault(__webpack_require__(/*! @controllers/tags.controller */ \"./src/controllers/tags.controller.ts\"));\nvar posts_controller_1 = __importDefault(__webpack_require__(/*! @controllers/posts.controller */ \"./src/controllers/posts.controller.ts\"));\nvar contents_controller_1 = __importDefault(__webpack_require__(/*! @controllers/contents.controller */ \"./src/controllers/contents.controller.ts\"));\nvar ipsUser_controller_1 = __importDefault(__webpack_require__(/*! @controllers/ipsUser.controller */ \"./src/controllers/ipsUser.controller.ts\"));\nvar skills_controller_1 = __importDefault(__webpack_require__(/*! @controllers/skills.controller */ \"./src/controllers/skills.controller.ts\"));\nvar project_controller_1 = __importDefault(__webpack_require__(/*! @controllers/project.controller */ \"./src/controllers/project.controller.ts\"));\nvar social_media_controller_1 = __importDefault(__webpack_require__(/*! @controllers/social-media.controller */ \"./src/controllers/social-media.controller.ts\"));\nvar stats_controller_1 = __importDefault(__webpack_require__(/*! @controllers/stats.controller */ \"./src/controllers/stats.controller.ts\"));\nfunction setAllRouters(app) {\n    return __awaiter(this, void 0, void 0, function () {\n        var router;\n        return __generator(this, function (_a) {\n            router = (0, express_1.Router)();\n            // Routes\n            router.use(\"/static-contents\", static_contents_controller_1.default);\n            router.use(\"/users\", users_controller_1.default);\n            router.use(\"/images\", image_controller_1.default);\n            router.use(\"/jobs\", jobs_controller_1.default);\n            router.use(\"/tags\", tags_controller_1.default);\n            router.use(\"/posts\", posts_controller_1.default);\n            router.use(\"/contents\", contents_controller_1.default);\n            router.use(\"/ips\", ipsUser_controller_1.default);\n            router.use(\"/skills\", skills_controller_1.default);\n            router.use(\"/projects\", project_controller_1.default);\n            router.use(\"/social-media\", social_media_controller_1.default);\n            router.use(\"/stats\", stats_controller_1.default);\n            app.use(\"/api\", router);\n            return [2 /*return*/];\n        });\n    });\n}\nexports[\"default\"] = setAllRouters;\n\n\n//# sourceURL=webpack://wilmion-api/./src/routes/index.ts?");
 
 /***/ }),
 
-/***/ 4890:
+/***/ "./src/services/contents.service.ts":
+/*!******************************************!*\
+  !*** ./src/services/contents.service.ts ***!
+  \******************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.ContentService = void 0;
-var boom_1 = __importDefault(__webpack_require__(3767));
-var connection_1 = __webpack_require__(681);
-var content_entity_1 = __webpack_require__(8416);
-var post_entity_1 = __webpack_require__(1091);
-var convertQueryParamsInOptions_1 = __webpack_require__(2126);
-var image_service_1 = __webpack_require__(5784);
-var ContentService = /** @class */ (function () {
-    function ContentService() {
-        this.connect();
-    }
-    ContentService.prototype.connect = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var database;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, connection_1.connection.db];
-                    case 1:
-                        database = _a.sent();
-                        this.db = database.getRepository(content_entity_1.Content);
-                        this.dbPost = database.getRepository(post_entity_1.Post);
-                        this.imageService = new image_service_1.ImageService();
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    ContentService.prototype.getPostById = function (id) {
-        return __awaiter(this, void 0, void 0, function () {
-            var post;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.dbPost.findOne(id)];
-                    case 1:
-                        post = _a.sent();
-                        if (!post)
-                            throw boom_1.default.notFound("The post with ID " + id + " doesn't exist");
-                        return [2 /*return*/, post];
-                }
-            });
-        });
-    };
-    ContentService.prototype.incrementOrDecrementTimeReadOfPost = function (post, whatIncrementOrDecrement) {
-        return __awaiter(this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        post.timeRead = post.timeRead + whatIncrementOrDecrement;
-                        return [4 /*yield*/, this.dbPost.save(post)];
-                    case 1: return [2 /*return*/, _a.sent()];
-                }
-            });
-        });
-    };
-    ContentService.prototype.calculateSecondsOfContent = function (content) {
-        return (content.length / 400) * 60;
-    };
-    ContentService.prototype.getAll = function (limit, offset, postId) {
-        return __awaiter(this, void 0, void 0, function () {
-            var queryParams, contents, post;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        queryParams = (0, convertQueryParamsInOptions_1.convertQueryParamsInOptions)(limit, offset);
-                        contents = [];
-                        if (!postId) return [3 /*break*/, 3];
-                        return [4 /*yield*/, this.getPostById(postId)];
-                    case 1:
-                        post = _a.sent();
-                        return [4 /*yield*/, this.db.find(__assign(__assign({}, queryParams), { where: {
-                                    post: post,
-                                }, relations: ["image", "post"] }))];
-                    case 2:
-                        contents = _a.sent();
-                        return [3 /*break*/, 5];
-                    case 3: return [4 /*yield*/, this.db.find(__assign(__assign({}, queryParams), { relations: ["image", "post"] }))];
-                    case 4:
-                        contents = _a.sent();
-                        _a.label = 5;
-                    case 5: return [2 /*return*/, contents];
-                }
-            });
-        });
-    };
-    ContentService.prototype.getById = function (id) {
-        return __awaiter(this, void 0, void 0, function () {
-            var content;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.db.findOne(id, { relations: ["image", "post"] })];
-                    case 1:
-                        content = _a.sent();
-                        if (!content)
-                            throw boom_1.default.notFound("This content of post doesn't exist 🚫");
-                        return [2 /*return*/, content];
-                }
-            });
-        });
-    };
-    ContentService.prototype.create = function (contentDto) {
-        return __awaiter(this, void 0, void 0, function () {
-            var previousContents, image, post, newContent;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getAll("999", "0", contentDto.postId)];
-                    case 1:
-                        previousContents = _a.sent();
-                        return [4 /*yield*/, this.imageService.getById(contentDto.imageId)];
-                    case 2:
-                        image = _a.sent();
-                        return [4 /*yield*/, this.getPostById(contentDto.postId)];
-                    case 3:
-                        post = _a.sent();
-                        newContent = this.db.create(contentDto);
-                        newContent.orderNumber = previousContents.length + 1;
-                        newContent.image = image;
-                        newContent.post = post;
-                        return [4 /*yield*/, this.incrementOrDecrementTimeReadOfPost(post, this.calculateSecondsOfContent(newContent.content))];
-                    case 4:
-                        _a.sent();
-                        return [4 /*yield*/, this.db.save(newContent)];
-                    case 5: return [2 /*return*/, _a.sent()];
-                }
-            });
-        });
-    };
-    ContentService.prototype.update = function (UpdateContentDto, id, numberOrder) {
-        return __awaiter(this, void 0, void 0, function () {
-            var content, secondsOfPrincipal, secondsOfNew, image;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getById(id)];
-                    case 1:
-                        content = _a.sent();
-                        if (!UpdateContentDto.content) return [3 /*break*/, 3];
-                        secondsOfPrincipal = this.calculateSecondsOfContent(content.content);
-                        secondsOfNew = this.calculateSecondsOfContent(UpdateContentDto.content);
-                        return [4 /*yield*/, this.incrementOrDecrementTimeReadOfPost(content.post, secondsOfNew - secondsOfPrincipal)];
-                    case 2:
-                        _a.sent();
-                        _a.label = 3;
-                    case 3:
-                        content = __assign(__assign(__assign({}, content), UpdateContentDto), { orderNumber: numberOrder ? numberOrder : content.orderNumber });
-                        if (!UpdateContentDto.imageId) return [3 /*break*/, 5];
-                        return [4 /*yield*/, this.imageService.getById(UpdateContentDto.imageId)];
-                    case 4:
-                        image = _a.sent();
-                        content.image = image;
-                        _a.label = 5;
-                    case 5: return [2 /*return*/, this.db.save(content)];
-                }
-            });
-        });
-    };
-    ContentService.prototype.delete = function (id) {
-        return __awaiter(this, void 0, void 0, function () {
-            var content, contents, newContents, _i, newContents_1, contentFor;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getById(id)];
-                    case 1:
-                        content = _a.sent();
-                        return [4 /*yield*/, this.getAll("999", "0", content.post.id)];
-                    case 2:
-                        contents = _a.sent();
-                        newContents = contents.filter(function (c, index) { return index >= content.orderNumber; });
-                        _i = 0, newContents_1 = newContents;
-                        _a.label = 3;
-                    case 3:
-                        if (!(_i < newContents_1.length)) return [3 /*break*/, 6];
-                        contentFor = newContents_1[_i];
-                        return [4 /*yield*/, this.update({}, contentFor.id, contentFor.orderNumber - 1)];
-                    case 4:
-                        _a.sent();
-                        _a.label = 5;
-                    case 5:
-                        _i++;
-                        return [3 /*break*/, 3];
-                    case 6: return [4 /*yield*/, this.incrementOrDecrementTimeReadOfPost(contents[0].post, this.calculateSecondsOfContent(content.content) / -1)];
-                    case 7:
-                        _a.sent();
-                        return [2 /*return*/, this.db.delete(id)];
-                }
-            });
-        });
-    };
-    return ContentService;
-}());
-exports.ContentService = ContentService;
-
+eval("\nvar __assign = (this && this.__assign) || function () {\n    __assign = Object.assign || function(t) {\n        for (var s, i = 1, n = arguments.length; i < n; i++) {\n            s = arguments[i];\n            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))\n                t[p] = s[p];\n        }\n        return t;\n    };\n    return __assign.apply(this, arguments);\n};\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.ContentService = void 0;\nvar boom_1 = __importDefault(__webpack_require__(/*! @hapi/boom */ \"@hapi/boom\"));\nvar connection_1 = __webpack_require__(/*! @db/connection */ \"./src/db/connection.ts\");\nvar content_entity_1 = __webpack_require__(/*! @entities/content.entity */ \"./src/entities/content.entity.ts\");\nvar post_entity_1 = __webpack_require__(/*! @entities/post.entity */ \"./src/entities/post.entity.ts\");\nvar convertQueryParamsInOptions_1 = __webpack_require__(/*! @utils/convertQueryParamsInOptions */ \"./src/utils/convertQueryParamsInOptions.ts\");\nvar image_service_1 = __webpack_require__(/*! ./image.service */ \"./src/services/image.service.ts\");\nvar ContentService = /** @class */ (function () {\n    function ContentService() {\n        this.connect();\n    }\n    ContentService.prototype.connect = function () {\n        return __awaiter(this, void 0, void 0, function () {\n            var database;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, connection_1.connection.db];\n                    case 1:\n                        database = _a.sent();\n                        this.db = database.getRepository(content_entity_1.Content);\n                        this.dbPost = database.getRepository(post_entity_1.Post);\n                        this.imageService = new image_service_1.ImageService();\n                        return [2 /*return*/];\n                }\n            });\n        });\n    };\n    ContentService.prototype.getPostById = function (id) {\n        return __awaiter(this, void 0, void 0, function () {\n            var post;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.dbPost.findOne(id)];\n                    case 1:\n                        post = _a.sent();\n                        if (!post)\n                            throw boom_1.default.notFound(\"The post with ID \" + id + \" doesn't exist\");\n                        return [2 /*return*/, post];\n                }\n            });\n        });\n    };\n    ContentService.prototype.incrementOrDecrementTimeReadOfPost = function (post, whatIncrementOrDecrement) {\n        return __awaiter(this, void 0, void 0, function () {\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0:\n                        post.timeRead = post.timeRead + whatIncrementOrDecrement;\n                        return [4 /*yield*/, this.dbPost.save(post)];\n                    case 1: return [2 /*return*/, _a.sent()];\n                }\n            });\n        });\n    };\n    ContentService.prototype.calculateSecondsOfContent = function (content) {\n        return (content.length / 400) * 60;\n    };\n    ContentService.prototype.getAll = function (limit, offset, postId) {\n        return __awaiter(this, void 0, void 0, function () {\n            var queryParams, contents, post;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0:\n                        queryParams = (0, convertQueryParamsInOptions_1.convertQueryParamsInOptions)(limit, offset);\n                        contents = [];\n                        if (!postId) return [3 /*break*/, 3];\n                        return [4 /*yield*/, this.getPostById(postId)];\n                    case 1:\n                        post = _a.sent();\n                        return [4 /*yield*/, this.db.find(__assign(__assign({}, queryParams), { where: {\n                                    post: post,\n                                }, relations: [\"image\", \"post\"] }))];\n                    case 2:\n                        contents = _a.sent();\n                        return [3 /*break*/, 5];\n                    case 3: return [4 /*yield*/, this.db.find(__assign(__assign({}, queryParams), { relations: [\"image\", \"post\"] }))];\n                    case 4:\n                        contents = _a.sent();\n                        _a.label = 5;\n                    case 5: return [2 /*return*/, contents];\n                }\n            });\n        });\n    };\n    ContentService.prototype.getById = function (id) {\n        return __awaiter(this, void 0, void 0, function () {\n            var content;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.db.findOne(id, { relations: [\"image\", \"post\"] })];\n                    case 1:\n                        content = _a.sent();\n                        if (!content)\n                            throw boom_1.default.notFound(\"This content of post doesn't exist 🚫\");\n                        return [2 /*return*/, content];\n                }\n            });\n        });\n    };\n    ContentService.prototype.create = function (contentDto) {\n        return __awaiter(this, void 0, void 0, function () {\n            var previousContents, image, post, newContent;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.getAll(\"999\", \"0\", contentDto.postId)];\n                    case 1:\n                        previousContents = _a.sent();\n                        return [4 /*yield*/, this.imageService.getById(contentDto.imageId)];\n                    case 2:\n                        image = _a.sent();\n                        return [4 /*yield*/, this.getPostById(contentDto.postId)];\n                    case 3:\n                        post = _a.sent();\n                        newContent = this.db.create(contentDto);\n                        newContent.orderNumber = previousContents.length + 1;\n                        newContent.image = image;\n                        newContent.post = post;\n                        return [4 /*yield*/, this.incrementOrDecrementTimeReadOfPost(post, this.calculateSecondsOfContent(newContent.content))];\n                    case 4:\n                        _a.sent();\n                        return [4 /*yield*/, this.db.save(newContent)];\n                    case 5: return [2 /*return*/, _a.sent()];\n                }\n            });\n        });\n    };\n    ContentService.prototype.update = function (UpdateContentDto, id, numberOrder) {\n        return __awaiter(this, void 0, void 0, function () {\n            var content, secondsOfPrincipal, secondsOfNew, image;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.getById(id)];\n                    case 1:\n                        content = _a.sent();\n                        if (!UpdateContentDto.content) return [3 /*break*/, 3];\n                        secondsOfPrincipal = this.calculateSecondsOfContent(content.content);\n                        secondsOfNew = this.calculateSecondsOfContent(UpdateContentDto.content);\n                        return [4 /*yield*/, this.incrementOrDecrementTimeReadOfPost(content.post, secondsOfNew - secondsOfPrincipal)];\n                    case 2:\n                        _a.sent();\n                        _a.label = 3;\n                    case 3:\n                        content = __assign(__assign(__assign({}, content), UpdateContentDto), { orderNumber: numberOrder ? numberOrder : content.orderNumber });\n                        if (!UpdateContentDto.imageId) return [3 /*break*/, 5];\n                        return [4 /*yield*/, this.imageService.getById(UpdateContentDto.imageId)];\n                    case 4:\n                        image = _a.sent();\n                        content.image = image;\n                        _a.label = 5;\n                    case 5: return [2 /*return*/, this.db.save(content)];\n                }\n            });\n        });\n    };\n    ContentService.prototype.delete = function (id) {\n        return __awaiter(this, void 0, void 0, function () {\n            var content, contents, newContents, _i, newContents_1, contentFor;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.getById(id)];\n                    case 1:\n                        content = _a.sent();\n                        return [4 /*yield*/, this.getAll(\"999\", \"0\", content.post.id)];\n                    case 2:\n                        contents = _a.sent();\n                        newContents = contents.filter(function (c, index) { return index >= content.orderNumber; });\n                        _i = 0, newContents_1 = newContents;\n                        _a.label = 3;\n                    case 3:\n                        if (!(_i < newContents_1.length)) return [3 /*break*/, 6];\n                        contentFor = newContents_1[_i];\n                        return [4 /*yield*/, this.update({}, contentFor.id, contentFor.orderNumber - 1)];\n                    case 4:\n                        _a.sent();\n                        _a.label = 5;\n                    case 5:\n                        _i++;\n                        return [3 /*break*/, 3];\n                    case 6: return [4 /*yield*/, this.incrementOrDecrementTimeReadOfPost(contents[0].post, this.calculateSecondsOfContent(content.content) / -1)];\n                    case 7:\n                        _a.sent();\n                        return [2 /*return*/, this.db.delete(id)];\n                }\n            });\n        });\n    };\n    return ContentService;\n}());\nexports.ContentService = ContentService;\n\n\n//# sourceURL=webpack://wilmion-api/./src/services/contents.service.ts?");
 
 /***/ }),
 
-/***/ 1060:
+/***/ "./src/services/datePostWithIps.service.ts":
+/*!*************************************************!*\
+  !*** ./src/services/datePostWithIps.service.ts ***!
+  \*************************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.DatePostsWithIpsService = void 0;
-var boom_1 = __importDefault(__webpack_require__(3767));
-var connection_1 = __webpack_require__(681);
-var datePostWithIps_entity_1 = __webpack_require__(7579);
-var ip_entity_1 = __webpack_require__(7229);
-var stats_entity_1 = __webpack_require__(5642);
-var post_service_1 = __webpack_require__(7440);
-var stat_service_1 = __webpack_require__(4376);
-var convertQueryParamsInOptions_1 = __webpack_require__(2126);
-var DatePostsWithIpsService = /** @class */ (function () {
-    function DatePostsWithIpsService() {
-        this.connect();
-    }
-    DatePostsWithIpsService.prototype.connect = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var database;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, connection_1.connection.db];
-                    case 1:
-                        database = _a.sent();
-                        this.db = database.getRepository(datePostWithIps_entity_1.DatePostWithIps);
-                        this.dbIp = database.getRepository(ip_entity_1.IPUser);
-                        this.postService = new post_service_1.PostsService();
-                        this.statService = new stat_service_1.StatService();
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    DatePostsWithIpsService.prototype.getByPostAndIp = function (post, ip) {
-        return __awaiter(this, void 0, void 0, function () {
-            var info;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.db.findOne({
-                            where: {
-                                post: post,
-                                ip: ip,
-                            },
-                            relations: ["ip", "post"],
-                        })];
-                    case 1:
-                        info = _a.sent();
-                        return [2 /*return*/, info];
-                }
-            });
-        });
-    };
-    // It's deprecated for now
-    DatePostsWithIpsService.prototype.getAll = function (limit, offset) {
-        return __awaiter(this, void 0, void 0, function () {
-            var queries, infos;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        queries = (0, convertQueryParamsInOptions_1.convertQueryParamsInOptions)(limit, offset);
-                        return [4 /*yield*/, this.db.find(__assign(__assign({}, queries), { relations: ["post", "ip"] }))];
-                    case 1:
-                        infos = _a.sent();
-                        return [2 /*return*/, infos];
-                }
-            });
-        });
-    };
-    DatePostsWithIpsService.prototype.create = function (dto) {
-        return __awaiter(this, void 0, void 0, function () {
-            var post, ip, newInfo;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.postService.getById(dto.postId)];
-                    case 1:
-                        post = _a.sent();
-                        return [4 /*yield*/, this.dbIp.findOneOrFail(dto.ipId)];
-                    case 2:
-                        ip = _a.sent();
-                        newInfo = this.db.create();
-                        newInfo.post = post;
-                        newInfo.ip = ip;
-                        return [4 /*yield*/, this.db.save(newInfo)];
-                    case 3: return [2 /*return*/, _a.sent()];
-                }
-            });
-        });
-    };
-    DatePostsWithIpsService.prototype.setLike = function (like, idPost, ipString) {
-        return __awaiter(this, void 0, void 0, function () {
-            var post, ip, info;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.postService.getById(idPost)];
-                    case 1:
-                        post = _a.sent();
-                        return [4 /*yield*/, this.dbIp.findOneOrFail({ ip: ipString })];
-                    case 2:
-                        ip = _a.sent();
-                        return [4 /*yield*/, this.getByPostAndIp(post, ip)];
-                    case 3:
-                        info = _a.sent();
-                        if (!info) {
-                            throw boom_1.default.badRequest("Want you like this post without see it post? 🤔🤔");
-                        }
-                        info.likedPost = like;
-                        return [2 /*return*/, info];
-                }
-            });
-        });
-    };
-    DatePostsWithIpsService.prototype.incrementView = function (idPost, ipString) {
-        return __awaiter(this, void 0, void 0, function () {
-            var post, ip, info, last, now, transcurso;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.postService.getById(idPost)];
-                    case 1:
-                        post = _a.sent();
-                        return [4 /*yield*/, this.dbIp.findOneOrFail({ ip: ipString })];
-                    case 2:
-                        ip = _a.sent();
-                        return [4 /*yield*/, this.getByPostAndIp(post, ip)];
-                    case 3:
-                        info = _a.sent();
-                        if (!!info) return [3 /*break*/, 5];
-                        return [4 /*yield*/, this.create({
-                                postId: idPost,
-                                ipId: ip.id,
-                            })];
-                    case 4:
-                        info = _a.sent();
-                        _a.label = 5;
-                    case 5:
-                        last = new Date(info.lastView.toString());
-                        now = new Date();
-                        transcurso = now.getTime() - last.getTime();
-                        if (transcurso < 600000)
-                            throw boom_1.default.locked("Hmmmmmmmmm.... 😣");
-                        info.quantityViews = info.quantityViews + 1;
-                        info.lastView = now;
-                        // Turn on the stat
-                        return [4 /*yield*/, this.statService.create({
-                                type: stats_entity_1.TypeStat.visitsToTheBlogPost,
-                                postId: idPost,
-                            })];
-                    case 6:
-                        // Turn on the stat
-                        _a.sent();
-                        return [4 /*yield*/, this.db.save(info)];
-                    case 7: return [2 /*return*/, _a.sent()];
-                }
-            });
-        });
-    };
-    return DatePostsWithIpsService;
-}());
-exports.DatePostsWithIpsService = DatePostsWithIpsService;
-
+eval("\nvar __assign = (this && this.__assign) || function () {\n    __assign = Object.assign || function(t) {\n        for (var s, i = 1, n = arguments.length; i < n; i++) {\n            s = arguments[i];\n            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))\n                t[p] = s[p];\n        }\n        return t;\n    };\n    return __assign.apply(this, arguments);\n};\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.DatePostsWithIpsService = void 0;\nvar boom_1 = __importDefault(__webpack_require__(/*! @hapi/boom */ \"@hapi/boom\"));\nvar connection_1 = __webpack_require__(/*! @db/connection */ \"./src/db/connection.ts\");\nvar datePostWithIps_entity_1 = __webpack_require__(/*! @entities/datePostWithIps.entity */ \"./src/entities/datePostWithIps.entity.ts\");\nvar ip_entity_1 = __webpack_require__(/*! @entities/ip.entity */ \"./src/entities/ip.entity.ts\");\nvar stats_entity_1 = __webpack_require__(/*! @entities/stats.entity */ \"./src/entities/stats.entity.ts\");\nvar post_service_1 = __webpack_require__(/*! ./post.service */ \"./src/services/post.service.ts\");\nvar stat_service_1 = __webpack_require__(/*! ./stat.service */ \"./src/services/stat.service.ts\");\nvar convertQueryParamsInOptions_1 = __webpack_require__(/*! @utils/convertQueryParamsInOptions */ \"./src/utils/convertQueryParamsInOptions.ts\");\nvar DatePostsWithIpsService = /** @class */ (function () {\n    function DatePostsWithIpsService() {\n        this.connect();\n    }\n    DatePostsWithIpsService.prototype.connect = function () {\n        return __awaiter(this, void 0, void 0, function () {\n            var database;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, connection_1.connection.db];\n                    case 1:\n                        database = _a.sent();\n                        this.db = database.getRepository(datePostWithIps_entity_1.DatePostWithIps);\n                        this.dbIp = database.getRepository(ip_entity_1.IPUser);\n                        this.postService = new post_service_1.PostsService();\n                        this.statService = new stat_service_1.StatService();\n                        return [2 /*return*/];\n                }\n            });\n        });\n    };\n    DatePostsWithIpsService.prototype.getByPostAndIp = function (post, ip) {\n        return __awaiter(this, void 0, void 0, function () {\n            var info;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.db.findOne({\n                            where: {\n                                post: post,\n                                ip: ip,\n                            },\n                            relations: [\"ip\", \"post\"],\n                        })];\n                    case 1:\n                        info = _a.sent();\n                        return [2 /*return*/, info];\n                }\n            });\n        });\n    };\n    // It's deprecated for now\n    DatePostsWithIpsService.prototype.getAll = function (limit, offset) {\n        return __awaiter(this, void 0, void 0, function () {\n            var queries, infos;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0:\n                        queries = (0, convertQueryParamsInOptions_1.convertQueryParamsInOptions)(limit, offset);\n                        return [4 /*yield*/, this.db.find(__assign(__assign({}, queries), { relations: [\"post\", \"ip\"] }))];\n                    case 1:\n                        infos = _a.sent();\n                        return [2 /*return*/, infos];\n                }\n            });\n        });\n    };\n    DatePostsWithIpsService.prototype.create = function (dto) {\n        return __awaiter(this, void 0, void 0, function () {\n            var post, ip, newInfo;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.postService.getById(dto.postId)];\n                    case 1:\n                        post = _a.sent();\n                        return [4 /*yield*/, this.dbIp.findOneOrFail(dto.ipId)];\n                    case 2:\n                        ip = _a.sent();\n                        newInfo = this.db.create();\n                        newInfo.post = post;\n                        newInfo.ip = ip;\n                        return [4 /*yield*/, this.db.save(newInfo)];\n                    case 3: return [2 /*return*/, _a.sent()];\n                }\n            });\n        });\n    };\n    DatePostsWithIpsService.prototype.setLike = function (like, idPost, ipString) {\n        return __awaiter(this, void 0, void 0, function () {\n            var post, ip, info;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.postService.getById(idPost)];\n                    case 1:\n                        post = _a.sent();\n                        return [4 /*yield*/, this.dbIp.findOneOrFail({ ip: ipString })];\n                    case 2:\n                        ip = _a.sent();\n                        return [4 /*yield*/, this.getByPostAndIp(post, ip)];\n                    case 3:\n                        info = _a.sent();\n                        if (!info) {\n                            throw boom_1.default.badRequest(\"Want you like this post without see it post? 🤔🤔\");\n                        }\n                        info.likedPost = like;\n                        return [2 /*return*/, info];\n                }\n            });\n        });\n    };\n    DatePostsWithIpsService.prototype.incrementView = function (idPost, ipString) {\n        return __awaiter(this, void 0, void 0, function () {\n            var post, ip, info, last, now, transcurso;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.postService.getById(idPost)];\n                    case 1:\n                        post = _a.sent();\n                        return [4 /*yield*/, this.dbIp.findOneOrFail({ ip: ipString })];\n                    case 2:\n                        ip = _a.sent();\n                        return [4 /*yield*/, this.getByPostAndIp(post, ip)];\n                    case 3:\n                        info = _a.sent();\n                        if (!!info) return [3 /*break*/, 5];\n                        return [4 /*yield*/, this.create({\n                                postId: idPost,\n                                ipId: ip.id,\n                            })];\n                    case 4:\n                        info = _a.sent();\n                        _a.label = 5;\n                    case 5:\n                        last = new Date(info.lastView.toString());\n                        now = new Date();\n                        transcurso = now.getTime() - last.getTime();\n                        if (transcurso < 600000)\n                            throw boom_1.default.locked(\"Hmmmmmmmmm.... 😣\");\n                        info.quantityViews = info.quantityViews + 1;\n                        info.lastView = now;\n                        // Turn on the stat\n                        return [4 /*yield*/, this.statService.create({\n                                type: stats_entity_1.TypeStat.visitsToTheBlogPost,\n                                postId: idPost,\n                            })];\n                    case 6:\n                        // Turn on the stat\n                        _a.sent();\n                        return [4 /*yield*/, this.db.save(info)];\n                    case 7: return [2 /*return*/, _a.sent()];\n                }\n            });\n        });\n    };\n    return DatePostsWithIpsService;\n}());\nexports.DatePostsWithIpsService = DatePostsWithIpsService;\n\n\n//# sourceURL=webpack://wilmion-api/./src/services/datePostWithIps.service.ts?");
 
 /***/ }),
 
-/***/ 5784:
+/***/ "./src/services/image.service.ts":
+/*!***************************************!*\
+  !*** ./src/services/image.service.ts ***!
+  \***************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.ImageService = void 0;
-var boom_1 = __importDefault(__webpack_require__(3767));
-var connection_1 = __webpack_require__(681);
-var image_entity_1 = __webpack_require__(6488);
-var convertQueryParamsInOptions_1 = __webpack_require__(2126);
-var upload_storage_1 = __webpack_require__(7017);
-var ImageService = /** @class */ (function () {
-    function ImageService() {
-        this.connect();
-    }
-    ImageService.prototype.connect = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var database;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, connection_1.connection.db];
-                    case 1:
-                        database = _a.sent();
-                        this.db = database.getRepository(image_entity_1.Image);
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    ImageService.prototype.getResolutionBySize = function (size) {
-        var _a = size.split("x"), width = _a[0], height = _a[1];
-        var resolution = parseInt(width, 10) / parseInt(height, 10);
-        resolution = resolution.toFixed(4);
-        return resolution;
-    };
-    ImageService.prototype.getById = function (id) {
-        return __awaiter(this, void 0, void 0, function () {
-            var image;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.db.findOne(id)];
-                    case 1:
-                        image = _a.sent();
-                        if (!image)
-                            throw boom_1.default.notFound("This image is not exist in this database");
-                        return [2 /*return*/, image];
-                }
-            });
-        });
-    };
-    ImageService.prototype.getByMd5 = function (md5) {
-        return __awaiter(this, void 0, void 0, function () {
-            var image;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.db.findOne({ md5: md5 })];
-                    case 1:
-                        image = _a.sent();
-                        if (!image)
-                            throw boom_1.default.notFound("This image is not exist in this database");
-                        return [2 /*return*/, image];
-                }
-            });
-        });
-    };
-    ImageService.prototype.getAll = function (limit, offset) {
-        return __awaiter(this, void 0, void 0, function () {
-            var options, images;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        options = (0, convertQueryParamsInOptions_1.convertQueryParamsInOptions)(limit, offset);
-                        return [4 /*yield*/, this.db.find(options)];
-                    case 1:
-                        images = _a.sent();
-                        return [2 /*return*/, images];
-                }
-            });
-        });
-    };
-    ImageService.prototype.create = function (imageDto, file) {
-        return __awaiter(this, void 0, void 0, function () {
-            var blob, name, existImage, Uri, newImage;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        if (!file)
-                            throw boom_1.default.notAcceptable("The image? 🤨");
-                        if (Array.isArray(file)) {
-                            throw boom_1.default.notAcceptable("The image is only one 👀");
-                        }
-                        blob = file.data;
-                        name = file.md5;
-                        return [4 /*yield*/, this.db.findOne({ md5: name })];
-                    case 1:
-                        existImage = _a.sent();
-                        if (existImage)
-                            throw boom_1.default.conflict("This image already exist, the ID is " + existImage.id);
-                        return [4 /*yield*/, (0, upload_storage_1.uploadStorage)(name, blob)];
-                    case 2:
-                        _a.sent();
-                        return [4 /*yield*/, (0, upload_storage_1.getUriFromFile)(name)];
-                    case 3:
-                        Uri = _a.sent();
-                        return [4 /*yield*/, this.db.create(imageDto)];
-                    case 4:
-                        newImage = _a.sent();
-                        newImage.imageUrl = Uri;
-                        newImage.resolution = this.getResolutionBySize(newImage.size);
-                        newImage.md5 = name;
-                        return [4 /*yield*/, this.db.save(newImage)];
-                    case 5: return [2 /*return*/, _a.sent()];
-                }
-            });
-        });
-    };
-    ImageService.prototype.delete = function (id) {
-        return __awaiter(this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getById(id)];
-                    case 1:
-                        _a.sent();
-                        return [4 /*yield*/, this.db.delete(id)];
-                    case 2:
-                        _a.sent();
-                        return [2 /*return*/, "This image with for ID ".concat(id, " was deleted")];
-                }
-            });
-        });
-    };
-    return ImageService;
-}());
-exports.ImageService = ImageService;
-
+eval("\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.ImageService = void 0;\nvar boom_1 = __importDefault(__webpack_require__(/*! @hapi/boom */ \"@hapi/boom\"));\nvar connection_1 = __webpack_require__(/*! @db/connection */ \"./src/db/connection.ts\");\nvar image_entity_1 = __webpack_require__(/*! @entities/image.entity */ \"./src/entities/image.entity.ts\");\nvar convertQueryParamsInOptions_1 = __webpack_require__(/*! @utils/convertQueryParamsInOptions */ \"./src/utils/convertQueryParamsInOptions.ts\");\nvar upload_storage_1 = __webpack_require__(/*! @firebase/upload-storage */ \"./src/firebase/upload-storage.ts\");\nvar ImageService = /** @class */ (function () {\n    function ImageService() {\n        this.connect();\n    }\n    ImageService.prototype.connect = function () {\n        return __awaiter(this, void 0, void 0, function () {\n            var database;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, connection_1.connection.db];\n                    case 1:\n                        database = _a.sent();\n                        this.db = database.getRepository(image_entity_1.Image);\n                        return [2 /*return*/];\n                }\n            });\n        });\n    };\n    ImageService.prototype.getResolutionBySize = function (size) {\n        var _a = size.split(\"x\"), width = _a[0], height = _a[1];\n        var resolution = parseInt(width, 10) / parseInt(height, 10);\n        resolution = resolution.toFixed(4);\n        return resolution;\n    };\n    ImageService.prototype.getById = function (id) {\n        return __awaiter(this, void 0, void 0, function () {\n            var image;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.db.findOne(id)];\n                    case 1:\n                        image = _a.sent();\n                        if (!image)\n                            throw boom_1.default.notFound(\"This image is not exist in this database\");\n                        return [2 /*return*/, image];\n                }\n            });\n        });\n    };\n    ImageService.prototype.getByMd5 = function (md5) {\n        return __awaiter(this, void 0, void 0, function () {\n            var image;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.db.findOne({ md5: md5 })];\n                    case 1:\n                        image = _a.sent();\n                        if (!image)\n                            throw boom_1.default.notFound(\"This image is not exist in this database\");\n                        return [2 /*return*/, image];\n                }\n            });\n        });\n    };\n    ImageService.prototype.getAll = function (limit, offset) {\n        return __awaiter(this, void 0, void 0, function () {\n            var options, images;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0:\n                        options = (0, convertQueryParamsInOptions_1.convertQueryParamsInOptions)(limit, offset);\n                        return [4 /*yield*/, this.db.find(options)];\n                    case 1:\n                        images = _a.sent();\n                        return [2 /*return*/, images];\n                }\n            });\n        });\n    };\n    ImageService.prototype.create = function (imageDto, file) {\n        return __awaiter(this, void 0, void 0, function () {\n            var blob, name, existImage, Uri, newImage;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0:\n                        if (!file)\n                            throw boom_1.default.notAcceptable(\"The image? 🤨\");\n                        if (Array.isArray(file)) {\n                            throw boom_1.default.notAcceptable(\"The image is only one 👀\");\n                        }\n                        blob = file.data;\n                        name = file.md5;\n                        return [4 /*yield*/, this.db.findOne({ md5: name })];\n                    case 1:\n                        existImage = _a.sent();\n                        if (existImage)\n                            throw boom_1.default.conflict(\"This image already exist, the ID is \" + existImage.id);\n                        return [4 /*yield*/, (0, upload_storage_1.uploadStorage)(name, blob)];\n                    case 2:\n                        _a.sent();\n                        return [4 /*yield*/, (0, upload_storage_1.getUriFromFile)(name)];\n                    case 3:\n                        Uri = _a.sent();\n                        return [4 /*yield*/, this.db.create(imageDto)];\n                    case 4:\n                        newImage = _a.sent();\n                        newImage.imageUrl = Uri;\n                        newImage.resolution = this.getResolutionBySize(newImage.size);\n                        newImage.md5 = name;\n                        return [4 /*yield*/, this.db.save(newImage)];\n                    case 5: return [2 /*return*/, _a.sent()];\n                }\n            });\n        });\n    };\n    ImageService.prototype.delete = function (id) {\n        return __awaiter(this, void 0, void 0, function () {\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.getById(id)];\n                    case 1:\n                        _a.sent();\n                        return [4 /*yield*/, this.db.delete(id)];\n                    case 2:\n                        _a.sent();\n                        return [2 /*return*/, \"This image with for ID \".concat(id, \" was deleted\")];\n                }\n            });\n        });\n    };\n    return ImageService;\n}());\nexports.ImageService = ImageService;\n\n\n//# sourceURL=webpack://wilmion-api/./src/services/image.service.ts?");
 
 /***/ }),
 
-/***/ 9597:
+/***/ "./src/services/ipsUser.service.ts":
+/*!*****************************************!*\
+  !*** ./src/services/ipsUser.service.ts ***!
+  \*****************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.IpsUserService = void 0;
-var boom_1 = __importDefault(__webpack_require__(3767));
-var connection_1 = __webpack_require__(681);
-var ip_entity_1 = __webpack_require__(7229);
-var convertQueryParamsInOptions_1 = __webpack_require__(2126);
-var IpsUserService = /** @class */ (function () {
-    function IpsUserService() {
-        this.connect();
-    }
-    IpsUserService.prototype.connect = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var database;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, connection_1.connection.db];
-                    case 1:
-                        database = _a.sent();
-                        this.db = database.getRepository(ip_entity_1.IPUser);
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    IpsUserService.prototype.getAll = function (limit, offset) {
-        return __awaiter(this, void 0, void 0, function () {
-            var queries, ips;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        queries = (0, convertQueryParamsInOptions_1.convertQueryParamsInOptions)(limit, offset);
-                        return [4 /*yield*/, this.db.find(__assign(__assign({}, queries), { relations: ["datePostWithIps"] }))];
-                    case 1:
-                        ips = _a.sent();
-                        return [2 /*return*/, ips];
-                }
-            });
-        });
-    };
-    IpsUserService.prototype.getByIp = function (ip) {
-        return __awaiter(this, void 0, void 0, function () {
-            var ipUser;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.db.findOne({ ip: ip }, {
-                            relations: ["datePostWithIps"],
-                        })];
-                    case 1:
-                        ipUser = _a.sent();
-                        if (!ipUser)
-                            throw boom_1.default.notFound("This IP doesn't exist 🙃");
-                        return [2 /*return*/, ipUser];
-                }
-            });
-        });
-    };
-    IpsUserService.prototype.create = function (ipuserDto) {
-        return __awaiter(this, void 0, void 0, function () {
-            var newIpUser;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        newIpUser = this.db.create(ipuserDto);
-                        return [4 /*yield*/, this.db.save(newIpUser)];
-                    case 1: return [2 /*return*/, _a.sent()];
-                }
-            });
-        });
-    };
-    return IpsUserService;
-}());
-exports.IpsUserService = IpsUserService;
-
+eval("\nvar __assign = (this && this.__assign) || function () {\n    __assign = Object.assign || function(t) {\n        for (var s, i = 1, n = arguments.length; i < n; i++) {\n            s = arguments[i];\n            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))\n                t[p] = s[p];\n        }\n        return t;\n    };\n    return __assign.apply(this, arguments);\n};\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.IpsUserService = void 0;\nvar boom_1 = __importDefault(__webpack_require__(/*! @hapi/boom */ \"@hapi/boom\"));\nvar connection_1 = __webpack_require__(/*! @db/connection */ \"./src/db/connection.ts\");\nvar ip_entity_1 = __webpack_require__(/*! @entities/ip.entity */ \"./src/entities/ip.entity.ts\");\nvar convertQueryParamsInOptions_1 = __webpack_require__(/*! @utils/convertQueryParamsInOptions */ \"./src/utils/convertQueryParamsInOptions.ts\");\nvar IpsUserService = /** @class */ (function () {\n    function IpsUserService() {\n        this.connect();\n    }\n    IpsUserService.prototype.connect = function () {\n        return __awaiter(this, void 0, void 0, function () {\n            var database;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, connection_1.connection.db];\n                    case 1:\n                        database = _a.sent();\n                        this.db = database.getRepository(ip_entity_1.IPUser);\n                        return [2 /*return*/];\n                }\n            });\n        });\n    };\n    IpsUserService.prototype.getAll = function (limit, offset) {\n        return __awaiter(this, void 0, void 0, function () {\n            var queries, ips;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0:\n                        queries = (0, convertQueryParamsInOptions_1.convertQueryParamsInOptions)(limit, offset);\n                        return [4 /*yield*/, this.db.find(__assign(__assign({}, queries), { relations: [\"datePostWithIps\"] }))];\n                    case 1:\n                        ips = _a.sent();\n                        return [2 /*return*/, ips];\n                }\n            });\n        });\n    };\n    IpsUserService.prototype.getByIp = function (ip) {\n        return __awaiter(this, void 0, void 0, function () {\n            var ipUser;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.db.findOne({ ip: ip }, {\n                            relations: [\"datePostWithIps\"],\n                        })];\n                    case 1:\n                        ipUser = _a.sent();\n                        if (!ipUser)\n                            throw boom_1.default.notFound(\"This IP doesn't exist 🙃\");\n                        return [2 /*return*/, ipUser];\n                }\n            });\n        });\n    };\n    IpsUserService.prototype.create = function (ipuserDto) {\n        return __awaiter(this, void 0, void 0, function () {\n            var newIpUser;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0:\n                        newIpUser = this.db.create(ipuserDto);\n                        return [4 /*yield*/, this.db.save(newIpUser)];\n                    case 1: return [2 /*return*/, _a.sent()];\n                }\n            });\n        });\n    };\n    return IpsUserService;\n}());\nexports.IpsUserService = IpsUserService;\n\n\n//# sourceURL=webpack://wilmion-api/./src/services/ipsUser.service.ts?");
 
 /***/ }),
 
-/***/ 3139:
+/***/ "./src/services/jobs.service.ts":
+/*!**************************************!*\
+  !*** ./src/services/jobs.service.ts ***!
+  \**************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.JobsService = void 0;
-var boom_1 = __importDefault(__webpack_require__(3767));
-var image_service_1 = __webpack_require__(5784);
-var connection_1 = __webpack_require__(681);
-var job_entity_1 = __webpack_require__(4352);
-var JobsService = /** @class */ (function () {
-    function JobsService() {
-        this.connect();
-        this.imageService = new image_service_1.ImageService();
-    }
-    JobsService.prototype.connect = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var database;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, connection_1.connection.db];
-                    case 1:
-                        database = _a.sent();
-                        this.db = database.getRepository(job_entity_1.Job);
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    JobsService.prototype.getAll = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var jobs;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.db.find({ relations: ["image"] })];
-                    case 1:
-                        jobs = _a.sent();
-                        return [2 /*return*/, jobs];
-                }
-            });
-        });
-    };
-    JobsService.prototype.getById = function (id) {
-        return __awaiter(this, void 0, void 0, function () {
-            var job;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.db.findOne(id, { relations: ["image"] })];
-                    case 1:
-                        job = _a.sent();
-                        if (!job)
-                            throw boom_1.default.notFound("This job doesn't exist");
-                        return [2 /*return*/, job];
-                }
-            });
-        });
-    };
-    JobsService.prototype.create = function (jobDto) {
-        return __awaiter(this, void 0, void 0, function () {
-            var jobs, image, newJob;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getAll()];
-                    case 1:
-                        jobs = _a.sent();
-                        return [4 /*yield*/, this.imageService.getById(jobDto.imageId)];
-                    case 2:
-                        image = _a.sent();
-                        if (jobs.length >= 2)
-                            throw boom_1.default.notAcceptable("The maximun jobs is 2. Update the jobs is the best way");
-                        newJob = this.db.create(jobDto);
-                        newJob.image = image;
-                        return [4 /*yield*/, this.db.save(newJob)];
-                    case 3: return [2 /*return*/, _a.sent()];
-                }
-            });
-        });
-    };
-    JobsService.prototype.update = function (id, jobUpdateDto) {
-        return __awaiter(this, void 0, void 0, function () {
-            var job, _a;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
-                    case 0: return [4 /*yield*/, this.getById(id)];
-                    case 1:
-                        job = _b.sent();
-                        if (!jobUpdateDto.imageId) return [3 /*break*/, 4];
-                        _a = job;
-                        return [4 /*yield*/, this.imageService.getById(jobUpdateDto.imageId)];
-                    case 2:
-                        _a.image = _b.sent();
-                        delete jobUpdateDto.imageId;
-                        return [4 /*yield*/, this.db.save(job)];
-                    case 3:
-                        _b.sent();
-                        _b.label = 4;
-                    case 4: return [4 /*yield*/, this.db.update(job.id, jobUpdateDto)];
-                    case 5:
-                        _b.sent();
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    JobsService.prototype.deactivate = function (id) {
-        return __awaiter(this, void 0, void 0, function () {
-            var job;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getById(id)];
-                    case 1:
-                        job = _a.sent();
-                        if (!job.active)
-                            throw boom_1.default.conflict("This job already deactivate");
-                        return [4 /*yield*/, this.db.update(job.id, { active: false })];
-                    case 2:
-                        _a.sent();
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    JobsService.prototype.activate = function (id) {
-        return __awaiter(this, void 0, void 0, function () {
-            var job;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getById(id)];
-                    case 1:
-                        job = _a.sent();
-                        if (job.active)
-                            throw boom_1.default.conflict("This job already activate");
-                        return [4 /*yield*/, this.db.update(job.id, { active: true })];
-                    case 2:
-                        _a.sent();
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    return JobsService;
-}());
-exports.JobsService = JobsService;
-
+eval("\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.JobsService = void 0;\nvar boom_1 = __importDefault(__webpack_require__(/*! @hapi/boom */ \"@hapi/boom\"));\nvar image_service_1 = __webpack_require__(/*! @services/image.service */ \"./src/services/image.service.ts\");\nvar connection_1 = __webpack_require__(/*! @db/connection */ \"./src/db/connection.ts\");\nvar job_entity_1 = __webpack_require__(/*! @entities/job.entity */ \"./src/entities/job.entity.ts\");\nvar JobsService = /** @class */ (function () {\n    function JobsService() {\n        this.connect();\n        this.imageService = new image_service_1.ImageService();\n    }\n    JobsService.prototype.connect = function () {\n        return __awaiter(this, void 0, void 0, function () {\n            var database;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, connection_1.connection.db];\n                    case 1:\n                        database = _a.sent();\n                        this.db = database.getRepository(job_entity_1.Job);\n                        return [2 /*return*/];\n                }\n            });\n        });\n    };\n    JobsService.prototype.getAll = function () {\n        return __awaiter(this, void 0, void 0, function () {\n            var jobs;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.db.find({ relations: [\"image\"] })];\n                    case 1:\n                        jobs = _a.sent();\n                        return [2 /*return*/, jobs];\n                }\n            });\n        });\n    };\n    JobsService.prototype.getById = function (id) {\n        return __awaiter(this, void 0, void 0, function () {\n            var job;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.db.findOne(id, { relations: [\"image\"] })];\n                    case 1:\n                        job = _a.sent();\n                        if (!job)\n                            throw boom_1.default.notFound(\"This job doesn't exist\");\n                        return [2 /*return*/, job];\n                }\n            });\n        });\n    };\n    JobsService.prototype.create = function (jobDto) {\n        return __awaiter(this, void 0, void 0, function () {\n            var jobs, image, newJob;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.getAll()];\n                    case 1:\n                        jobs = _a.sent();\n                        return [4 /*yield*/, this.imageService.getById(jobDto.imageId)];\n                    case 2:\n                        image = _a.sent();\n                        if (jobs.length >= 2)\n                            throw boom_1.default.notAcceptable(\"The maximun jobs is 2. Update the jobs is the best way\");\n                        newJob = this.db.create(jobDto);\n                        newJob.image = image;\n                        return [4 /*yield*/, this.db.save(newJob)];\n                    case 3: return [2 /*return*/, _a.sent()];\n                }\n            });\n        });\n    };\n    JobsService.prototype.update = function (id, jobUpdateDto) {\n        return __awaiter(this, void 0, void 0, function () {\n            var job, _a;\n            return __generator(this, function (_b) {\n                switch (_b.label) {\n                    case 0: return [4 /*yield*/, this.getById(id)];\n                    case 1:\n                        job = _b.sent();\n                        if (!jobUpdateDto.imageId) return [3 /*break*/, 4];\n                        _a = job;\n                        return [4 /*yield*/, this.imageService.getById(jobUpdateDto.imageId)];\n                    case 2:\n                        _a.image = _b.sent();\n                        delete jobUpdateDto.imageId;\n                        return [4 /*yield*/, this.db.save(job)];\n                    case 3:\n                        _b.sent();\n                        _b.label = 4;\n                    case 4: return [4 /*yield*/, this.db.update(job.id, jobUpdateDto)];\n                    case 5:\n                        _b.sent();\n                        return [2 /*return*/];\n                }\n            });\n        });\n    };\n    JobsService.prototype.deactivate = function (id) {\n        return __awaiter(this, void 0, void 0, function () {\n            var job;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.getById(id)];\n                    case 1:\n                        job = _a.sent();\n                        if (!job.active)\n                            throw boom_1.default.conflict(\"This job already deactivate\");\n                        return [4 /*yield*/, this.db.update(job.id, { active: false })];\n                    case 2:\n                        _a.sent();\n                        return [2 /*return*/];\n                }\n            });\n        });\n    };\n    JobsService.prototype.activate = function (id) {\n        return __awaiter(this, void 0, void 0, function () {\n            var job;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.getById(id)];\n                    case 1:\n                        job = _a.sent();\n                        if (job.active)\n                            throw boom_1.default.conflict(\"This job already activate\");\n                        return [4 /*yield*/, this.db.update(job.id, { active: true })];\n                    case 2:\n                        _a.sent();\n                        return [2 /*return*/];\n                }\n            });\n        });\n    };\n    return JobsService;\n}());\nexports.JobsService = JobsService;\n\n\n//# sourceURL=webpack://wilmion-api/./src/services/jobs.service.ts?");
 
 /***/ }),
 
-/***/ 7440:
+/***/ "./src/services/post.service.ts":
+/*!**************************************!*\
+  !*** ./src/services/post.service.ts ***!
+  \**************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.PostsService = void 0;
-var boom_1 = __importDefault(__webpack_require__(3767));
-var connection_1 = __webpack_require__(681);
-var post_entity_1 = __webpack_require__(1091);
-var convertQueryParamsInOptions_1 = __webpack_require__(2126);
-var tags_service_1 = __webpack_require__(2837);
-var users_service_1 = __webpack_require__(5099);
-var get_nor_repeat_in_many_to_many_relations_1 = __webpack_require__(2405);
-var PostsService = /** @class */ (function () {
-    function PostsService() {
-        this.connect();
-    }
-    PostsService.prototype.connect = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var database;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, connection_1.connection.db];
-                    case 1:
-                        database = _a.sent();
-                        this.db = database.getRepository(post_entity_1.Post);
-                        this.tagsService = new tags_service_1.TagsService();
-                        this.userService = new users_service_1.UsersService();
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    PostsService.prototype.getTags = function (tagsIds) {
-        return __awaiter(this, void 0, void 0, function () {
-            var tags, _i, tagsIds_1, tagId, tag;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        tags = [];
-                        _i = 0, tagsIds_1 = tagsIds;
-                        _a.label = 1;
-                    case 1:
-                        if (!(_i < tagsIds_1.length)) return [3 /*break*/, 4];
-                        tagId = tagsIds_1[_i];
-                        return [4 /*yield*/, this.tagsService.getById(tagId)];
-                    case 2:
-                        tag = _a.sent();
-                        tags.push(tag);
-                        _a.label = 3;
-                    case 3:
-                        _i++;
-                        return [3 /*break*/, 1];
-                    case 4: return [2 /*return*/, tags];
-                }
-            });
-        });
-    };
-    PostsService.prototype.getAll = function (limit, offset) {
-        return __awaiter(this, void 0, void 0, function () {
-            var queryParams, posts;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        queryParams = (0, convertQueryParamsInOptions_1.convertQueryParamsInOptions)(limit, offset);
-                        return [4 /*yield*/, this.db.find(__assign(__assign({}, queryParams), { where: {
-                                    active: true,
-                                }, relations: ["user", "contents", "tags"] }))];
-                    case 1:
-                        posts = _a.sent();
-                        return [2 /*return*/, posts];
-                }
-            });
-        });
-    };
-    PostsService.prototype.getById = function (id) {
-        return __awaiter(this, void 0, void 0, function () {
-            var post;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.db.findOne(id, {
-                            relations: ["user", "contents", "tags"],
-                        })];
-                    case 1:
-                        post = _a.sent();
-                        if (!post || !post.active)
-                            throw boom_1.default.notFound("The post is not exist 🤭");
-                        return [2 /*return*/, post];
-                }
-            });
-        });
-    };
-    PostsService.prototype.create = function (postDto, idUser) {
-        return __awaiter(this, void 0, void 0, function () {
-            var user, newPost, tags;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.userService.getById(idUser)];
-                    case 1:
-                        user = _a.sent();
-                        newPost = this.db.create(postDto);
-                        newPost.timeRead = 0;
-                        newPost.user = user;
-                        return [4 /*yield*/, this.getTags(postDto.tagsId)];
-                    case 2:
-                        tags = _a.sent();
-                        newPost.tags = tags;
-                        return [4 /*yield*/, this.db.save(newPost)];
-                    case 3: return [2 /*return*/, _a.sent()];
-                }
-            });
-        });
-    };
-    PostsService.prototype.update = function (postUpdateDto, id) {
-        return __awaiter(this, void 0, void 0, function () {
-            var post, tagsId, newTagsIds, newTags;
-            var _a;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
-                    case 0: return [4 /*yield*/, this.getById(id)];
-                    case 1:
-                        post = _b.sent();
-                        if (!postUpdateDto.tagsId) return [3 /*break*/, 3];
-                        tagsId = postUpdateDto.tagsId;
-                        newTagsIds = (0, get_nor_repeat_in_many_to_many_relations_1.getNotRepeatInManyToManyRelations)(tagsId, post.tags);
-                        return [4 /*yield*/, this.getTags(newTagsIds)];
-                    case 2:
-                        newTags = _b.sent();
-                        (_a = post.tags).push.apply(_a, newTags);
-                        _b.label = 3;
-                    case 3:
-                        post = __assign(__assign({}, post), postUpdateDto);
-                        return [4 /*yield*/, this.db.save(post)];
-                    case 4: return [2 /*return*/, _b.sent()];
-                }
-            });
-        });
-    };
-    PostsService.prototype.delete = function (id) {
-        return __awaiter(this, void 0, void 0, function () {
-            var post;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getById(id)];
-                    case 1:
-                        post = _a.sent();
-                        post.active = false;
-                        return [2 /*return*/, this.db.save(post)];
-                }
-            });
-        });
-    };
-    return PostsService;
-}());
-exports.PostsService = PostsService;
-
+eval("\nvar __assign = (this && this.__assign) || function () {\n    __assign = Object.assign || function(t) {\n        for (var s, i = 1, n = arguments.length; i < n; i++) {\n            s = arguments[i];\n            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))\n                t[p] = s[p];\n        }\n        return t;\n    };\n    return __assign.apply(this, arguments);\n};\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.PostsService = void 0;\nvar boom_1 = __importDefault(__webpack_require__(/*! @hapi/boom */ \"@hapi/boom\"));\nvar connection_1 = __webpack_require__(/*! @db/connection */ \"./src/db/connection.ts\");\nvar post_entity_1 = __webpack_require__(/*! @entities/post.entity */ \"./src/entities/post.entity.ts\");\nvar convertQueryParamsInOptions_1 = __webpack_require__(/*! @utils/convertQueryParamsInOptions */ \"./src/utils/convertQueryParamsInOptions.ts\");\nvar tags_service_1 = __webpack_require__(/*! ./tags.service */ \"./src/services/tags.service.ts\");\nvar users_service_1 = __webpack_require__(/*! ./users.service */ \"./src/services/users.service.ts\");\nvar get_nor_repeat_in_many_to_many_relations_1 = __webpack_require__(/*! @utils/get-nor-repeat-in-many-to-many-relations */ \"./src/utils/get-nor-repeat-in-many-to-many-relations.ts\");\nvar PostsService = /** @class */ (function () {\n    function PostsService() {\n        this.connect();\n    }\n    PostsService.prototype.connect = function () {\n        return __awaiter(this, void 0, void 0, function () {\n            var database;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, connection_1.connection.db];\n                    case 1:\n                        database = _a.sent();\n                        this.db = database.getRepository(post_entity_1.Post);\n                        this.tagsService = new tags_service_1.TagsService();\n                        this.userService = new users_service_1.UsersService();\n                        return [2 /*return*/];\n                }\n            });\n        });\n    };\n    PostsService.prototype.getTags = function (tagsIds) {\n        return __awaiter(this, void 0, void 0, function () {\n            var tags, _i, tagsIds_1, tagId, tag;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0:\n                        tags = [];\n                        _i = 0, tagsIds_1 = tagsIds;\n                        _a.label = 1;\n                    case 1:\n                        if (!(_i < tagsIds_1.length)) return [3 /*break*/, 4];\n                        tagId = tagsIds_1[_i];\n                        return [4 /*yield*/, this.tagsService.getById(tagId)];\n                    case 2:\n                        tag = _a.sent();\n                        tags.push(tag);\n                        _a.label = 3;\n                    case 3:\n                        _i++;\n                        return [3 /*break*/, 1];\n                    case 4: return [2 /*return*/, tags];\n                }\n            });\n        });\n    };\n    PostsService.prototype.getAll = function (limit, offset) {\n        return __awaiter(this, void 0, void 0, function () {\n            var queryParams, posts;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0:\n                        queryParams = (0, convertQueryParamsInOptions_1.convertQueryParamsInOptions)(limit, offset);\n                        return [4 /*yield*/, this.db.find(__assign(__assign({}, queryParams), { where: {\n                                    active: true,\n                                }, relations: [\"user\", \"contents\", \"tags\"] }))];\n                    case 1:\n                        posts = _a.sent();\n                        return [2 /*return*/, posts];\n                }\n            });\n        });\n    };\n    PostsService.prototype.getById = function (id) {\n        return __awaiter(this, void 0, void 0, function () {\n            var post;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.db.findOne(id, {\n                            relations: [\"user\", \"contents\", \"tags\"],\n                        })];\n                    case 1:\n                        post = _a.sent();\n                        if (!post || !post.active)\n                            throw boom_1.default.notFound(\"The post is not exist 🤭\");\n                        return [2 /*return*/, post];\n                }\n            });\n        });\n    };\n    PostsService.prototype.create = function (postDto, idUser) {\n        return __awaiter(this, void 0, void 0, function () {\n            var user, newPost, tags;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.userService.getById(idUser)];\n                    case 1:\n                        user = _a.sent();\n                        newPost = this.db.create(postDto);\n                        newPost.timeRead = 0;\n                        newPost.user = user;\n                        return [4 /*yield*/, this.getTags(postDto.tagsId)];\n                    case 2:\n                        tags = _a.sent();\n                        newPost.tags = tags;\n                        return [4 /*yield*/, this.db.save(newPost)];\n                    case 3: return [2 /*return*/, _a.sent()];\n                }\n            });\n        });\n    };\n    PostsService.prototype.update = function (postUpdateDto, id) {\n        return __awaiter(this, void 0, void 0, function () {\n            var post, tagsId, newTagsIds, newTags;\n            var _a;\n            return __generator(this, function (_b) {\n                switch (_b.label) {\n                    case 0: return [4 /*yield*/, this.getById(id)];\n                    case 1:\n                        post = _b.sent();\n                        if (!postUpdateDto.tagsId) return [3 /*break*/, 3];\n                        tagsId = postUpdateDto.tagsId;\n                        newTagsIds = (0, get_nor_repeat_in_many_to_many_relations_1.getNotRepeatInManyToManyRelations)(tagsId, post.tags);\n                        return [4 /*yield*/, this.getTags(newTagsIds)];\n                    case 2:\n                        newTags = _b.sent();\n                        (_a = post.tags).push.apply(_a, newTags);\n                        _b.label = 3;\n                    case 3:\n                        post = __assign(__assign({}, post), postUpdateDto);\n                        return [4 /*yield*/, this.db.save(post)];\n                    case 4: return [2 /*return*/, _b.sent()];\n                }\n            });\n        });\n    };\n    PostsService.prototype.delete = function (id) {\n        return __awaiter(this, void 0, void 0, function () {\n            var post;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.getById(id)];\n                    case 1:\n                        post = _a.sent();\n                        post.active = false;\n                        return [2 /*return*/, this.db.save(post)];\n                }\n            });\n        });\n    };\n    return PostsService;\n}());\nexports.PostsService = PostsService;\n\n\n//# sourceURL=webpack://wilmion-api/./src/services/post.service.ts?");
 
 /***/ }),
 
-/***/ 6795:
+/***/ "./src/services/project.service.ts":
+/*!*****************************************!*\
+  !*** ./src/services/project.service.ts ***!
+  \*****************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.ProjectService = void 0;
-var boom_1 = __importDefault(__webpack_require__(3767));
-var connection_1 = __webpack_require__(681);
-var project_entity_1 = __webpack_require__(4971);
-var image_service_1 = __webpack_require__(5784);
-var skills_service_1 = __webpack_require__(7444);
-var get_nor_repeat_in_many_to_many_relations_1 = __webpack_require__(2405);
-var ProjectService = /** @class */ (function () {
-    function ProjectService() {
-        this.connect();
-    }
-    ProjectService.prototype.connect = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var database;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, connection_1.connection.db];
-                    case 1:
-                        database = _a.sent();
-                        this.db = database.getRepository(project_entity_1.Project);
-                        this.imageService = new image_service_1.ImageService();
-                        this.skillService = new skills_service_1.SkillService();
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    ProjectService.prototype.getAll = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var project;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.db.find({
-                            relations: ["image", "skills"],
-                        })];
-                    case 1:
-                        project = _a.sent();
-                        return [2 /*return*/, project];
-                }
-            });
-        });
-    };
-    ProjectService.prototype.getById = function (id) {
-        return __awaiter(this, void 0, void 0, function () {
-            var project;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.db.findOne(id, {
-                            relations: ["skills", "image"],
-                        })];
-                    case 1:
-                        project = _a.sent();
-                        if (!project)
-                            throw boom_1.default.notFound("This Project doesn't exist");
-                        return [2 /*return*/, project];
-                }
-            });
-        });
-    };
-    ProjectService.prototype.create = function (projectDto) {
-        return __awaiter(this, void 0, void 0, function () {
-            var projects, image, skills, _i, _a, skillId, skill, newProject;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
-                    case 0: return [4 /*yield*/, this.getAll()];
-                    case 1:
-                        projects = _b.sent();
-                        if (projects.length > 2)
-                            throw boom_1.default.illegal("No! The max length is 3 💢");
-                        return [4 /*yield*/, this.imageService.getById(projectDto.imageId)];
-                    case 2:
-                        image = _b.sent();
-                        skills = [];
-                        _i = 0, _a = projectDto.skillsIds;
-                        _b.label = 3;
-                    case 3:
-                        if (!(_i < _a.length)) return [3 /*break*/, 6];
-                        skillId = _a[_i];
-                        return [4 /*yield*/, this.skillService.getById(skillId)];
-                    case 4:
-                        skill = _b.sent();
-                        skills.push(skill);
-                        _b.label = 5;
-                    case 5:
-                        _i++;
-                        return [3 /*break*/, 3];
-                    case 6:
-                        newProject = this.db.create(projectDto);
-                        newProject.image = image;
-                        newProject.skills = skills;
-                        return [4 /*yield*/, this.db.save(newProject)];
-                    case 7: return [2 /*return*/, _b.sent()];
-                }
-            });
-        });
-    };
-    ProjectService.prototype.update = function (projectDto, id) {
-        return __awaiter(this, void 0, void 0, function () {
-            var project, _a, newSkillsIds, _i, newSkillsIds_1, skillId, skill;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
-                    case 0: return [4 /*yield*/, this.getById(id)];
-                    case 1:
-                        project = _b.sent();
-                        if (!projectDto.imageId) return [3 /*break*/, 3];
-                        _a = project;
-                        return [4 /*yield*/, this.imageService.getById(projectDto.imageId)];
-                    case 2:
-                        _a.image = _b.sent();
-                        _b.label = 3;
-                    case 3:
-                        if (!projectDto.skillsIds) return [3 /*break*/, 7];
-                        newSkillsIds = (0, get_nor_repeat_in_many_to_many_relations_1.getNotRepeatInManyToManyRelations)(projectDto.skillsIds, project.skills);
-                        _i = 0, newSkillsIds_1 = newSkillsIds;
-                        _b.label = 4;
-                    case 4:
-                        if (!(_i < newSkillsIds_1.length)) return [3 /*break*/, 7];
-                        skillId = newSkillsIds_1[_i];
-                        return [4 /*yield*/, this.skillService.getById(skillId)];
-                    case 5:
-                        skill = _b.sent();
-                        project.skills.push(skill);
-                        _b.label = 6;
-                    case 6:
-                        _i++;
-                        return [3 /*break*/, 4];
-                    case 7:
-                        project = __assign(__assign({}, project), projectDto);
-                        return [4 /*yield*/, this.db.save(project)];
-                    case 8: return [2 /*return*/, _b.sent()];
-                }
-            });
-        });
-    };
-    ProjectService.prototype.activateProject = function (id) {
-        return __awaiter(this, void 0, void 0, function () {
-            var project;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getById(id)];
-                    case 1:
-                        project = _a.sent();
-                        project.active = true;
-                        return [4 /*yield*/, this.db.save(project)];
-                    case 2: return [2 /*return*/, _a.sent()];
-                }
-            });
-        });
-    };
-    ProjectService.prototype.delete = function (id) {
-        return __awaiter(this, void 0, void 0, function () {
-            var project;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getById(id)];
-                    case 1:
-                        project = _a.sent();
-                        project.active = false;
-                        return [4 /*yield*/, this.db.save(project)];
-                    case 2: return [2 /*return*/, _a.sent()];
-                }
-            });
-        });
-    };
-    return ProjectService;
-}());
-exports.ProjectService = ProjectService;
-
+eval("\nvar __assign = (this && this.__assign) || function () {\n    __assign = Object.assign || function(t) {\n        for (var s, i = 1, n = arguments.length; i < n; i++) {\n            s = arguments[i];\n            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))\n                t[p] = s[p];\n        }\n        return t;\n    };\n    return __assign.apply(this, arguments);\n};\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.ProjectService = void 0;\nvar boom_1 = __importDefault(__webpack_require__(/*! @hapi/boom */ \"@hapi/boom\"));\nvar connection_1 = __webpack_require__(/*! @db/connection */ \"./src/db/connection.ts\");\nvar project_entity_1 = __webpack_require__(/*! @entities/project.entity */ \"./src/entities/project.entity.ts\");\nvar image_service_1 = __webpack_require__(/*! ./image.service */ \"./src/services/image.service.ts\");\nvar skills_service_1 = __webpack_require__(/*! ./skills.service */ \"./src/services/skills.service.ts\");\nvar get_nor_repeat_in_many_to_many_relations_1 = __webpack_require__(/*! @utils/get-nor-repeat-in-many-to-many-relations */ \"./src/utils/get-nor-repeat-in-many-to-many-relations.ts\");\nvar ProjectService = /** @class */ (function () {\n    function ProjectService() {\n        this.connect();\n    }\n    ProjectService.prototype.connect = function () {\n        return __awaiter(this, void 0, void 0, function () {\n            var database;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, connection_1.connection.db];\n                    case 1:\n                        database = _a.sent();\n                        this.db = database.getRepository(project_entity_1.Project);\n                        this.imageService = new image_service_1.ImageService();\n                        this.skillService = new skills_service_1.SkillService();\n                        return [2 /*return*/];\n                }\n            });\n        });\n    };\n    ProjectService.prototype.getAll = function () {\n        return __awaiter(this, void 0, void 0, function () {\n            var project;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.db.find({\n                            relations: [\"image\", \"skills\"],\n                        })];\n                    case 1:\n                        project = _a.sent();\n                        return [2 /*return*/, project];\n                }\n            });\n        });\n    };\n    ProjectService.prototype.getById = function (id) {\n        return __awaiter(this, void 0, void 0, function () {\n            var project;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.db.findOne(id, {\n                            relations: [\"skills\", \"image\"],\n                        })];\n                    case 1:\n                        project = _a.sent();\n                        if (!project)\n                            throw boom_1.default.notFound(\"This Project doesn't exist\");\n                        return [2 /*return*/, project];\n                }\n            });\n        });\n    };\n    ProjectService.prototype.create = function (projectDto) {\n        return __awaiter(this, void 0, void 0, function () {\n            var projects, image, skills, _i, _a, skillId, skill, newProject;\n            return __generator(this, function (_b) {\n                switch (_b.label) {\n                    case 0: return [4 /*yield*/, this.getAll()];\n                    case 1:\n                        projects = _b.sent();\n                        if (projects.length > 2)\n                            throw boom_1.default.illegal(\"No! The max length is 3 💢\");\n                        return [4 /*yield*/, this.imageService.getById(projectDto.imageId)];\n                    case 2:\n                        image = _b.sent();\n                        skills = [];\n                        _i = 0, _a = projectDto.skillsIds;\n                        _b.label = 3;\n                    case 3:\n                        if (!(_i < _a.length)) return [3 /*break*/, 6];\n                        skillId = _a[_i];\n                        return [4 /*yield*/, this.skillService.getById(skillId)];\n                    case 4:\n                        skill = _b.sent();\n                        skills.push(skill);\n                        _b.label = 5;\n                    case 5:\n                        _i++;\n                        return [3 /*break*/, 3];\n                    case 6:\n                        newProject = this.db.create(projectDto);\n                        newProject.image = image;\n                        newProject.skills = skills;\n                        return [4 /*yield*/, this.db.save(newProject)];\n                    case 7: return [2 /*return*/, _b.sent()];\n                }\n            });\n        });\n    };\n    ProjectService.prototype.update = function (projectDto, id) {\n        return __awaiter(this, void 0, void 0, function () {\n            var project, _a, newSkillsIds, _i, newSkillsIds_1, skillId, skill;\n            return __generator(this, function (_b) {\n                switch (_b.label) {\n                    case 0: return [4 /*yield*/, this.getById(id)];\n                    case 1:\n                        project = _b.sent();\n                        if (!projectDto.imageId) return [3 /*break*/, 3];\n                        _a = project;\n                        return [4 /*yield*/, this.imageService.getById(projectDto.imageId)];\n                    case 2:\n                        _a.image = _b.sent();\n                        _b.label = 3;\n                    case 3:\n                        if (!projectDto.skillsIds) return [3 /*break*/, 7];\n                        newSkillsIds = (0, get_nor_repeat_in_many_to_many_relations_1.getNotRepeatInManyToManyRelations)(projectDto.skillsIds, project.skills);\n                        _i = 0, newSkillsIds_1 = newSkillsIds;\n                        _b.label = 4;\n                    case 4:\n                        if (!(_i < newSkillsIds_1.length)) return [3 /*break*/, 7];\n                        skillId = newSkillsIds_1[_i];\n                        return [4 /*yield*/, this.skillService.getById(skillId)];\n                    case 5:\n                        skill = _b.sent();\n                        project.skills.push(skill);\n                        _b.label = 6;\n                    case 6:\n                        _i++;\n                        return [3 /*break*/, 4];\n                    case 7:\n                        project = __assign(__assign({}, project), projectDto);\n                        return [4 /*yield*/, this.db.save(project)];\n                    case 8: return [2 /*return*/, _b.sent()];\n                }\n            });\n        });\n    };\n    ProjectService.prototype.activateProject = function (id) {\n        return __awaiter(this, void 0, void 0, function () {\n            var project;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.getById(id)];\n                    case 1:\n                        project = _a.sent();\n                        project.active = true;\n                        return [4 /*yield*/, this.db.save(project)];\n                    case 2: return [2 /*return*/, _a.sent()];\n                }\n            });\n        });\n    };\n    ProjectService.prototype.delete = function (id) {\n        return __awaiter(this, void 0, void 0, function () {\n            var project;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.getById(id)];\n                    case 1:\n                        project = _a.sent();\n                        project.active = false;\n                        return [4 /*yield*/, this.db.save(project)];\n                    case 2: return [2 /*return*/, _a.sent()];\n                }\n            });\n        });\n    };\n    return ProjectService;\n}());\nexports.ProjectService = ProjectService;\n\n\n//# sourceURL=webpack://wilmion-api/./src/services/project.service.ts?");
 
 /***/ }),
 
-/***/ 7444:
+/***/ "./src/services/skills.service.ts":
+/*!****************************************!*\
+  !*** ./src/services/skills.service.ts ***!
+  \****************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.SkillService = void 0;
-var boom_1 = __importDefault(__webpack_require__(3767));
-var connection_1 = __webpack_require__(681);
-var skill_entity_1 = __webpack_require__(4472);
-var convertQueryParamsInOptions_1 = __webpack_require__(2126);
-var image_service_1 = __webpack_require__(5784);
-var SkillService = /** @class */ (function () {
-    function SkillService() {
-        this.connect();
-    }
-    SkillService.prototype.connect = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var database;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, connection_1.connection.db];
-                    case 1:
-                        database = _a.sent();
-                        this.db = database.getRepository(skill_entity_1.Skill);
-                        this.imageService = new image_service_1.ImageService();
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    SkillService.prototype.getAll = function (limit, offset) {
-        return __awaiter(this, void 0, void 0, function () {
-            var query, skills;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        query = (0, convertQueryParamsInOptions_1.convertQueryParamsInOptions)(limit, offset);
-                        return [4 /*yield*/, this.db.find(__assign(__assign({}, query), { where: {
-                                    active: true,
-                                }, relations: ["image"] }))];
-                    case 1:
-                        skills = _a.sent();
-                        return [2 /*return*/, skills];
-                }
-            });
-        });
-    };
-    SkillService.prototype.getById = function (id) {
-        return __awaiter(this, void 0, void 0, function () {
-            var skill;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.db.findOne(id)];
-                    case 1:
-                        skill = _a.sent();
-                        if (!skill || !skill.active)
-                            throw boom_1.default.notFound("The skill doesn't exist ✏️");
-                        return [2 /*return*/, skill];
-                }
-            });
-        });
-    };
-    SkillService.prototype.create = function (skillDto) {
-        return __awaiter(this, void 0, void 0, function () {
-            var existSkill, image, newSkill;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        if ((skillDto.imageId && skillDto.icon) ||
-                            (!skillDto.imageId && !skillDto.icon)) {
-                            throw boom_1.default.conflict("Only one parameter is exist");
-                        }
-                        return [4 /*yield*/, this.db.findOne({ name: skillDto.name })];
-                    case 1:
-                        existSkill = _a.sent();
-                        if (!(existSkill && !existSkill.active)) return [3 /*break*/, 3];
-                        return [4 /*yield*/, this.update(skillDto, existSkill.id)];
-                    case 2: 
-                    // If exist, reactivate the skill
-                    return [2 /*return*/, _a.sent()];
-                    case 3:
-                        image = null;
-                        if (!skillDto.imageId) return [3 /*break*/, 5];
-                        return [4 /*yield*/, this.imageService.getById(skillDto.imageId)];
-                    case 4:
-                        image = _a.sent();
-                        _a.label = 5;
-                    case 5: return [4 /*yield*/, this.db.create(skillDto)];
-                    case 6:
-                        newSkill = _a.sent();
-                        newSkill.image = image;
-                        return [4 /*yield*/, this.db.save(newSkill)];
-                    case 7: return [2 /*return*/, _a.sent()];
-                }
-            });
-        });
-    };
-    SkillService.prototype.update = function (skillDto, id) {
-        return __awaiter(this, void 0, void 0, function () {
-            var skill, _a;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
-                    case 0:
-                        if (skillDto.imageId && skillDto.icon) {
-                            throw boom_1.default.conflict("Only one parameter is exist");
-                        }
-                        return [4 /*yield*/, this.getById(id)];
-                    case 1:
-                        skill = _b.sent();
-                        skill.active = true;
-                        if (!skillDto.imageId) return [3 /*break*/, 3];
-                        _a = skill;
-                        return [4 /*yield*/, this.imageService.getById(skillDto.imageId)];
-                    case 2:
-                        _a.image = _b.sent();
-                        skill.icon = null;
-                        _b.label = 3;
-                    case 3:
-                        if (skillDto.icon) {
-                            skill.image = null;
-                            skill.icon = skillDto.icon;
-                        }
-                        skill = __assign(__assign({}, skill), skillDto);
-                        return [4 /*yield*/, this.db.save(skill)];
-                    case 4: return [2 /*return*/, _b.sent()];
-                }
-            });
-        });
-    };
-    SkillService.prototype.delete = function (id) {
-        return __awaiter(this, void 0, void 0, function () {
-            var skill;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getById(id)];
-                    case 1:
-                        skill = _a.sent();
-                        skill.active = false;
-                        return [4 /*yield*/, this.db.save(skill)];
-                    case 2:
-                        _a.sent();
-                        return [2 /*return*/, {}];
-                }
-            });
-        });
-    };
-    return SkillService;
-}());
-exports.SkillService = SkillService;
-
+eval("\nvar __assign = (this && this.__assign) || function () {\n    __assign = Object.assign || function(t) {\n        for (var s, i = 1, n = arguments.length; i < n; i++) {\n            s = arguments[i];\n            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))\n                t[p] = s[p];\n        }\n        return t;\n    };\n    return __assign.apply(this, arguments);\n};\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.SkillService = void 0;\nvar boom_1 = __importDefault(__webpack_require__(/*! @hapi/boom */ \"@hapi/boom\"));\nvar connection_1 = __webpack_require__(/*! @db/connection */ \"./src/db/connection.ts\");\nvar skill_entity_1 = __webpack_require__(/*! @entities/skill.entity */ \"./src/entities/skill.entity.ts\");\nvar convertQueryParamsInOptions_1 = __webpack_require__(/*! @utils/convertQueryParamsInOptions */ \"./src/utils/convertQueryParamsInOptions.ts\");\nvar image_service_1 = __webpack_require__(/*! ./image.service */ \"./src/services/image.service.ts\");\nvar SkillService = /** @class */ (function () {\n    function SkillService() {\n        this.connect();\n    }\n    SkillService.prototype.connect = function () {\n        return __awaiter(this, void 0, void 0, function () {\n            var database;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, connection_1.connection.db];\n                    case 1:\n                        database = _a.sent();\n                        this.db = database.getRepository(skill_entity_1.Skill);\n                        this.imageService = new image_service_1.ImageService();\n                        return [2 /*return*/];\n                }\n            });\n        });\n    };\n    SkillService.prototype.getAll = function (limit, offset) {\n        return __awaiter(this, void 0, void 0, function () {\n            var query, skills;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0:\n                        query = (0, convertQueryParamsInOptions_1.convertQueryParamsInOptions)(limit, offset);\n                        return [4 /*yield*/, this.db.find(__assign(__assign({}, query), { where: {\n                                    active: true,\n                                }, relations: [\"image\"] }))];\n                    case 1:\n                        skills = _a.sent();\n                        return [2 /*return*/, skills];\n                }\n            });\n        });\n    };\n    SkillService.prototype.getById = function (id) {\n        return __awaiter(this, void 0, void 0, function () {\n            var skill;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.db.findOne(id)];\n                    case 1:\n                        skill = _a.sent();\n                        if (!skill || !skill.active)\n                            throw boom_1.default.notFound(\"The skill doesn't exist ✏️\");\n                        return [2 /*return*/, skill];\n                }\n            });\n        });\n    };\n    SkillService.prototype.create = function (skillDto) {\n        return __awaiter(this, void 0, void 0, function () {\n            var existSkill, image, newSkill;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0:\n                        if ((skillDto.imageId && skillDto.icon) ||\n                            (!skillDto.imageId && !skillDto.icon)) {\n                            throw boom_1.default.conflict(\"Only one parameter is exist\");\n                        }\n                        return [4 /*yield*/, this.db.findOne({ name: skillDto.name })];\n                    case 1:\n                        existSkill = _a.sent();\n                        if (!(existSkill && !existSkill.active)) return [3 /*break*/, 3];\n                        return [4 /*yield*/, this.update(skillDto, existSkill.id)];\n                    case 2: \n                    // If exist, reactivate the skill\n                    return [2 /*return*/, _a.sent()];\n                    case 3:\n                        image = null;\n                        if (!skillDto.imageId) return [3 /*break*/, 5];\n                        return [4 /*yield*/, this.imageService.getById(skillDto.imageId)];\n                    case 4:\n                        image = _a.sent();\n                        _a.label = 5;\n                    case 5: return [4 /*yield*/, this.db.create(skillDto)];\n                    case 6:\n                        newSkill = _a.sent();\n                        newSkill.image = image;\n                        return [4 /*yield*/, this.db.save(newSkill)];\n                    case 7: return [2 /*return*/, _a.sent()];\n                }\n            });\n        });\n    };\n    SkillService.prototype.update = function (skillDto, id) {\n        return __awaiter(this, void 0, void 0, function () {\n            var skill, _a;\n            return __generator(this, function (_b) {\n                switch (_b.label) {\n                    case 0:\n                        if (skillDto.imageId && skillDto.icon) {\n                            throw boom_1.default.conflict(\"Only one parameter is exist\");\n                        }\n                        return [4 /*yield*/, this.getById(id)];\n                    case 1:\n                        skill = _b.sent();\n                        skill.active = true;\n                        if (!skillDto.imageId) return [3 /*break*/, 3];\n                        _a = skill;\n                        return [4 /*yield*/, this.imageService.getById(skillDto.imageId)];\n                    case 2:\n                        _a.image = _b.sent();\n                        skill.icon = null;\n                        _b.label = 3;\n                    case 3:\n                        if (skillDto.icon) {\n                            skill.image = null;\n                            skill.icon = skillDto.icon;\n                        }\n                        skill = __assign(__assign({}, skill), skillDto);\n                        return [4 /*yield*/, this.db.save(skill)];\n                    case 4: return [2 /*return*/, _b.sent()];\n                }\n            });\n        });\n    };\n    SkillService.prototype.delete = function (id) {\n        return __awaiter(this, void 0, void 0, function () {\n            var skill;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.getById(id)];\n                    case 1:\n                        skill = _a.sent();\n                        skill.active = false;\n                        return [4 /*yield*/, this.db.save(skill)];\n                    case 2:\n                        _a.sent();\n                        return [2 /*return*/, {}];\n                }\n            });\n        });\n    };\n    return SkillService;\n}());\nexports.SkillService = SkillService;\n\n\n//# sourceURL=webpack://wilmion-api/./src/services/skills.service.ts?");
 
 /***/ }),
 
-/***/ 1307:
+/***/ "./src/services/socialMedia.service.ts":
+/*!*********************************************!*\
+  !*** ./src/services/socialMedia.service.ts ***!
+  \*********************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.SocialMediaService = void 0;
-var boom_1 = __importDefault(__webpack_require__(3767));
-var connection_1 = __webpack_require__(681);
-var socialMedia_entity_1 = __webpack_require__(9196);
-var convertQueryParamsInOptions_1 = __webpack_require__(2126);
-var SocialMediaService = /** @class */ (function () {
-    function SocialMediaService() {
-        this.connect();
-    }
-    SocialMediaService.prototype.connect = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var database;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, connection_1.connection.db];
-                    case 1:
-                        database = _a.sent();
-                        this.db = database.getRepository(socialMedia_entity_1.SocialMedia);
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    SocialMediaService.prototype.getAll = function (limit, offset) {
-        return __awaiter(this, void 0, void 0, function () {
-            var queries, allSocialMedia;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        queries = (0, convertQueryParamsInOptions_1.convertQueryParamsInOptions)(limit, offset);
-                        return [4 /*yield*/, this.db.find(__assign(__assign({}, queries), { where: {
-                                    active: true,
-                                } }))];
-                    case 1:
-                        allSocialMedia = _a.sent();
-                        return [2 /*return*/, allSocialMedia];
-                }
-            });
-        });
-    };
-    SocialMediaService.prototype.getById = function (id) {
-        return __awaiter(this, void 0, void 0, function () {
-            var socialMedia;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.db.findOne(id)];
-                    case 1:
-                        socialMedia = _a.sent();
-                        if (!socialMedia || !socialMedia.active)
-                            throw boom_1.default.notFound("This social media doesn't exist ☹️");
-                        return [2 /*return*/, socialMedia];
-                }
-            });
-        });
-    };
-    SocialMediaService.prototype.create = function (socialMediaDto) {
-        return __awaiter(this, void 0, void 0, function () {
-            var existSocialMedia, newSocialMedia;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.db.findOne({ name: socialMediaDto.name })];
-                    case 1:
-                        existSocialMedia = _a.sent();
-                        if (!(existSocialMedia && !existSocialMedia.active)) return [3 /*break*/, 3];
-                        existSocialMedia = __assign(__assign({}, existSocialMedia), socialMediaDto);
-                        return [4 /*yield*/, this.db.save(existSocialMedia)];
-                    case 2: return [2 /*return*/, _a.sent()];
-                    case 3:
-                        newSocialMedia = this.db.create(socialMediaDto);
-                        return [4 /*yield*/, this.db.save(newSocialMedia)];
-                    case 4: return [2 /*return*/, _a.sent()];
-                }
-            });
-        });
-    };
-    SocialMediaService.prototype.update = function (socialMediaDto, id) {
-        return __awaiter(this, void 0, void 0, function () {
-            var socialMedia;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getById(id)];
-                    case 1:
-                        socialMedia = _a.sent();
-                        return [4 /*yield*/, this.db.update(socialMedia.id, socialMediaDto)];
-                    case 2: return [2 /*return*/, _a.sent()];
-                }
-            });
-        });
-    };
-    SocialMediaService.prototype.delete = function (id) {
-        return __awaiter(this, void 0, void 0, function () {
-            var socialMedia;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getById(id)];
-                    case 1:
-                        socialMedia = _a.sent();
-                        socialMedia.active = false;
-                        return [4 /*yield*/, this.db.save(socialMedia)];
-                    case 2: return [2 /*return*/, _a.sent()];
-                }
-            });
-        });
-    };
-    return SocialMediaService;
-}());
-exports.SocialMediaService = SocialMediaService;
-
+eval("\nvar __assign = (this && this.__assign) || function () {\n    __assign = Object.assign || function(t) {\n        for (var s, i = 1, n = arguments.length; i < n; i++) {\n            s = arguments[i];\n            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))\n                t[p] = s[p];\n        }\n        return t;\n    };\n    return __assign.apply(this, arguments);\n};\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.SocialMediaService = void 0;\nvar boom_1 = __importDefault(__webpack_require__(/*! @hapi/boom */ \"@hapi/boom\"));\nvar connection_1 = __webpack_require__(/*! @db/connection */ \"./src/db/connection.ts\");\nvar socialMedia_entity_1 = __webpack_require__(/*! @entities/socialMedia.entity */ \"./src/entities/socialMedia.entity.ts\");\nvar convertQueryParamsInOptions_1 = __webpack_require__(/*! @utils/convertQueryParamsInOptions */ \"./src/utils/convertQueryParamsInOptions.ts\");\nvar SocialMediaService = /** @class */ (function () {\n    function SocialMediaService() {\n        this.connect();\n    }\n    SocialMediaService.prototype.connect = function () {\n        return __awaiter(this, void 0, void 0, function () {\n            var database;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, connection_1.connection.db];\n                    case 1:\n                        database = _a.sent();\n                        this.db = database.getRepository(socialMedia_entity_1.SocialMedia);\n                        return [2 /*return*/];\n                }\n            });\n        });\n    };\n    SocialMediaService.prototype.getAll = function (limit, offset) {\n        return __awaiter(this, void 0, void 0, function () {\n            var queries, allSocialMedia;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0:\n                        queries = (0, convertQueryParamsInOptions_1.convertQueryParamsInOptions)(limit, offset);\n                        return [4 /*yield*/, this.db.find(__assign(__assign({}, queries), { where: {\n                                    active: true,\n                                } }))];\n                    case 1:\n                        allSocialMedia = _a.sent();\n                        return [2 /*return*/, allSocialMedia];\n                }\n            });\n        });\n    };\n    SocialMediaService.prototype.getById = function (id) {\n        return __awaiter(this, void 0, void 0, function () {\n            var socialMedia;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.db.findOne(id)];\n                    case 1:\n                        socialMedia = _a.sent();\n                        if (!socialMedia || !socialMedia.active)\n                            throw boom_1.default.notFound(\"This social media doesn't exist ☹️\");\n                        return [2 /*return*/, socialMedia];\n                }\n            });\n        });\n    };\n    SocialMediaService.prototype.create = function (socialMediaDto) {\n        return __awaiter(this, void 0, void 0, function () {\n            var existSocialMedia, newSocialMedia;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.db.findOne({ name: socialMediaDto.name })];\n                    case 1:\n                        existSocialMedia = _a.sent();\n                        if (!(existSocialMedia && !existSocialMedia.active)) return [3 /*break*/, 3];\n                        existSocialMedia = __assign(__assign({}, existSocialMedia), socialMediaDto);\n                        return [4 /*yield*/, this.db.save(existSocialMedia)];\n                    case 2: return [2 /*return*/, _a.sent()];\n                    case 3:\n                        newSocialMedia = this.db.create(socialMediaDto);\n                        return [4 /*yield*/, this.db.save(newSocialMedia)];\n                    case 4: return [2 /*return*/, _a.sent()];\n                }\n            });\n        });\n    };\n    SocialMediaService.prototype.update = function (socialMediaDto, id) {\n        return __awaiter(this, void 0, void 0, function () {\n            var socialMedia;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.getById(id)];\n                    case 1:\n                        socialMedia = _a.sent();\n                        return [4 /*yield*/, this.db.update(socialMedia.id, socialMediaDto)];\n                    case 2: return [2 /*return*/, _a.sent()];\n                }\n            });\n        });\n    };\n    SocialMediaService.prototype.delete = function (id) {\n        return __awaiter(this, void 0, void 0, function () {\n            var socialMedia;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.getById(id)];\n                    case 1:\n                        socialMedia = _a.sent();\n                        socialMedia.active = false;\n                        return [4 /*yield*/, this.db.save(socialMedia)];\n                    case 2: return [2 /*return*/, _a.sent()];\n                }\n            });\n        });\n    };\n    return SocialMediaService;\n}());\nexports.SocialMediaService = SocialMediaService;\n\n\n//# sourceURL=webpack://wilmion-api/./src/services/socialMedia.service.ts?");
 
 /***/ }),
 
-/***/ 4376:
+/***/ "./src/services/stat.service.ts":
+/*!**************************************!*\
+  !*** ./src/services/stat.service.ts ***!
+  \**************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.StatService = void 0;
-var boom_1 = __importDefault(__webpack_require__(3767));
-var index_1 = __importDefault(__webpack_require__(2275));
-var connection_1 = __webpack_require__(681);
-var stats_entity_1 = __webpack_require__(5642);
-var post_entity_1 = __webpack_require__(1091);
-var convertQueryParamsInOptions_1 = __webpack_require__(2126);
-var StatService = /** @class */ (function () {
-    function StatService() {
-        this.connect();
-    }
-    StatService.prototype.connect = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var database;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, connection_1.connection.db];
-                    case 1:
-                        database = _a.sent();
-                        this.db = database.getRepository(stats_entity_1.Stat);
-                        this.dbPost = database.getRepository(post_entity_1.Post);
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    StatService.prototype.getAll = function (limit, offset, type) {
-        return __awaiter(this, void 0, void 0, function () {
-            var queries, query, stats;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, (0, convertQueryParamsInOptions_1.convertQueryParamsInOptions)(limit, offset)];
-                    case 1:
-                        queries = _a.sent();
-                        query = __assign(__assign({}, queries), { relations: ["post"] });
-                        if (type) {
-                            query.where = { type: type };
-                        }
-                        return [4 /*yield*/, this.db.find(query)];
-                    case 2:
-                        stats = _a.sent();
-                        return [2 /*return*/, stats];
-                }
-            });
-        });
-    };
-    StatService.prototype.getById = function (id) {
-        return __awaiter(this, void 0, void 0, function () {
-            var stat;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.db.findOne(id, { relations: ["post"] })];
-                    case 1:
-                        stat = _a.sent();
-                        if (!stat)
-                            throw boom_1.default.notFound("The stat with ID: ".concat(id, " doesn't exist"));
-                        return [2 /*return*/, stat];
-                }
-            });
-        });
-    };
-    StatService.prototype.create = function (statDto, origin) {
-        return __awaiter(this, void 0, void 0, function () {
-            var newStat, _a;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
-                    case 0:
-                        if (origin) {
-                            if (!index_1.default.hostAllowedList.includes(origin)) {
-                                throw boom_1.default.forbidden("🤨🤨🤨");
-                            }
-                        }
-                        newStat = this.db.create(statDto);
-                        if (!statDto.postId) return [3 /*break*/, 2];
-                        _a = newStat;
-                        return [4 /*yield*/, this.dbPost.findOneOrFail(statDto.postId)];
-                    case 1:
-                        _a.post = _b.sent();
-                        _b.label = 2;
-                    case 2: return [4 /*yield*/, this.db.save(newStat)];
-                    case 3: return [2 /*return*/, _b.sent()];
-                }
-            });
-        });
-    };
-    StatService.prototype.delete = function (id) {
-        return __awaiter(this, void 0, void 0, function () {
-            var stat;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getById(id)];
-                    case 1:
-                        stat = _a.sent();
-                        return [4 /*yield*/, this.db.delete(stat.id)];
-                    case 2: return [2 /*return*/, _a.sent()];
-                }
-            });
-        });
-    };
-    return StatService;
-}());
-exports.StatService = StatService;
-
+eval("\nvar __assign = (this && this.__assign) || function () {\n    __assign = Object.assign || function(t) {\n        for (var s, i = 1, n = arguments.length; i < n; i++) {\n            s = arguments[i];\n            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))\n                t[p] = s[p];\n        }\n        return t;\n    };\n    return __assign.apply(this, arguments);\n};\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.StatService = void 0;\nvar boom_1 = __importDefault(__webpack_require__(/*! @hapi/boom */ \"@hapi/boom\"));\nvar index_1 = __importDefault(__webpack_require__(/*! @config/index */ \"./src/config/index.ts\"));\nvar connection_1 = __webpack_require__(/*! @db/connection */ \"./src/db/connection.ts\");\nvar stats_entity_1 = __webpack_require__(/*! @entities/stats.entity */ \"./src/entities/stats.entity.ts\");\nvar post_entity_1 = __webpack_require__(/*! @entities/post.entity */ \"./src/entities/post.entity.ts\");\nvar convertQueryParamsInOptions_1 = __webpack_require__(/*! @utils/convertQueryParamsInOptions */ \"./src/utils/convertQueryParamsInOptions.ts\");\nvar StatService = /** @class */ (function () {\n    function StatService() {\n        this.connect();\n    }\n    StatService.prototype.connect = function () {\n        return __awaiter(this, void 0, void 0, function () {\n            var database;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, connection_1.connection.db];\n                    case 1:\n                        database = _a.sent();\n                        this.db = database.getRepository(stats_entity_1.Stat);\n                        this.dbPost = database.getRepository(post_entity_1.Post);\n                        return [2 /*return*/];\n                }\n            });\n        });\n    };\n    StatService.prototype.getAll = function (limit, offset, type) {\n        return __awaiter(this, void 0, void 0, function () {\n            var queries, query, stats;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, (0, convertQueryParamsInOptions_1.convertQueryParamsInOptions)(limit, offset)];\n                    case 1:\n                        queries = _a.sent();\n                        query = __assign(__assign({}, queries), { relations: [\"post\"] });\n                        if (type) {\n                            query.where = { type: type };\n                        }\n                        return [4 /*yield*/, this.db.find(query)];\n                    case 2:\n                        stats = _a.sent();\n                        return [2 /*return*/, stats];\n                }\n            });\n        });\n    };\n    StatService.prototype.getById = function (id) {\n        return __awaiter(this, void 0, void 0, function () {\n            var stat;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.db.findOne(id, { relations: [\"post\"] })];\n                    case 1:\n                        stat = _a.sent();\n                        if (!stat)\n                            throw boom_1.default.notFound(\"The stat with ID: \".concat(id, \" doesn't exist\"));\n                        return [2 /*return*/, stat];\n                }\n            });\n        });\n    };\n    StatService.prototype.create = function (statDto, origin) {\n        return __awaiter(this, void 0, void 0, function () {\n            var newStat, _a;\n            return __generator(this, function (_b) {\n                switch (_b.label) {\n                    case 0:\n                        if (origin) {\n                            if (!index_1.default.hostAllowedList.includes(origin)) {\n                                throw boom_1.default.forbidden(\"🤨🤨🤨\");\n                            }\n                        }\n                        newStat = this.db.create(statDto);\n                        if (!statDto.postId) return [3 /*break*/, 2];\n                        _a = newStat;\n                        return [4 /*yield*/, this.dbPost.findOneOrFail(statDto.postId)];\n                    case 1:\n                        _a.post = _b.sent();\n                        _b.label = 2;\n                    case 2: return [4 /*yield*/, this.db.save(newStat)];\n                    case 3: return [2 /*return*/, _b.sent()];\n                }\n            });\n        });\n    };\n    StatService.prototype.delete = function (id) {\n        return __awaiter(this, void 0, void 0, function () {\n            var stat;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.getById(id)];\n                    case 1:\n                        stat = _a.sent();\n                        return [4 /*yield*/, this.db.delete(stat.id)];\n                    case 2: return [2 /*return*/, _a.sent()];\n                }\n            });\n        });\n    };\n    return StatService;\n}());\nexports.StatService = StatService;\n\n\n//# sourceURL=webpack://wilmion-api/./src/services/stat.service.ts?");
 
 /***/ }),
 
-/***/ 1200:
+/***/ "./src/services/static-contents.service.ts":
+/*!*************************************************!*\
+  !*** ./src/services/static-contents.service.ts ***!
+  \*************************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.StaticContentsService = void 0;
-var typeorm_1 = __webpack_require__(5250);
-var boom_1 = __importDefault(__webpack_require__(3767));
-var connection_1 = __webpack_require__(681);
-var staticContents_entity_1 = __webpack_require__(4318);
-var convertQueryParamsInOptions_1 = __webpack_require__(2126);
-var StaticContentsService = /** @class */ (function () {
-    function StaticContentsService() {
-        this.connect();
-    }
-    StaticContentsService.prototype.connect = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var database;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, connection_1.connection.db];
-                    case 1:
-                        database = _a.sent();
-                        this.db = database.getRepository(staticContents_entity_1.StaticContent);
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    StaticContentsService.prototype.getById = function (id) {
-        return __awaiter(this, void 0, void 0, function () {
-            var content;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.db.findOne(id)];
-                    case 1:
-                        content = _a.sent();
-                        if (!content)
-                            throw boom_1.default.notFound("The static content was not found");
-                        return [2 /*return*/, content];
-                }
-            });
-        });
-    };
-    StaticContentsService.prototype.getAll = function (limit, offset) {
-        return __awaiter(this, void 0, void 0, function () {
-            var options, staticContents;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        options = (0, convertQueryParamsInOptions_1.convertQueryParamsInOptions)(limit, offset);
-                        return [4 /*yield*/, this.db.find(options)];
-                    case 1:
-                        staticContents = _a.sent();
-                        return [2 /*return*/, staticContents];
-                }
-            });
-        });
-    };
-    StaticContentsService.prototype.getOne = function (page) {
-        return __awaiter(this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        if (!(page === "contact")) return [3 /*break*/, 2];
-                        return [4 /*yield*/, this.db.findOne({ contactEmail: (0, typeorm_1.Not)((0, typeorm_1.IsNull)()) })];
-                    case 1:
-                        data = _a.sent();
-                        return [2 /*return*/, data];
-                    case 2: throw boom_1.default.notFound("This page isn't exist");
-                }
-            });
-        });
-    };
-    StaticContentsService.prototype.create = function (payload) {
-        return __awaiter(this, void 0, void 0, function () {
-            var contact, newStaticContent;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        if (!payload.contactEmail) return [3 /*break*/, 2];
-                        return [4 /*yield*/, this.getOne("contact")];
-                    case 1:
-                        contact = _a.sent();
-                        if (contact)
-                            throw boom_1.default.conflict("The contact page already exist");
-                        _a.label = 2;
-                    case 2: return [4 /*yield*/, this.db.create(payload)];
-                    case 3:
-                        newStaticContent = _a.sent();
-                        return [4 /*yield*/, this.db.save(newStaticContent)];
-                    case 4: return [2 /*return*/, _a.sent()];
-                }
-            });
-        });
-    };
-    StaticContentsService.prototype.update = function (id, payload) {
-        return __awaiter(this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getById(id)];
-                    case 1:
-                        data = _a.sent();
-                        return [4 /*yield*/, this.db.update(data.id, payload)];
-                    case 2:
-                        _a.sent();
-                        return [2 /*return*/, __assign(__assign({}, data), payload)];
-                }
-            });
-        });
-    };
-    StaticContentsService.prototype.delete = function (id) {
-        return __awaiter(this, void 0, void 0, function () {
-            var data;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getById(id)];
-                    case 1:
-                        data = _a.sent();
-                        return [4 /*yield*/, this.db.delete(data.id)];
-                    case 2:
-                        _a.sent();
-                        return [2 /*return*/, "Removed successfully"];
-                }
-            });
-        });
-    };
-    return StaticContentsService;
-}());
-exports.StaticContentsService = StaticContentsService;
-
+eval("\nvar __assign = (this && this.__assign) || function () {\n    __assign = Object.assign || function(t) {\n        for (var s, i = 1, n = arguments.length; i < n; i++) {\n            s = arguments[i];\n            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))\n                t[p] = s[p];\n        }\n        return t;\n    };\n    return __assign.apply(this, arguments);\n};\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.StaticContentsService = void 0;\nvar typeorm_1 = __webpack_require__(/*! typeorm */ \"typeorm\");\nvar boom_1 = __importDefault(__webpack_require__(/*! @hapi/boom */ \"@hapi/boom\"));\nvar connection_1 = __webpack_require__(/*! @db/connection */ \"./src/db/connection.ts\");\nvar staticContents_entity_1 = __webpack_require__(/*! @entities/staticContents.entity */ \"./src/entities/staticContents.entity.ts\");\nvar convertQueryParamsInOptions_1 = __webpack_require__(/*! @utils/convertQueryParamsInOptions */ \"./src/utils/convertQueryParamsInOptions.ts\");\nvar StaticContentsService = /** @class */ (function () {\n    function StaticContentsService() {\n        this.connect();\n    }\n    StaticContentsService.prototype.connect = function () {\n        return __awaiter(this, void 0, void 0, function () {\n            var database;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, connection_1.connection.db];\n                    case 1:\n                        database = _a.sent();\n                        this.db = database.getRepository(staticContents_entity_1.StaticContent);\n                        return [2 /*return*/];\n                }\n            });\n        });\n    };\n    StaticContentsService.prototype.getById = function (id) {\n        return __awaiter(this, void 0, void 0, function () {\n            var content;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.db.findOne(id)];\n                    case 1:\n                        content = _a.sent();\n                        if (!content)\n                            throw boom_1.default.notFound(\"The static content was not found\");\n                        return [2 /*return*/, content];\n                }\n            });\n        });\n    };\n    StaticContentsService.prototype.getAll = function (limit, offset) {\n        return __awaiter(this, void 0, void 0, function () {\n            var options, staticContents;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0:\n                        options = (0, convertQueryParamsInOptions_1.convertQueryParamsInOptions)(limit, offset);\n                        return [4 /*yield*/, this.db.find(options)];\n                    case 1:\n                        staticContents = _a.sent();\n                        return [2 /*return*/, staticContents];\n                }\n            });\n        });\n    };\n    StaticContentsService.prototype.getOne = function (page) {\n        return __awaiter(this, void 0, void 0, function () {\n            var data;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0:\n                        if (!(page === \"contact\")) return [3 /*break*/, 2];\n                        return [4 /*yield*/, this.db.findOne({ contactEmail: (0, typeorm_1.Not)((0, typeorm_1.IsNull)()) })];\n                    case 1:\n                        data = _a.sent();\n                        return [2 /*return*/, data];\n                    case 2: throw boom_1.default.notFound(\"This page isn't exist\");\n                }\n            });\n        });\n    };\n    StaticContentsService.prototype.create = function (payload) {\n        return __awaiter(this, void 0, void 0, function () {\n            var contact, newStaticContent;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0:\n                        if (!payload.contactEmail) return [3 /*break*/, 2];\n                        return [4 /*yield*/, this.getOne(\"contact\")];\n                    case 1:\n                        contact = _a.sent();\n                        if (contact)\n                            throw boom_1.default.conflict(\"The contact page already exist\");\n                        _a.label = 2;\n                    case 2: return [4 /*yield*/, this.db.create(payload)];\n                    case 3:\n                        newStaticContent = _a.sent();\n                        return [4 /*yield*/, this.db.save(newStaticContent)];\n                    case 4: return [2 /*return*/, _a.sent()];\n                }\n            });\n        });\n    };\n    StaticContentsService.prototype.update = function (id, payload) {\n        return __awaiter(this, void 0, void 0, function () {\n            var data;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.getById(id)];\n                    case 1:\n                        data = _a.sent();\n                        return [4 /*yield*/, this.db.update(data.id, payload)];\n                    case 2:\n                        _a.sent();\n                        return [2 /*return*/, __assign(__assign({}, data), payload)];\n                }\n            });\n        });\n    };\n    StaticContentsService.prototype.delete = function (id) {\n        return __awaiter(this, void 0, void 0, function () {\n            var data;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.getById(id)];\n                    case 1:\n                        data = _a.sent();\n                        return [4 /*yield*/, this.db.delete(data.id)];\n                    case 2:\n                        _a.sent();\n                        return [2 /*return*/, \"Removed successfully\"];\n                }\n            });\n        });\n    };\n    return StaticContentsService;\n}());\nexports.StaticContentsService = StaticContentsService;\n\n\n//# sourceURL=webpack://wilmion-api/./src/services/static-contents.service.ts?");
 
 /***/ }),
 
-/***/ 2837:
+/***/ "./src/services/tags.service.ts":
+/*!**************************************!*\
+  !*** ./src/services/tags.service.ts ***!
+  \**************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.TagsService = void 0;
-var boom_1 = __importDefault(__webpack_require__(3767));
-var connection_1 = __webpack_require__(681);
-var tag_entity_1 = __webpack_require__(9074);
-var convertQueryParamsInOptions_1 = __webpack_require__(2126);
-var TagsService = /** @class */ (function () {
-    function TagsService() {
-        this.connect();
-    }
-    TagsService.prototype.connect = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var database;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, connection_1.connection.db];
-                    case 1:
-                        database = _a.sent();
-                        this.db = database.getRepository(tag_entity_1.Tag);
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    TagsService.prototype.getAll = function (limit, offset) {
-        return __awaiter(this, void 0, void 0, function () {
-            var queryParams, tags;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        queryParams = (0, convertQueryParamsInOptions_1.convertQueryParamsInOptions)(limit, offset);
-                        return [4 /*yield*/, this.db.find(__assign(__assign({}, queryParams), { relations: ["posts"] }))];
-                    case 1:
-                        tags = _a.sent();
-                        return [2 /*return*/, tags];
-                }
-            });
-        });
-    };
-    TagsService.prototype.getById = function (id) {
-        return __awaiter(this, void 0, void 0, function () {
-            var tag;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.db.findOne(id, {
-                            relations: ["posts"],
-                        })];
-                    case 1:
-                        tag = _a.sent();
-                        if (!tag || !tag.active)
-                            throw boom_1.default.notFound("The tag was not found");
-                        return [2 /*return*/, tag];
-                }
-            });
-        });
-    };
-    TagsService.prototype.create = function (tagDto) {
-        return __awaiter(this, void 0, void 0, function () {
-            var tag, newTag;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.db.findOne({ text: tagDto.text })];
-                    case 1:
-                        tag = _a.sent();
-                        if (!(tag && !tag.active)) return [3 /*break*/, 3];
-                        tag.active = true;
-                        tag = __assign(__assign({}, tag), tagDto);
-                        return [4 /*yield*/, this.db.save(tag)];
-                    case 2: return [2 /*return*/, _a.sent()];
-                    case 3:
-                        newTag = this.db.create(tagDto);
-                        return [4 /*yield*/, this.db.save(newTag)];
-                    case 4: return [2 /*return*/, _a.sent()];
-                }
-            });
-        });
-    };
-    TagsService.prototype.update = function (tagDto, id) {
-        return __awaiter(this, void 0, void 0, function () {
-            var tag;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getById(id)];
-                    case 1:
-                        tag = _a.sent();
-                        return [4 /*yield*/, this.db.update(tag.id, tagDto)];
-                    case 2:
-                        _a.sent();
-                        return [2 /*return*/, __assign(__assign({}, tag), tagDto)];
-                }
-            });
-        });
-    };
-    TagsService.prototype.delete = function (id) {
-        return __awaiter(this, void 0, void 0, function () {
-            var tag;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getById(id)];
-                    case 1:
-                        tag = _a.sent();
-                        if (!tag.active)
-                            throw boom_1.default.notFound("This tag doesn't exist");
-                        tag.posts = [];
-                        tag.active = false;
-                        return [2 /*return*/, this.db.save(tag)];
-                }
-            });
-        });
-    };
-    return TagsService;
-}());
-exports.TagsService = TagsService;
-
+eval("\nvar __assign = (this && this.__assign) || function () {\n    __assign = Object.assign || function(t) {\n        for (var s, i = 1, n = arguments.length; i < n; i++) {\n            s = arguments[i];\n            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))\n                t[p] = s[p];\n        }\n        return t;\n    };\n    return __assign.apply(this, arguments);\n};\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.TagsService = void 0;\nvar boom_1 = __importDefault(__webpack_require__(/*! @hapi/boom */ \"@hapi/boom\"));\nvar connection_1 = __webpack_require__(/*! @db/connection */ \"./src/db/connection.ts\");\nvar tag_entity_1 = __webpack_require__(/*! @entities/tag.entity */ \"./src/entities/tag.entity.ts\");\nvar convertQueryParamsInOptions_1 = __webpack_require__(/*! @utils/convertQueryParamsInOptions */ \"./src/utils/convertQueryParamsInOptions.ts\");\nvar TagsService = /** @class */ (function () {\n    function TagsService() {\n        this.connect();\n    }\n    TagsService.prototype.connect = function () {\n        return __awaiter(this, void 0, void 0, function () {\n            var database;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, connection_1.connection.db];\n                    case 1:\n                        database = _a.sent();\n                        this.db = database.getRepository(tag_entity_1.Tag);\n                        return [2 /*return*/];\n                }\n            });\n        });\n    };\n    TagsService.prototype.getAll = function (limit, offset) {\n        return __awaiter(this, void 0, void 0, function () {\n            var queryParams, tags;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0:\n                        queryParams = (0, convertQueryParamsInOptions_1.convertQueryParamsInOptions)(limit, offset);\n                        return [4 /*yield*/, this.db.find(__assign(__assign({}, queryParams), { relations: [\"posts\"] }))];\n                    case 1:\n                        tags = _a.sent();\n                        return [2 /*return*/, tags];\n                }\n            });\n        });\n    };\n    TagsService.prototype.getById = function (id) {\n        return __awaiter(this, void 0, void 0, function () {\n            var tag;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.db.findOne(id, {\n                            relations: [\"posts\"],\n                        })];\n                    case 1:\n                        tag = _a.sent();\n                        if (!tag || !tag.active)\n                            throw boom_1.default.notFound(\"The tag was not found\");\n                        return [2 /*return*/, tag];\n                }\n            });\n        });\n    };\n    TagsService.prototype.create = function (tagDto) {\n        return __awaiter(this, void 0, void 0, function () {\n            var tag, newTag;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.db.findOne({ text: tagDto.text })];\n                    case 1:\n                        tag = _a.sent();\n                        if (!(tag && !tag.active)) return [3 /*break*/, 3];\n                        tag.active = true;\n                        tag = __assign(__assign({}, tag), tagDto);\n                        return [4 /*yield*/, this.db.save(tag)];\n                    case 2: return [2 /*return*/, _a.sent()];\n                    case 3:\n                        newTag = this.db.create(tagDto);\n                        return [4 /*yield*/, this.db.save(newTag)];\n                    case 4: return [2 /*return*/, _a.sent()];\n                }\n            });\n        });\n    };\n    TagsService.prototype.update = function (tagDto, id) {\n        return __awaiter(this, void 0, void 0, function () {\n            var tag;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.getById(id)];\n                    case 1:\n                        tag = _a.sent();\n                        return [4 /*yield*/, this.db.update(tag.id, tagDto)];\n                    case 2:\n                        _a.sent();\n                        return [2 /*return*/, __assign(__assign({}, tag), tagDto)];\n                }\n            });\n        });\n    };\n    TagsService.prototype.delete = function (id) {\n        return __awaiter(this, void 0, void 0, function () {\n            var tag;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.getById(id)];\n                    case 1:\n                        tag = _a.sent();\n                        if (!tag.active)\n                            throw boom_1.default.notFound(\"This tag doesn't exist\");\n                        tag.posts = [];\n                        tag.active = false;\n                        return [2 /*return*/, this.db.save(tag)];\n                }\n            });\n        });\n    };\n    return TagsService;\n}());\nexports.TagsService = TagsService;\n\n\n//# sourceURL=webpack://wilmion-api/./src/services/tags.service.ts?");
 
 /***/ }),
 
-/***/ 5099:
+/***/ "./src/services/users.service.ts":
+/*!***************************************!*\
+  !*** ./src/services/users.service.ts ***!
+  \***************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.UsersService = void 0;
-var boom_1 = __importDefault(__webpack_require__(3767));
-var connection_1 = __webpack_require__(681);
-var image_service_1 = __webpack_require__(5784);
-var user_entity_1 = __webpack_require__(7052);
-var security_1 = __webpack_require__(9189);
-var jwt_1 = __webpack_require__(1913);
-var UsersService = /** @class */ (function () {
-    function UsersService() {
-        this.connect();
-    }
-    UsersService.prototype.connect = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var database;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, connection_1.connection.db];
-                    case 1:
-                        database = _a.sent();
-                        this.db = database.getRepository(user_entity_1.User);
-                        this.imageService = new image_service_1.ImageService();
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    UsersService.prototype.getById = function (id) {
-        return __awaiter(this, void 0, void 0, function () {
-            var user;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.db.findOne(id, {
-                            relations: ["image"],
-                        })];
-                    case 1:
-                        user = _a.sent();
-                        if (!user || !user.active) {
-                            throw boom_1.default.notFound("User not found");
-                        }
-                        return [2 /*return*/, user];
-                }
-            });
-        });
-    };
-    UsersService.prototype.create = function (payload) {
-        return __awaiter(this, void 0, void 0, function () {
-            var image, password, newUser, userSaved;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.imageService.getById(payload.imageId)];
-                    case 1:
-                        image = _a.sent();
-                        return [4 /*yield*/, (0, security_1.encryption)(payload.password)];
-                    case 2:
-                        password = _a.sent();
-                        return [4 /*yield*/, this.db.create(__assign(__assign({}, payload), { password: password }))];
-                    case 3:
-                        newUser = _a.sent();
-                        newUser.image = image;
-                        newUser.posts = [];
-                        return [4 /*yield*/, this.db.save(newUser)];
-                    case 4:
-                        userSaved = _a.sent();
-                        return [2 /*return*/, this.quitPasswordFromReturnData(userSaved)];
-                }
-            });
-        });
-    };
-    UsersService.prototype.login = function (loginDto) {
-        return __awaiter(this, void 0, void 0, function () {
-            var user, isPassword, payloadToken;
-            var _a;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
-                    case 0: return [4 /*yield*/, this.db.findOne({ email: loginDto.email }, {
-                            relations: ["image"],
-                        })];
-                    case 1:
-                        user = _b.sent();
-                        if (!user || !user.active)
-                            throw boom_1.default.notFound("This user doesn't exist");
-                        return [4 /*yield*/, (0, security_1.verifyPassword)(loginDto.password, user.password)];
-                    case 2:
-                        isPassword = _b.sent();
-                        if (!isPassword)
-                            throw boom_1.default.unauthorized("You're not this user 👎🙅‍♂️🙅‍♀️");
-                        payloadToken = {
-                            id: user.id,
-                            role: user.email === "wilmion92@gmail.com" ? "admin" : "customer",
-                        };
-                        _a = {
-                            user: this.quitPasswordFromReturnData(user)
-                        };
-                        return [4 /*yield*/, (0, jwt_1.generateToken)(payloadToken)];
-                    case 3: return [2 /*return*/, (_a.token = _b.sent(),
-                            _a)];
-                }
-            });
-        });
-    };
-    UsersService.prototype.update = function (id, payload) {
-        return __awaiter(this, void 0, void 0, function () {
-            var user, userUpdated;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        if (!payload.imageId) return [3 /*break*/, 2];
-                        return [4 /*yield*/, this.comprobateImageId(payload.imageId)];
-                    case 1:
-                        _a.sent();
-                        _a.label = 2;
-                    case 2:
-                        if (payload.password || payload.email)
-                            throw boom_1.default.conflict("The password or email is not change");
-                        return [4 /*yield*/, this.getById(id)];
-                    case 3:
-                        user = _a.sent();
-                        return [4 /*yield*/, this.db.update(user.id, payload)];
-                    case 4:
-                        userUpdated = _a.sent();
-                        return [2 /*return*/, userUpdated];
-                }
-            });
-        });
-    };
-    UsersService.prototype.delete = function (id) {
-        return __awaiter(this, void 0, void 0, function () {
-            var user;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getById(id)];
-                    case 1:
-                        user = _a.sent();
-                        return [2 /*return*/, this.db.update(user.id, __assign(__assign({}, user), { active: false }))];
-                }
-            });
-        });
-    };
-    UsersService.prototype.changeEmail = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
-                return [2 /*return*/, "This function for now, it not exist"];
-            });
-        });
-    };
-    UsersService.prototype.changePassword = function (oldPassword, newPassword, id) {
-        return __awaiter(this, void 0, void 0, function () {
-            var user, isCurrentPassword, password;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getById(id)];
-                    case 1:
-                        user = _a.sent();
-                        return [4 /*yield*/, (0, security_1.verifyPassword)(oldPassword, user.password)];
-                    case 2:
-                        isCurrentPassword = _a.sent();
-                        if (!isCurrentPassword)
-                            throw boom_1.default.unauthorized("You're not have property of this user 🤔🙄😑");
-                        return [4 /*yield*/, (0, security_1.encryption)(newPassword)];
-                    case 3:
-                        password = _a.sent();
-                        return [2 /*return*/, this.db.update(id, { password: password })];
-                }
-            });
-        });
-    };
-    UsersService.prototype.comprobateImageId = function (imageId) {
-        return __awaiter(this, void 0, void 0, function () {
-            var existAnImage;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.imageService.getById(imageId)];
-                    case 1:
-                        existAnImage = _a.sent();
-                        if (!existAnImage)
-                            throw boom_1.default.notFound("Image entity does not exist");
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    UsersService.prototype.quitPasswordFromReturnData = function (user) {
-        return __assign(__assign({}, user), { password: "" });
-    };
-    return UsersService;
-}());
-exports.UsersService = UsersService;
-
+eval("\nvar __assign = (this && this.__assign) || function () {\n    __assign = Object.assign || function(t) {\n        for (var s, i = 1, n = arguments.length; i < n; i++) {\n            s = arguments[i];\n            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))\n                t[p] = s[p];\n        }\n        return t;\n    };\n    return __assign.apply(this, arguments);\n};\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.UsersService = void 0;\nvar boom_1 = __importDefault(__webpack_require__(/*! @hapi/boom */ \"@hapi/boom\"));\nvar connection_1 = __webpack_require__(/*! @db/connection */ \"./src/db/connection.ts\");\nvar image_service_1 = __webpack_require__(/*! ./image.service */ \"./src/services/image.service.ts\");\nvar user_entity_1 = __webpack_require__(/*! @entities/user.entity */ \"./src/entities/user.entity.ts\");\nvar security_1 = __webpack_require__(/*! @utils/security */ \"./src/utils/security.ts\");\nvar jwt_1 = __webpack_require__(/*! @utils/jwt */ \"./src/utils/jwt.ts\");\nvar UsersService = /** @class */ (function () {\n    function UsersService() {\n        this.connect();\n    }\n    UsersService.prototype.connect = function () {\n        return __awaiter(this, void 0, void 0, function () {\n            var database;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, connection_1.connection.db];\n                    case 1:\n                        database = _a.sent();\n                        this.db = database.getRepository(user_entity_1.User);\n                        this.imageService = new image_service_1.ImageService();\n                        return [2 /*return*/];\n                }\n            });\n        });\n    };\n    UsersService.prototype.getById = function (id) {\n        return __awaiter(this, void 0, void 0, function () {\n            var user;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.db.findOne(id, {\n                            relations: [\"image\"],\n                        })];\n                    case 1:\n                        user = _a.sent();\n                        if (!user || !user.active) {\n                            throw boom_1.default.notFound(\"User not found\");\n                        }\n                        return [2 /*return*/, user];\n                }\n            });\n        });\n    };\n    UsersService.prototype.create = function (payload) {\n        return __awaiter(this, void 0, void 0, function () {\n            var image, password, newUser, userSaved;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.imageService.getById(payload.imageId)];\n                    case 1:\n                        image = _a.sent();\n                        return [4 /*yield*/, (0, security_1.encryption)(payload.password)];\n                    case 2:\n                        password = _a.sent();\n                        return [4 /*yield*/, this.db.create(__assign(__assign({}, payload), { password: password }))];\n                    case 3:\n                        newUser = _a.sent();\n                        newUser.image = image;\n                        newUser.posts = [];\n                        return [4 /*yield*/, this.db.save(newUser)];\n                    case 4:\n                        userSaved = _a.sent();\n                        return [2 /*return*/, this.quitPasswordFromReturnData(userSaved)];\n                }\n            });\n        });\n    };\n    UsersService.prototype.login = function (loginDto) {\n        return __awaiter(this, void 0, void 0, function () {\n            var user, isPassword, payloadToken;\n            var _a;\n            return __generator(this, function (_b) {\n                switch (_b.label) {\n                    case 0: return [4 /*yield*/, this.db.findOne({ email: loginDto.email }, {\n                            relations: [\"image\"],\n                        })];\n                    case 1:\n                        user = _b.sent();\n                        if (!user || !user.active)\n                            throw boom_1.default.notFound(\"This user doesn't exist\");\n                        return [4 /*yield*/, (0, security_1.verifyPassword)(loginDto.password, user.password)];\n                    case 2:\n                        isPassword = _b.sent();\n                        if (!isPassword)\n                            throw boom_1.default.unauthorized(\"You're not this user 👎🙅‍♂️🙅‍♀️\");\n                        payloadToken = {\n                            id: user.id,\n                            role: user.email === \"wilmion92@gmail.com\" ? \"admin\" : \"customer\",\n                        };\n                        _a = {\n                            user: this.quitPasswordFromReturnData(user)\n                        };\n                        return [4 /*yield*/, (0, jwt_1.generateToken)(payloadToken)];\n                    case 3: return [2 /*return*/, (_a.token = _b.sent(),\n                            _a)];\n                }\n            });\n        });\n    };\n    UsersService.prototype.update = function (id, payload) {\n        return __awaiter(this, void 0, void 0, function () {\n            var user, userUpdated;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0:\n                        if (!payload.imageId) return [3 /*break*/, 2];\n                        return [4 /*yield*/, this.comprobateImageId(payload.imageId)];\n                    case 1:\n                        _a.sent();\n                        _a.label = 2;\n                    case 2:\n                        if (payload.password || payload.email)\n                            throw boom_1.default.conflict(\"The password or email is not change\");\n                        return [4 /*yield*/, this.getById(id)];\n                    case 3:\n                        user = _a.sent();\n                        return [4 /*yield*/, this.db.update(user.id, payload)];\n                    case 4:\n                        userUpdated = _a.sent();\n                        return [2 /*return*/, userUpdated];\n                }\n            });\n        });\n    };\n    UsersService.prototype.delete = function (id) {\n        return __awaiter(this, void 0, void 0, function () {\n            var user;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.getById(id)];\n                    case 1:\n                        user = _a.sent();\n                        return [2 /*return*/, this.db.update(user.id, __assign(__assign({}, user), { active: false }))];\n                }\n            });\n        });\n    };\n    UsersService.prototype.changeEmail = function () {\n        return __awaiter(this, void 0, void 0, function () {\n            return __generator(this, function (_a) {\n                return [2 /*return*/, \"This function for now, it not exist\"];\n            });\n        });\n    };\n    UsersService.prototype.changePassword = function (oldPassword, newPassword, id) {\n        return __awaiter(this, void 0, void 0, function () {\n            var user, isCurrentPassword, password;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.getById(id)];\n                    case 1:\n                        user = _a.sent();\n                        return [4 /*yield*/, (0, security_1.verifyPassword)(oldPassword, user.password)];\n                    case 2:\n                        isCurrentPassword = _a.sent();\n                        if (!isCurrentPassword)\n                            throw boom_1.default.unauthorized(\"You're not have property of this user 🤔🙄😑\");\n                        return [4 /*yield*/, (0, security_1.encryption)(newPassword)];\n                    case 3:\n                        password = _a.sent();\n                        return [2 /*return*/, this.db.update(id, { password: password })];\n                }\n            });\n        });\n    };\n    UsersService.prototype.comprobateImageId = function (imageId) {\n        return __awaiter(this, void 0, void 0, function () {\n            var existAnImage;\n            return __generator(this, function (_a) {\n                switch (_a.label) {\n                    case 0: return [4 /*yield*/, this.imageService.getById(imageId)];\n                    case 1:\n                        existAnImage = _a.sent();\n                        if (!existAnImage)\n                            throw boom_1.default.notFound(\"Image entity does not exist\");\n                        return [2 /*return*/];\n                }\n            });\n        });\n    };\n    UsersService.prototype.quitPasswordFromReturnData = function (user) {\n        return __assign(__assign({}, user), { password: \"\" });\n    };\n    return UsersService;\n}());\nexports.UsersService = UsersService;\n\n\n//# sourceURL=webpack://wilmion-api/./src/services/users.service.ts?");
 
 /***/ }),
 
-/***/ 3370:
+/***/ "./src/strategies/index.ts":
+/*!*********************************!*\
+  !*** ./src/strategies/index.ts ***!
+  \*********************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var passport_1 = __importDefault(__webpack_require__(3511));
-var jwt_strategy_1 = __webpack_require__(5360);
-passport_1.default.use("jwt", jwt_strategy_1.jwtStrategy);
-
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar passport_1 = __importDefault(__webpack_require__(/*! passport */ \"passport\"));\nvar jwt_strategy_1 = __webpack_require__(/*! ./jwt.strategy */ \"./src/strategies/jwt.strategy.ts\");\npassport_1.default.use(\"jwt\", jwt_strategy_1.jwtStrategy);\n\n\n//# sourceURL=webpack://wilmion-api/./src/strategies/index.ts?");
 
 /***/ }),
 
-/***/ 5360:
+/***/ "./src/strategies/jwt.strategy.ts":
+/*!****************************************!*\
+  !*** ./src/strategies/jwt.strategy.ts ***!
+  \****************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.jwtStrategy = void 0;
-var passport_jwt_1 = __webpack_require__(136);
-var boom_1 = __importDefault(__webpack_require__(3767));
-var index_1 = __importDefault(__webpack_require__(2275));
-var users_service_1 = __webpack_require__(5099);
-var service = new users_service_1.UsersService();
-exports.jwtStrategy = new passport_jwt_1.Strategy({
-    secretOrKey: index_1.default.jwt.secret,
-    jwtFromRequest: passport_jwt_1.ExtractJwt.fromAuthHeaderAsBearerToken(),
-}, function (payload, done) { return __awaiter(void 0, void 0, void 0, function () {
-    var e_1;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                return [4 /*yield*/, service.getById(payload.id)];
-            case 1:
-                _a.sent();
-                done(null, payload);
-                return [3 /*break*/, 3];
-            case 2:
-                e_1 = _a.sent();
-                return [2 /*return*/, done(boom_1.default.unauthorized(e_1))];
-            case 3: return [2 /*return*/];
-        }
-    });
-}); });
-
+eval("\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.jwtStrategy = void 0;\nvar passport_jwt_1 = __webpack_require__(/*! passport-jwt */ \"passport-jwt\");\nvar boom_1 = __importDefault(__webpack_require__(/*! @hapi/boom */ \"@hapi/boom\"));\nvar index_1 = __importDefault(__webpack_require__(/*! @config/index */ \"./src/config/index.ts\"));\nvar users_service_1 = __webpack_require__(/*! @services/users.service */ \"./src/services/users.service.ts\");\nvar service = new users_service_1.UsersService();\nexports.jwtStrategy = new passport_jwt_1.Strategy({\n    secretOrKey: index_1.default.jwt.secret,\n    jwtFromRequest: passport_jwt_1.ExtractJwt.fromAuthHeaderAsBearerToken(),\n}, function (payload, done) { return __awaiter(void 0, void 0, void 0, function () {\n    var e_1;\n    return __generator(this, function (_a) {\n        switch (_a.label) {\n            case 0:\n                _a.trys.push([0, 2, , 3]);\n                return [4 /*yield*/, service.getById(payload.id)];\n            case 1:\n                _a.sent();\n                done(null, payload);\n                return [3 /*break*/, 3];\n            case 2:\n                e_1 = _a.sent();\n                return [2 /*return*/, done(boom_1.default.unauthorized(e_1))];\n            case 3: return [2 /*return*/];\n        }\n    });\n}); });\n\n\n//# sourceURL=webpack://wilmion-api/./src/strategies/jwt.strategy.ts?");
 
 /***/ }),
 
-/***/ 3618:
+/***/ "./src/swagger/config.swagger.ts":
+/*!***************************************!*\
+  !*** ./src/swagger/config.swagger.ts ***!
+  \***************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.setupSwagger = void 0;
-//Documentation
-var swagger_jsdoc_1 = __importDefault(__webpack_require__(7777));
-var swagger_ui_express_1 = __importDefault(__webpack_require__(9948));
-var options = {
-    definition: {
-        openapi: "3.0.0",
-        info: {
-            title: "WILMION API",
-            version: "1.0.0",
-            description: "A simple express library API",
-        },
-        servers: [
-            {
-                url: "http://localhost:3000/api",
-            },
-        ],
-    },
-    apis: ["./src/swagger/*.ts"],
-};
-function setupSwagger(app) {
-    var specs = (0, swagger_jsdoc_1.default)(options);
-    app.use("/docs", swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(specs));
-}
-exports.setupSwagger = setupSwagger;
-
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.setupSwagger = void 0;\n//Documentation\nvar swagger_jsdoc_1 = __importDefault(__webpack_require__(/*! swagger-jsdoc */ \"swagger-jsdoc\"));\nvar swagger_ui_express_1 = __importDefault(__webpack_require__(/*! swagger-ui-express */ \"swagger-ui-express\"));\nvar options = {\n    definition: {\n        openapi: \"3.0.0\",\n        info: {\n            title: \"WILMION API\",\n            version: \"1.0.0\",\n            description: \"A simple express library API\",\n        },\n        servers: [\n            {\n                url: \"http://localhost:3000/api\",\n            },\n        ],\n    },\n    apis: [\"./src/swagger/*.ts\"],\n};\nfunction setupSwagger(app) {\n    var specs = (0, swagger_jsdoc_1.default)(options);\n    app.use(\"/docs\", swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(specs));\n}\nexports.setupSwagger = setupSwagger;\n\n\n//# sourceURL=webpack://wilmion-api/./src/swagger/config.swagger.ts?");
 
 /***/ }),
 
-/***/ 2126:
+/***/ "./src/utils/convertQueryParamsInOptions.ts":
+/*!**************************************************!*\
+  !*** ./src/utils/convertQueryParamsInOptions.ts ***!
+  \**************************************************/
 /***/ ((__unused_webpack_module, exports) => {
 
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.convertQueryParamsInOptions = void 0;
-function convertQueryParamsInOptions(limit, offset) {
-    var options = {
-        take: limit ? parseInt(limit, 10) : 20,
-        skip: offset ? parseInt(offset, 10) : 0,
-    };
-    return options;
-}
-exports.convertQueryParamsInOptions = convertQueryParamsInOptions;
-
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.convertQueryParamsInOptions = void 0;\nfunction convertQueryParamsInOptions(limit, offset) {\n    var options = {\n        take: limit ? parseInt(limit, 10) : 20,\n        skip: offset ? parseInt(offset, 10) : 0,\n    };\n    return options;\n}\nexports.convertQueryParamsInOptions = convertQueryParamsInOptions;\n\n\n//# sourceURL=webpack://wilmion-api/./src/utils/convertQueryParamsInOptions.ts?");
 
 /***/ }),
 
-/***/ 5033:
+/***/ "./src/utils/enum.ts":
+/*!***************************!*\
+  !*** ./src/utils/enum.ts ***!
+  \***************************/
 /***/ ((__unused_webpack_module, exports) => {
 
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.ToArray = void 0;
-function ToArray(enumme) {
-    var StringIsNumber = function (value) { return isNaN(Number(value)) === false; };
-    return Object.keys(enumme)
-        .filter(StringIsNumber)
-        .map(function (key) { return enumme[key]; });
-}
-exports.ToArray = ToArray;
-
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.ToArray = void 0;\nfunction ToArray(enumme) {\n    var StringIsNumber = function (value) { return isNaN(Number(value)) === false; };\n    return Object.keys(enumme)\n        .filter(StringIsNumber)\n        .map(function (key) { return enumme[key]; });\n}\nexports.ToArray = ToArray;\n\n\n//# sourceURL=webpack://wilmion-api/./src/utils/enum.ts?");
 
 /***/ }),
 
-/***/ 2405:
+/***/ "./src/utils/get-nor-repeat-in-many-to-many-relations.ts":
+/*!***************************************************************!*\
+  !*** ./src/utils/get-nor-repeat-in-many-to-many-relations.ts ***!
+  \***************************************************************/
 /***/ ((__unused_webpack_module, exports) => {
 
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.getNotRepeatInManyToManyRelations = void 0;
-function getNotRepeatInManyToManyRelations(listIds, entities) {
-    var newTagsIds = listIds.filter(function (id) {
-        var isUnique = true;
-        entities.forEach(function (entity) {
-            if (String(entity.id) === id)
-                isUnique = false;
-        });
-        return isUnique;
-    });
-    return newTagsIds;
-}
-exports.getNotRepeatInManyToManyRelations = getNotRepeatInManyToManyRelations;
-
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.getNotRepeatInManyToManyRelations = void 0;\nfunction getNotRepeatInManyToManyRelations(listIds, entities) {\n    var newTagsIds = listIds.filter(function (id) {\n        var isUnique = true;\n        entities.forEach(function (entity) {\n            if (String(entity.id) === id)\n                isUnique = false;\n        });\n        return isUnique;\n    });\n    return newTagsIds;\n}\nexports.getNotRepeatInManyToManyRelations = getNotRepeatInManyToManyRelations;\n\n\n//# sourceURL=webpack://wilmion-api/./src/utils/get-nor-repeat-in-many-to-many-relations.ts?");
 
 /***/ }),
 
-/***/ 1913:
+/***/ "./src/utils/jwt.ts":
+/*!**************************!*\
+  !*** ./src/utils/jwt.ts ***!
+  \**************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.generateToken = void 0;
-var jsonwebtoken_1 = __importDefault(__webpack_require__(9344));
-var index_1 = __importDefault(__webpack_require__(2275));
-function generateToken(data) {
-    return __awaiter(this, void 0, void 0, function () {
-        var token;
-        return __generator(this, function (_a) {
-            token = jsonwebtoken_1.default.sign(data, index_1.default.jwt.secret, {
-                expiresIn: "8h",
-            });
-            return [2 /*return*/, token];
-        });
-    });
-}
-exports.generateToken = generateToken;
-
+eval("\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.generateToken = void 0;\nvar jsonwebtoken_1 = __importDefault(__webpack_require__(/*! jsonwebtoken */ \"jsonwebtoken\"));\nvar index_1 = __importDefault(__webpack_require__(/*! @config/index */ \"./src/config/index.ts\"));\nfunction generateToken(data) {\n    return __awaiter(this, void 0, void 0, function () {\n        var token;\n        return __generator(this, function (_a) {\n            token = jsonwebtoken_1.default.sign(data, index_1.default.jwt.secret, {\n                expiresIn: \"8h\",\n            });\n            return [2 /*return*/, token];\n        });\n    });\n}\nexports.generateToken = generateToken;\n\n\n//# sourceURL=webpack://wilmion-api/./src/utils/jwt.ts?");
 
 /***/ }),
 
-/***/ 178:
+/***/ "./src/utils/response.ts":
+/*!*******************************!*\
+  !*** ./src/utils/response.ts ***!
+  \*******************************/
 /***/ ((__unused_webpack_module, exports) => {
 
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-function response(res, status, payload, message) {
-    var obj = {
-        status: status,
-        message: message,
-        payload: payload,
-    };
-    res.status(status).json(obj);
-}
-exports["default"] = response;
-
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nfunction response(res, status, payload, message) {\n    var obj = {\n        status: status,\n        message: message,\n        payload: payload,\n    };\n    res.status(status).json(obj);\n}\nexports[\"default\"] = response;\n\n\n//# sourceURL=webpack://wilmion-api/./src/utils/response.ts?");
 
 /***/ }),
 
-/***/ 9189:
+/***/ "./src/utils/security.ts":
+/*!*******************************!*\
+  !*** ./src/utils/security.ts ***!
+  \*******************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.verifyPassword = exports.encryption = void 0;
-var bcryptjs_1 = __importDefault(__webpack_require__(8432));
-var index_1 = __importDefault(__webpack_require__(2275));
-function encryption(password) {
-    return __awaiter(this, void 0, void 0, function () {
-        var salts, hashedPassword;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, bcryptjs_1.default.genSalt(index_1.default.encryption.saltRounds)];
-                case 1:
-                    salts = _a.sent();
-                    return [4 /*yield*/, bcryptjs_1.default.hash(password, salts)];
-                case 2:
-                    hashedPassword = _a.sent();
-                    return [2 /*return*/, hashedPassword];
-            }
-        });
-    });
-}
-exports.encryption = encryption;
-function verifyPassword(password, hashedPassword) {
-    return __awaiter(this, void 0, void 0, function () {
-        var isPassword;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, bcryptjs_1.default.compare(password, hashedPassword)];
-                case 1:
-                    isPassword = _a.sent();
-                    return [2 /*return*/, isPassword];
-            }
-        });
-    });
-}
-exports.verifyPassword = verifyPassword;
-
+eval("\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nvar __generator = (this && this.__generator) || function (thisArg, body) {\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\n    function verb(n) { return function (v) { return step([n, v]); }; }\n    function step(op) {\n        if (f) throw new TypeError(\"Generator is already executing.\");\n        while (_) try {\n            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;\n            if (y = 0, t) op = [op[0] & 2, t.value];\n            switch (op[0]) {\n                case 0: case 1: t = op; break;\n                case 4: _.label++; return { value: op[1], done: false };\n                case 5: _.label++; y = op[1]; op = [0]; continue;\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\n                default:\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\n                    if (t[2]) _.ops.pop();\n                    _.trys.pop(); continue;\n            }\n            op = body.call(thisArg, _);\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\n    }\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.verifyPassword = exports.encryption = void 0;\nvar bcryptjs_1 = __importDefault(__webpack_require__(/*! bcryptjs */ \"bcryptjs\"));\nvar index_1 = __importDefault(__webpack_require__(/*! @config/index */ \"./src/config/index.ts\"));\nfunction encryption(password) {\n    return __awaiter(this, void 0, void 0, function () {\n        var salts, hashedPassword;\n        return __generator(this, function (_a) {\n            switch (_a.label) {\n                case 0: return [4 /*yield*/, bcryptjs_1.default.genSalt(index_1.default.encryption.saltRounds)];\n                case 1:\n                    salts = _a.sent();\n                    return [4 /*yield*/, bcryptjs_1.default.hash(password, salts)];\n                case 2:\n                    hashedPassword = _a.sent();\n                    return [2 /*return*/, hashedPassword];\n            }\n        });\n    });\n}\nexports.encryption = encryption;\nfunction verifyPassword(password, hashedPassword) {\n    return __awaiter(this, void 0, void 0, function () {\n        var isPassword;\n        return __generator(this, function (_a) {\n            switch (_a.label) {\n                case 0: return [4 /*yield*/, bcryptjs_1.default.compare(password, hashedPassword)];\n                case 1:\n                    isPassword = _a.sent();\n                    return [2 /*return*/, isPassword];\n            }\n        });\n    });\n}\nexports.verifyPassword = verifyPassword;\n\n\n//# sourceURL=webpack://wilmion-api/./src/utils/security.ts?");
 
 /***/ }),
 
-/***/ 3767:
+/***/ "@hapi/boom":
+/*!*****************************!*\
+  !*** external "@hapi/boom" ***!
+  \*****************************/
 /***/ ((module) => {
 
 module.exports = require("@hapi/boom");
 
 /***/ }),
 
-/***/ 8414:
+/***/ "@hapi/joi":
+/*!****************************!*\
+  !*** external "@hapi/joi" ***!
+  \****************************/
 /***/ ((module) => {
 
 module.exports = require("@hapi/joi");
 
 /***/ }),
 
-/***/ 8432:
+/***/ "bcryptjs":
+/*!***************************!*\
+  !*** external "bcryptjs" ***!
+  \***************************/
 /***/ ((module) => {
 
 module.exports = require("bcryptjs");
 
 /***/ }),
 
-/***/ 3582:
+/***/ "cors":
+/*!***********************!*\
+  !*** external "cors" ***!
+  \***********************/
 /***/ ((module) => {
 
 module.exports = require("cors");
 
 /***/ }),
 
-/***/ 5142:
+/***/ "dotenv":
+/*!*************************!*\
+  !*** external "dotenv" ***!
+  \*************************/
 /***/ ((module) => {
 
 module.exports = require("dotenv");
 
 /***/ }),
 
-/***/ 6860:
+/***/ "express":
+/*!**************************!*\
+  !*** external "express" ***!
+  \**************************/
 /***/ ((module) => {
 
 module.exports = require("express");
 
 /***/ }),
 
-/***/ 6674:
+/***/ "express-fileupload":
+/*!*************************************!*\
+  !*** external "express-fileupload" ***!
+  \*************************************/
 /***/ ((module) => {
 
 module.exports = require("express-fileupload");
 
 /***/ }),
 
-/***/ 4324:
+/***/ "firebase/app":
+/*!*******************************!*\
+  !*** external "firebase/app" ***!
+  \*******************************/
 /***/ ((module) => {
 
 module.exports = require("firebase/app");
 
 /***/ }),
 
-/***/ 1668:
+/***/ "firebase/storage":
+/*!***********************************!*\
+  !*** external "firebase/storage" ***!
+  \***********************************/
 /***/ ((module) => {
 
 module.exports = require("firebase/storage");
 
 /***/ }),
 
-/***/ 9344:
+/***/ "jsonwebtoken":
+/*!*******************************!*\
+  !*** external "jsonwebtoken" ***!
+  \*******************************/
 /***/ ((module) => {
 
 module.exports = require("jsonwebtoken");
 
 /***/ }),
 
-/***/ 3511:
+/***/ "passport":
+/*!***************************!*\
+  !*** external "passport" ***!
+  \***************************/
 /***/ ((module) => {
 
 module.exports = require("passport");
 
 /***/ }),
 
-/***/ 136:
+/***/ "passport-jwt":
+/*!*******************************!*\
+  !*** external "passport-jwt" ***!
+  \*******************************/
 /***/ ((module) => {
 
 module.exports = require("passport-jwt");
 
 /***/ }),
 
-/***/ 3236:
+/***/ "reflect-metadata":
+/*!***********************************!*\
+  !*** external "reflect-metadata" ***!
+  \***********************************/
 /***/ ((module) => {
 
 module.exports = require("reflect-metadata");
 
 /***/ }),
 
-/***/ 7777:
+/***/ "swagger-jsdoc":
+/*!********************************!*\
+  !*** external "swagger-jsdoc" ***!
+  \********************************/
 /***/ ((module) => {
 
 module.exports = require("swagger-jsdoc");
 
 /***/ }),
 
-/***/ 9948:
+/***/ "swagger-ui-express":
+/*!*************************************!*\
+  !*** external "swagger-ui-express" ***!
+  \*************************************/
 /***/ ((module) => {
 
 module.exports = require("swagger-ui-express");
 
 /***/ }),
 
-/***/ 5250:
+/***/ "typeorm":
+/*!**************************!*\
+  !*** external "typeorm" ***!
+  \**************************/
 /***/ ((module) => {
 
 module.exports = require("typeorm");
@@ -6936,7 +901,7 @@ module.exports = require("typeorm");
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	var __webpack_exports__ = __webpack_require__(3607);
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/index.ts");
 /******/ 	var __webpack_export_target__ = exports;
 /******/ 	for(var i in __webpack_exports__) __webpack_export_target__[i] = __webpack_exports__[i];
 /******/ 	if(__webpack_exports__.__esModule) Object.defineProperty(__webpack_export_target__, "__esModule", { value: true });

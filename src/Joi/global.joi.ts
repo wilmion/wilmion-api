@@ -4,7 +4,7 @@ export const idSchema = Joi.string();
 
 const limitSchema = Joi.number().min(0).positive();
 
-const offsetSchema = Joi.number().min(0).positive();
+const offsetSchema = Joi.number().min(0);
 
 export const idRouteSchema = {
   id: idSchema.required(),
