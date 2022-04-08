@@ -44,10 +44,10 @@ export class Job {
   role: string;
 
   @Column({
-    type: "timestamp",
+    type: "varchar",
     nullable: false,
   })
-  from: Timestamp;
+  from: string;
 
   @Column({
     type: "varchar",

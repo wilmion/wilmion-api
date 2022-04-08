@@ -7,7 +7,10 @@ const activeSchema = Joi.boolean();
 const roleSchema = Joi.string();
 const fromSchema = Joi.string();
 const toSchema = Joi.string();
-const functionSchema = Joi.string();
+const functionSchema = Joi.alternatives().try(
+  Joi.string().min(5),
+  Joi.equal(null)
+);
 const imageId = Joi.string().min(1);
 
 export const JobSchema = {

@@ -78,16 +78,7 @@ export class ProjectService {
     }
 
     if (projectDto.skillsIds) {
-      const newSkillsIds = getNotRepeatInManyToManyRelations<Skill>(
-        projectDto.skillsIds,
-        project.skills
-      );
-
-      for (const skillId of newSkillsIds) {
-        const skill = await this.skillService.getById(skillId);
-
-        project.skills.push(skill);
-      }
+      project.skills = await this.getSkillsByIds(projectDto.skillsIds);
     }
 
     project = { ...project, ...projectDto };
@@ -109,5 +100,17 @@ export class ProjectService {
     project.active = false;
 
     return await this.db.save(project);
+  }
+
+  private async getSkillsByIds(ids: string[]) {
+    const skills: Skill[] = [];
+
+    for (const id of ids) {
+      const skill = await this.skillService.getById(id);
+
+      skills.push(skill);
+    }
+
+    return skills;
   }
 }

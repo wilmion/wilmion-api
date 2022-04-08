@@ -86,11 +86,14 @@ export class UsersService {
     if (payload.password || payload.email)
       throw Boom.conflict("The password or email is not change");
 
-    const user = await this.getById(id);
+    let user = await this.getById(id);
 
-    const userUpdated = await this.db.update(user.id, payload);
+    user = {
+      ...user,
+      ...payload,
+    };
 
-    return userUpdated;
+    return await this.db.save(user);
   }
 
   async delete(id: string) {

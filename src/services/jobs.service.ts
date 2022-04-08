@@ -23,6 +23,7 @@ export class JobsService {
 
     this.db = database.getRepository(Job);
   }
+
   async getAll() {
     const jobs = await this.db.find({ relations: ["image"] });
 
@@ -59,13 +60,11 @@ export class JobsService {
       job.image = await this.imageService.getById(jobUpdateDto.imageId);
 
       delete jobUpdateDto.imageId;
-
-      await this.db.save(job);
     }
 
-    await this.db.update(job.id, jobUpdateDto);
+    job = { ...job, ...(jobUpdateDto as any) };
 
-    return;
+    return await this.db.save(job);
   }
 
   async deactivate(id: string) {
@@ -73,7 +72,9 @@ export class JobsService {
 
     if (!job.active) throw Boom.conflict("This job already deactivate");
 
-    await this.db.update(job.id, { active: false });
+    job.active = false;
+
+    return await this.db.save(job);
   }
 
   async activate(id: string) {
@@ -81,6 +82,8 @@ export class JobsService {
 
     if (job.active) throw Boom.conflict("This job already activate");
 
-    await this.db.update(job.id, { active: true });
+    job.active = true;
+
+    return await this.db.save(job);
   }
 }
