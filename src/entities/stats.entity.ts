@@ -2,9 +2,9 @@ import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
-  Timestamp,
   JoinColumn,
   ManyToOne,
+  Timestamp,
 } from "typeorm";
 import { Post } from "./post.entity";
 
@@ -28,7 +28,8 @@ export class Stat {
     type: "timestamp",
     name: "created_at",
     nullable: false,
-    default: new Date(),
+    default: () => "CURRENT_TIMESTAMP",
+    precision: 3,
   })
   readonly createdAt: Timestamp;
 

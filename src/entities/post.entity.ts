@@ -30,7 +30,7 @@ export class Post {
   @Column({
     type: "timestamp",
     name: "created_at",
-    default: new Date(),
+    default: () => "CURRENT_TIMESTAMP",
   })
   createdAt: Timestamp;
 

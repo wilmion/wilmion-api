@@ -5,3 +5,13 @@ export interface StatsDto {
 
   readonly postId?: string;
 }
+
+export interface GraphicStat {
+  text: string;
+  value: number;
+}
+
+export interface ReturnedData {
+  title: string;
+  raw: GraphicStat[];
+}

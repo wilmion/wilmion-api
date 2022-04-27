@@ -23,9 +23,9 @@ route.get(
   validateHandler(querySchema, "query"),
   async (req, res, next) => {
     try {
-      const { limit, offset, type } = req.query as any;
+      const { from, to, type } = req.query as any;
 
-      const data = await service.getAll(limit, offset, type);
+      const data = await service.getAll(from, to, type);
 
       response(res, 200, data, "The data traveled successfully 🛬🛫✈️");
     } catch (error) {
@@ -56,9 +56,7 @@ route.post("/", validateHandler(statSchema), async (req, res, next) => {
   try {
     const body = req.body as StatsDto;
 
-    const origin = req.get("host");
-
-    const result = await service.create(body, origin);
+    const result = await service.create(body);
 
     response(res, 201, result, "The stat was created successfully 🥵");
   } catch (error) {
