@@ -46,6 +46,14 @@ export class IpsUserService {
     return ipUser;
   }
 
+  async setIp(ip: string) {
+    const newIp = this.db.create({
+      ip,
+    });
+
+    return await this.db.save(newIp);
+  }
+
   async create(ipuserDto: IpUserDto) {
     const newIpUser = this.db.create(ipuserDto);
 
