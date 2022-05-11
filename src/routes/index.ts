@@ -14,6 +14,10 @@ import ProjectRoute from "@controllers/project.controller";
 import SocialMedia from "@controllers/social-media.controller";
 import StatRoute from "@controllers/stats.controller";
 
+import { IpsUserService } from "@services/ipsUser.service";
+
+const service = new IpsUserService();
+
 async function setAllRouters(app: Application) {
   const router = Router();
 
@@ -32,6 +36,17 @@ async function setAllRouters(app: Application) {
   router.use("/stats", StatRoute);
 
   app.use("/api", router);
+  app.get("/home", async (req, res, next) => {
+    try {
+      const ip = req.header("x-forwarded-for") || req.connection.remoteAddress;
+
+      await service.setIp(ip);
+
+      res.redirect("https://wilmion.com");
+    } catch (e) {
+      next(e);
+    }
+  });
 }
 
 export default setAllRouters;
