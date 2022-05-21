@@ -40,6 +40,17 @@ export class UsersService {
     return user;
   }
 
+  async getAuthorImageUrl() {
+    const user = await this.db.findOneOrFail({
+      relations: ["image"],
+      where: {
+        email: "wilmion92@gmail.com",
+      },
+    });
+
+    return user.image.imageUrl;
+  }
+
   async create(payload: UserDto) {
     const image = await this.imageService.getById(payload.imageId);
 

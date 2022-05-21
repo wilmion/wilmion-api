@@ -34,6 +34,16 @@ route.get(
   }
 );
 
+route.get("/author-image", async (req, res, next) => {
+  try {
+    const imageUrl = await service.getAuthorImageUrl();
+
+    response(res, 200, imageUrl, "The data traveled successfully");
+  } catch (e) {
+    next(e);
+  }
+});
+
 route.post(
   "/register",
   validateHandler(UserSchenma),
