@@ -81,12 +81,16 @@ export class UsersService {
   }
 
   async update(id: string, payload: Partial<UserDto>) {
-    if (payload.imageId) await this.comprobateImageId(payload.imageId);
+    let user = await this.getById(id);
+
+    if (payload.imageId) {
+      const image = await this.imageService.getById(payload.imageId);
+
+      user.image = image;
+    }
 
     if (payload.password || payload.email)
       throw Boom.conflict("The password or email is not change");
-
-    let user = await this.getById(id);
 
     user = {
       ...user,
@@ -117,12 +121,6 @@ export class UsersService {
     const password = await encryption(newPassword);
 
     return this.db.update(id, { password });
-  }
-
-  private async comprobateImageId(imageId: string) {
-    const existAnImage = await this.imageService.getById(imageId);
-
-    if (!existAnImage) throw Boom.notFound("Image entity does not exist");
   }
 
   private quitPasswordFromReturnData(user: User) {
